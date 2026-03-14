@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Three_Wheeler_(EV)_Total_Fleet_Rest_of_World",
+  "description": "Total fleet of electric three-wheelers in Rest of World. The definition of a three-wheeler is aligned with UNECE L2, L4 or L5 classes",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    12000.0,
+    59000.0,
+    143000.0,
+    258000.0,
+    395000.0,
+    487000.0,
+    643000.0,
+    991000.0,
+    1558000.0,
+    2248000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

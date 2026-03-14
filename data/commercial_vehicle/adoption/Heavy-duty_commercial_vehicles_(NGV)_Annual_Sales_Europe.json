@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Heavy-duty_commercial_vehicles_(NGV)_Annual_Sales_Europe",
+  "description": "Annual natural gas vehicle heavy-duty sales in Europe",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    4269.0,
+    4002.0,
+    2507.0,
+    4051.0,
+    5636.0,
+    8012.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

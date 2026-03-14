@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Car_(BEV)_Average_Battery_Pack_Size_USA",
+  "description": "Average battery pack size of BEVs in the USA.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    45.0,
+    60.0,
+    62.0,
+    72.0,
+    75.0,
+    76.0,
+    77.0,
+    81.0,
+    83.0,
+    87.0
+  ],
+  "type": "adoption",
+  "units": "kWh",
+  "source": "IEA",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

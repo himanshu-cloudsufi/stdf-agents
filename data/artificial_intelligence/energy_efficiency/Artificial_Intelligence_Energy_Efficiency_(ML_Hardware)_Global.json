@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Artificial_Intelligence_Energy_Efficiency_(ML_Hardware)_Global",
+  "description": "Leading ML hardware becomes 40% more energy-efficient each year.The upcoming Blackwell series of processors may be even more efficient, depending on their power consumption.",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2020,
+    2021,
+    2024
+  ],
+  "Y": [
+    74800000000.0,
+    161000000000.0,
+    559000000000.0,
+    789000000000.0,
+    1620000000000.0,
+    2500000000000.0
+  ],
+  "type": "Energy Efficiency",
+  "units": "Flops/watt",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "Energy Efficiency",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

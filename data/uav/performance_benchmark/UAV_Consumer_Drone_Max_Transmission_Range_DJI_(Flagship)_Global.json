@@ -1,0 +1,27 @@
+{
+  "dataset_name": "UAV_Consumer_Drone_Max_Transmission_Range_DJI_(Flagship)_Global",
+  "description": "Max transmission range of DJI flagship consumer drones.",
+  "X": [
+    2018,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    10.0,
+    10.0,
+    15.0,
+    15.0,
+    15.0,
+    15.0
+  ],
+  "type": "Performance Benchmark",
+  "units": "km",
+  "source": "DJI Official - Mavic 2 Pro: OcuSync 2.0, 10 km max transmission (FCC)",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

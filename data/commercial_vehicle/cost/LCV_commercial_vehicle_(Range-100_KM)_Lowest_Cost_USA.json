@@ -1,0 +1,39 @@
+{
+  "dataset_name": "LCV_commercial_vehicle_(Range-100_KM)_Lowest_Cost_USA",
+  "description": "Cost curve for LCV commerical vehicle (Range-100 KM) (Lowest) - USA",
+  "X": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    60000.0,
+    55000.0,
+    52000.0,
+    50000.0,
+    47000.0,
+    44000.0,
+    41000.0,
+    38000.0,
+    35000.0,
+    32000.0,
+    30000.0,
+    28000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

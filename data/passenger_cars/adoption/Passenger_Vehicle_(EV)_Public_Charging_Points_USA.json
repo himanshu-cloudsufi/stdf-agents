@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Vehicle_(EV)_Public_Charging_Points_USA",
+  "description": "Public electric vehicle charging points in USA",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    32000.0,
+    38000.0,
+    43000.0,
+    60000.0,
+    80000.0,
+    100000.0,
+    110000.0,
+    130000.0,
+    160000.0,
+    200000.0
+  ],
+  "type": "adoption",
+  "units": "unit",
+  "source": "Database",
+  "region": "USA",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

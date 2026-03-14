@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Battery_System_Total_Median_Cost_China",
+  "description": "Median total cost of complete battery system for UAVs in China",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    111.0,
+    127.0,
+    126.0,
+    94.0
+  ],
+  "type": "cost",
+  "units": "USD/system",
+  "source": "BloombergNEF Annual Survey (Market)",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

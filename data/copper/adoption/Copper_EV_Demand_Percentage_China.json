@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_EV_Demand_Percentage_China",
+  "description": "Share of copper demand from EVs in China.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    2.0,
+    2.5,
+    3.0,
+    3.8,
+    4.5,
+    5.0,
+    6.0,
+    7.0,
+    8.0,
+    9.0
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

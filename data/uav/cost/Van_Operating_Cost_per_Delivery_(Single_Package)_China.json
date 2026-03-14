@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Van_Operating_Cost_per_Delivery_(Single_Package)_China",
+  "description": "Average operating cost of a delivery van per single package delivered in China",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    7.5,
+    7.7,
+    7.9,
+    8.1,
+    8.3,
+    8.5,
+    8.8
+  ],
+  "type": "cost",
+  "units": "USD/delivery",
+  "source": "McKinsey global benchmarks",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

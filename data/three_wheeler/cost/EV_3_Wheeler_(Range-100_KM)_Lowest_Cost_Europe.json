@@ -1,0 +1,37 @@
+{
+  "dataset_name": "EV_3_Wheeler_(Range-100_KM)_Lowest_Cost_Europe",
+  "description": "Cost curve for EV 3 Wheeler (Range-100 KM) (Lowest) - Europe",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    8000.0,
+    7800.0,
+    7500.0,
+    7200.0,
+    6800.0,
+    6500.0,
+    6200.0,
+    6000.0,
+    5800.0,
+    5600.0,
+    5200.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

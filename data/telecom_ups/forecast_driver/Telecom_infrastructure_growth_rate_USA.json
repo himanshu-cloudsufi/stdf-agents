@@ -1,0 +1,43 @@
+{
+  "dataset_name": "Telecom_infrastructure_growth_rate_USA",
+  "description": "Annual growth rate of telecom infrastructure in the USA",
+  "X": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    6.0,
+    5.5,
+    5.0,
+    4.8,
+    4.5,
+    4.3,
+    4.0,
+    3.8,
+    3.5,
+    3.2,
+    3.5,
+    3.3,
+    3.0,
+    2.8
+  ],
+  "type": "forecast driver",
+  "units": "% growth rate",
+  "source": "Database",
+  "region": "USA",
+  "category": "forecast driver",
+  "entity_type": "Sector",
+  "level_name": "Telecom UPS"
+}

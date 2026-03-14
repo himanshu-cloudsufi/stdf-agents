@@ -1,0 +1,39 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Total_Fleet_Rest_of_World",
+  "description": "Total stock of plug-in hybrid passenger vehicles in Rest of World.",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    26400.0,
+    54000.0,
+    73000.0,
+    70000.0,
+    110000.0,
+    250000.0,
+    260000.0,
+    370000.0,
+    480000.0,
+    590000.0,
+    400000.0,
+    1000000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

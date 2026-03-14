@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Artificial_General_Intelligence_Average_TPS_Global",
+  "description": "Represents throughput of AI model inference, measured as tokens per second (TPS), the number of output tokens a model can generate every second. It\u2019s a key indicator of model speed, responsiveness, and scalability for both user-facing and agentic (multi-step reasoning or tool-using) tasks.Speeds have increased exponentially, from ~15 TPS in 2021 (e.g., GPT-3 on A100 GPUs) to over 1,000 TPS in 2025 (e.g., Llama 4 Maverick on Blackwell/Cerebras). This ~67x improvement is driven by hardware (e.g., Blackwell FP4 support), optimizations (e.g., speculative decoding, KV caching), and architectural advances (e.g., MoE in Llama 4). Early models were serial and memory-bound; modern ones achieve real-time (human-reading-speed ~10\u201320 TPS) or superhuman rates for agentic tasks.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    15.0,
+    40.0,
+    65.0,
+    150.0,
+    1000.0
+  ],
+  "type": "Performance Rate",
+  "units": "Output Tokens/Second",
+  "source": "Database",
+  "region": "World",
+  "category": "Performance Rate",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

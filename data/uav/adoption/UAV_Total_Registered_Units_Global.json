@@ -1,0 +1,31 @@
+{
+  "dataset_name": "UAV_Total_Registered_Units_Global",
+  "description": "Total registered UAV units globally.",
+  "X": [
+    2010,
+    2016,
+    2017,
+    2019,
+    2020,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    15000.0,
+    600000.0,
+    988000.0,
+    1691000.0,
+    2263248.0,
+    1700421.0,
+    4775000.0,
+    6050000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "Drone Industry Insights (GlobeNewsWire 2025)",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

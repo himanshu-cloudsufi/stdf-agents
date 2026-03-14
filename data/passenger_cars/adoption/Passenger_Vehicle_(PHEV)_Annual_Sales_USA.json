@@ -1,0 +1,43 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Annual_Sales_USA",
+  "description": "Annual plug-in hybrid vehicle sales in USA",
+  "X": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    2000.0,
+    14000.0,
+    21000.0,
+    29000.0,
+    51000.0,
+    77000.0,
+    94000.0,
+    108000.0,
+    84000.0,
+    65000.0,
+    164000.0,
+    189000.0,
+    281000.0,
+    320000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

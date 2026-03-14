@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Service_Robot_(Professional)_Annual_Installation_(Agriculture)_Global",
+  "description": "Agriculture category includes robots used for tasks such as plowing, seeding, harvesting, weeding, fertilizing, and pesticide spraying\u2014both indoors (e.g. greenhouses) and outdoors (e.g. fields and vineyards). It also covers robots for milking, as well as those used in other livestock activities like feeding and barn cleaning.",
+  "X": [
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    7000.0,
+    8000.0,
+    20000.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

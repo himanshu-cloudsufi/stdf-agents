@@ -1,0 +1,27 @@
+{
+  "dataset_name": "UAV_Active_Commercial_Drones_USA",
+  "description": "Active commercial drones in the USA.",
+  "X": [
+    2017,
+    2018,
+    2020,
+    2021,
+    2023,
+    2024
+  ],
+  "Y": [
+    110604.0,
+    122000.0,
+    382377.0,
+    622055.0,
+    352222.0,
+    842000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "DOT press release (Jan 2018); CAAC",
+  "region": "USA",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

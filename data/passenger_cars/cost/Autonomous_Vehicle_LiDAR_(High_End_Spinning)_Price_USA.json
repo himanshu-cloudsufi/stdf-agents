@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_LiDAR_(High_End_Spinning)_Price_USA",
+  "description": "Price of high-end spinning LiDAR for autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    60000.0,
+    45000.0,
+    30000.0,
+    20000.0,
+    15000.0,
+    12000.0,
+    9000.0,
+    7000.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

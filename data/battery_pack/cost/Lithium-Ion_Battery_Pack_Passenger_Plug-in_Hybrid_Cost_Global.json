@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_Passenger_Plug-in_Hybrid_Cost_Global",
+  "description": "Lithium-Ion Battery Pack Passenger Plug-in Hybrid Cost Global",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    454.0,
+    433.0,
+    397.0,
+    380.0,
+    354.0,
+    320.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cost",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

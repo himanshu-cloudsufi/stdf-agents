@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Light-duty_commercial_vehicles_(NGV)_Annual_Sales_Rest_of_World",
+  "description": "Annual natural gas vehicle light-duty sales in Rest of World",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.0,
+    82.0,
+    1593.0,
+    6620.0,
+    12004.0,
+    20645.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "Rest of World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

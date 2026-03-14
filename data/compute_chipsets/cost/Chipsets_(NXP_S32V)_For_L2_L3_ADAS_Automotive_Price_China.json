@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(NXP_S32V)_For_L2/L3/ADAS_Automotive_Price_China",
+  "description": "Price of NXP S32V chipset for L2/L3 ADAS in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    480.0,
+    450.0,
+    430.0,
+    420.0,
+    400.0,
+    390.0,
+    380.0,
+    360.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

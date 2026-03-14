@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Autonomous_Passenger_Car_Annual_Sales_(L0)_Global",
+  "description": "Annual global sales of Level-0 autonomous passenger cars.",
+  "X": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    31.0,
+    22.0,
+    10.0,
+    8.0,
+    7.0,
+    6.0
+  ],
+  "type": "adoption",
+  "units": "Million Units",
+  "source": "IDTechEx Research",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Autonomous Vehicle"
+}

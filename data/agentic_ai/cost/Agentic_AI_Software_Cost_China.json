@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Agentic_AI_Software_Cost_China",
+  "description": "Annual cost of software required to develop and operate Agentic AI systems in China.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    80000000.0,
+    110000000.0,
+    150000000.0,
+    193000000.0,
+    278000000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Agentic AI"
+}

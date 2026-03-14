@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Military_UAV_Fleet_Size_USA",
+  "description": "Military UAV fleet size in the USA.",
+  "X": [
+    2010,
+    2014,
+    2020,
+    2024
+  ],
+  "Y": [
+    300.0,
+    10000.0,
+    11000.0,
+    20000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "Bard Drone Databook (CNAS 2019)",
+  "region": "USA",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

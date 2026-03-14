@@ -1,0 +1,39 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Total_Fleet_Europe",
+  "description": "Total plug-in hybrid vehicle fleet in Europe",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    36000.0,
+    70000.0,
+    170000.0,
+    290000.0,
+    450000.0,
+    630000.0,
+    800000.0,
+    1400000.0,
+    2500000.0,
+    3400000.0,
+    4500000.0,
+    5400000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

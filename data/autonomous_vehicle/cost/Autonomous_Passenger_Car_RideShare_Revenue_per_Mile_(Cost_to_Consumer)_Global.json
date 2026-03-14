@@ -1,0 +1,23 @@
+{
+  "dataset_name": "Autonomous_Passenger_Car_RideShare_Revenue_per_Mile_(Cost_to_Consumer)_Global",
+  "description": "Consumer cost per mile for autonomous rideshare services.",
+  "X": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    3.5,
+    3.1,
+    2.9,
+    2.75
+  ],
+  "type": "cost",
+  "units": "$ per mile",
+  "source": "AAA, Goldman Sachs Research",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Autonomous Vehicle"
+}

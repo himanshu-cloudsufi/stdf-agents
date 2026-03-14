@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Agentic_AI_Deployment_Cost_Rest_of_World",
+  "description": "Total cost to deploy and maintain Agentic AI solutions in the Rest of the World.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    1081105263.0,
+    1424000000.0,
+    2027600000.0,
+    4484400000.0,
+    6356436000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Agentic AI"
+}

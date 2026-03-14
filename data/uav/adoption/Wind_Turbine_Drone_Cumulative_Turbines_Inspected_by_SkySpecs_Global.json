@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Wind_Turbine_Drone_Cumulative_Turbines_Inspected_by_SkySpecs_Global",
+  "description": "Cumulative global count of wind turbines inspected by SkySpecs using drones.",
+  "X": [
+    2015,
+    2017,
+    2018,
+    2019,
+    2020,
+    2022,
+    2025
+  ],
+  "Y": [
+    0.0,
+    3600.0,
+    11000.0,
+    30000.0,
+    60000.0,
+    100000.0,
+    270000.0
+  ],
+  "type": "adoption",
+  "units": "Turbines",
+  "source": "PR Newswire: 30,000 autonomous",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

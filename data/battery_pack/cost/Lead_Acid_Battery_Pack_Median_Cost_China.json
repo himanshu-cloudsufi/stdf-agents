@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Lead_Acid_Battery_Pack_Median_Cost_China",
+  "description": "Cost curve for Lead-Acid Battery (pack-level median) (Median) - China",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    250.0,
+    225.0,
+    200.0,
+    183.0,
+    160.0,
+    150.0,
+    140.0,
+    130.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Database",
+  "region": "China",
+  "category": "cost",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

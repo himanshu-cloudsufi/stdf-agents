@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Vehicle_(EV)_Public_Charging_Points_Global",
+  "description": "Public electric vehicle charging points worldwide",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    184000.0,
+    331000.0,
+    439000.0,
+    550000.0,
+    880000.0,
+    1290000.0,
+    1800000.0,
+    2790000.0,
+    4100000.0,
+    5440000.0
+  ],
+  "type": "adoption",
+  "units": "unit",
+  "source": "Database",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

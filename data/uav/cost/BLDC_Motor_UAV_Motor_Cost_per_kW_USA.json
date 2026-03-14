@@ -1,0 +1,27 @@
+{
+  "dataset_name": "BLDC_Motor_UAV_Motor_Cost_per_kW_USA",
+  "description": "Cost per kW of BLDC (Brushless Direct Current) motors used in UAVs in the USA",
+  "X": [
+    2017,
+    2019,
+    2020,
+    2021,
+    2022,
+    2025
+  ],
+  "Y": [
+    121.12,
+    75.53,
+    39.98,
+    48.72,
+    67.98,
+    69.05
+  ],
+  "type": "cost",
+  "units": "USD/kW",
+  "source": "Manufacturer/Retailer/Market Report",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "UAV"
+}

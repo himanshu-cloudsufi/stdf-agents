@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Agentic_AI_Annual_Tokens_Consumed_Global",
+  "description": "Total annual AI tokens consumed globally.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    0.001,
+    0.001,
+    0.01,
+    0.1,
+    3.0,
+    75.0,
+    3000.0,
+    18000.0
+  ],
+  "type": "adoption",
+  "units": "Trillions",
+  "source": "Internet (McKinsey,Epoch AI projections,Stanford AI Index 2024.)",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Market_Size_China",
+  "description": "Market size of autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1000.0,
+    1500.0,
+    2000.0,
+    2500.0,
+    3700.0,
+    4950.0,
+    6325.0
+  ],
+  "type": "adoption",
+  "units": "USD Million",
+  "source": "Internet (Grand View Research)",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Market",
+  "level_name": "Autonomous Vehicle"
+}

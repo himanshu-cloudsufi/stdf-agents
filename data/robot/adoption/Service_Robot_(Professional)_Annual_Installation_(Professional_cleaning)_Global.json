@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Service_Robot_(Professional)_Annual_Installation_(Professional_cleaning)_Global",
+  "description": "Professional cleaning category includes robots designed to clean floors, windows, walls, tanks, pipes, and vehicle hulls in professional environments. This category also includes disinfection robots and others used for specialized or large-scale cleaning tasks.",
+  "X": [
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    6000.0,
+    7000.0,
+    12000.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

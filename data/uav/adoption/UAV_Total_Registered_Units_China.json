@@ -1,0 +1,27 @@
+{
+  "dataset_name": "UAV_Total_Registered_Units_China",
+  "description": "Total registered UAV units in China.",
+  "X": [
+    2017,
+    2019,
+    2020,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    45000.0,
+    371000.0,
+    517000.0,
+    832000.0,
+    1270000.0,
+    2200000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "Drone Industry Insights (GlobeNewsWire 2025)",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

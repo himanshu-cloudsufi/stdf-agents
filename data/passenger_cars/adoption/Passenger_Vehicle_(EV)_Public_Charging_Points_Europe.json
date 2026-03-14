@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Vehicle_(EV)_Public_Charging_Points_Europe",
+  "description": "Public electric vehicle charging points in Europe",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    67000.0,
+    122000.0,
+    133000.0,
+    140000.0,
+    190000.0,
+    260000.0,
+    370000.0,
+    570000.0,
+    760000.0,
+    1030000.0
+  ],
+  "type": "adoption",
+  "units": "unit",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_Wind_Turbines_Percentage_China",
+  "description": "Percentage of copper demand attributable to wind turbine manufacturing in China.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.0,
+    1.2,
+    1.4,
+    1.5,
+    1.7,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.6
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

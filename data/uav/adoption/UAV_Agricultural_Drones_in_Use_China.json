@@ -1,0 +1,27 @@
+{
+  "dataset_name": "UAV_Agricultural_Drones_in_Use_China",
+  "description": "Agricultural drones in use in China.",
+  "X": [
+    2016,
+    2017,
+    2019,
+    2020,
+    2022,
+    2024
+  ],
+  "Y": [
+    13000.0,
+    13000.0,
+    30000.0,
+    110000.0,
+    200000.0,
+    230000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "DJI Agriculture (global DJI agri drones)",
+  "region": "China",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

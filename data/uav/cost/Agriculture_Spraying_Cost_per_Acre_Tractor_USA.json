@@ -1,0 +1,23 @@
+{
+  "dataset_name": "Agriculture_Spraying_Cost_per_Acre_Tractor_USA",
+  "description": "Cost of crop spraying per acre using tractor in the USA",
+  "X": [
+    2017,
+    2020,
+    2023,
+    2024
+  ],
+  "Y": [
+    7.0,
+    7.5,
+    6.5,
+    6.5
+  ],
+  "type": "cost",
+  "units": "USD/acre",
+  "source": "UK Extension AEN-171",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Service",
+  "level_name": "UAV"
+}

@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_E-Bus_&_Commercial_Cost_China",
+  "description": "Cost per kWh of lithium-ion battery packs for e-buses and commercial vehicles in China",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    177.0,
+    170.0,
+    127.0,
+    119.0,
+    144.0,
+    103.0,
+    90.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Rethinkx",
+  "region": "China",
+  "category": "cost",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

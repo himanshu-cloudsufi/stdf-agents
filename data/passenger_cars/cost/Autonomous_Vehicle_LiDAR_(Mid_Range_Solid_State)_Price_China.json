@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_LiDAR_(Mid_Range_Solid_State)_Price_China",
+  "description": "Price of mid-range solid-state LiDAR for autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    8000.0,
+    6000.0,
+    5000.0,
+    3500.0,
+    2500.0,
+    1800.0,
+    1200.0,
+    800.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

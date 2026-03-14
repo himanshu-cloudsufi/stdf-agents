@@ -1,0 +1,35 @@
+{
+  "dataset_name": "UAV_DJI_Market_Share_China",
+  "description": "DJI market share in China\u2019s UAV market.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    65.0,
+    75.0,
+    80.0,
+    85.0,
+    87.0,
+    88.0,
+    89.0,
+    89.0,
+    90.0,
+    90.0
+  ],
+  "type": "Market Share",
+  "units": "%",
+  "source": "COVID-19 agricultural drone boom (DJI leader)",
+  "region": "China",
+  "category": "Market Share",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

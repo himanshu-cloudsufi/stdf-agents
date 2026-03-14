@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Van_Operating_Cost_per_Delivery_(Single_Package)_Europe",
+  "description": "Average operating cost of a delivery van per single package delivered in Europe",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    9.5,
+    9.8,
+    10.1,
+    10.5,
+    10.8,
+    11.0,
+    11.3
+  ],
+  "type": "cost",
+  "units": "USD/delivery",
+  "source": "McKinsey EU studies",
+  "region": "Europe",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

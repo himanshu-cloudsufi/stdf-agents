@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Vehicle_(EV)_Public_Charging_Points_China",
+  "description": "Public electric vehicle charging points in China",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    59000.0,
+    141000.0,
+    214000.0,
+    280000.0,
+    520000.0,
+    810000.0,
+    1150000.0,
+    1800000.0,
+    2730000.0,
+    3580000.0
+  ],
+  "type": "adoption",
+  "units": "unit",
+  "source": "Database",
+  "region": "China",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Life_Cycle_Emission_Rate_USA",
+  "description": "Total lifecycle CO2 emissions per PHEV vehicle in the USA, including manufacturing, fuel, and disposal.",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    241.0,
+    239.0,
+    236.0,
+    234.0,
+    232.0,
+    229.0,
+    227.0,
+    227.0,
+    223.0,
+    218.0,
+    214.0,
+    208.0,
+    204.0
+  ],
+  "type": "Emission Rate",
+  "units": "g CO2e/km",
+  "source": "Database",
+  "region": "USA",
+  "category": "Emission Rate",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

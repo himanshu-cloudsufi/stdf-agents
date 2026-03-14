@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Life_Cycle_Emission_Rate_Global",
+  "description": "Total lifecycle CO2 emissions per PHEV vehicle globally.",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    282.0,
+    272.0,
+    270.0,
+    268.0,
+    267.0,
+    266.0,
+    266.0,
+    262.0,
+    258.0,
+    258.0,
+    258.0,
+    259.0,
+    258.0
+  ],
+  "type": "Emission Rate",
+  "units": "g CO2e/km",
+  "source": "Database",
+  "region": "World",
+  "category": "Emission Rate",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

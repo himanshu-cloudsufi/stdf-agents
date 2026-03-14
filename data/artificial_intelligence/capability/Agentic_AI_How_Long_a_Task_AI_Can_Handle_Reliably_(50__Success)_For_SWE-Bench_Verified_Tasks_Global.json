@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Agentic_AI_How_Long_a_Task_AI_Can_Handle_Reliably_(50%_Success)_For_SWE-Bench_Verified_Tasks_Global",
+  "description": "Measuring AI performance in terms of the length of SWE-Bench Verified Tasks (measured by how long they take by human professionals) that generalist frontier model agents can complete autonomously with 50% reliability. It has been doubling approximately every 7 months for the last 6 years. Extrapolating this trend predicts that, in under a decade, we will see AI agents that can independently complete a large fraction of software tasks that currently take humans days or weeks.",
+  "X": [
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    4.0,
+    60.0,
+    2700.0
+  ],
+  "type": "Capability",
+  "units": "seconds",
+  "source": "METR",
+  "region": "World",
+  "category": "Capability",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

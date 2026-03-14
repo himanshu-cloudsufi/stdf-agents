@@ -1,0 +1,35 @@
+{
+  "dataset_name": "UAV_DJI_Market_Share_Global",
+  "description": "Global market share of DJI in UAV market.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    25.0,
+    50.0,
+    60.0,
+    72.0,
+    74.0,
+    76.0,
+    77.0,
+    78.0,
+    79.0,
+    70.0
+  ],
+  "type": "Market Share",
+  "units": "%",
+  "source": "Coolest Gadget Analysis / Dedrone 2023",
+  "region": "World",
+  "category": "Market Share",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

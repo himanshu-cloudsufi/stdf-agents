@@ -1,0 +1,53 @@
+{
+  "5G_Network_5G_Coverage_Land_Area_China": {
+    "level_name": "5G Network"
+  },
+  "5G_Network_5G_Coverage_Land_Area_Europe": {
+    "level_name": "5G Network"
+  },
+  "5G_Network_5G_Coverage_Land_Area_Global": {
+    "level_name": "5G Network"
+  },
+  "5G_Network_5G_Coverage_Land_Area_USA": {
+    "level_name": "5G Network"
+  },
+  "5G_Network_Population_Coverage_China": {
+    "level_name": "5G Network"
+  },
+  "5G_Network_Population_Coverage_Europe": {
+    "level_name": "5G Network"
+  },
+  "5G_Network_Population_Coverage_Global": {
+    "level_name": "5G Network"
+  },
+  "5G_Network_Population_Coverage_USA": {
+    "level_name": "5G Network"
+  },
+  "Liquefied_Natural_Gas_Balance_of_Trade_China": {
+    "level_name": "Natural Gas"
+  },
+  "Liquefied_Natural_Gas_Balance_of_Trade_Europe": {
+    "level_name": "Natural Gas"
+  },
+  "Liquefied_Natural_Gas_Balance_of_Trade_USA": {
+    "level_name": "Natural Gas"
+  },
+  "UAV_Battery_Energy_Density_China": {
+    "type": "Energy Density"
+  },
+  "UAV_Battery_Energy_Density_Europe": {
+    "type": "Energy Density"
+  },
+  "UAV_Battery_Energy_Density_Global": {
+    "type": "Energy Density"
+  },
+  "UAV_Battery_Energy_Density_Rest_of_World": {
+    "type": "Energy Density"
+  },
+  "UAV_Battery_Energy_Density_USA": {
+    "type": "Energy Density"
+  },
+  "Polysilicon_Cost_Global": {
+    "level_name": "Energy Generation"
+  }
+}

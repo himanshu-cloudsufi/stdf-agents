@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Commercial_Vehicle_(EV)_Total_Fleet_Global",
+  "description": "Global total electric commercial vehicle fleet",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    337476.0,
+    422971.0,
+    617765.0,
+    965442.0,
+    1716059.0,
+    2947412.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

@@ -1,0 +1,33 @@
+{
+  "dataset_name": "DJI_Mavic_Pro_Price_Global",
+  "description": "Historical retail price of DJI Mavic Pro",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    999.0,
+    884.0,
+    769.0,
+    634.5,
+    500.0,
+    450.0,
+    450.0,
+    450.0,
+    450.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "RethinkX",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

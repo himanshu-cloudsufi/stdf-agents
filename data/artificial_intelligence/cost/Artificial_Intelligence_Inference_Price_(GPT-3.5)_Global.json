@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Artificial_Intelligence_Inference_Price_(GPT-3.5)_Global",
+  "description": "Inference costs refer to the expense of querying a trained model, and they are typically measured in USD per million tokens. Data on AI token pricing comes from both Artificial Analysis and Epoch AI\u2019s proprietary database on API pricing. The reported price is a 3:1 weighted average of input and output token price",
+  "X": [
+    2024,
+    2023,
+    2024,
+    2023,
+    2024,
+    2024
+  ],
+  "Y": [
+    0.6,
+    13.0,
+    0.9,
+    3.0,
+    0.2,
+    0.08
+  ],
+  "type": "cost",
+  "units": "$ Per Million Token",
+  "source": "Stanford",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

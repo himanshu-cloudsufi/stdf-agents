@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Car_(BEV)_Energy_Consumption_USA",
+  "description": "Energy consumption of BEVs in the USA (kWh/100 km).",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    20.8,
+    20.2,
+    19.9,
+    19.6,
+    19.3,
+    19.0,
+    18.7,
+    18.4,
+    18.1,
+    17.9
+  ],
+  "type": "Energy Efficiency",
+  "units": "kWh/100 KM",
+  "source": "FuelEconomy.Gov",
+  "region": "USA",
+  "category": "Energy Efficiency",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

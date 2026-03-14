@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_(Commercial_Vehicle)_Total_Demand_Global",
+  "description": "Lithium-Ion Battery Pack (Commercial Vehicle) Total Demand Global",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    2.0,
+    6.0,
+    13.0,
+    23.0,
+    32.0,
+    41.0,
+    62.0,
+    105.0,
+    175.0,
+    278.0
+  ],
+  "type": "adoption",
+  "units": "GWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

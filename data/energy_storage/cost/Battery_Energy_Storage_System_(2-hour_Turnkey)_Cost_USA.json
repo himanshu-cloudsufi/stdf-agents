@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Battery_Energy_Storage_System_(2-hour_Turnkey)_Cost_USA",
+  "description": "Turnkey cost for 2-hour Battery Energy Storage System in USA.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    205.0,
+    192.0,
+    318.0,
+    432.0,
+    376.0,
+    248.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Rethinkx",
+  "region": "USA",
+  "category": "cost",
+  "entity_type": "Market",
+  "level_name": "Energy Storage"
+}

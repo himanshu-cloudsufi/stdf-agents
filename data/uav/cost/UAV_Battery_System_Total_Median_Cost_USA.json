@@ -1,0 +1,35 @@
+{
+  "dataset_name": "UAV_Battery_System_Total_Median_Cost_USA",
+  "description": "Median total cost of complete battery system for UAVs in the USA",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    600.0,
+    525.0,
+    400.0,
+    260.0,
+    220.0,
+    200.0,
+    155.0,
+    157.0,
+    140.0,
+    123.0
+  ],
+  "type": "cost",
+  "units": "USD/kWh",
+  "source": "Academic Study",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

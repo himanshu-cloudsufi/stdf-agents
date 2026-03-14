@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Commercial_Vehicle_(NGV)_Total_Fleet_Global",
+  "description": "Installed base of NGV commercial vehicles",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1202591.0,
+    1351588.0,
+    1502835.0,
+    1645990.0,
+    1786672.0,
+    1950334.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

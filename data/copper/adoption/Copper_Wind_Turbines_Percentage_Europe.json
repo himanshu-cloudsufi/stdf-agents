@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_Wind_Turbines_Percentage_Europe",
+  "description": "Percentage of copper demand attributable to wind turbine manufacturing in Europe.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.5,
+    1.7,
+    1.9,
+    2.1
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

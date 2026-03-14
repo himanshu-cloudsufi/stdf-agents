@@ -1,0 +1,27 @@
+{
+  "dataset_name": "5G_Network_5G_Coverage_Land_Area_China",
+  "description": "Land area covered by 5G in China.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    4.5,
+    20.6,
+    37.8,
+    52.9,
+    72.2,
+    76.6
+  ],
+  "type": "adoption",
+  "units": "%",
+  "source": "MIIT / China Mobile / China Telecom / CAICT",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "5G Network"
+}

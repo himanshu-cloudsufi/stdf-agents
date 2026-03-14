@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Liquefied_Natural_Gas_Annual_Export_Europe",
+  "description": "Annual LNG exports of Europe.",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    9.0,
+    13.0,
+    11.0,
+    10.6,
+    7.9,
+    11.8,
+    8.8,
+    7.0,
+    4.3,
+    7.9,
+    9.2
+  ],
+  "type": "adoption",
+  "units": "Billion Cubic Meter",
+  "source": "Energy Institute Statistical Review of World Energy",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Natural Gas"
+}

@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Purchase_Price_SUV_Europe",
+  "description": "Average market purchase price for PHEV SUVs in Europe.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    38889.0,
+    36666.0,
+    35555.0,
+    35555.0,
+    33333.0,
+    30000.0,
+    30000.0,
+    32222.0,
+    35556.0,
+    38889.0,
+    38889.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

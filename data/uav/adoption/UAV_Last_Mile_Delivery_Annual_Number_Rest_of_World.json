@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Last_Mile_Delivery_Annual_Number_Rest_of_World",
+  "description": "Annual UAV last-mile delivery sales in Rest of World.",
+  "X": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    35000.0,
+    86000.0,
+    540000.0,
+    560000.0
+  ],
+  "type": "adoption",
+  "units": "deliveries/year",
+  "source": "Interpolated - Exponential Growth (CAGR 145%)",
+  "region": "Rest of World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Artificial_Intelligence_Amortized_hardware_and_energy_cost_for_Training_Global",
+  "description": "Amortized hardware cost plus energy cost for the final training run of frontier models. The selected models are among the top 10 most compute-intensive for their time. Amortized hardware costs are the product of training chip-hours and a depreciated hardware cost, with 23% overhead added for cluster-level networking.",
+  "X": [
+    2021,
+    2023,
+    2017,
+    2019,
+    2022,
+    2016,
+    2023
+  ],
+  "Y": [
+    617000.0,
+    29800000.0,
+    17200.0,
+    126000.0,
+    4630000.0,
+    12600.0,
+    10300000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

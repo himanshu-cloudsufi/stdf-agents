@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(Renesas_R-Car_H3)_For_L2/L3/ADAS_Automotive_Price_China",
+  "description": "Price of Renesas R-Car H3 chipset for L2/L3 ADAS in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    700.0,
+    680.0,
+    650.0,
+    630.0,
+    610.0,
+    590.0,
+    560.0,
+    540.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

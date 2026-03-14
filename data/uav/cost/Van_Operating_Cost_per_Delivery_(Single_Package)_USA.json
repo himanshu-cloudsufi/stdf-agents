@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Van_Operating_Cost_per_Delivery_(Single_Package)_USA",
+  "description": "Average operating cost of a delivery van per single package delivered in the USA",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    10.5,
+    10.7,
+    10.9,
+    11.0,
+    11.2,
+    11.4,
+    11.8
+  ],
+  "type": "cost",
+  "units": "USD/delivery",
+  "source": "McKinsey",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

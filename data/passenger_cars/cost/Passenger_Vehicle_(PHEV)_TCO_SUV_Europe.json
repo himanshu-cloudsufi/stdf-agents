@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_TCO_SUV_Europe",
+  "description": "Total cost of ownership for PHEV SUVs in Europe.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    78080.0,
+    75151.0,
+    73334.0,
+    73406.0,
+    70479.0,
+    66440.0,
+    66512.0,
+    68806.0,
+    73354.0,
+    76894.0,
+    77024.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

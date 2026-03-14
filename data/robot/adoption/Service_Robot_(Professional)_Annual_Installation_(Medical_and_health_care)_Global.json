@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Service_Robot_(Professional)_Annual_Installation_(Medical_and_health_care)_Global",
+  "description": "Medical and health care category includes robots used in clinical and care settings for diagnostics, surgery, rehabilitation, and non-invasive therapy. It also includes hospital support robots, wearable exoskeletons, and telepresence robots used specifically in healthcare.",
+  "X": [
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    10000.0,
+    9000.0,
+    6000.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

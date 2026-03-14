@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Purchase_Price_Sedan_Europe",
+  "description": "Average market purchase price for PHEV Sedans in Europe.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    33334.0,
+    31111.0,
+    30000.0,
+    28889.0,
+    26666.0,
+    23333.0,
+    23333.0,
+    25555.0,
+    28889.0,
+    32223.0,
+    32223.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

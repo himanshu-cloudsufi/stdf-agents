@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Radar_Suite_Price_China",
+  "description": "Price of full radar sensor suite for autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    2200.0,
+    1980.0,
+    1780.0,
+    1560.0,
+    1280.0,
+    1020.0,
+    846.0,
+    684.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Lithium_Ion_Battery_operated_Forklifts-8_hrs_run_Lowest_Cost_USA",
+  "description": "Cost curve for Lithium Ion Battery operated Forklifts-8 hrs run (Lowest) - USA",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    42000.0,
+    40000.0,
+    38000.0,
+    35000.0,
+    32000.0,
+    29000.0,
+    27000.0,
+    25000.0,
+    23000.0,
+    21500.0,
+    20000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Forklift"
+}

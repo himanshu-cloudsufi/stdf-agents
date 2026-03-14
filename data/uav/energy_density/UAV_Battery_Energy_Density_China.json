@@ -1,0 +1,35 @@
+{
+  "dataset_name": "UAV_Battery_Energy_Density_China",
+  "description": "Battery energy density of UAV systems in China.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    194.0,
+    195.0,
+    200.0,
+    200.0,
+    200.0,
+    203.0,
+    210.0,
+    230.0,
+    260.0,
+    320.0
+  ],
+  "type": "Energy Density",
+  "units": "Wh/kg",
+  "source": "DJI (Industry)",
+  "region": "China",
+  "category": "Commodity intensity",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

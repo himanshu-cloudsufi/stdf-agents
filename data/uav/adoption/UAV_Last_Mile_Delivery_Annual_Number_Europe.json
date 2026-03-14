@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Last_Mile_Delivery_Annual_Number_Europe",
+  "description": "Annual UAV last-mile delivery sales in Europe.",
+  "X": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    10000.0,
+    58000.0,
+    148000.0,
+    119000.0
+  ],
+  "type": "adoption",
+  "units": "deliveries/year",
+  "source": "Interpolated - Exponential Growth (CAGR 84-109%)",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

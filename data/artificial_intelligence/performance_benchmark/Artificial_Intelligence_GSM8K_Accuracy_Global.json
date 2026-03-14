@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Artificial_Intelligence_GSM8K_Accuracy_Global",
+  "description": "GSM8K, introduced by OpenAI in 2021, is a dataset containing approximately 8,000 diverse grade-school math word problems that challenges AI models to generate multistep solutions using arithmetic operations.",
+  "X": [
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    89.0,
+    92.0,
+    97.72
+  ],
+  "type": "Performance Benchmark",
+  "units": "%",
+  "source": "Stanford",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

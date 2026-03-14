@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Total_Registered_Units_Rest_of_World",
+  "description": "Total registered UAV units in Rest of World.",
+  "X": [
+    2019,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    150000.0,
+    400000.0,
+    600000.0,
+    800000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "Drone Industry Insights (GlobeNewsWire 2025)",
+  "region": "Rest of World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

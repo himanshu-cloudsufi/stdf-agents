@@ -1,0 +1,25 @@
+{
+  "dataset_name": "5G_Network_5G_Coverage_Land_Area_USA",
+  "description": "Land area covered by 5G networks in the USA.",
+  "X": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.35,
+    1.5,
+    11.5,
+    25.0,
+    35.0
+  ],
+  "type": "adoption",
+  "units": "%",
+  "source": "FCC / Verizon / AT&T / Ericsson / Opensignal",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "5G Network"
+}

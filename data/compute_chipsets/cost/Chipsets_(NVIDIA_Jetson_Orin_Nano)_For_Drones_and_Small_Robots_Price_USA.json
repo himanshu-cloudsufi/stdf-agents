@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Chipsets_(NVIDIA_Jetson_Orin_Nano)_For_Drones_and_Small_Robots_Price_USA",
+  "description": "Price of NVIDIA Jetson Orin Nano chipset for drones and small robots in the USA.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    450.0,
+    420.0,
+    380.0,
+    320.0,
+    260.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

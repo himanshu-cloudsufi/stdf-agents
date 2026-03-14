@@ -1,0 +1,23 @@
+{
+  "dataset_name": "Passenger_Car_(ICE)_Average_Car_Cost_per_Mile_(15k/year)_Global",
+  "description": "Global cost per mile for ICE cars at 15k miles/year.",
+  "X": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    0.75,
+    0.8,
+    0.85,
+    0.9
+  ],
+  "type": "cost",
+  "units": "$ per mile",
+  "source": "AAA, Goldman Sachs Research",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

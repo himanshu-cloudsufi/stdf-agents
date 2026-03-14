@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Industrial_Robot_Annual_Installation_(Food_Industry)_Global",
+  "description": "Annual Installations/Sales of Industrialrobots in Food Industry",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    9000.0,
+    12000.0,
+    11000.0,
+    12000.0,
+    15381.0,
+    15107.0,
+    14685.0,
+    20792.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

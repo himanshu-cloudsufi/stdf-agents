@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Lithium_Ion_Battery_Pack_Battery_Energy_Density_Global",
+  "description": "Global Li-ion battery pack energy density.",
+  "X": [
+    2010,
+    2012,
+    2014,
+    2016,
+    2018,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    100.0,
+    120.0,
+    135.0,
+    150.0,
+    165.0,
+    175.0,
+    270.0,
+    180.0,
+    190.0,
+    285.0
+  ],
+  "type": "Energy Density",
+  "units": "Wh/kg",
+  "source": "Industry trend (interpolated)",
+  "region": "World",
+  "category": "Energy Density",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

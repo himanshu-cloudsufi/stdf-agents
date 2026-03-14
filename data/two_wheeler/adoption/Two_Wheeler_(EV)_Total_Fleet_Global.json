@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Two_Wheeler_(EV)_Total_Fleet_Global",
+  "description": "Total global fleet of electric two-wheelers.Two-wheelers refer to vehicles with a top speed of at least 25 km/hr and which fit the L1 and L3 classes definition of UNECE. This excludes micromobility options such as electric-assisted bicycles and low-speed electric scooters.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    9306000.0,
+    12206000.0,
+    15606000.0,
+    20206000.0,
+    26206000.0,
+    34406000.0,
+    45406000.0,
+    54406000.0,
+    63506000.0,
+    72406000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Database",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Two Wheeler"
+}

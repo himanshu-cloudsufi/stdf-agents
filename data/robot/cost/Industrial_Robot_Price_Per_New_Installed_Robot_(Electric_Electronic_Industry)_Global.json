@@ -1,0 +1,33 @@
+{
+  "dataset_name": "Industrial_Robot_Price_Per_New_Installed_Robot_(Electric/Electronic_Industry)_Global",
+  "description": "Price Per New Installed Industry Robot in Electronics/Electrical Industry",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    35000.0,
+    55000.0,
+    75000.0,
+    72000.0,
+    68000.0,
+    70000.0,
+    92000.0,
+    88000.0,
+    60000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Statista",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

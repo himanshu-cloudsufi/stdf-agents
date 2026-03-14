@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Two_Wheeler_(EV)_Median_Cost_Rest_of_World",
+  "description": "Cost curve for EV 2 Wheeler (Median) - Rest of World",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    2000.0,
+    1900.0,
+    1800.0,
+    1700.0,
+    1500.0,
+    1300.0,
+    1200.0,
+    1000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Two Wheeler"
+}

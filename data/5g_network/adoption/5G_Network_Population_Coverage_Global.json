@@ -1,0 +1,27 @@
+{
+  "dataset_name": "5G_Network_Population_Coverage_Global",
+  "description": "Global 5G population coverage.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    17.0,
+    27.0,
+    38.0,
+    50.0,
+    59.0,
+    67.0
+  ],
+  "type": "adoption",
+  "units": "%",
+  "source": "Ericsson Mobility Report",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "5G Network"
+}

@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(NVIDIA_DRIVE:Thor_Blackwell)_For_High_Performance_Automotive_Level4/Level5_Price_USA",
+  "description": "Price of NVIDIA DRIVE Thor (Blackwell) chipset for Level 4/5 autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    25000.0,
+    27000.0,
+    30000.0,
+    28000.0,
+    26000.0,
+    24000.0,
+    20000.0,
+    15000.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

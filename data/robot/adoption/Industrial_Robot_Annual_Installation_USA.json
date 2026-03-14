@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Industrial_Robot_Annual_Installation_USA",
+  "description": "Asia is the world\u2019s largest industrial robot market. In 2024, 401,665 units were installed,up 5% year over year. 74% of all newly deployed robots were installed in Asia (2023:70%). From 2019 to 2024, annual robot installations grew by 10% on average each year.Three of the top five markets for industrial robots are in Asia: China is by far the largest market. More than every other robot (54%) installed worldwide in 2024 ended up in China: Installations were up 7% to 295,045 units. ",
+  "X": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    33000.0,
+    38000.0,
+    41000.0,
+    46000.0,
+    55000.0,
+    47000.0,
+    39000.0,
+    52000.0,
+    36000.0,
+    55000.0,
+    50000.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

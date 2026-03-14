@@ -1,0 +1,21 @@
+{
+  "dataset_name": "UAV_Cumulative_BVLOS_Authorizations_Japan",
+  "description": "Total cumulative number of BVLOS approvals granted for UAV operations in Japan.",
+  "X": [
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    7.0,
+    36.0,
+    71.0
+  ],
+  "type": "adoption",
+  "units": "Authorizations",
+  "source": "ACSL/MLIT",
+  "region": "Japan",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

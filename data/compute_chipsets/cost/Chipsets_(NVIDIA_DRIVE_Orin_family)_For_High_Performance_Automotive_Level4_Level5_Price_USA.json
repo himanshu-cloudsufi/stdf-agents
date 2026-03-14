@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(NVIDIA_DRIVE:Orin_family)_For_High_Performance_Automotive_Level4/Level5_Price_USA",
+  "description": "Price of NVIDIA DRIVE Orin family chipset for Level 4/5 autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    9500.0,
+    10500.0,
+    11500.0,
+    11000.0,
+    10000.0,
+    9000.0,
+    7800.0,
+    6000.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

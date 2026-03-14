@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Passenger_EV_Cars_(Range_-200_miles)_Lowest_Cost_Rest_of_World",
+  "description": "Cost curve for Passenger EV Cars (Range -200 miles) (Lowest) - Rest of World",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    90000.0,
+    90000.0,
+    85000.0,
+    80000.0,
+    45000.0,
+    42000.0,
+    42000.0,
+    30000.0,
+    27000.0,
+    22000.0,
+    18000.0,
+    13000.0,
+    8000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

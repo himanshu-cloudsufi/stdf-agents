@@ -1,0 +1,35 @@
+{
+  "dataset_name": "BLDC_Motor_UAV_Motor_Cost_per_kW_China",
+  "description": "Cost per kW of BLDC (Brushless Direct Current) motors used in UAVs in China",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    47.52,
+    43.2,
+    43.2,
+    30.67,
+    29.33,
+    20.0,
+    20.0,
+    24.0,
+    22.67,
+    21.33
+  ],
+  "type": "cost",
+  "units": "USD/kW",
+  "source": "Manufacturer/Retailer/Market Report",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "UAV"
+}

@@ -1,0 +1,27 @@
+{
+  "dataset_name": "5G_Network_Population_Coverage_China",
+  "description": "Population covered by 5G networks in China.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    20.0,
+    45.0,
+    70.0,
+    85.0,
+    92.0,
+    95.0
+  ],
+  "type": "adoption",
+  "units": "%",
+  "source": "GSMA Intelligence 2022",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "5G Network"
+}

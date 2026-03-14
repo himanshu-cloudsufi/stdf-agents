@@ -1,0 +1,25 @@
+{
+  "dataset_name": "5G_Network_5G_Coverage_Land_Area_Global",
+  "description": "Global 5G land area coverage.",
+  "X": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    5.0,
+    10.0,
+    15.0,
+    22.0,
+    25.0
+  ],
+  "type": "adoption",
+  "units": "%",
+  "source": "GSMA / Ericsson / ITU",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "5G Network"
+}

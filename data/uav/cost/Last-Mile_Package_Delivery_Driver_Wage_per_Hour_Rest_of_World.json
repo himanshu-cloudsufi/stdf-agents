@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Last-Mile_Package_Delivery_Driver_Wage_per_Hour_Rest_of_World",
+  "description": "Average hourly wage for last-mile package delivery drivers (rest of world excluding USA/UK/Europe/China)",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    3.2,
+    3.35,
+    3.5,
+    3.7,
+    3.9,
+    4.1,
+    4.35,
+    4.6,
+    4.9,
+    5.2
+  ],
+  "type": "cost",
+  "units": "USD/hour",
+  "source": "ILO + Brazil IBGE transport",
+  "region": "Rest of World",
+  "category": "cost per unit capability",
+  "entity_type": "Service",
+  "level_name": "UAV"
+}

@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Solar_PV_Module_(Bifacial)_Cost_Europe",
+  "description": "Average price for bifacial solar PV modules in EU.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.500908,
+    0.456882,
+    0.47648,
+    0.426432,
+    0.386081,
+    0.360434
+  ],
+  "type": "cost",
+  "units": "$/W",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "cost",
+  "entity_type": "Technology",
+  "level_name": "Energy Generation"
+}

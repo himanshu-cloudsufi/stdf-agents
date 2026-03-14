@@ -1,0 +1,43 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Annual_Lead_Implied_Demand_Europe",
+  "description": "Lead demand from plug-in hybrid vehicle sales in Europe",
+  "X": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.032,
+    0.2,
+    0.304,
+    0.416,
+    0.728,
+    0.912,
+    1.152,
+    1.392,
+    1.512,
+    5.584,
+    8.872,
+    8.73576,
+    8.33184,
+    7.791
+  ],
+  "type": "adoption",
+  "units": "kt",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

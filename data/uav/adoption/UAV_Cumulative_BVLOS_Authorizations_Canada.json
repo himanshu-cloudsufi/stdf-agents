@@ -1,0 +1,21 @@
+{
+  "dataset_name": "UAV_Cumulative_BVLOS_Authorizations_Canada",
+  "description": "Total cumulative number of BVLOS approvals granted for UAV operations in Canada.",
+  "X": [
+    2020,
+    2022,
+    2024
+  ],
+  "Y": [
+    31.0,
+    190.0,
+    246.0
+  ],
+  "type": "adoption",
+  "units": "Authorizations",
+  "source": "Coastal Drone",
+  "region": "Canada",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_LiDAR_(Low_Cost_ADAS)_Price_China",
+  "description": "Price of low-cost ADAS LiDAR for autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    2000.0,
+    1500.0,
+    1200.0,
+    900.0,
+    800.0,
+    600.0,
+    250.0,
+    200.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

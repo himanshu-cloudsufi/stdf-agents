@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_TCO_SUV_Rest_of_World",
+  "description": "Total cost of ownership for PHEV SUVs in the Rest of the World.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    65650.0,
+    62850.0,
+    61250.0,
+    59650.0,
+    58050.0,
+    56450.0,
+    56950.0,
+    57450.0,
+    57950.0,
+    67550.0,
+    68300.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

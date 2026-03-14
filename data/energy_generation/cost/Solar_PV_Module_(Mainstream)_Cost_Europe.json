@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Solar_PV_Module_(Mainstream)_Cost_Europe",
+  "description": "Average price for mainstream solar PV modules in EU.",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.567981,
+    0.454879,
+    0.339362,
+    0.307848,
+    0.327796,
+    0.349073,
+    0.260531,
+    0.145339
+  ],
+  "type": "cost",
+  "units": "$/W",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "cost",
+  "entity_type": "Technology",
+  "level_name": "Energy Generation"
+}

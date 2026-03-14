@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Commercial_Vehicle_(EV)_Total_Fleet_Europe",
+  "description": "Total electric commercial vehicle fleet in Europe",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    115515.0,
+    150410.0,
+    219334.0,
+    307744.0,
+    511986.0,
+    851297.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

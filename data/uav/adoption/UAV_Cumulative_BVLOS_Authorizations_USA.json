@@ -1,0 +1,33 @@
+{
+  "dataset_name": "UAV_Cumulative_BVLOS_Authorizations_USA",
+  "description": "Total cumulative number of BVLOS approvals granted for UAV operations in the USA.",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.0,
+    4.0,
+    23.0,
+    40.0,
+    68.0,
+    107.0,
+    145.0,
+    170.0,
+    190.0
+  ],
+  "type": "adoption",
+  "units": "Authorizations",
+  "source": "DOT OIG",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

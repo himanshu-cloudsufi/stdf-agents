@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Commercial_Vehicle_(NGV)_Annual_Sales_USA",
+  "description": "Annual natural gas vehicle commercial sales in USA",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    4822.0,
+    0.0,
+    0.0,
+    2556.0,
+    6519.0,
+    12129.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

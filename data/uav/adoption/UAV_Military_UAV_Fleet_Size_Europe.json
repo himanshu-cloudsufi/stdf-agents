@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Military_UAV_Fleet_Size_Europe",
+  "description": "Military UAV fleet size in Europe.",
+  "X": [
+    2010,
+    2014,
+    2020,
+    2024
+  ],
+  "Y": [
+    50.0,
+    200.0,
+    500.0,
+    1000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "Bard Drone Databook (CNAS 2019)",
+  "region": "Europe",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

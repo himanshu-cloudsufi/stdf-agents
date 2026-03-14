@@ -1,0 +1,29 @@
+{
+  "dataset_name": "UAV_Last_Mile_Delivery_Annual_Number_Global",
+  "description": "Global UAV last-mile delivery annual sales.",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2022,
+    2024
+  ],
+  "Y": [
+    500.0,
+    1500.0,
+    4500.0,
+    13500.0,
+    40000.0,
+    875000.0,
+    1000000.0
+  ],
+  "type": "adoption",
+  "units": "deliveries/year",
+  "source": "Interpolated - Exponential Growth (CAGR 196%)",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

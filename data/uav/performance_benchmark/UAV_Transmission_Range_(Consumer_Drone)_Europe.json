@@ -1,0 +1,33 @@
+{
+  "dataset_name": "UAV_Transmission_Range_(Consumer_Drone)_Europe",
+  "description": "Transmission range of consumer drones in Europe.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    3.5,
+    3.5,
+    4.0,
+    5.0,
+    6.0,
+    8.0,
+    8.0,
+    10.0,
+    10.0
+  ],
+  "type": "Performance Benchmark",
+  "units": "km",
+  "source": "DJI Enterprise",
+  "region": "Europe",
+  "category": "Performance Benchmark",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

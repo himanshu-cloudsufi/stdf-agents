@@ -1,0 +1,23 @@
+{
+  "dataset_name": "GPU_NVIDIA_H100_Tensor_Core_Price_Global",
+  "description": "Market price trend for the NVIDIA H100 Tensor Core GPU",
+  "X": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    27500.0,
+    35000.0,
+    30000.0,
+    27500.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Internet- DirectMacro (2025 pricing), Cyfuture Cloud, Modal Blog, Jarvislabs.ai, Global Compute Index (X posts).",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Artificial Intelligence"
+}

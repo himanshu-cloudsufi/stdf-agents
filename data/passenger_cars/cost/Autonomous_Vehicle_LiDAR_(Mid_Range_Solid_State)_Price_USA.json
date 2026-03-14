@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_LiDAR_(Mid_Range_Solid_State)_Price_USA",
+  "description": "Price of mid-range solid-state LiDAR for autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    10000.0,
+    8000.0,
+    6000.0,
+    4500.0,
+    3500.0,
+    2800.0,
+    2000.0,
+    1500.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

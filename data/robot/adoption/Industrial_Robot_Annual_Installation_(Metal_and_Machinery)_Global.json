@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Industrial_Robot_Annual_Installation_(Metal_and_Machinery)_Global",
+  "description": "Annual Installations/Sales of Industrialrobots in Metal and Machinery Sector",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    44000.0,
+    44000.0,
+    46000.0,
+    41000.0,
+    68385.0,
+    66115.0,
+    76831.0,
+    88777.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

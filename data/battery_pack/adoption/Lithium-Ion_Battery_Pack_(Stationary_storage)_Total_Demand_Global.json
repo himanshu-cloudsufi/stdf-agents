@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_(Stationary_storage)_Total_Demand_Global",
+  "description": "Total demand for lithium-ion battery packs in stationary storage globally",
+  "X": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.0,
+    1.0,
+    2.0,
+    3.0,
+    5.0,
+    8.0,
+    16.0,
+    23.0,
+    35.0,
+    56.0,
+    94.0,
+    190.0,
+    359.0
+  ],
+  "type": "adoption",
+  "units": "GWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

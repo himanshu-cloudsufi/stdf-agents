@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Active_Commercial_Drones_Rest_of_World",
+  "description": "Active commercial drones in Rest of World.",
+  "X": [
+    2017,
+    2020,
+    2023,
+    2024
+  ],
+  "Y": [
+    1000.0,
+    20000.0,
+    50000.0,
+    80000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "FAA forecast report",
+  "region": "Rest of World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Commercial_Vehicle_(NGV)_Total_Fleet_China",
+  "description": "Total natural gas vehicle commercial fleet in China",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    218300.0,
+    354998.0,
+    414437.0,
+    457939.0,
+    496074.0,
+    537460.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Rethinkx",
+  "region": "China",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

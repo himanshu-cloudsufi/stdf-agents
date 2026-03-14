@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Agricultural_Drones_in_Use_Rest_of_World",
+  "description": "Agricultural drones in use in Rest of World.",
+  "X": [
+    2016,
+    2019,
+    2022,
+    2024
+  ],
+  "Y": [
+    1000.0,
+    30000.0,
+    50000.0,
+    157000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "DJI Agriculture (global DJI agri drones)",
+  "region": "Rest of World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

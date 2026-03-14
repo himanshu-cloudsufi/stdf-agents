@@ -1,0 +1,33 @@
+{
+  "dataset_name": "UAV_Transmission_Range_(Consumer_Drone)_USA",
+  "description": "Transmission range of consumer drones in the USA.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    5.0,
+    7.0,
+    7.0,
+    8.0,
+    10.0,
+    15.0,
+    15.0,
+    20.0,
+    20.0
+  ],
+  "type": "Performance Benchmark",
+  "units": "km",
+  "source": "DJI Enterprise",
+  "region": "USA",
+  "category": "Performance Benchmark",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

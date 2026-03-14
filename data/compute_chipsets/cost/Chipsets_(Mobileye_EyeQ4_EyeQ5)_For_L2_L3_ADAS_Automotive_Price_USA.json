@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(Mobileye_EyeQ4/EyeQ5)_For_L2/L3/ADAS_Automotive_Price_USA",
+  "description": "Price of Mobileye EyeQ4/EyeQ5 chipset for L2/L3 ADAS in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    1400.0,
+    1350.0,
+    1300.0,
+    1250.0,
+    1100.0,
+    950.0,
+    800.0,
+    650.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

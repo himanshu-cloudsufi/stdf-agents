@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Radar_(Imaging/4D)_Price_China",
+  "description": "Price of imaging/4D radar for autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    800.0,
+    700.0,
+    640.0,
+    560.0,
+    420.0,
+    300.0,
+    220.0,
+    160.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

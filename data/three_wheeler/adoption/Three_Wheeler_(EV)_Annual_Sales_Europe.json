@@ -1,0 +1,23 @@
+{
+  "dataset_name": "Three_Wheeler_(EV)_Annual_Sales_Europe",
+  "description": "Three Wheeler (EV) Annual Sales Europe. The definition of a three-wheeler is aligned with UNECE L2, L4 or L5 classes",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    4000.0,
+    10000.0,
+    40000.0,
+    70000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Database",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

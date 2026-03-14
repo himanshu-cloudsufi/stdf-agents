@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_LiDAR_(High_End_Spinning)_Price_China",
+  "description": "Price of high-end spinning LiDAR for autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    50000.0,
+    30000.0,
+    20000.0,
+    12000.0,
+    8000.0,
+    6000.0,
+    4000.0,
+    3000.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

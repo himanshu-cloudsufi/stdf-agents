@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Military_UAV_Fleet_Size_China",
+  "description": "Military UAV fleet size in China.",
+  "X": [
+    2010,
+    2014,
+    2020,
+    2024
+  ],
+  "Y": [
+    50.0,
+    1000.0,
+    2000.0,
+    5000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "Bard Drone Databook (CNAS 2019)",
+  "region": "China",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

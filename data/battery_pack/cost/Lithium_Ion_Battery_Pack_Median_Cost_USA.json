@@ -1,0 +1,33 @@
+{
+  "dataset_name": "Lithium_Ion_Battery_Pack_Median_Cost_USA",
+  "description": "Cost curve for Lithium-ion Battery (pack-level median) (Median) - USA",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    1100.0,
+    700.0,
+    450.0,
+    285.0,
+    185.0,
+    152.0,
+    137.0,
+    115.0,
+    112.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

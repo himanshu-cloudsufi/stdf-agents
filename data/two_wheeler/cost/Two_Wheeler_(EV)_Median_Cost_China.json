@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Two_Wheeler_(EV)_Median_Cost_China",
+  "description": "Cost curve for EV 2 Wheeler (Median) - China",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    1200.0,
+    1100.0,
+    1000.0,
+    900.0,
+    700.0,
+    500.0,
+    400.0,
+    300.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "China",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Two Wheeler"
+}

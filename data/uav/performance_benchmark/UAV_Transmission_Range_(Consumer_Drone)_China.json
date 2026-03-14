@@ -1,0 +1,31 @@
+{
+  "dataset_name": "UAV_Transmission_Range_(Consumer_Drone)_China",
+  "description": "Transmission range of consumer drones in China.",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    4.0,
+    4.0,
+    5.0,
+    6.0,
+    8.0,
+    8.0,
+    10.0,
+    10.0
+  ],
+  "type": "Performance Benchmark",
+  "units": "km",
+  "source": "DJI Enterprise",
+  "region": "China",
+  "category": "Performance Benchmark",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

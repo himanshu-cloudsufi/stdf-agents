@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Radar_Suite_Price_USA",
+  "description": "Price of full radar sensor suite for autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    2880.0,
+    2700.0,
+    2480.0,
+    2130.0,
+    1790.0,
+    1520.0,
+    1300.0,
+    1060.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

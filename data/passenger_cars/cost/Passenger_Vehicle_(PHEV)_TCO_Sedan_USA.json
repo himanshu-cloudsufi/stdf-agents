@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_TCO_Sedan_USA",
+  "description": "Total cost of ownership for PHEV Sedans in the USA.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    55195.0,
+    52850.0,
+    50500.0,
+    49950.0,
+    49150.0,
+    48910.0,
+    48130.0,
+    47350.0,
+    46570.0,
+    48390.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

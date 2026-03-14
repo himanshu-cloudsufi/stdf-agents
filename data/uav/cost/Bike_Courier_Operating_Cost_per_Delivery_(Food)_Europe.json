@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Bike_Courier_Operating_Cost_per_Delivery_(Food)_Europe",
+  "description": "Average operating cost of a bike courier per food delivery in Europe",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    5.5,
+    5.7,
+    5.9,
+    6.1,
+    6.3,
+    6.5,
+    6.8
+  ],
+  "type": "cost",
+  "units": "USD/delivery",
+  "source": "Copenhagen Economics",
+  "region": "Europe",
+  "category": "cost per unit capability",
+  "entity_type": "Service",
+  "level_name": "UAV"
+}

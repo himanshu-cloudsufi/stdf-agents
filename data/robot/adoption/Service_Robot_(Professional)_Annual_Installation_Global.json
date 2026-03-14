@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Service_Robot_(Professional)_Annual_Installation_Global",
+  "description": "Annual Installations/Sales of Professional Service robots",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    84000.0,
+    107000.0,
+    112000.0,
+    78000.0,
+    121000.0,
+    158000.0,
+    205000.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

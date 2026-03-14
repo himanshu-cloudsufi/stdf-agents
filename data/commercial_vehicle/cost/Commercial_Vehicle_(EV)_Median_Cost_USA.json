@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Commercial_Vehicle_(EV)_Median_Cost_USA",
+  "description": "Cost curve for EV commercial vehicle (Median) - USA",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    45000.0,
+    43000.0,
+    42000.0,
+    40000.0,
+    38000.0,
+    36000.0,
+    34000.0,
+    32000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

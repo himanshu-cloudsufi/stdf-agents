@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Artificial_Intelligence_Traning_Dataset_Size_Global",
+  "description": "Across all domains of AI and ML, models are using more and more training data. In language modeling, datasets are growing at a rate of 3.7x per year. The largest models currently use datasets with tens of trillions of words.",
+  "X": [
+    2011,
+    2013,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    75000.0,
+    4100000.0,
+    38000000.0,
+    47000000.0,
+    400000000.0,
+    1800000000.0,
+    3300000000.0,
+    17000000000.0,
+    42000000000.0,
+    400000000000.0,
+    1400000000000.0,
+    6500000000000.0,
+    7500000000000.0
+  ],
+  "type": "adoption",
+  "units": "Token",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

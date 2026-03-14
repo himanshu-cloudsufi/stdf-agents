@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_Solar_Demand_Percentage_China",
+  "description": "Percentage of copper demand attributable to solar power installations in China.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.2,
+    1.5,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.7,
+    3.0,
+    3.3,
+    3.5
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

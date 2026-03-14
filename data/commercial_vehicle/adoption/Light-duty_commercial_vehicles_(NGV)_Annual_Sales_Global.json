@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Light-duty_commercial_vehicles_(NGV)_Annual_Sales_Global",
+  "description": "Annual sales of light-duty natural gas commercial vehicles globally",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    14983.0,
+    21365.0,
+    14015.0,
+    12578.0,
+    15286.0,
+    17439.0,
+    17124.0,
+    25711.0,
+    35046.0,
+    49676.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

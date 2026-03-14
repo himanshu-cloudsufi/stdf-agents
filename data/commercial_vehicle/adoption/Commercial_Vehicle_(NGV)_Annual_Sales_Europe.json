@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Commercial_Vehicle_(NGV)_Annual_Sales_Europe",
+  "description": "Annual natural gas vehicle commercial sales in Europe",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    21857.0,
+    21914.0,
+    10816.0,
+    14298.0,
+    16884.0,
+    20325.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

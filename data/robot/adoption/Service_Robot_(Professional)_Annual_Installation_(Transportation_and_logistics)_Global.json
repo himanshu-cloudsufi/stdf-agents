@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Service_Robot_(Professional)_Annual_Installation_(Transportation_and_logistics)_Global",
+  "description": "Transportation and logistics category includes robots that transport goods and manage inventory in both indoor and outdoor environments. These robots are used in places such as warehouses, hospitals, hotels, and public streets, and they support activities like deliveries, stock counting, and restocking.",
+  "X": [
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    60000.0,
+    86000.0,
+    113000.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

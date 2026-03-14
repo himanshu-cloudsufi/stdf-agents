@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Last_Mile_Delivery_Annual_Number_China",
+  "description": "Annual UAV last-mile delivery sales in China.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    10000.0,
+    100000.0,
+    200000.0,
+    200000.0
+  ],
+  "type": "adoption",
+  "units": "deliveries/year",
+  "source": "CALCULATED - Regional reconciliation to Global 1M",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

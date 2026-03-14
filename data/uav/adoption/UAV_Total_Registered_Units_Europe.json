@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Total_Registered_Units_Europe",
+  "description": "Total registered UAV units in Europe.",
+  "X": [
+    2019,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    40000.0,
+    150000.0,
+    285000.0,
+    350000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "Drone Industry Insights (GlobeNewsWire 2025)",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

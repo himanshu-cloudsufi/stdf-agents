@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Three_Wheeler_(EV)_Median_Cost_Europe",
+  "description": "Cost curve for EV 3 Wheeler (Median) - Europe",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    9500.0,
+    9000.0,
+    8500.0,
+    8000.0,
+    7500.0,
+    7000.0,
+    6500.0,
+    6000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

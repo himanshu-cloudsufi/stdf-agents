@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Vehicle_(EV)_Public_Charging_Points_Rest_of_World",
+  "description": "Public electric vehicle charging points in Rest of World",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    26000.0,
+    30000.0,
+    49000.0,
+    70000.0,
+    90000.0,
+    120000.0,
+    170000.0,
+    290000.0,
+    450000.0,
+    630000.0
+  ],
+  "type": "adoption",
+  "units": "unit",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

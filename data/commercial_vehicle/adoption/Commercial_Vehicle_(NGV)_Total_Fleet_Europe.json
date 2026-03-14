@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Commercial_Vehicle_(NGV)_Total_Fleet_Europe",
+  "description": "Total natural gas vehicle commercial fleet in Europe",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    486413.0,
+    495658.0,
+    496638.0,
+    493840.0,
+    504641.0,
+    518446.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

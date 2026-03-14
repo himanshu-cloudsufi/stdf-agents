@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Lead_Annual_Implied_Demand-Sales_Buses_Global",
+  "description": "Annual implied lead demand for bus battery sales globally",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    3.553,
+    2.81,
+    2.463,
+    2.642,
+    2.814,
+    3.368
+  ],
+  "type": "adoption",
+  "units": "kt",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Commercial Vehicle"
+}

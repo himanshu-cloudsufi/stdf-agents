@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Agentic_AI_How_Long_a_Task_AI_Can_Handle_Reliably_(50%_Success)_Global",
+  "description": "Measuring AI performance in terms of the length of tasks (measured by how long they take by human professionals) that generalist frontier model agents can complete autonomously with 50% reliability. It has been doubling approximately every 7 months for the last 6 years. Extrapolating this trend predicts that, in under a decade, we will see AI agents that can independently complete a large fraction of software tasks that currently take humans days or weeks.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    2.0,
+    9.0,
+    23.0,
+    36.0,
+    540.0,
+    2340.0,
+    8220.0
+  ],
+  "type": "Capability",
+  "units": "seconds",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "Capability",
+  "entity_type": "Technology",
+  "level_name": "Agentic AI"
+}

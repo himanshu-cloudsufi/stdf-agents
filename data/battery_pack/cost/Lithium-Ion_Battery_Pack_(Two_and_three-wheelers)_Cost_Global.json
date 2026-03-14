@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_(Two_and_three-wheelers)_Cost_Global",
+  "description": "Lithium-Ion Battery Pack Two and Three Wheeler Cost Global",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    470.0,
+    365.0,
+    270.0,
+    220.0,
+    195.0,
+    175.0,
+    160.0,
+    185.0,
+    135.0,
+    115.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cost",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

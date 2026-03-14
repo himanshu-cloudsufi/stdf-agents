@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Industrial_Robot_Operational_stock_Rest_of_World",
+  "description": "Operational Stock of Industrial Robots.",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    865000.0,
+    961000.0,
+    1067000.0,
+    1147000.0,
+    1229000.0,
+    1304000.0,
+    1362000.0,
+    1428955.0
+  ],
+  "type": "adoption",
+  "units": "Robots",
+  "source": "IFR",
+  "region": "Rest of World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_EV_Demand_Percentage_USA",
+  "description": "Share of copper demand from EVs in the USA.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.9,
+    1.1,
+    1.4,
+    1.8,
+    2.0,
+    2.2,
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

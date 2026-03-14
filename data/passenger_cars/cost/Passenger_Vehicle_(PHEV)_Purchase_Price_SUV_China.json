@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Purchase_Price_SUV_China",
+  "description": "Average market purchase price for PHEV SUVs in China.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    33571.0,
+    30714.0,
+    28571.0,
+    25714.0,
+    23571.0,
+    21428.0,
+    22142.0,
+    19999.0,
+    20000.0,
+    10300.0,
+    12000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

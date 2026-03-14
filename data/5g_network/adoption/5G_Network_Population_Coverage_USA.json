@@ -1,0 +1,27 @@
+{
+  "dataset_name": "5G_Network_Population_Coverage_USA",
+  "description": "Population covered by 5G networks in the USA.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    35.0,
+    55.0,
+    73.0,
+    83.0,
+    90.0,
+    95.0
+  ],
+  "type": "adoption",
+  "units": "%",
+  "source": "CTIA Annual Survey",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "5G Network"
+}

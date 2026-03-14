@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Light-duty_commercial_vehicles_(NGV)_Annual_Sales_China",
+  "description": "Annual natural gas vehicle light-duty sales in China",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    316.0,
+    532.0,
+    7741.0,
+    9493.0,
+    12570.0,
+    17593.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

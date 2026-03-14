@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Solar_PV_Module_(High_efficiency)_Cost_Europe",
+  "description": "Average price for high efficiency solar PV modules in EU.",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.712241,
+    0.578571,
+    0.441947,
+    0.418039,
+    0.445948,
+    0.451789,
+    0.35245,
+    0.23398
+  ],
+  "type": "cost",
+  "units": "$/W",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "cost",
+  "entity_type": "Technology",
+  "level_name": "Energy Generation"
+}

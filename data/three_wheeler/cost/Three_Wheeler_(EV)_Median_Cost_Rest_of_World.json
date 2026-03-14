@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Three_Wheeler_(EV)_Median_Cost_Rest_of_World",
+  "description": "Cost curve for EV 3 Wheeler (Median) - Rest of World",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    3000.0,
+    2750.0,
+    2500.0,
+    2250.0,
+    2000.0,
+    1700.0,
+    1500.0,
+    1200.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

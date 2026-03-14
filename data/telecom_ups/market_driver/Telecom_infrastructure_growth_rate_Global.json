@@ -1,0 +1,43 @@
+{
+  "dataset_name": "Telecom_infrastructure_growth_rate_Global",
+  "description": "Telecom infrastructure growth projections",
+  "X": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    8.0,
+    7.5,
+    7.0,
+    6.5,
+    6.0,
+    5.8,
+    5.5,
+    5.3,
+    5.0,
+    4.8,
+    5.0,
+    4.8,
+    4.5,
+    4.3
+  ],
+  "type": "market driver",
+  "units": "% growth rate",
+  "source": "Database",
+  "region": "World",
+  "category": "forecast driver",
+  "entity_type": "Sector",
+  "level_name": "Telecom UPS"
+}

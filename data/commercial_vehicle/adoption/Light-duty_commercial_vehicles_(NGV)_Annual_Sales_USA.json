@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Light-duty_commercial_vehicles_(NGV)_Annual_Sales_USA",
+  "description": "Annual natural gas vehicle light-duty sales in USA",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.0,
+    0.0,
+    0.0,
+    324.0,
+    744.0,
+    1255.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

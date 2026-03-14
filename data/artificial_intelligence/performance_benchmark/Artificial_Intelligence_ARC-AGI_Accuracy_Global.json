@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Artificial_Intelligence_ARC-AGI_Accuracy_Global",
+  "description": "ARC-AGI benchmark presents AI systems with a set of independent tasks. Each task includes demonstration or input pairs followed by one or more test or output scenarios . This benchmark emphasizes generalized learning ability: It is impossible for systems to prepare in advance, as each task introduces a unique logic. The tasks require no specialized world knowledge or language skills but instead draw on assumed prior knowledge, such as the concept of objects, basic topology, and elementary arithmetic\u2014concepts typically mastered by children at an early age.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.0,
+    21.0,
+    25.0,
+    30.0,
+    34.0,
+    75.7
+  ],
+  "type": "Performance Benchmark",
+  "units": "%",
+  "source": "Stanford",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

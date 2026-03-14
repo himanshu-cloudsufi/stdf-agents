@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Two_Wheeler_(EV)_Total_Fleet_China",
+  "description": "Total fleet of electric two-wheelers in China.Two-wheelers refer to vehicles with a top speed of at least 25 km/hr and which fit the L1 and L3 classes definition of UNECE. This excludes micromobility options such as electric-assisted bicycles and low-speed electric scooters.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    8712000.0,
+    11412000.0,
+    14612000.0,
+    18912000.0,
+    24412000.0,
+    32212000.0,
+    42412000.0,
+    50112000.0,
+    57612000.0,
+    64512000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Database",
+  "region": "China",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

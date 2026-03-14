@@ -1,0 +1,23 @@
+{
+  "dataset_name": "UAV_Last_Mile_Delivery_Annual_Number_USA",
+  "description": "Annual UAV last-mile delivery units sold in the USA.",
+  "X": [
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    1000.0,
+    9350.0,
+    87000.0,
+    150000.0
+  ],
+  "type": "adoption",
+  "units": "deliveries/year",
+  "source": "Interpolated - Exponential Growth (CAGR 295% USA)",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Artificial_General_Intelligence_Average_Token_Cost_Global",
+  "description": "Average token cost for AGI models worldwide.Costs have plummeted ~120x overall, from $60/M tokens in 2021 to ~$0.5/M in 2025, with median annual reductions of 50x post-2024 due to commoditization (e.g., open-source Llama models) and efficiency gains (e.g., quantization). The speed of becoming cost-effective accelerated in 2024\u20132025, with 10\u2013200x yearly drops tied to inference optimizations reducing compute needs by 4\u201330x",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    60.0,
+    20.0,
+    10.0,
+    2.0,
+    0.5
+  ],
+  "type": "cost",
+  "units": "$/Million Tokens",
+  "source": "Database",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

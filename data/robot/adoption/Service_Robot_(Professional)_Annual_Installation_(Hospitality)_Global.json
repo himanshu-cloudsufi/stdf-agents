@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Service_Robot_(Professional)_Annual_Installation_(Hospitality)_Global",
+  "description": "Hospitality category includes robots that prepare and serve food or drinks, as well as those that provide information, guidance, or remote presence in customer-facing environments like hotels, restaurants, and museums.",
+  "X": [
+    2021,
+    2022,
+    2023
+  ],
+  "Y": [
+    11000.0,
+    25000.0,
+    54000.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

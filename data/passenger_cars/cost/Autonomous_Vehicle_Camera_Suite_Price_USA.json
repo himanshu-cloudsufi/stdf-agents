@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Camera_Suite_Price_USA",
+  "description": "Price of camera sensor suite for autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    1465.0,
+    1377.5,
+    1290.5,
+    1148.0,
+    1006.0,
+    869.5,
+    758.5,
+    659.5
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

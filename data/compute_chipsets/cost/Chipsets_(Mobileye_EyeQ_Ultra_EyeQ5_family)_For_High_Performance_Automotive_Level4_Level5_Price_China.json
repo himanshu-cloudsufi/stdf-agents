@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(Mobileye_EyeQ_Ultra/EyeQ5_family)_For_High_Performance_Automotive_Level4/Level5_Price_China",
+  "description": "Price of Mobileye EyeQ Ultra/EyeQ5 family chipset for Level 4/5 autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    2000.0,
+    1900.0,
+    1800.0,
+    1700.0,
+    1500.0,
+    1200.0,
+    1000.0,
+    800.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

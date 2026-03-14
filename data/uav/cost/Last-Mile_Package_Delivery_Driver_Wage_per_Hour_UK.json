@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Last-Mile_Package_Delivery_Driver_Wage_per_Hour_UK",
+  "description": "Average hourly wage for last-mile package delivery drivers in the UK",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    12.5,
+    12.8,
+    13.1,
+    13.65,
+    15.7,
+    16.5,
+    17.25
+  ],
+  "type": "cost",
+  "units": "USD/hour",
+  "source": "Royal Mail/DHL UK delivery driver",
+  "region": "UK",
+  "category": "cost per unit capability",
+  "entity_type": "Service",
+  "level_name": "UAV"
+}

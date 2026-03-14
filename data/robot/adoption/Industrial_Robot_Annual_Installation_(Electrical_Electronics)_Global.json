@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Industrial_Robot_Annual_Installation_(Electrical/Electronics)_Global",
+  "description": "Annual Installations/Sales of Industrialrobots in Electronics/Electrical Sector",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    122000.0,
+    105000.0,
+    88000.0,
+    109000.0,
+    142637.0,
+    156920.0,
+    125804.0,
+    128899.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

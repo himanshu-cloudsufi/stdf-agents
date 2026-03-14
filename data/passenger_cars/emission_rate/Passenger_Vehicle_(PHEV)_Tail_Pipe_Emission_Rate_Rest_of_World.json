@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Tail_Pipe_Emission_Rate_Rest_of_World",
+  "description": "Average tailpipe CO2 emissions per PHEV vehicle per year in the Rest of the World.",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    90.0,
+    90.0,
+    88.0,
+    88.0,
+    81.0,
+    79.0,
+    79.0,
+    77.0,
+    76.0,
+    75.0,
+    73.0,
+    73.0,
+    69.0
+  ],
+  "type": "Emission Rate",
+  "units": "g CO2e/km",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "Emission Rate",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

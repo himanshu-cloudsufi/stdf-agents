@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Radar_(Long_Range)_Price_China",
+  "description": "Price of long-range radar for autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    400.0,
+    360.0,
+    320.0,
+    280.0,
+    240.0,
+    200.0,
+    170.0,
+    140.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

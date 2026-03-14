@@ -1,0 +1,21 @@
+{
+  "dataset_name": "UAV_Active_Commercial_Drones_Europe",
+  "description": "Active commercial drones in Europe.",
+  "X": [
+    2020,
+    2023,
+    2024
+  ],
+  "Y": [
+    5000.0,
+    30000.0,
+    50000.0
+  ],
+  "type": "adoption",
+  "units": "units",
+  "source": "FAA FY2024 Report; CAAC via SCIO",
+  "region": "Europe",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_GNSS_Price_USA",
+  "description": "Price of GNSS sensor for autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    500.0,
+    475.0,
+    450.0,
+    425.0,
+    400.0,
+    375.0,
+    350.0,
+    325.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

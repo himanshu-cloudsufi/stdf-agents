@@ -1,0 +1,35 @@
+{
+  "dataset_name": "DJI_Phantom_3_Price_Global",
+  "description": "Historical retail price of DJI Phantom 3 drone ",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    799.0,
+    499.0,
+    449.5,
+    400.0,
+    243.75,
+    230.0,
+    216.25,
+    202.5,
+    188.75,
+    175.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "RethinkX",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

@@ -1,0 +1,43 @@
+{
+  "dataset_name": "EV_2_Wheeler_(Range-100_KM)_Lowest_Cost_Europe",
+  "description": "Cost curve for EV 2 Wheeler (Range-100 KM) (Lowest) - Europe",
+  "X": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    4100.0,
+    3800.0,
+    3600.0,
+    3200.0,
+    3100.0,
+    3000.0,
+    2800.0,
+    2600.0,
+    2400.0,
+    2200.0,
+    2000.0,
+    1800.0,
+    1600.0,
+    1400.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Two Wheeler"
+}

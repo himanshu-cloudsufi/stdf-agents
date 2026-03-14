@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Three_Wheeler_(EV)_Median_Cost_China",
+  "description": "Cost curve for EV 3 Wheeler (Median) - China",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    5000.0,
+    4500.0,
+    4000.0,
+    3500.0,
+    3000.0,
+    2500.0,
+    2000.0,
+    1500.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "China",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

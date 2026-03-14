@@ -1,0 +1,23 @@
+{
+  "dataset_name": "Three_Wheeler_(EV)_Total_Fleet_Europe",
+  "description": "Total fleet of electric three-wheelers in Europe.The definition of a three-wheeler is aligned with UNECE L2, L4 or L5 classes",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    10000.0,
+    20000.0,
+    60000.0,
+    130000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

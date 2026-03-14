@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Last-Mile_Package_Delivery_Driver_Wage_per_Hour_China",
+  "description": "Average hourly wage for last-mile package delivery drivers in China",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    4.35,
+    4.65,
+    5.15,
+    5.45,
+    5.65,
+    5.9,
+    5.95,
+    6.1,
+    6.35,
+    6.6
+  ],
+  "type": "cost",
+  "units": "USD/hour",
+  "source": "China Daily courier income survey",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Service",
+  "level_name": "UAV"
+}

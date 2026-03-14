@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_TCO_SUV_USA",
+  "description": "Total cost of ownership for PHEV SUVs in the USA.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    61100.0,
+    58750.0,
+    56100.0,
+    55150.0,
+    53300.0,
+    52710.0,
+    56180.0,
+    56950.0,
+    57720.0,
+    57990.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

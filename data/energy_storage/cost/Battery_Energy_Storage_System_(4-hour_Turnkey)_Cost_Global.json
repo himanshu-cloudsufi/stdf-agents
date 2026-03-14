@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Battery_Energy_Storage_System_(4-hour_Turnkey)_Cost_Global",
+  "description": "Turnkey cost for 4-hour Battery Energy Storage System in Global.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    441.0,
+    347.0,
+    314.0,
+    318.0,
+    285.0,
+    255.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cost",
+  "entity_type": "Market",
+  "level_name": "Energy Storage"
+}

@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Life_Cycle_Emission_Rate_China",
+  "description": "Total lifecycle CO2 emissions per PHEV vehicle in China.",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    337.0,
+    334.0,
+    331.0,
+    326.0,
+    322.0,
+    318.0,
+    311.0,
+    308.0,
+    301.0,
+    292.0,
+    285.0,
+    279.0,
+    273.0
+  ],
+  "type": "Emission Rate",
+  "units": "g CO2e/km",
+  "source": "Database",
+  "region": "China",
+  "category": "Emission Rate",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

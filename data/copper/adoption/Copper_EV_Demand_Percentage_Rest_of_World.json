@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_EV_Demand_Percentage_Rest_of_World",
+  "description": "Percentage of copper demand from EVs in Rest of World.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.7,
+    0.9,
+    1.1,
+    1.4,
+    1.7,
+    2.0,
+    2.3,
+    2.7,
+    3.0,
+    3.2
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

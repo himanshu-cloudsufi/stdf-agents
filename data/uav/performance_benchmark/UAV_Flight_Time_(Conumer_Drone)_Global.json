@@ -1,0 +1,35 @@
+{
+  "dataset_name": "UAV_Flight_Time_(Conumer_Drone)_Global",
+  "description": "Average flight time of consumer drones globally.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    23.0,
+    28.0,
+    30.0,
+    30.0,
+    31.0,
+    34.0,
+    43.0,
+    46.0,
+    46.0,
+    45.0
+  ],
+  "type": "Performance Benchmark",
+  "units": "min",
+  "source": "DJI Official",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

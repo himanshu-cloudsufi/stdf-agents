@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Artificial_Intelligence_Number_of_Models_by_Hardware_(NVIDIA_V100)_Global",
+  "description": "Number of Model by ML Hardware",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    5.0,
+    16.0,
+    29.0,
+    52.0,
+    58.0,
+    67.0,
+    68.0,
+    68.0
+  ],
+  "type": "adoption",
+  "units": "Model Count",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Agentic_AI_Software_Cost_Global",
+  "description": "Annual cost of software required to develop and operate Agentic AI systems globally.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    2100000000.0,
+    2800000000.0,
+    3900000000.0,
+    5250000000.0,
+    7550000000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Agentic AI"
+}

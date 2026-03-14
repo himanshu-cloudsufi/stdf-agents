@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(NVIDIA_Jetson_Xavier_NX)_For_Drones_and_Small_Robots_Price_USA",
+  "description": "Price of NVIDIA Jetson Xavier NX chipset for drones and small robots in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    1100.0,
+    1050.0,
+    700.0,
+    650.0,
+    600.0,
+    550.0,
+    460.0,
+    360.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

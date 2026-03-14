@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Wind_Turbine_Drone_Inspection_Throughput_Global",
+  "description": "Total number of wind turbines inspected globally using drones each year.",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2023
+  ],
+  "Y": [
+    5.0,
+    8.0,
+    12.0,
+    15.0,
+    17.0,
+    18.0,
+    18.0
+  ],
+  "type": "Capability",
+  "units": "turbines/drone/day",
+  "source": "Industry average for mature automated systems (interpolated between 2018 and 2020)",
+  "region": "World",
+  "category": "Capability",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

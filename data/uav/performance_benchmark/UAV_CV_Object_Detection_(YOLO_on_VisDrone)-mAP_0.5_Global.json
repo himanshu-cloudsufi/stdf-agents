@@ -1,0 +1,27 @@
+{
+  "dataset_name": "UAV_CV_Object_Detection_(YOLO_on_VisDrone)-mAP@0.5_Global",
+  "description": "YOLO model object-detection accuracy (mAP@0.5) on VisDrone.",
+  "X": [
+    2018,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    25.0,
+    32.0,
+    35.2,
+    38.0,
+    43.0,
+    47.3
+  ],
+  "type": "Performance Benchmark",
+  "units": "%",
+  "source": "YOLOv11m on VisDrone2019-val",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

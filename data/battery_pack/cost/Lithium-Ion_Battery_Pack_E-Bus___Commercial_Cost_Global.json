@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_E-Bus_&_Commercial_Cost_Global",
+  "description": "Lithium-Ion Battery Pack E-Bus & Commercial Cost Global",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    480.0,
+    453.0,
+    397.0,
+    389.0,
+    312.0,
+    192.0,
+    190.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cost",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

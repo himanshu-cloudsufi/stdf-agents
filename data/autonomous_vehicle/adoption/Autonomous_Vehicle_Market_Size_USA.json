@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Market_Size_USA",
+  "description": "Market size of autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    4000.0,
+    5000.0,
+    8000.0,
+    9000.0,
+    14000.0,
+    17000.0,
+    20706.0
+  ],
+  "type": "adoption",
+  "units": "USD Million",
+  "source": "Internet (Grand View Research)",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Market",
+  "level_name": "Autonomous Vehicle"
+}

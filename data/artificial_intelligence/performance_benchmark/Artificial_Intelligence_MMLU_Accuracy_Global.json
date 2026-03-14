@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Artificial_Intelligence_MMLU_Accuracy_Global",
+  "description": "The Massive Multitask Language Understanding (MMLU) benchmark assesses model performance in zero-shot or fewshot scenarios across 57 subjects, including the humanities,STEM, and the social sciences (Figure 2.2.3). MMLU has emerged as a premier benchmark for assessing LLM capabilities: Many state-of-the-art models like GPT-4o, Claude 3.5, and Gemini 2.0 have been evaluated against MMLU. ",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    33.0,
+    55.0,
+    60.0,
+    75.0,
+    85.0,
+    92.3
+  ],
+  "type": "Performance Benchmark",
+  "units": "%",
+  "source": "Stanford",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

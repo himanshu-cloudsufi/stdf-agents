@@ -1,0 +1,27 @@
+{
+  "dataset_name": "UAV_BVLOS-Authorized_Companies_USA",
+  "description": "Number of companies authorized to conduct BVLOS UAV operations in the USA.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    15.0,
+    22.0,
+    50.0,
+    85.0,
+    112.0,
+    134.0
+  ],
+  "type": "adoption",
+  "units": "Companies",
+  "source": "AUVSI",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

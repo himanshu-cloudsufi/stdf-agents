@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Artificial_Intelligence_Cloud_Compute_Cost_for_Training_Global",
+  "description": "Estimated cloud compute costs for the final training run of frontier models. The selected models are among the top 10 most compute-intensive for their time. The costs are the product of the number of training chip-hours and a historical cloud rental price.",
+  "X": [
+    2021,
+    2023,
+    2017,
+    2019,
+    2022,
+    2016,
+    2023
+  ],
+  "Y": [
+    3500000.0,
+    191000000.0,
+    33400.0,
+    380000.0,
+    8490000.0,
+    20300.0,
+    25800000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

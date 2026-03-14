@@ -1,0 +1,25 @@
+{
+  "dataset_name": "UAV_CV_Object_Detection_(VisDrone_Challenge)_Best_mAP_(Challenge)_Global",
+  "description": "Best mAP achieved in the VisDrone CV challenge.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "Y": [
+    31.88,
+    29.62,
+    37.37,
+    39.43,
+    41.5
+  ],
+  "type": "Performance Benchmark",
+  "units": "%",
+  "source": "VisDrone-DET2018 - Winner: HAL-Retina-Net",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

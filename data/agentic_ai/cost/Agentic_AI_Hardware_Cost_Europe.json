@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Agentic_AI_Hardware_Cost_Europe",
+  "description": "Capital and operational costs for hardware used in Agentic AI systems in Europe.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    8421052.0,
+    16000000.0,
+    30400000.0,
+    57760000.0,
+    109744000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Agentic AI"
+}

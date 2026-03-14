@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Concentrated_Solar_Power_Installed_Capacity_China",
+  "description": "Installed capacity of concentrated solar power (CSP) in China.",
+  "X": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.0,
+    11.0,
+    11.0,
+    11.0,
+    31.0,
+    31.0,
+    246.0,
+    396.0,
+    450.0,
+    570.0,
+    570.0,
+    570.0,
+    570.0
+  ],
+  "type": "adoption",
+  "units": "MW",
+  "source": "Rethinkx",
+  "region": "China",
+  "category": "cumulative adoption",
+  "entity_type": "Technology",
+  "level_name": "Energy Generation"
+}

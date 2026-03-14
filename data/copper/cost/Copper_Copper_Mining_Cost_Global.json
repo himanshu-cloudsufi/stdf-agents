@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Copper_Copper_Mining_Cost_Global",
+  "description": "Average cost of copper extraction per ton globally.",
+  "X": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    2600.0,
+    2800.0,
+    3152.0,
+    3300.0,
+    3100.0,
+    3200.0,
+    3395.0,
+    3400.0,
+    3300.0,
+    3858.0,
+    4100.0,
+    4200.0,
+    4600.0
+  ],
+  "type": "cost",
+  "units": "$/metric ton",
+  "source": "Database",
+  "region": "World",
+  "category": "cost per unit capability",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

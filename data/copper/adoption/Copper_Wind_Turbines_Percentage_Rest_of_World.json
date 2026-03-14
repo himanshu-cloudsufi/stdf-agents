@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_Wind_Turbines_Percentage_Rest_of_World",
+  "description": "Percentage of copper demand attributable to wind turbine manufacturing in the Rest of the World.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.5,
+    0.5,
+    0.6,
+    0.7,
+    0.7,
+    0.8,
+    0.8,
+    0.9,
+    0.9,
+    0.95
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

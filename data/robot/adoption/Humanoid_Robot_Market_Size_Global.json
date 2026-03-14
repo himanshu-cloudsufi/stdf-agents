@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Humanoid_Robot_Market_Size_Global",
+  "description": "Annual Installations/Sales of Industrialrobots in Food Industry",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    1.53,
+    1.46,
+    1.8,
+    2.02,
+    2.92
+  ],
+  "type": "adoption",
+  "units": "USD Billion",
+  "source": "MarketandMarkets",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

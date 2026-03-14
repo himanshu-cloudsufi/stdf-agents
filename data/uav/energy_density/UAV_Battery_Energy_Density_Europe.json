@@ -1,0 +1,35 @@
+{
+  "dataset_name": "UAV_Battery_Energy_Density_Europe",
+  "description": "Battery energy density of UAV systems in Europe.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    150.0,
+    150.0,
+    160.0,
+    170.0,
+    180.0,
+    203.0,
+    210.0,
+    230.0,
+    250.0,
+    300.0
+  ],
+  "type": "Energy Density",
+  "units": "Wh/kg",
+  "source": "BloombergNEF (Market)",
+  "region": "Europe",
+  "category": "Commodity intensity",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

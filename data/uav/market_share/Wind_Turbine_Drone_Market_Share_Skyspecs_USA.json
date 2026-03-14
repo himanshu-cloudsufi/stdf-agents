@@ -1,0 +1,33 @@
+{
+  "dataset_name": "Wind_Turbine_Drone_Market_Share_Skyspecs_USA",
+  "description": "Annual market share of SkySpecs in the U.S. wind-turbine drone inspection market.",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    3.5,
+    10.0,
+    20.0,
+    27.5,
+    35.0,
+    45.0,
+    50.0,
+    58.0,
+    65.0
+  ],
+  "type": "Market Share",
+  "units": "percent",
+  "source": "Derived from Cumulative <3.6k inspections vs ~54k total NA turbines",
+  "region": "USA",
+  "category": "Market Share",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

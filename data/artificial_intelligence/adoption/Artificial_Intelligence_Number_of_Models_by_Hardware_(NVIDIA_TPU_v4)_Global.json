@@ -1,0 +1,23 @@
+{
+  "dataset_name": "Artificial_Intelligence_Number_of_Models_by_Hardware_(NVIDIA_TPU_v4)_Global",
+  "description": "Number of Model by ML Hardware",
+  "X": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    13.0,
+    19.0,
+    26.0,
+    26.0
+  ],
+  "type": "adoption",
+  "units": "Model Count",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

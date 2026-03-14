@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Solar_PV_Module_(All_Black)_Cost_Europe",
+  "description": "Average price for all black solar PV modules in EU.",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.695573,
+    0.596859,
+    0.461563,
+    0.432244,
+    0.459045,
+    0.445546,
+    0.22,
+    0.13
+  ],
+  "type": "cost",
+  "units": "$/W",
+  "source": "Rethinkx",
+  "region": "Europe",
+  "category": "cost",
+  "entity_type": "Technology",
+  "level_name": "Energy Generation"
+}

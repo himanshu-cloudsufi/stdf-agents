@@ -1,0 +1,27 @@
+{
+  "dataset_name": "5G_Network_Population_Coverage_Europe",
+  "description": "Population covered by 5G networks in Europe.",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    13.0,
+    29.0,
+    54.0,
+    68.0,
+    81.0,
+    94.0
+  ],
+  "type": "adoption",
+  "units": "%",
+  "source": "5G Observatory",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "5G Network"
+}

@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Three_Wheeler_(EV)_Total_Fleet_China",
+  "description": "Total fleet of electric three-wheelers in China.The definition of a three-wheeler is aligned with UNECE L2, L4 or L5 classes",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    176000.0,
+    213000.0,
+    250000.0,
+    500000.0,
+    840000.0,
+    1180000.0,
+    1450000.0,
+    1800000.0,
+    2120000.0,
+    2420000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Database",
+  "region": "China",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Three Wheeler"
+}

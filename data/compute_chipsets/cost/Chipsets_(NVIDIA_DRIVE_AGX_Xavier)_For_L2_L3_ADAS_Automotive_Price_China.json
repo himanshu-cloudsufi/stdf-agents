@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(NVIDIA_DRIVE_AGX_Xavier)_For_L2/L3/ADAS_Automotive_Price_China",
+  "description": "Price of NVIDIA DRIVE AGX Xavier chipset for L2/L3 ADAS in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    2400.0,
+    2300.0,
+    2100.0,
+    1950.0,
+    1700.0,
+    1600.0,
+    1200.0,
+    900.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

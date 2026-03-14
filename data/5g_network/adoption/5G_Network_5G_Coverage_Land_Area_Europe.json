@@ -1,0 +1,25 @@
+{
+  "dataset_name": "5G_Network_5G_Coverage_Land_Area_Europe",
+  "description": "Land area covered by 5G in Europe.",
+  "X": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    8.5,
+    40.0,
+    44.0,
+    48.0,
+    50.0
+  ],
+  "type": "adoption",
+  "units": "%",
+  "source": "EC DESI / BEREC / GSMA / Ericsson / Prysmian",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "5G Network"
+}

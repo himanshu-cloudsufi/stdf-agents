@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Tail_Pipe_Emission_Rate_USA",
+  "description": "Average tailpipe CO2 emissions per PHEV vehicle per year in the USA.",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    69.0,
+    68.0,
+    67.0,
+    66.0,
+    65.0,
+    64.0,
+    63.0,
+    63.0,
+    62.0,
+    60.0,
+    58.0,
+    56.0,
+    54.0
+  ],
+  "type": "Emission Rate",
+  "units": "g CO2e/km",
+  "source": "Database",
+  "region": "USA",
+  "category": "Emission Rate",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

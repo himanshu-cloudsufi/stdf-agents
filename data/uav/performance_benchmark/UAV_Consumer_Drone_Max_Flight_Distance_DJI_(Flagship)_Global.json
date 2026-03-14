@@ -1,0 +1,27 @@
+{
+  "dataset_name": "UAV_Consumer_Drone_Max_Flight_Distance_DJI_(Flagship)_Global",
+  "description": "Max flight distance of DJI flagship consumer drones.",
+  "X": [
+    2018,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    18.0,
+    18.5,
+    30.0,
+    30.0,
+    28.0,
+    32.0
+  ],
+  "type": "Performance Benchmark",
+  "units": "km",
+  "source": "DJI Official - Mavic 2 Pro: 18 km max flight distance (50 kph, no wind)",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

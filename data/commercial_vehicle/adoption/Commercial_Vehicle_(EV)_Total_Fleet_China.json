@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Commercial_Vehicle_(EV)_Total_Fleet_China",
+  "description": "Total electric commercial vehicle fleet in China",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    218976.0,
+    251252.0,
+    332133.0,
+    528631.0,
+    919926.0,
+    1497833.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Rethinkx",
+  "region": "China",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

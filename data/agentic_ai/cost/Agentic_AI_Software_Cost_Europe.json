@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Agentic_AI_Software_Cost_Europe",
+  "description": "Annual cost of software required to develop and operate Agentic AI systems in Europe.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    260000000.0,
+    340000000.0,
+    460000000.0,
+    634000000.0,
+    913000000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Agentic AI"
+}

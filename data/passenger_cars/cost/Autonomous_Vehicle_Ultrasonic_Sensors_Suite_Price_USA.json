@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Ultrasonic_Sensors_Suite_Price_USA",
+  "description": "Price of ultrasonic sensor suite for autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    176.0,
+    160.0,
+    144.0,
+    128.0,
+    120.0,
+    112.0,
+    104.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

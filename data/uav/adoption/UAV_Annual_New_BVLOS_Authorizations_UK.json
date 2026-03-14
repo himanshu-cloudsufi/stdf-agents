@@ -1,0 +1,25 @@
+{
+  "dataset_name": "UAV_Annual_New_BVLOS_Authorizations_UK",
+  "description": "Number of new BVLOS UAV approvals issued annually in the UK.",
+  "X": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    20.0,
+    37.0,
+    36.0,
+    39.0,
+    61.0
+  ],
+  "type": "adoption",
+  "units": "Authorizations",
+  "source": "UK CAA",
+  "region": "UK",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

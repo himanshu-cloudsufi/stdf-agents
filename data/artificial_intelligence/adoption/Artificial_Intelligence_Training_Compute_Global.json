@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Artificial_Intelligence_Training_Compute_Global",
+  "description": "Training compute of frontier AI models. Since 2010, the training compute used to create AI models has been growing at a rate of 4.4x per year. Most of this growth comes from increased spending, although improvements in hardware have also played a role.",
+  "X": [
+    2021,
+    2023,
+    2017,
+    2019,
+    2022,
+    2016,
+    2023
+  ],
+  "Y": [
+    6.31e+23,
+    5e+25,
+    8.43e+20,
+    5.93e+22,
+    2.58e+24,
+    4.36e+20,
+    3.76e+24
+  ],
+  "type": "adoption",
+  "units": "FLOP",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

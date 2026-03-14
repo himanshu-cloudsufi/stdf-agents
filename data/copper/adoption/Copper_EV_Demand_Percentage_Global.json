@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_EV_Demand_Percentage_Global",
+  "description": "Global percentage of copper demand from EVs.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.0,
+    1.2,
+    1.5,
+    2.0,
+    2.5,
+    2.8,
+    3.2,
+    3.8,
+    4.5,
+    5.0
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Disengagements_per_Million_Miles_Global",
+  "description": "Number of autonomous-driving system disengagements per million miles of testing globally.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "Y": [
+    3000000.0,
+    30000000.0,
+    15000000.0,
+    6000000.0,
+    5000000.0
+  ],
+  "type": "Safety Incidents",
+  "units": "disengagements per million miles",
+  "source": "MDPI Study (Fig.13)",
+  "region": "World",
+  "category": "Safety Incidents",
+  "entity_type": "Market",
+  "level_name": "Autonomous Vehicle"
+}

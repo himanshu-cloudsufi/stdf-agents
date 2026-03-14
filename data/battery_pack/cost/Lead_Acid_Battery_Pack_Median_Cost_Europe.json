@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Lead_Acid_Battery_Pack_Median_Cost_Europe",
+  "description": "Cost curve for Lead-Acid Battery (pack-level median) (Median) - Europe",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    350.0,
+    315.0,
+    280.0,
+    260.0,
+    220.0,
+    210.0,
+    200.0,
+    190.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Database",
+  "region": "Europe",
+  "category": "cost",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Medium-duty_commercial_vehicles_(NGV)_Annual_Sales_Global",
+  "description": "Annual sales of medium-duty natural gas commercial vehicles globally",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    11666.0,
+    21275.0,
+    26161.0,
+    6441.0,
+    7720.0,
+    1477.0,
+    783.0,
+    8371.0,
+    10308.0,
+    12816.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

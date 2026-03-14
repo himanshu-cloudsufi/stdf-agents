@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Purchase_Price_SUV_USA",
+  "description": "Average market purchase price for PHEV SUVs in the USA.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    29500.0,
+    27500.0,
+    26500.0,
+    25500.0,
+    24500.0,
+    23500.0,
+    25500.0,
+    26500.0,
+    27500.0,
+    29000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

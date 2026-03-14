@@ -1,0 +1,31 @@
+{
+  "dataset_name": "BLDC_Motor_UAV_Motor_Efficiency_Peak_China",
+  "description": "Peak efficiency of UAV BLDC motors in China.",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    79.0,
+    81.0,
+    83.0,
+    85.0,
+    87.0,
+    89.0,
+    90.0,
+    91.0
+  ],
+  "type": "Efficiency Rate",
+  "units": "%",
+  "source": "Beihang University - T-Motor U11 KV90",
+  "region": "China",
+  "category": "Efficiency Rate",
+  "entity_type": "Component",
+  "level_name": "UAV"
+}

@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_TCO_Sedan_Rest_of_World",
+  "description": "Total cost of ownership for PHEV Sedans in the Rest of the World.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    59450.0,
+    56650.0,
+    53850.0,
+    52250.0,
+    50650.0,
+    49050.0,
+    48450.0,
+    47850.0,
+    47250.0,
+    50400.0,
+    50700.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cost per unit capability",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

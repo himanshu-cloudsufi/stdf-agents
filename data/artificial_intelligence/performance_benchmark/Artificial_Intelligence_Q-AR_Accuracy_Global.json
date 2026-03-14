@@ -1,0 +1,29 @@
+{
+  "dataset_name": "Artificial_Intelligence_Q-AR_Accuracy_Global",
+  "description": "Introduced in 2019 by researchers from the University of Washington and the Allen Institute for AI, the Visual Commonsense Reasoning (VCR) challenge tests the commonsense visual reasoning abilities of AI systems. In this challenge, AI systems not only answer questions based on images but also reason about the logic behind their answers (Figure 2.3.1). Performance in VCR is measured using the Q->AR score, which evaluates the machine\u2019s ability to both select the correct answer to a question (Q->A) and choose the appropriate rationale behind that answer (Q->R).",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    15.0,
+    67.0,
+    70.0,
+    72.0,
+    75.0,
+    81.0,
+    85.0
+  ],
+  "type": "Performance Benchmark",
+  "units": "%",
+  "source": "Stanford",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

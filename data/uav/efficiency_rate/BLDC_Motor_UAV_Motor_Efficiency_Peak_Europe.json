@@ -1,0 +1,31 @@
+{
+  "dataset_name": "BLDC_Motor_UAV_Motor_Efficiency_Peak_Europe",
+  "description": "Peak efficiency of UAV BLDC motors in Europe.",
+  "X": [
+    2014,
+    2016,
+    2017,
+    2018,
+    2020,
+    2021,
+    2022,
+    2024
+  ],
+  "Y": [
+    80.0,
+    82.0,
+    84.0,
+    86.0,
+    88.0,
+    89.0,
+    90.0,
+    92.0
+  ],
+  "type": "Efficiency Rate",
+  "units": "%",
+  "source": "Beihang/Leeds - SunnySky X3535",
+  "region": "Europe",
+  "category": "Efficiency Rate",
+  "entity_type": "Component",
+  "level_name": "UAV"
+}

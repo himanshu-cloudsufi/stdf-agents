@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Car_(BEV)_Energy_Consumption_China",
+  "description": "Energy consumption of BEVs in China (kWh/100 km).",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    14.0,
+    13.8,
+    13.5,
+    13.2,
+    13.0,
+    12.8,
+    12.6,
+    12.35,
+    12.3,
+    12.2
+  ],
+  "type": "Energy Efficiency",
+  "units": "kWh/100 KM",
+  "source": "https://dieselnet.com/standards/cn/nev.php",
+  "region": "China",
+  "category": "Energy Efficiency",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

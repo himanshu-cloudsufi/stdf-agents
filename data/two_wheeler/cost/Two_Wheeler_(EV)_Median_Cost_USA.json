@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Two_Wheeler_(EV)_Median_Cost_USA",
+  "description": "Cost curve for EV 2 Wheeler (Median) - USA",
+  "X": [
+    2010,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+  ],
+  "Y": [
+    4000.0,
+    3900.0,
+    3600.0,
+    3300.0,
+    2800.0,
+    2500.0,
+    2200.0,
+    2000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Two Wheeler"
+}

@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Agentic_AI_Deployment_Cost_China",
+  "description": "Total cost to deploy and maintain Agentic AI solutions in China.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    15869474.0,
+    140000000.0,
+    720000000.0,
+    1108300000.0,
+    1483770000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Technology",
+  "level_name": "Agentic AI"
+}

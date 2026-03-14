@@ -1,0 +1,41 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_(E_Bus)_Total_Demand_Global",
+  "description": "Lithium-Ion Battery Pack (E Bus) Total Demand Global",
+  "X": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.0,
+    4.0,
+    17.0,
+    27.0,
+    39.0,
+    52.0,
+    65.0,
+    76.0,
+    86.0,
+    94.0,
+    104.0,
+    113.0,
+    125.0
+  ],
+  "type": "adoption",
+  "units": "GWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

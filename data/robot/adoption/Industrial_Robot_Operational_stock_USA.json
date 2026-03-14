@@ -1,0 +1,33 @@
+{
+  "dataset_name": "Industrial_Robot_Operational_stock_USA",
+  "description": "Operational Stock of Industrial Robots.",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    250000.0,
+    260000.0,
+    290000.0,
+    300000.0,
+    310000.0,
+    340000.0,
+    370000.0,
+    380000.0,
+    390000.0
+  ],
+  "type": "adoption",
+  "units": "Robots",
+  "source": "AIPRM via IFR.org",
+  "region": "USA",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

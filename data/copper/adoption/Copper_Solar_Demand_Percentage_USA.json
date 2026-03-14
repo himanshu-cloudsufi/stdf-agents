@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_Solar_Demand_Percentage_USA",
+  "description": "Percentage of copper demand attributable to solar power installations in the USA.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.4,
+    1.5
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

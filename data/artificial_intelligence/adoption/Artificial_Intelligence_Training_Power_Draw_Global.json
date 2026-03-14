@@ -1,0 +1,43 @@
+{
+  "dataset_name": "Artificial_Intelligence_Training_Power_Draw_Global",
+  "description": "Electricity/Power consumption for training major AI models.Training frontier models requires a large and growing amount of power for GPUs, servers, cooling and other equipment. This is driven by an increase in GPU count; power draw per GPU is also growing",
+  "X": [
+    2022,
+    2025,
+    2015,
+    2021,
+    2023,
+    2016,
+    2017,
+    2024,
+    2020,
+    2019,
+    2016,
+    2014,
+    2018,
+    2023
+  ],
+  "Y": [
+    2100000.0,
+    44000000.0,
+    8500.0,
+    1800000.0,
+    19000000.0,
+    17000.0,
+    31000.0,
+    23000000.0,
+    460000.0,
+    170000.0,
+    38000.0,
+    2100.0,
+    120000.0,
+    11000000.0
+  ],
+  "type": "adoption",
+  "units": "Watt",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

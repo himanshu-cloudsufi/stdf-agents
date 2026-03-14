@@ -1,0 +1,25 @@
+{
+  "dataset_name": "Artificial_Intelligence_MATH_Word_Problem_Solving_Accuracy_Global",
+  "description": "MATH is a dataset of 12,500 challenging, competitionlevel mathematics problems introduced by UC Berkeley and University of Chicago researchers in 2021. Human Baseline is 90%.",
+  "X": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    9.0,
+    50.0,
+    83.0,
+    90.0,
+    97.9
+  ],
+  "type": "Performance Benchmark",
+  "units": "%",
+  "source": "Stanford",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

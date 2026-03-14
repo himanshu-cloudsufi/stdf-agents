@@ -1,0 +1,37 @@
+{
+  "dataset_name": "Industrial_Robot_Operational_stock_Europe",
+  "description": "Operational Stock of Industrial Robots.",
+  "X": [
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    410000.0,
+    430000.0,
+    460000.0,
+    500000.0,
+    540000.0,
+    580000.0,
+    610000.0,
+    680000.0,
+    730000.0,
+    780000.0,
+    790000.0
+  ],
+  "type": "adoption",
+  "units": "Robots",
+  "source": "AIPRM via IFR.org",
+  "region": "Europe",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

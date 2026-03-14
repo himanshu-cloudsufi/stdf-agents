@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Industrial_Robot_Annual_Installation_(Automotive)_Global",
+  "description": "Annual Installations/Sales of Industrialrobots in Automotive Sector",
+  "X": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    123000.0,
+    126000.0,
+    105000.0,
+    80000.0,
+    117303.0,
+    136112.0,
+    135461.0,
+    126088.0
+  ],
+  "type": "adoption",
+  "units": "Robots/Year",
+  "source": "IFR",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Robot"
+}

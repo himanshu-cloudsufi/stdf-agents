@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Commercial_Vehicle_(NGV)_Annual_Sales_Global",
+  "description": "Historical NGV commercial vehicle sales data",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    36949.0,
+    55245.0,
+    115496.0,
+    69589.0,
+    112058.0,
+    159292.0,
+    73298.0,
+    85596.0,
+    100005.0,
+    125548.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Chipsets_(Ambarella_CVflow_family)_For_Drones_and_Small_Robots_Price_China",
+  "description": "Price of Ambarella CVflow chipset family for drones and small robots in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    280.0,
+    260.0,
+    240.0,
+    220.0,
+    200.0,
+    180.0,
+    150.0,
+    120.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Compute Chipsets"
+}

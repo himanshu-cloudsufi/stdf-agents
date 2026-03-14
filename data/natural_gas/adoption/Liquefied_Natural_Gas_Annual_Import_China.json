@@ -1,0 +1,39 @@
+{
+  "dataset_name": "Liquefied_Natural_Gas_Annual_Import_China",
+  "description": "Annual LNG imports of China.",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    25.1,
+    27.3,
+    27.0,
+    36.8,
+    52.9,
+    73.5,
+    84.7,
+    94.0,
+    110.1,
+    87.0,
+    97.8,
+    107.64
+  ],
+  "type": "adoption",
+  "units": "Billion Cubic Meter",
+  "source": "Energy Institute Statistical Review of World Energy",
+  "region": "China",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Natural Gas"
+}

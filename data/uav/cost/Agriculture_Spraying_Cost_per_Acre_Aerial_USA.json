@@ -1,0 +1,21 @@
+{
+  "dataset_name": "Agriculture_Spraying_Cost_per_Acre_Aerial_USA",
+  "description": "Cost of crop spraying per acre using manned aerial (crop duster plane) in the USA",
+  "X": [
+    2020,
+    2023,
+    2024
+  ],
+  "Y": [
+    15.0,
+    13.5,
+    12.5
+  ],
+  "type": "cost",
+  "units": "USD/acre",
+  "source": "FBN / MU Extension",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Service",
+  "level_name": "UAV"
+}

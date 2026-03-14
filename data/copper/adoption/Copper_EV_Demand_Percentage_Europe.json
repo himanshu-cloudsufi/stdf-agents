@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Copper_EV_Demand_Percentage_Europe",
+  "description": "Share of copper demand from EVs in Europe.",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.0,
+    1.2,
+    1.5,
+    1.8,
+    2.0,
+    2.3,
+    2.7,
+    3.2,
+    3.8,
+    4.0
+  ],
+  "type": "adoption",
+  "units": "%/year",
+  "source": "Database",
+  "region": "Europe",
+  "category": "annual adoption",
+  "entity_type": "Commodity",
+  "level_name": "Copper"
+}

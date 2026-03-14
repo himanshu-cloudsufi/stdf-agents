@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_IMU_Price_China",
+  "description": "Price of inertial measurement unit (IMU) for autonomous vehicles in China.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    525.0,
+    500.0,
+    475.0,
+    450.0,
+    425.0,
+    400.0,
+    375.0,
+    350.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "China",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

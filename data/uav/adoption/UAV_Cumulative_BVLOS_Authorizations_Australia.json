@@ -1,0 +1,29 @@
+{
+  "dataset_name": "UAV_Cumulative_BVLOS_Authorizations_Australia",
+  "description": "Total cumulative number of BVLOS approvals granted for UAV operations in Australia.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    45.0,
+    62.0,
+    81.0,
+    99.0,
+    137.0,
+    164.0,
+    194.0
+  ],
+  "type": "adoption",
+  "units": "Authorizations",
+  "source": "CASA",
+  "region": "Australia",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "UAV"
+}

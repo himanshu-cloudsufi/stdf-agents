@@ -1,0 +1,27 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_Passenger_BEV_Cost_Global",
+  "description": "Lithium-Ion Battery Pack Passenger BEV Cost Global",
+  "X": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    179.0,
+    152.0,
+    139.0,
+    152.0,
+    132.0,
+    97.0
+  ],
+  "type": "cost",
+  "units": "$/KWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cost",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

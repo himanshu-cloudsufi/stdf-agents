@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Passenger_Car_(BEV)_Energy_Consumption_Europe",
+  "description": "Energy consumption of BEVs in Europe (kWh/100 km).",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    18.0,
+    17.5,
+    17.0,
+    16.8,
+    16.5,
+    16.2,
+    16.0,
+    16.6,
+    16.5,
+    16.4
+  ],
+  "type": "Energy Efficiency",
+  "units": "kWh/100 KM",
+  "source": "https://theicct.org/publication/real-world-co2-emission-values-vehicles-europe-jan24/",
+  "region": "Europe",
+  "category": "Energy Efficiency",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

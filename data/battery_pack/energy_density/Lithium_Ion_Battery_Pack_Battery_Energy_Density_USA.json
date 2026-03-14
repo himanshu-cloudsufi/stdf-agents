@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Lithium_Ion_Battery_Pack_Battery_Energy_Density_USA",
+  "description": "Li-ion battery pack energy density in the USA.",
+  "X": [
+    2011,
+    2013,
+    2015,
+    2017,
+    2019,
+    2020,
+    2022,
+    2024
+  ],
+  "Y": [
+    130.0,
+    145.0,
+    155.0,
+    165.0,
+    175.0,
+    180.0,
+    185.0,
+    195.0
+  ],
+  "type": "Energy Density",
+  "units": "Wh/kg",
+  "source": "See consolidated dataset",
+  "region": "USA",
+  "category": "Energy Density",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}

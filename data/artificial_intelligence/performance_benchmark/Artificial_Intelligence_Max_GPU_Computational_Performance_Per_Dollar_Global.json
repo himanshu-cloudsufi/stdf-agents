@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Artificial_Intelligence_Max_GPU_Computational_Performance_Per_Dollar_Global",
+  "description": "Hardware computational performance shown in floating-point operations per second (FLOP/s) per US dollar, adjusted for inflation.FLOP/s values refer to 32-bit (full) precision. Data is expressed in constant 2024 US$. Inflation adjustment is based on the US\nConsumer Price Index (CPI).This measures computing power per dollar\u2014specifically, how many calculations per second you get for each inflation-adjusted dollar when buying a GPU.",
+  "X": [
+    2008,
+    2010,
+    2013,
+    2014,
+    2016,
+    2017,
+    2020,
+    2022
+  ],
+  "Y": [
+    657610000.0,
+    2200000000.0,
+    4760000000.0,
+    6850000000.0,
+    11330000000.0,
+    12670000000.0,
+    35150000000.0,
+    48190000000.0
+  ],
+  "type": "Performance Benchmark",
+  "units": "Flops/s/$",
+  "source": "Epoch AI",
+  "region": "World",
+  "category": "Performance Benchmark",
+  "entity_type": "Technology",
+  "level_name": "Artificial Intelligence"
+}

@@ -1,0 +1,33 @@
+{
+  "dataset_name": "Two_Wheeler_(EV)_Annual_Sales_USA",
+  "description": "Two Wheeler (EV) Annual Sales USA.Two-wheelers refer to vehicles with a top speed of at least 25 km/hr and which fit the L1 and L3 classes definition of UNECE. This excludes micromobility options such as electric-assisted bicycles and low-speed electric scooters.",
+  "X": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1700.0,
+    2300.0,
+    2800.0,
+    6300.0,
+    8000.0,
+    8900.0,
+    9600.0,
+    7800.0,
+    7100.0
+  ],
+  "type": "adoption",
+  "units": "vehicles/year",
+  "source": "Rethinkx",
+  "region": "USA",
+  "category": "annual adoption",
+  "entity_type": "Product",
+  "level_name": "Two Wheeler"
+}

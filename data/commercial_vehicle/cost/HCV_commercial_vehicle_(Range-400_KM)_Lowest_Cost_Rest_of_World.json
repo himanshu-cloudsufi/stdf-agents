@@ -1,0 +1,37 @@
+{
+  "dataset_name": "HCV_commercial_vehicle_(Range-400_KM)_Lowest_Cost_Rest_of_World",
+  "description": "Cost curve for HCV commerical vehicle (Range-400 KM) (Lowest) - Rest of World",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    250000.0,
+    240000.0,
+    230000.0,
+    220000.0,
+    210000.0,
+    200000.0,
+    190000.0,
+    180000.0,
+    170000.0,
+    160000.0,
+    150000.0
+  ],
+  "type": "cost",
+  "units": "$",
+  "source": "Database",
+  "region": "Rest of World",
+  "category": "cost",
+  "entity_type": "Product",
+  "level_name": "Commercial Vehicle"
+}

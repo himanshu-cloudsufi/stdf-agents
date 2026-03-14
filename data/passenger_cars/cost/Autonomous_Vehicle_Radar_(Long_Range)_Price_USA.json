@@ -1,0 +1,31 @@
+{
+  "dataset_name": "Autonomous_Vehicle_Radar_(Long_Range)_Price_USA",
+  "description": "Price of long-range radar for autonomous vehicles in the USA.",
+  "X": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "Y": [
+    600.0,
+    550.0,
+    500.0,
+    420.0,
+    350.0,
+    300.0,
+    260.0,
+    220.0
+  ],
+  "type": "cost",
+  "units": "USD",
+  "source": "Database",
+  "region": "USA",
+  "category": "cost per unit capability",
+  "entity_type": "Component",
+  "level_name": "Passenger Cars"
+}

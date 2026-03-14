@@ -1,0 +1,39 @@
+{
+  "dataset_name": "Passenger_Vehicle_(PHEV)_Total_Fleet_Global",
+  "description": "Total plug-in hybrid vehicle fleet worldwide",
+  "X": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    160000.0,
+    300000.0,
+    520000.0,
+    800000.0,
+    1200000.0,
+    1900000.0,
+    2400000.0,
+    3400000.0,
+    5300000.0,
+    8000000.0,
+    12000000.0,
+    19000000.0
+  ],
+  "type": "adoption",
+  "units": "vehicles",
+  "source": "Database",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Product",
+  "level_name": "Passenger Cars"
+}

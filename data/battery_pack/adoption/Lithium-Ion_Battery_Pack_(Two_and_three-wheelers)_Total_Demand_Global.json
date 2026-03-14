@@ -1,0 +1,35 @@
+{
+  "dataset_name": "Lithium-Ion_Battery_Pack_(Two_and_three-wheelers)_Total_Demand_Global",
+  "description": "Total demand for lithium-ion battery packs in 2- and 3-wheelers globally",
+  "X": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "Y": [
+    1.0,
+    4.0,
+    7.0,
+    12.0,
+    21.0,
+    37.0,
+    68.0,
+    114.0,
+    154.0,
+    219.0
+  ],
+  "type": "adoption",
+  "units": "GWh",
+  "source": "Rethinkx",
+  "region": "World",
+  "category": "cumulative adoption",
+  "entity_type": "Component",
+  "level_name": "Battery Pack"
+}
