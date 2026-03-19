@@ -2,7 +2,6 @@
 """Split curves_catalog.json into per-curve files and build data/index.json."""
 
 import json
-import os
 import re
 from pathlib import Path
 
@@ -18,8 +17,14 @@ def sanitize_filename(name: str) -> str:
 
 
 def slugify(value: str) -> str:
-    """Convert a field value to a directory slug: lowercase, spaces/hyphens to underscores."""
-    return value.strip().lower().replace(' ', '_').replace('-', '_')
+    """Convert a field value to a directory slug: lowercase, spaces/hyphens to underscores.
+
+    Strips path separators and '..' to prevent path traversal.
+    """
+    slug = value.strip().lower().replace(' ', '_').replace('-', '_')
+    # Remove path traversal and separator characters
+    slug = slug.replace('..', '').replace('/', '').replace('\\', '')
+    return slug
 
 
 def main():
