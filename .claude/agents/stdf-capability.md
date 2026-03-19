@@ -58,10 +58,7 @@ python3 scripts/query_curves.py --list-sectors
 
 Default output shows metadata + file paths. Add `--detail` for full X/Y data.
 
-**Data priority order:**
-1. **Local data** (`data/` directory via Read/Glob) — primary source for capability benchmarks, performance trajectories, efficiency data, and energy density trends.
-2. **Web research** — secondary source for gaps not covered by the catalog.
-3. When using catalog data, cite the `source` field from the curve file.
+**Data priority:** Follow the 3-tier hierarchy and tagging rules in `shared-rules.md` ("Data Source Hierarchy", "Web Search Guardrails", "Citation Standards"). Local catalog is primary for capability benchmarks, performance trajectories, efficiency data, and energy density trends. When using catalog data, cite the `source` field from the curve file.
 
 Relevant curve types: `Capability` (5), `Performance Benchmark` (16), `Energy Density` (5), `Energy Efficiency` (4), `Efficiency Rate` (4), `Capacity Factor` (10), `Performance Rate` (16). Also check `Safety Incidents` (2) for safety dimensions.
 

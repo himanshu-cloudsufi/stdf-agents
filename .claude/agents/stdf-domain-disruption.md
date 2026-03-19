@@ -62,10 +62,7 @@ python3 scripts/query_curves.py --list-types
 
 Default output shows metadata + file paths. Add `--detail` for full X/Y data.
 
-**Data priority order:**
-1. **Local data** (`data/` directory via Read/Glob) — primary source for quantitative grounding. Use adoption curves to assess S-curve positioning, cost data to identify disruption dynamics, market share for incumbent erosion evidence.
-2. **Web research** — secondary source for qualitative context, recent developments, and data gaps.
-3. When using catalog data, cite the `source` field from the curve file.
+**Data priority:** Follow the 3-tier hierarchy and tagging rules in `shared-rules.md` ("Data Source Hierarchy", "Web Search Guardrails", "Citation Standards"). Local catalog is primary for quantitative grounding — adoption curves for S-curve positioning, cost data for disruption dynamics, market share for incumbent erosion. When using catalog data, cite the `source` field from the curve file.
 
 The catalog covers 25 sectors including Passenger Cars, Energy Storage, Energy Generation, Battery Pack, Autonomous Vehicle, Artificial Intelligence, Robot, and more. 503 adoption curves + 279 cost curves + 42 labor impact + market share data.
 
