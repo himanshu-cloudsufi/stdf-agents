@@ -180,6 +180,8 @@ def completion_year(L, k, x0, target_pct=80.0):
             f"target_pct ({target_pct}) must be less than L ({L}); "
             "the S-curve never reaches or exceeds its saturation level."
         )
+    if k <= 0:
+        raise ValueError(f"Growth rate k must be positive; got {k}")
     # Solve: L / (1 + exp(-k*(t-x0))) = target_pct
     # => 1 + exp(-k*(t-x0)) = L / target_pct
     # => exp(-k*(t-x0)) = (L / target_pct) - 1 = (L - target_pct) / target_pct

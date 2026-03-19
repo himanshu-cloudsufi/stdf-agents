@@ -103,8 +103,11 @@ def learning_rate_from_decay(r: float, basis: str = "per_year") -> float:
     elif basis == "per_doubling":
         if r <= 0:
             raise ValueError("Decay rate must be positive for per_doubling basis")
-        doubling_time = math.log(2) / r
-        return round((1 - math.exp(-r * doubling_time)) * 100, 2)
+        # Learning rate per doubling of cumulative production:
+        # LR = (1 - 2^(-r_log2)) * 100 where r_log2 = r * ln(2) / ln(e)
+        # Simplified: LR = (1 - 2^(-b)) * 100 with b = r * ln(2)
+        b = r * math.log(2)
+        return round((1 - 2 ** (-b)) * 100, 2)
     else:
         raise ValueError(f"Unknown basis '{basis}'; use 'per_year' or 'per_doubling'")
 
@@ -319,6 +322,10 @@ def convert_solar_wp_to_kwh(
         raise ValueError("cost_per_wp must be non-negative")
     if not (0 < capacity_factor < 1):
         raise ValueError("capacity_factor must be between 0 and 1")
+    if lifetime_years <= 0:
+        raise ValueError("lifetime_years must be positive")
+    if degradation_adj >= 1:
+        raise ValueError("degradation_adj must be less than 1")
 
     total_kwh = capacity_factor * 8760 * lifetime_years * (1 - degradation_adj)
     cost_per_kwh = (cost_per_wp * 1000) / total_kwh

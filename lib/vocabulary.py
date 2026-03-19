@@ -25,6 +25,14 @@ BANNED_TERMS: dict[str, str] = {
     "decarbonization": '"displacement of fossil-fuel incumbents" or name the specific disruption',
 }
 
+# Banned source URL/name patterns — organizations whose data must not be cited.
+BANNED_SOURCE_PATTERNS: list[tuple[str, str]] = [
+    (r"iea\.org", "IEA URL banned — use primary data"),
+    (r"bnef\.com|bloombergnef", "BNEF URL banned — use primary data"),
+    (r"eia\.gov", "EIA URL banned — use primary data"),
+    (r"opec\.org", "OPEC URL banned — use primary data"),
+]
+
 # Required terms that should appear in every compliant agent output.
 REQUIRED_TERMS: list[str] = [
     "disruption",
@@ -48,6 +56,20 @@ def scan_banned(text: str) -> list[dict]:
         positions = [m.start() for m in pattern.finditer(text)]
         if positions:
             results.append({"term": term, "replacement": replacement, "positions": positions})
+    return results
+
+
+def scan_banned_sources(text: str) -> list[dict]:
+    """Scan for banned organization URLs/references.
+
+    Returns list of {"pattern": str, "reason": str, "positions": list[int]}.
+    """
+    results = []
+    for pattern_str, reason in BANNED_SOURCE_PATTERNS:
+        pattern = re.compile(pattern_str, re.IGNORECASE)
+        positions = [m.start() for m in pattern.finditer(text)]
+        if positions:
+            results.append({"pattern": pattern_str, "reason": reason, "positions": positions})
     return results
 
 

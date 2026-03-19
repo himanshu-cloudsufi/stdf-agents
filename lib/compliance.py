@@ -5,7 +5,7 @@ levels. Pre-defined criteria constants are included for each STDF agent:
 cost-curve, capability, adoption-scurve, and tipping-point.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 @dataclass
@@ -132,4 +132,35 @@ TIPPING_CRITERIA: list[dict] = [
     {"id": "5.3", "severity": "HIGH",     "description": "Cost parity condition mapped with evidence from Cost Curve agent"},
     {"id": "5.4", "severity": "MEDIUM",   "description": "Capability parity condition mapped with evidence from Capability agent"},
     {"id": "5.5", "severity": "MEDIUM",   "description": "Post-tipping dynamics stated — BOTH incumbent vicious cycle AND disruptor virtuous cycle"},
+]
+
+SYNTHESIZER_CRITERIA: list[dict] = [
+    {"id": "6.1", "severity": "CRITICAL", "description": "All 7 STDF phases present in narrative"},
+    {"id": "6.2", "severity": "CRITICAL", "description": "Every claim traces to a subagent output"},
+    {"id": "6.3", "severity": "CRITICAL", "description": "Zero banned vocabulary terms in output"},
+    {"id": "6.4", "severity": "HIGH",     "description": "Key conclusion is unambiguous with rupture window"},
+    {"id": "6.5", "severity": "HIGH",     "description": "Confidence calculation shown transparently"},
+    {"id": "6.6", "severity": "HIGH",     "description": "Data gaps and assumptions aggregated from all subagents"},
+    {"id": "6.7", "severity": "MEDIUM",   "description": "Handoff context contains all required keys"},
+]
+
+COMMODITY_DEMAND_CRITERIA: list[dict] = [
+    {"id": "7.1", "severity": "CRITICAL", "description": "80% demand driver coverage — all drivers >=80% of total demand identified and individually modeled"},
+    {"id": "7.2", "severity": "CRITICAL", "description": "Recursive decomposition to market products — NOT intermediate components"},
+    {"id": "7.3", "severity": "HIGH",     "description": "Each major demand driver follows full disruption process"},
+    {"id": "7.4", "severity": "CRITICAL", "description": "Demand = derivative of product/service forecast, NOT GDP proxies"},
+    {"id": "7.5", "severity": "HIGH",     "description": "Material intensity by technology stated with explicit coefficients per variant"},
+    {"id": "7.6", "severity": "HIGH",     "description": "Incumbent + Disruptor + Chimera demand tracked as three parallel streams"},
+    {"id": "7.7", "severity": "HIGH",     "description": "OEM + Replacement split tracked with explicit lifetimes"},
+    {"id": "7.8", "severity": "MEDIUM",   "description": "Stock-flow fleet model consistent: Fleet(t+1) = Fleet(t) + Sales(t) - Scrappage(t)"},
+    {"id": "7.9", "severity": "HIGH",     "description": "Regional demand breakdown (China, USA, Europe, RoW) with region-specific parameters"},
+]
+
+PIPELINE_CRITERIA: list[dict] = [
+    {"id": "P.1", "severity": "CRITICAL", "description": "Zero banned vocabulary across all agent outputs"},
+    {"id": "P.2", "severity": "CRITICAL", "description": "No forecast web data cited as observed"},
+    {"id": "P.3", "severity": "HIGH",     "description": "All data has provenance tags (T1/T2/T3)"},
+    {"id": "P.4", "severity": "HIGH",     "description": "No banned source URLs (IEA, BNEF, EIA, OPEC)"},
+    {"id": "P.5", "severity": "MEDIUM",   "description": "All agent output files written successfully"},
+    {"id": "P.6", "severity": "MEDIUM",   "description": "Cross-agent consistency (tipping year agrees across agents)"},
 ]
