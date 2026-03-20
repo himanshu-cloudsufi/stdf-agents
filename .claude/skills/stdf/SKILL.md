@@ -99,6 +99,36 @@ Parse the query to detect:
 
 ---
 
+## Step 1b: Phase 1 Hard Gate (after Tier 1 completes)
+
+After Tier 1 agents finish (domain-disruption, cost-researcher, capability):
+
+1. **Read** `output/{SLUG}/agents/01-domain-disruption.md` — extract:
+   - Disruption Map (disruptors, incumbents, chimeras)
+   - Technology Flow Classification (if present)
+   - Cost Metric Recommendation (from handoff context)
+   - Market Type Recommendation (from handoff context)
+
+2. **Classify** (if domain-disruption didn't already):
+   - Flow type per technology: X-Flow / Stellar / Hybrid
+   - Cost metric for parity: purchase price / $/kWh / $/km
+   - Market type: consumer / fleet / enterprise / utility
+
+3. **Present for approval** via AskUserQuestion:
+
+   Q1: "Disruption scope" — show extracted disruptors/incumbents, ask if correct
+   Q2: "Cost parity metric" — show recommendation + alternatives
+   Q3: "Market type" — show recommendation + alternatives
+
+4. **If user approves:** Append `## Classification Overrides` section to 01-domain-disruption.md with the confirmed classifications. Continue to Step 2 (Plan).
+
+5. **If user overrides:**
+   - Append `## User Overrides` section to 01-domain-disruption.md
+   - If override changes disruptor/incumbent definition → re-run cost-researcher and capability
+   - If override changes only flow type / cost metric / market type → continue without re-run
+
+---
+
 ## Step 2: Plan
 
 Use **EnterPlanMode**. Build the execution plan from the chosen preset:
@@ -166,6 +196,7 @@ Copy this checklist into your response and update it as tiers complete. Only inc
 
 ```
 - [ ] Tier 1: Foundation agents (domain-disruption, cost-researcher, capability)
+- [ ] Phase 1 Gate: Classification approved
 - [ ] Tier 2: Cost fitting (cost-fitter)
 - [ ] Tier 3: Condition checkers (cost-parity, capability-parity, adoption-readiness)
 - [ ] Tier 4: Tipping synthesis (tipping-synthesizer)

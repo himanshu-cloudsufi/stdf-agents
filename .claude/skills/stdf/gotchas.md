@@ -42,3 +42,15 @@ The Step 4 validation script is informational — it runs AFTER all agents have 
 ## Empty output files silently pass validation
 
 An agent may create a file but write nothing to it. The guardrail checker won't flag an empty file as a violation. After each tier, check file sizes — not just file existence.
+
+## Phase 1 hard gate is MANDATORY
+
+After Tier 1, pause for user classification approval. Never skip this step. If domain-disruption lacks flow classification, the /stdf skill provides it. The gate presents disruption scope, cost parity metric, and market type for user confirmation before Tier 2 proceeds.
+
+## User Overrides propagate downstream
+
+If 01-domain-disruption.md has a `## User Overrides` section, ALL downstream agents must check for it. The synthesizer MUST reference overrides in its narrative.
+
+## Re-run scope on override
+
+Only re-run cost-researcher and capability if the override changes the disruptor/incumbent definition. Flow type, cost metric, and market type changes do NOT require Phase 1 re-run.
