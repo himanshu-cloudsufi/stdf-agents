@@ -7,7 +7,7 @@ color: purple
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md` and `.claude/shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-capability/`
 

@@ -7,7 +7,7 @@ color: orange
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md`, `.claude/shared-glossary.md`, and `.claude/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-cost-researcher/`
 

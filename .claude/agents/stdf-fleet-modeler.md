@@ -7,7 +7,7 @@ color: cyan
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md`, `.claude/shared-glossary.md`, and `.claude/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-fleet-modeler/`
 
@@ -161,6 +161,11 @@ if not check['consistent']:
 
 ### BANNED / REQUIRED Vocabulary
 See `.claude/shared-rules.md` for the complete banned and required vocabulary lists.
+
+### Output Table Requirements
+**All values: [model-derived] from stock-flow model with upstream sales projections**
+
+Use header annotation for uniform model-derived tables. Add Data Type column only for mixed tables.
 
 ## Output Format
 

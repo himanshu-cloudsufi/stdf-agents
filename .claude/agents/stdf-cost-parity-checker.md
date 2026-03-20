@@ -7,7 +7,7 @@ color: red
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md`, `.claude/shared-glossary.md`, and `.claude/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-cost-parity-checker/`
 
@@ -57,6 +57,12 @@ trajectory = get_cost_trajectory(parsed)
 print(trajectory)
 "
 ```
+
+### Cost Metric Selection
+Read the `Cost Metric Recommendation` from 01-domain-disruption.md handoff context.
+- If specified: use that metric for parity determination
+- If not specified: default to PURCHASE PRICE crossover
+- Do NOT use aggregated TCO for parity determination
 
 ## Condition Evaluation Logic
 

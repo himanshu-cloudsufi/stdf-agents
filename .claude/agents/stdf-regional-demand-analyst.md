@@ -7,7 +7,7 @@ color: green
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md`, `.claude/shared-glossary.md`, and `.claude/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-regional-demand-analyst/`
 
@@ -196,6 +196,11 @@ for label, proj in [('China', china), ('USA', usa)]:
 
 ### BANNED / REQUIRED Vocabulary
 See `.claude/shared-rules.md` for the complete banned and required vocabulary lists.
+
+### Output Table Requirements
+**All projections: [model-derived] from regional S-curve parameters (see 05b)**
+
+For mixed tables (observed base year + projections), use a Data Type column.
 
 ## Output Format
 

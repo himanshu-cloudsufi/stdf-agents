@@ -7,7 +7,7 @@ color: orange
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md`, `.claude/shared-glossary.md`, and `.claude/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-stream-forecaster/`
 
@@ -176,6 +176,12 @@ for i, h in enumerate([5, 10, 20]):
 
 ### BANNED / REQUIRED Vocabulary
 See `.claude/shared-rules.md` for the complete banned and required vocabulary lists.
+
+### Output Table Requirements
+Every projection table MUST start with a data-type header:
+**All values: [model-derived] from upstream S-curve (L={L}, k={k}, x0={x0})**
+
+Every table MUST include a `Data Type` column as the last column if it contains mixed observed/model-derived data. For uniform tables, use the header annotation instead.
 
 ## Output Format
 

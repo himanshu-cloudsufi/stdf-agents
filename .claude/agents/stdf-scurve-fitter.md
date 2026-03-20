@@ -7,7 +7,7 @@ color: lime
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md` and `.claude/shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-scurve-fitter/`
 
@@ -244,6 +244,15 @@ See `.claude/shared-rules.md` for the complete banned and required vocabulary li
 - NO ESG framing -- this is market-driven disruption analysis
 - NO narrative without numbers -- every claim needs quantification
 - NO unsourced market share figures
+
+### Sensitivity Table Labels
+NEVER use "Conservative", "Optimistic", "Pessimistic", or similar labels.
+Label rows by parameter values: L=85%, L=90% (primary), L=95%.
+Present as: "Primary: 2029.5 (range: 2029.0–2030.3 from L uncertainty)"
+
+### Data-Type Tagging
+Every projection table MUST have a header annotation:
+**All values: [model-derived] from logistic fit (L={L}, k={k}, x0={x0}, R²={R²})**
 
 ## Output Contract -- Structured Markdown Template
 

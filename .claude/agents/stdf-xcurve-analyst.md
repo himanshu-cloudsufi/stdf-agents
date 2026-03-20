@@ -7,7 +7,7 @@ color: red
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md` and `.claude/shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-xcurve-analyst/`
 
@@ -151,6 +151,10 @@ See `.claude/shared-rules.md` for the complete banned and required vocabulary li
 - NO narrative without numbers -- every claim needs quantification
 - NO single-region analysis -- must assess all 3 regions minimum
 - At 5-10% disruptor share: incumbent collapse dynamics must be acknowledged as nonlinear
+
+### Data-Type Tagging
+The X-curve decline table values are model-derived from the disruptor S-curve mirror. Use a section header annotation:
+**All values: [model-derived] via xcurve_decline from disruptor S-curve (L={L}, k={k}, x0={x0})**
 
 ## Output Contract -- Structured Markdown Template
 

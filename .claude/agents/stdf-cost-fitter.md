@@ -7,7 +7,7 @@ color: yellow
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md`, `.claude/shared-glossary.md`, and `.claude/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-cost-fitter/`
 
@@ -40,6 +40,8 @@ Cost-curve dynamics are the gravitational force of disruption. Just as gravity d
 - NO re-researching cost data points
 - NO narrative hand-waving — every claim is backed by a computed number
 - NO assumed learning rates — derive from data only
+- NO TCO aggregation — present each cost component separately (see shared-cost-rules.md Rule 1)
+- NO scenario labels — use parameter values for sensitivity (see shared-cost-rules.md Rule 4)
 
 ## Reading Upstream Data
 
@@ -112,11 +114,27 @@ Your prompt will include an output file path (e.g., `output/<slug>/agents/02b-co
 - **Basis:** [per_year | per_doubling_deployment]
 - **Derived from:** [description of data and method used]
 
+### Plausibility Check
+- **Status:** [NORMAL | CAUTION | IMPLAUSIBLE]
+- **Learning rate:** [X]%
+- **Expected bounds:** [low]%–[high]% for [tech_class]
+- **Explanation:** [from plausibility_check result]
+
 ### Incumbent Trend
 - **Model:** [flat | linear_rising | linear_declining]
 - **Slope per year:** [value] [unit]/year
 - **R-squared:** [value]
 - **Structural drivers:** [comma-separated list explaining WHY the incumbent cost is flat/rising]
+
+### Disaggregated Cost Comparison (Service-Level)
+
+Present each cost component as a SEPARATE table or section:
+1. **Purchase Price Trajectory** (CNY or USD per vehicle/unit)
+2. **Energy Cost Trajectory** (CNY/km or $/kWh)
+3. **Maintenance Cost** — only if sourced; if unsourced, list in Data Gaps
+4. **Consumable Replacement** (battery mid-life, etc.) — only if sourced
+
+The primary cost parity metric is specified in the domain-disruption handoff context (`Cost Metric Recommendation`). Compute crossover for THAT metric.
 
 ### Competitive Threshold (Cost Parity)
 - **Year range:** [e.g., 2023-2024]
@@ -304,6 +322,28 @@ print(f\"Learning rate: {result['learning_rate_pct']}% per doubling of deploymen
 print(f\"R-squared: {result['r_squared']}\")
 "
 ```
+
+### Step 4b — Plausibility Check
+After deriving the learning rate, run the plausibility check:
+
+```bash
+python3 -c "
+from lib.cost_curve_math import plausibility_check
+
+lr_pct = 16.3  # from learning_rate_from_decay result
+tech = 'batteries'  # technology class
+
+result = plausibility_check(lr_pct, tech)
+print(f'Status: {result[\"status\"]}')
+print(f'Bounds: {result[\"bounds\"]}')
+print(f'Explanation: {result[\"explanation\"]}')
+"
+```
+
+**Action based on status:**
+- **NORMAL:** Continue — no documentation needed beyond the check result.
+- **CAUTION:** Document in Data Gaps section: "Learning rate {X}% is outside expected bounds for {tech_class} but within 20% margin. Review inputs."
+- **IMPLAUSIBLE:** Document in Data Gaps AND re-examine inputs: check data quality, unit consistency, and whether the exponential fit is appropriate. If the learning rate remains implausible after review, flag prominently in the output.
 
 ### Step 5 — Incumbent Trend Fitting
 Use `lib.cost_curve_math.incumbent_trend_fit`:

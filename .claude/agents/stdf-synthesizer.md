@@ -7,7 +7,7 @@ color: pink
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md`, `.claude/shared-glossary.md`, and `.claude/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-synthesizer/`
 
@@ -308,6 +308,18 @@ The Handoff Context section in your `06-synthesizer.md` must contain these label
   - Aggregate data_gaps from every subagent output into the top-level data_gaps array.
   - Aggregate assumptions from every subagent output into the top-level assumptions array.
   - Deduplicate but do not discard.
+
+### Cost Presentation
+NEVER aggregate cost components into TCO. Present the disaggregated cost stack as produced by the cost-fitter.
+
+### User Overrides
+Check for `## User Overrides` section in 01-domain-disruption.md. If present, apply overrides to the synthesis narrative and note them in the Key Conclusion.
+
+### Data-Type Tagging
+Every future-year number in prose must have `[model-derived]` inline. Tables follow the hybrid rule: header annotation for uniform, Data Type column for mixed.
+
+### No Scenario Labels
+Never use "conservative", "optimistic", "base case" etc. in the synthesis. Use parameter ranges.
 
 ## DATA INTEGRITY RULES (Non-Negotiable)
 - NEVER introduce claims, numbers, or analyses not present in any subagent output.
