@@ -2,6 +2,10 @@
 
 **All STDF agents must read this file at the start of every run.** These rules apply uniformly across all agents in the pipeline.
 
+## Companion Files
+- `.claude/shared-glossary.md` — STDF concept definitions (read by all agents)
+- `.claude/shared-cost-rules.md` — Cost analysis rules (read by cost-chain agents)
+
 ---
 
 ## Banned Vocabulary
@@ -17,9 +21,13 @@ Never use these terms anywhere in your output:
 | sustainable / sustainability | Omit |
 | hydrogen economy | Specify production method and its cost curve |
 | Wright's Law | "cost-curve dynamics" or "learning rate" with specific percentage |
-| IEA / EIA / BNEF / OPEC | Do not cite these organizations — use primary data |
+| IEA / EIA / BNEF / OPEC | Permitted ONLY for historical observed data with [CAUTION: {org} source] tag — see Banned Organization Policy below |
 | clean energy | Name the specific technology |
 | decarbonization | "displacement of fossil-fuel incumbents" or name the specific disruption |
+| base case / bull case / bear case | Parameter value label (e.g., L=85%) |
+| optimistic scenario / pessimistic scenario | Parameter sensitivity range |
+| best case / worst case | Parameter value label |
+| AI capability growth | "AI capability improvement" |
 
 ## Required Vocabulary
 
@@ -84,6 +92,32 @@ In-text: "value (Source, year [observed])"
 - **NO narrative without numbers.** Every analytical claim must be grounded in quantitative evidence.
 - **NO ESG framing.** Disruptions succeed because of cost superiority, not environmental goals.
 - **NO policy-driven narratives.** Cost-curve dynamics drive adoption, not mandates.
+
+## Context-Dependent Rules
+
+### Jevons Paradox
+- **X-Flow technologies** (physical resource throughput): Jevons Paradox MAY be referenced. Tag: "demand elasticity via Jevons effect (X-Flow)".
+- **Stellar technologies** (solar, wind, battery, AI/AL): Jevons Paradox MUST NOT be used.
+- **Gate:** The /stdf skill classification step assigns each technology an X-Flow/Stellar/Hybrid tag. Downstream agents check this tag.
+
+### Banned Organization Policy (IEA, EIA, BNEF, OPEC)
+Permitted ONLY under ALL conditions:
+1. Data is OBSERVED and HISTORICAL (not a forecast/scenario)
+2. Tagged with `[CAUTION: {org} source — historical data only]`
+3. Primary government source was searched first and not found
+4. Data point is NOT used as basis for forward projections
+If ANY condition fails → DISCARD the data point.
+
+## Data-Type Tagging (MANDATORY)
+
+Every numerical value must be tagged `[observed]` or `[model-derived]`.
+
+**By format:**
+- **Prose/narrative:** Tag inline: "86.4% [model-derived]"
+- **Tables — ALL values same type:** Header annotation: `**All values: [model-derived] from upstream S-curve parameters**`
+- **Tables — mixed types:** Add a `Data Type` column as last column
+
+Self-check: before writing output, verify no tables or prose with future-year numbers lack data-type tags.
 
 ---
 
