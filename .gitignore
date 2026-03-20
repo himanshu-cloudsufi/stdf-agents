@@ -14,7 +14,5 @@ Thumbs.db
 .idea/
 
 # Agent memory (project-scoped, not shared)
-.claude/agent-memory/
 
 # Output artifacts (regenerable)
-output/
