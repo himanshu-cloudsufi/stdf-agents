@@ -26,6 +26,14 @@ ANTI_PATTERNS = re.compile(
     re.IGNORECASE,
 )
 
+# Banned scenario-label language
+SCENARIO_TERMS = re.compile(
+    r"\b(base\s+case|bull\s+case|bear\s+case|optimistic\s+scenario|pessimistic\s+scenario|"
+    r"best\s+case|worst\s+case|base\s+scenario|conservative\s+scenario|aggressive\s+scenario|"
+    r"scenario\s+range)\b",
+    re.IGNORECASE,
+)
+
 # Year pattern (4-digit years 2000-2099)
 YEAR_PATTERN = re.compile(r"\b(20\d{2})\b")
 
@@ -86,6 +94,22 @@ def validate_anti_patterns(text: str) -> list[dict]:
             "phrase": phrase,
             "context_snippet": context,
             "issue": f"Anti-pattern phrase '{phrase}' detected",
+        })
+    return results
+
+
+def validate_scenario_labels(text: str) -> list[dict]:
+    """Scan for banned scenario-label language."""
+    results = []
+    for m in SCENARIO_TERMS.finditer(text):
+        phrase = m.group(0)
+        start = max(0, m.start() - 60)
+        end = min(len(text), m.end() + 60)
+        context = text[start:end].replace("\n", " ").strip()
+        results.append({
+            "phrase": phrase,
+            "context_snippet": context,
+            "issue": f"Banned scenario label '{phrase}' — use parameter values instead",
         })
     return results
 
@@ -170,6 +194,52 @@ def validate_citation_provenance(text: str) -> list[dict]:
     return results
 
 
+def validate_data_type_tags(text: str, analysis_date: str) -> list[dict]:
+    """Flag future-year numbers in prose/tables lacking data-type tags."""
+    if not analysis_date:
+        return []
+    try:
+        analysis_year = int(analysis_date[:4])
+    except (ValueError, IndexError):
+        return []
+
+    results = []
+    lines = text.splitlines()
+    section_tagged = False
+
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        # Track section-level tags
+        if "all values" in stripped.lower() and ("[model-derived]" in stripped.lower() or "[observed]" in stripped.lower()):
+            section_tagged = True
+            continue
+        # Reset section tag at new headers or blank lines between sections
+        if stripped.startswith("#") or (not stripped and i + 1 < len(lines) and lines[i + 1].strip().startswith("#")):
+            section_tagged = False
+            continue
+        if section_tagged:
+            continue
+        # Skip headers, separators, source lines
+        if stripped.startswith("#") or stripped.startswith("|--") or stripped.startswith("- ["):
+            continue
+        # Find future-year references
+        future_years = re.findall(r"\b(20[3-9]\d|202[7-9])\b", stripped)
+        if not future_years:
+            continue
+        has_tag = "[model-derived]" in stripped or "[observed]" in stripped
+        if has_tag:
+            continue
+        # Check for numerical values on the line
+        has_numbers = bool(re.search(r"\d+\.\d+%|\d+\.\d+ [A-Z]|[\$]\d|CNY [\d,]|\d+,\d{3}", stripped))
+        if has_numbers:
+            results.append({
+                "line": i + 1,
+                "context": stripped[:100],
+                "issue": f"Line {i+1}: future-year numbers without data-type tag",
+            })
+    return results
+
+
 def full_guardrail_check(text: str, analysis_date: str = None) -> dict:
     """Run all guardrail checks on the given text.
 
@@ -206,6 +276,13 @@ def full_guardrail_check(text: str, analysis_date: str = None) -> dict:
             "detail": v["issue"],
         })
 
+    scenarios = validate_scenario_labels(text)
+    for v in scenarios:
+        critical.append({
+            "type": "scenario_label",
+            "detail": v["issue"],
+        })
+
     # Warnings
     forecast = validate_no_forecast_language(text)
     for v in forecast:
@@ -228,6 +305,14 @@ def full_guardrail_check(text: str, analysis_date: str = None) -> dict:
             "type": "missing_provenance",
             "detail": v["issue"],
         })
+
+    if analysis_date:
+        tag_issues = validate_data_type_tags(text, analysis_date)
+        for v in tag_issues:
+            warnings.append({
+                "type": "untagged_projection",
+                "detail": v["issue"],
+            })
 
     # Build report
     lines = ["## Guardrail Validation Report", ""]

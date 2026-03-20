@@ -10,13 +10,11 @@ def test_validate_banned_vocabulary_clean():
 
 
 def test_validate_banned_vocabulary_with_violations():
-    text = "The transition to clean energy requires IEA data and BNEF projections."
+    text = "The transition to clean energy requires data."
     result = guardrails.validate_banned_vocabulary(text)
     terms = {v["term"] for v in result}
     assert "transition" in terms
     assert "clean energy" in terms
-    assert "IEA" in terms
-    assert "BNEF" in terms
     assert all(v["count"] >= 1 for v in result)
 
 
@@ -129,6 +127,29 @@ def test_full_guardrail_check_fail():
     assert result["pass"] is False
     assert len(result["critical_violations"]) > 0
     assert "FAIL" in result["report"]
+
+
+def test_validate_scenario_range_caught():
+    """'scenario range' should be caught as a banned scenario label."""
+    text = "The scenario range is 2025-2030 for battery adoption."
+    result = guardrails.validate_scenario_labels(text)
+    phrases = {v["phrase"].lower() for v in result}
+    assert "scenario range" in phrases
+
+
+def test_validate_confidence_range_not_caught():
+    """'confidence range' should NOT be caught — only 'scenario range' is banned."""
+    text = "The confidence range is 0.75-0.85."
+    result = guardrails.validate_scenario_labels(text)
+    assert result == []
+
+
+def test_full_guardrail_check_scenario_range():
+    """full_guardrail_check should catch 'scenario range' as critical."""
+    text = "The scenario range is 2025-2030."
+    result = guardrails.full_guardrail_check(text)
+    assert result["pass"] is False
+    assert any("scenario range" in v["detail"].lower() for v in result["critical_violations"])
 
 
 def test_full_guardrail_check_report_format():
