@@ -59,3 +59,27 @@ def test_scan_banned_sources_opec_url():
 def test_scan_banned_sources_clean():
     hits = vocab.scan_banned_sources("Government statistical agency published data.")
     assert hits == []
+
+
+def test_scan_banned_sources_iea_inline_without_caution():
+    """IEA mentioned inline without CAUTION tag should be a violation."""
+    hits = vocab.scan_banned_sources("According to IEA, costs fell 20%.")
+    assert len(hits) >= 1
+    assert any("IEA" in h.get("reason", "") or "IEA" in h.get("pattern", "") for h in hits)
+
+
+def test_scan_banned_sources_iea_inline_with_caution():
+    """IEA mentioned with [CAUTION: IEA ...] tag on same line should pass."""
+    hits = vocab.scan_banned_sources(
+        "IEA data [CAUTION: IEA source — historical data only] shows cost decline."
+    )
+    # Filter to org-name hits only (not URL hits)
+    org_hits = [h for h in hits if "mentioned without" in h.get("reason", "")]
+    assert org_hits == []
+
+
+def test_scan_banned_sources_bnef_inline_without_caution():
+    """BNEF mentioned inline without CAUTION tag should be a violation."""
+    hits = vocab.scan_banned_sources("BNEF reports battery cost at $92/kWh.")
+    assert len(hits) >= 1
+    assert any("BNEF" in h.get("reason", "") or "BNEF" in h.get("pattern", "") for h in hits)

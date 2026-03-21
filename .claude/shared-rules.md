@@ -100,6 +100,12 @@ In-text: "value (Source, year [observed])"
 - **Stellar technologies** (solar, wind, battery, AI/AL): Jevons Paradox MUST NOT be used.
 - **Gate:** The /stdf skill classification step assigns each technology an X-Flow/Stellar/Hybrid tag. Downstream agents check this tag.
 
+**Where to find the tag:** Read `01-domain-disruption.md` section `## Classification Overrides`. Each technology is tagged with `X-Flow`, `Stellar`, or `Hybrid`.
+
+**Fallback behavior:** If the `## Classification Overrides` section is missing (e.g., Phase 1 hard gate was skipped), the agent MUST self-classify based on the technology's characteristics — X-Flow if it has physical resource throughput, Stellar if it has zero marginal cost characteristics — and emit `[WARNING: Jevons classification not found in upstream — self-classified as {tag}]` in the output.
+
+**Propagation rule:** Every downstream agent that may reference Jevons (capability, xcurve-analyst, tipping-synthesizer, stream-forecaster, demand-decomposer) MUST read the classification tag before applying or excluding Jevons. Never assume the classification — always check.
+
 ### Banned Organization Policy (IEA, EIA, BNEF, OPEC)
 Permitted ONLY under ALL conditions:
 1. Data is OBSERVED and HISTORICAL (not a forecast/scenario)

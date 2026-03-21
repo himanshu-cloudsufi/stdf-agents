@@ -165,6 +165,11 @@ Volume gain -> cost decline via learning rate -> better economics attract new se
 
 Both cycles must name SPECIFIC mechanisms relevant to the domain, using data from the checker outputs.
 
+### Jevons Paradox in Post-Tipping Dynamics
+When describing post-tipping dynamics, check the X-Flow/Stellar classification from `01-domain-disruption.md` `## Classification Overrides`:
+- **X-Flow technologies:** Jevons Paradox may extend demand — mention that falling costs can increase total resource consumption via demand elasticity.
+- **Stellar technologies:** Do NOT apply Jevons Paradox — efficiency gains in Stellar technologies do not rebound into increased physical resource consumption.
+
 ## Completion Timeline
 
 If all conditions are met, compute the completion timeline (80%+ market share) using S-curve parameters if available from upstream. Use `lib.tipping_math.completion_timeline_from_scurve`:

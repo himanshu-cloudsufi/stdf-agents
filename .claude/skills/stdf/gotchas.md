@@ -54,3 +54,23 @@ If 01-domain-disruption.md has a `## User Overrides` section, ALL downstream age
 ## Re-run scope on override
 
 Only re-run cost-researcher and capability if the override changes the disruptor/incumbent definition. Flow type, cost metric, and market type changes do NOT require Phase 1 re-run.
+
+## Jevons Paradox: never apply to Stellar technologies
+
+Jevons Paradox (efficiency gains increasing total resource consumption) applies ONLY to X-Flow technologies (physical resource throughput like copper, lead, aluminium). For Stellar technologies (solar, wind, battery, AI/AL), efficiency gains do NOT rebound into increased resource consumption — the marginal cost of the resource approaches zero. If an agent references Jevons for a Stellar technology, the output is analytically incorrect. Check the `## Classification Overrides` section in `01-domain-disruption.md` for the tag.
+
+## Banned Org Policy: IEA/BNEF needs CAUTION tag or hook blocks write
+
+Inline mentions of IEA, BNEF, EIA, or OPEC in agent output are flagged as violations by `lib/vocabulary.py` UNLESS the same line contains a `[CAUTION: {org} ...]` tag. URLs (iea.org, bnef.com, etc.) are ALWAYS violations regardless of tagging. If you see a hook block on write due to "banned source," check whether the agent added the CAUTION tag.
+
+## Data-type tags: check future-year tables have annotations
+
+Every table containing future-year numbers (post-analysis-date) must have either:
+- A header annotation: `**All values: [model-derived] from ...**` (for uniform tables)
+- A `Data Type` column as the last column (for mixed observed/model-derived tables)
+
+The `validate_data_type_tags()` guardrail catches untagged future-year numbers. If the Step 4 validation flags "untagged_projection" warnings, the agent needs to add data-type annotations.
+
+## X-Flow/Stellar classification must propagate to downstream agents
+
+The X-Flow/Stellar/Hybrid classification is set in `01-domain-disruption.md` `## Classification Overrides` during the Phase 1 hard gate. Every downstream agent that references Jevons Paradox (capability, xcurve-analyst, tipping-synthesizer, stream-forecaster, demand-decomposer) MUST read this tag before applying or excluding Jevons. If the tag is missing, agents should self-classify and emit a `[WARNING]`. A missing tag is a pipeline smell — check whether the Phase 1 hard gate was skipped.

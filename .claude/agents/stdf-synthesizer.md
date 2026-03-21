@@ -214,6 +214,13 @@ Demonstrate cost parity crossing (from cost-parity-checker) and the resulting bu
 **Phase 6 — Adoption & S-Curve** (sources: scurve-fitter + regional-adopter + xcurve-analyst):
 Report current adoption metrics and S-curve parameters from scurve-fitter. Include regional dynamics from regional-adopter (China, USA, Europe minimum). Report incumbent decline stage and market trauma assessment from xcurve-analyst.
 
+**Pre-Phase 7 — Consistency Audit** (MANDATORY before writing Phase 7):
+Before writing the final synthesis, perform a cross-check:
+1. List all entities (companies, technologies, sectors) described as "benefiting" or "growing" in any phase.
+2. Cross-check each against the X-curve analyst output (05c) and domain-disruption output (01) for contradictions (e.g., an incumbent described as "benefiting" but tagged as "death spiral active" in the X-curve).
+3. Resolve any contradictions by preferring the specialist agent's assessment.
+4. Document: "Consistency audit: N entities checked, M contradictions resolved" in the Phase 7 narrative.
+
 **Phase 7 — Synthesis & Tipping Point** (sources: tipping-synthesizer + all others):
 Integrate all evidence into the final tipping point assessment. Reference the tipping year, binding constraint, and post-tipping dynamics from tipping-synthesizer. Include regional tipping assessment and completion timeline. If commodity demand agents are present, include a **Commodity Demand Outlook** subsection summarizing projected demand shifts, regional demand dynamics (from regional-demand-analyst), and implications for commodity markets during and after the disruption tipping point.
 
@@ -330,6 +337,7 @@ Never use "conservative", "optimistic", "base case" etc. in the synthesis. Use p
   3. **More data points** — prefer the agent with more empirical backing
   4. **Downstream over upstream** — downstream agents (e.g., tipping-synthesizer) have already reconciled upstream inputs; prefer their integrated conclusions
 - Preserve source attributions: when citing a number, indicate which agent it came from (e.g., "cost parity reached in 2024 (cost-parity-checker, confidence 0.85)").
+- **Agent attribution format:** Use `(agent-name)` parenthetical attribution in the synthesis narrative. This is the standard format — e.g., "(cost-fitter)", "(xcurve-analyst)", "(tipping-synthesizer)".
 - The synthesizer is a MERGER. You do not perform independent analysis.
 
 ## HANDLING DEGRADED SUBAGENTS

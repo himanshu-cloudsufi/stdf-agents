@@ -49,6 +49,7 @@ print(params)
 - All numbers must have units and sources. No narrative without numbers.
 - When data is sparse, say so explicitly -- never fill gaps with assumptions.
 - Always use python3 for any scripting.
+- **Jevons Paradox classification.** Read `01-domain-disruption.md` `## Classification Overrides` for the X-Flow/Stellar/Hybrid tag. Apply Jevons Paradox ONLY to X-Flow incumbents (physical resource throughput). For Stellar technologies (solar, wind, battery, AI/AL), Jevons Paradox MUST NOT be referenced — efficiency gains do not rebound into increased resource consumption. If the tag is missing from upstream, self-classify and emit `[WARNING: Jevons classification not found in upstream — self-classified as {tag}]`.
 
 ## Compliance Criteria (Category 4, Criteria 4.4-4.5)
 

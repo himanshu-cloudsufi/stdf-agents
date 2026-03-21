@@ -88,6 +88,8 @@ print('Intensity:', intensity[:3])
 
 5. **Per-driver disruption process:** For each market product, show the full disruption dynamics — not just a total. Each driver has its own incumbent/disruptor/chimera mix evolving over time.
 
+6. **Jevons Paradox classification.** Read the X-Flow/Stellar/Hybrid classification from `01-domain-disruption.md` `## Classification Overrides`. For X-Flow commodities (physical resource throughput), consider that Jevons Paradox may increase total demand as costs fall — factor this into demand projections as an upward demand elasticity term. For Stellar technologies, do NOT apply Jevons — efficiency gains do not rebound into increased resource consumption. If the tag is missing, self-classify and emit `[WARNING: Jevons classification not found in upstream — self-classified as {tag}]`.
+
 ## Quantitative Methods
 
 ### Incumbent Declining Stream

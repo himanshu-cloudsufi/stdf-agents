@@ -86,9 +86,13 @@ Parse the query to detect:
 - Preset signals (see Presets table above)
 - Commodity keywords + demand/supply signals
 
-**If the user explicitly stated the mode** (e.g., "quick STDF analysis", "full STDF with commodity"), skip AskUserQuestion and use the stated mode.
+**Auto-detect preset bypass:** If the query clearly maps to a single preset, skip AskUserQuestion and use the detected preset directly:
+- Query contains "quick" or "brief" or "overview" → **QUICK**
+- Query contains "tipping point" + "when" → **TIPPING_ONLY**
+- Query contains a commodity keyword (copper, lithium, etc.) + "demand" or "supply" → add **COMMODITY** to the detected base preset
+- User explicitly stated the mode (e.g., "quick STDF analysis", "full STDF with commodity") → use the stated mode
 
-**Otherwise**, use **AskUserQuestion** with two questions:
+**All other cases**, use **AskUserQuestion** with two questions:
 
 **Q1** (single select): "Pipeline mode" — show the auto-detected preset as "(Recommended)", plus 3 alternatives from the Presets table.
 

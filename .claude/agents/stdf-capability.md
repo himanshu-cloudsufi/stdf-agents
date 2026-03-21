@@ -117,6 +117,7 @@ If your prompt includes `UPSTREAM_FILES:` paths, use the `Read` tool to read eac
 3. **Historical trajectory data is required.** For each dimension, provide data points over time showing the rate of improvement. Distinguish exponential improvement curves from linear ones.
 4. **Threshold assessment per dimension.** For each dimension, define the competitive capability threshold — the MINIMUM performance level at which the disruptor becomes a viable substitute for mainstream (not early adopter) use.
 5. **Always use tools to gather real data** before producing your structured output. Do not fabricate numbers. If data is unavailable for a dimension, state that explicitly with reduced confidence.
+6. **Jevons Paradox classification.** Read `01-domain-disruption.md` `## Classification Overrides` for the X-Flow/Stellar/Hybrid tag. If the technology is classified as **Stellar**, you MUST NOT reference Jevons Paradox in the capability assessment — efficiency gains in Stellar technologies do not rebound into increased resource consumption. If the tag is missing from upstream, self-classify (X-Flow/Stellar/Hybrid) based on whether the technology has physical resource throughput (X-Flow) or zero marginal cost characteristics (Stellar), and emit `[WARNING: Jevons classification not found in upstream — self-classified as {tag}]` in your output.
 
 ## Tool Usage
 

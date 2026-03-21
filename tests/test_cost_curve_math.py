@@ -208,6 +208,34 @@ def test_convert_storage_cap_to_delivered_errors(kwargs):
         ccm.convert_storage_cap_to_delivered(**kwargs)
 
 
+def test_plausibility_check_normal():
+    result = ccm.plausibility_check(20.0, "batteries")
+    assert result["status"] == "NORMAL"
+    assert result["bounds"] == (12.0, 28.0)
+    assert result["tech_class"] == "batteries"
+
+
+def test_plausibility_check_caution():
+    # 11% is below 12% range but within 20% margin (floor = 12 * 0.8 = 9.6)
+    result = ccm.plausibility_check(11.0, "batteries")
+    assert result["status"] == "CAUTION"
+    assert "below" in result["explanation"].lower()
+
+
+def test_plausibility_check_implausible():
+    # 5% is far below 12% range and below 20% margin floor of 9.6
+    result = ccm.plausibility_check(5.0, "batteries")
+    assert result["status"] == "IMPLAUSIBLE"
+    assert "far below" in result["explanation"].lower()
+
+
+def test_plausibility_check_generic_fallback():
+    result = ccm.plausibility_check(15.0, "unknown_tech")
+    assert result["tech_class"] == "generic"
+    assert result["bounds"] == (5.0, 35.0)
+    assert result["status"] == "NORMAL"
+
+
 def test_full_cost_analysis_pipeline():
     result = ccm.full_cost_analysis(
         disruptor_years=[2020, 2021, 2022, 2023],
@@ -219,8 +247,10 @@ def test_full_cost_analysis_pipeline():
         "exponential_fit",
         "learning_rate_per_year",
         "learning_rate_per_doubling",
+        "plausibility_check",
         "incumbent_trend",
         "competitive_threshold",
         "inflection_threshold",
     }
     assert 0 < result["learning_rate_per_doubling"] < 100
+    assert result["plausibility_check"]["status"] in ("NORMAL", "CAUTION", "IMPLAUSIBLE")

@@ -122,6 +122,8 @@ If 6.1, 6.2, or 6.4 is violated, STOP and return a non-compliance notice.
 
 5. **Per-driver disruption tagging:** For each market product, tag its disruption status (incumbent / disruptor / chimera) using the domain-disruption agent's output. Tag its S-curve phase using the scurve-fitter agent's output.
 
+6. **Jevons applicability tagging:** For each market product, tag its Jevons applicability based on the upstream X-Flow/Stellar/Hybrid classification from `01-domain-disruption.md` `## Classification Overrides`. Add a `Jevons` column to the Demand Decomposition Tree table with values: `applicable` (X-Flow — demand may increase as costs fall), `not applicable` (Stellar — no demand rebound), or `partial` (Hybrid — component-dependent). This tag propagates to downstream stream-forecaster and fleet-modeler agents.
+
 ## Quantitative Methods
 
 ### Demand Decomposition Tree
