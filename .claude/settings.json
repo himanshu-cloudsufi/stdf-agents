@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 .claude/hooks/stdf_validate.py",
+            "command": "python3 /Users/himanshuchauhan/TONY/STDF/stdf-agents/.claude/hooks/stdf_validate.py",
             "timeout": 15
           }
         ]
