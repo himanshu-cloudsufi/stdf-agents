@@ -1,12 +1,18 @@
 ---
-name: Transportation Sector — BEV disruption of ICE vehicles (March 2026)
-description: Key data anchors and findings from the EV vs ICE disruption analysis for reuse in future analyses
+name: Transportation Sector — BEV disruption of ICE vehicles (March 2026, updated)
+description: Key data anchors and findings from the EV vs ICE disruption analysis for reuse in future analyses — updated with TIPPING_ONLY run data
 type: project
 ---
 
-Analysis completed: March 2026. Sector: Transportation. Sub-domains: mass-market BEV passenger cars, luxury/performance BEV, PHEV chimera, FCEV chimera, BEV commercial vehicles, two- and three-wheeler BEV, autonomous robotaxi / TaaS, BEV charging infrastructure, vehicle-to-grid (V2G) grid services.
+Analysis completed: March 2026 (updated March 2026 for TIPPING_ONLY preset). Sector: Transportation. Sub-domains: mass-market BEV passenger cars, luxury/performance BEV, PHEV chimera, FCEV chimera, BEV commercial vehicles, two- and three-wheeler BEV, autonomous robotaxi / TaaS, BEV charging infrastructure, vehicle-to-grid (V2G) grid services.
 
-Output written to: `output/electric-vehicles/agents/01-domain-disruption.md`
+Output written to:
+- `output/electric-vehicles/agents/01-domain-disruption.md` (original run)
+- `output/give-me-tipping-point-of-evs-20260321-083514/agents/01-domain-disruption.md` (TIPPING_ONLY run, March 2026)
+- `output/ev-tipping-point/agents/01-domain-disruption.md` (TIPPING_ONLY run #2, March 2026)
+- `output/give-me-tipping-point-of-evs-20260322-185253/agents/01-domain-disruption.md` (TIPPING_ONLY run #3, March 2026)
+- `output/give-me-tipping-point-of-ev-vehicles-20260323-200327/agents/01-domain-disruption.md` (TIPPING_ONLY run #4, 2026-03-24)
+
 
 **Key cost data anchors (from local catalog + web research, March 2026):**
 - Li-ion battery pack median global: $1,436/kWh (2010) → $115/kWh (2024); 92% decline (Rethinkx)

@@ -16,6 +16,17 @@ Pattern insight: Market-driven disruption S-curve adoption inflects BEFORE full 
 
 **How to apply:** When evaluating sectors with structural BEV physics advantages (efficiency, torque, noise), those dimensions will always be in Cluster 1 and should not be treated as indicators of capability trajectory progress — they are baseline from day 1. Range, infrastructure, and payload dimensions are the real trajectory metrics to watch.
 
+## BEV vs ICE Passenger Car (2026-03-24) — dedicated capability parity pass
+
+10-dimension evaluation: 9/10 MET → PARTIAL.
+- Cluster 1 (structural, pre-2015): energy efficiency (3.77x primary energy advantage), maintenance cost, cargo space — MET at first purpose-built BEV platform deployment
+- Cluster 2 (utility, 2017–2019): acceleration (2017), range (2018), charge time (2019) — threshold crossings aligned with Phase 1 S-curve inflection
+- Cluster 3 (market completeness, 2021–2023): model variety (2021), cold weather retention (mid-2022), TCO SUV segment (2023)
+- NOT_MET: tco_fleet_avg_usd_mile — 20.2% gap (exceeds 15% APPROACHING window), model-derived crossing 2028; economic, not performance
+- Parity year (partial): 2023 | Full parity (all 10 dims): 2028 [model-derived]
+
+Key insight: When the sole NOT_MET dimension is a fleet-average economic aggregate rather than a performance dimension, PARTIAL is the correct status even if the gap exceeds the 15% APPROACHING window. The physical capability disruption is complete; incumbent displacement is now gated by cost-curve dynamics on purchase price, not performance.
+
 ## Oil/Gas Multi-Vector Disruption — 3 Vector Pattern (2026-03-20)
 
 V1 BEV vs ICE (passenger cars): sequential, 3 clusters spanning 2013–2027.

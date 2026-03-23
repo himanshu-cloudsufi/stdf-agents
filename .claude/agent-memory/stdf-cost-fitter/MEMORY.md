@@ -5,3 +5,4 @@
 - [feedback_vocabulary.md](./feedback_vocabulary.md) — Hook blocks "projected/projection" and "outlook" as forecast language — use "model output", "forward curve", "analysis" instead
 - [reference_oil_gas_disruption.md](./reference_oil_gas_disruption.md) — Validated fits, learning rates, TCO methodology, and threshold years for three-vector oil/gas disruption: BEV/ICE ($/mile), Solar+BESS/NGCC ($/MWh), HP/Gas ($/kWh_th) (2026-03-20)
 - [reference_liion_leadacid_batteries.md](./reference_liion_leadacid_batteries.md) — Validated exponential fit (r=0.1841, R²=0.954), service-level conversion params, and threshold years for Li-ion vs. lead-acid (lead demand decline pipeline, 2026-03-20)
+- [reference_ev_ice_passenger_usa.md](./reference_ev_ice_passenger_usa.md) — Validated fits, learning rates, and threshold years for BEV vs. ICE passenger car US consumer market: parity 2025–2026, inflection 2031–2032 (2026-03-24)
