@@ -412,12 +412,27 @@ async def stream_to_ws(
                     if slug in session_meta:
                         session_meta[slug]["session_id"] = event.session_id
                         session_meta[slug]["cost"] = event.total_cost_usd
+
+                    # Extract token usage from ResultMessage if available
+                    usage = getattr(event, "usage", None)
+                    input_tokens = None
+                    output_tokens = None
+                    if isinstance(usage, dict):
+                        input_tokens = usage.get("input_tokens")
+                        output_tokens = usage.get("output_tokens")
+                    elif usage is not None:
+                        input_tokens = getattr(usage, "input_tokens", None)
+                        output_tokens = getattr(usage, "output_tokens", None)
+
                     await ws_holder.safe_send(
                         {
                             "type": "done",
                             "slug": slug,
                             "cost": event.total_cost_usd,
                             "session_id": event.session_id,
+                            "duration_ms": getattr(event, "duration_ms", None),
+                            "input_tokens": input_tokens,
+                            "output_tokens": output_tokens,
                         }
                     )
             logger.info("Stream complete for slug=%s", slug)
@@ -568,6 +583,20 @@ async def chat(websocket: WebSocket, user_id: str):
                 if prompt_info and not prompt_info["future"].done():
                     prompt_info["future"].set_result(answers)
                     logger.info("Answer received for slug=%s", slug)
+                continue
+
+            if msg.get("type") == "set_thinking":
+                mode = msg.get("mode", "off")
+                logger.info(
+                    "Thinking mode set to %s for user=%s", mode, user_id
+                )
+                continue
+
+            if msg.get("type") == "set_permission_mode":
+                mode = msg.get("mode", "bypassPermissions")
+                logger.info(
+                    "Permission mode set to %s for user=%s", mode, user_id
+                )
                 continue
 
             query = msg.get("query")

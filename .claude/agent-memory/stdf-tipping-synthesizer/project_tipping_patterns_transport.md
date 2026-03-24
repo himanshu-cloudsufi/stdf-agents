@@ -15,7 +15,8 @@ type: project
 
 - **China transport disruptions**: Eastern (YRD/PRD) → Northern (BTH) → Central → Western, typically 1–2 year intervals between regions. Eastern corridors have the densest freight and infrastructure; western corridors are last (2–4 year lag behind eastern).
 - Infrastructure readiness is the binding regional variable in China transport; cost parity and regulatory readiness are effectively uniform across regions.
-- **China leads globally in V1 and V2**: China tips 2–3 years before USA and Europe in both BEV transport and solar+BESS power generation. In V1: China 2025, USA/Europe 2027. In V2: China 2025, Europe 2026, USA 2027–2028.
+- **China leads globally in V1 and V2**: China tips 2–3 years before USA and Europe in both BEV transport and solar+BESS power generation. In V1 (BEV passenger, 2026-03-24 run): China 2024 (all 3 conditions simultaneously MET), Europe 2027, USA 2028. Updated from prior estimate of "V1: China 2025, USA/Europe 2027".
+- **USA DCFC tariff friction adds ~1–2 years**: In the passenger BEV disruption, the 100% Section 301 tariff on Chinese BEV imports eliminates the lowest-cost global BEV supply ($7,800–$16,000 LFP BEVs), sustaining a price floor above the natural cost-curve level. The USA tips 1 year after Europe specifically because of this friction; in the absence of the tariff, USA and Europe would likely co-tip at 2027.
 - **V2 regional differentiation**: Grid interconnection queue (US-specific, 5-yr avg wait) is a binding regional variable with no European equivalent. Europe has shorter interconnection timelines (1–3 yr) — a structural advantage that accelerates V2 tipping in Europe relative to the US by 1–2 years.
 - **V3 uniform NOT_MET**: All three regions (China, USA, Europe) are NOT_MET on V3 gross-ducted pathway. European mini-split/subsidy pathway has a partial exception (2026–2028 in high-gas-price EU markets), but this represents less than 15% of total gas heating addressable market.
 
@@ -29,8 +30,9 @@ type: project
 ## Post-Tipping Dynamics (Transport)
 
 - **Incumbent stranded-asset mechanism** is domain-specific in transport: fuel infrastructure (LNG stations, diesel pumps) becomes uneconomic before the vehicle fleet is fully displaced, creating a service-quality degradation loop that accelerates incumbent displacement.
-- **Platform standardization lock-in** is a high-impact accelerator in transport: CATL 75# swap block achieving 95%+ compatibility before GB formalization created a de-facto standard that locks in the disruptor ecosystem.
-- **ICE manufacturer utilization cliff**: ICE engine assembly lines at ~85–90% utilization; 20% volume decline drops to 65–70%, raising per-unit cost $400–800. This cost increase narrows the residual ICE price advantage and accelerates the vicious cycle.
+- **Platform standardization lock-in** is a high-impact accelerator in transport: CATL 75# swap block achieving 95%+ compatibility before GB formalization created a de-facto standard that locks in the disruptor ecosystem. NACS connector standardization (all US OEMs adopted) performs the same role for the US passenger BEV market.
+- **ICE manufacturer utilization cliff (passenger BEV, quantified 2026-03-24)**: At 30% BEV global share by 2028, ICE plant utilization falls from ~87.5% to ~74%; fixed cost per unit rises from ~$500 to ~$593/unit (+$93). At 40–50% BEV share (post-tipping 2028–2032), utilization falls to 55–65%, pushing fixed costs to ~$675–$795/unit. These are the calibrated numbers for passenger ICE vicious cycle modeling.
+- **ICE platform investment freeze**: ICE engine R&D and new platform tooling has an 8–12 year payback cycle. Once BEV parity is dominant (2028+), new ICE programs cannot recoup tooling costs. OEMs announced ICE platform freezes around 2025–2026 — this creates a product quality stagnation loop.
 - **Gas generation utilization cliff**: NGCC breakeven at ~80% capacity factor; solar+BESS displacing high-value hours drops NGCC to ~50% CF, raising effective $/MWh by $8–12, directly widening the cost gap against solar+BESS.
 
 ## Composite Multi-Vector Tipping Patterns

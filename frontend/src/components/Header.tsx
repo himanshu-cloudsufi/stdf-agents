@@ -10,11 +10,18 @@ export function Header() {
         STDF Analysis Platform
       </h1>
       <div className="flex items-center gap-3">
-        {!isConnected && (
-          <span className="text-xs text-amber-600 bg-amber-50 px-2 py-1 rounded">
-            Reconnecting...
+        <div className="flex items-center gap-1.5">
+          <span
+            className={`inline-block h-2 w-2 rounded-full ${
+              isConnected ? "bg-green-500" : "bg-red-500"
+            }`}
+          />
+          <span
+            className={`text-xs ${isConnected ? "text-green-700" : "text-red-600"}`}
+          >
+            {isConnected ? "Connected" : "Disconnected"}
           </span>
-        )}
+        </div>
         <span className="text-sm text-gray-500">{userId}</span>
       </div>
     </header>
