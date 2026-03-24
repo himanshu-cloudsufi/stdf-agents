@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Streamdown } from "streamdown";
 import { code } from "@streamdown/code";
+import { toolIcons } from "../utils/toolMetadata";
 
 interface AllowedPrompt {
   tool: string;
@@ -50,18 +51,21 @@ export function PlanApprovalCard({
       )}
 
       {expanded && allowedPrompts.length > 0 && (
-        <div className="space-y-1">
+        <div className="space-y-2">
           <p className="text-xs font-medium text-gray-600 uppercase tracking-wider">
-            Permissions requested:
+            Permissions requested
           </p>
-          <div className="space-y-1">
+          <div className="flex flex-wrap gap-1.5">
             {allowedPrompts.map((p, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 px-3 py-1.5 bg-white rounded border border-gray-200 text-xs"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white rounded-full border border-gray-200 text-xs"
               >
-                <span className="text-gray-400 font-mono">{p.tool}</span>
-                <span className="text-gray-700">{p.prompt}</span>
+                <span className="text-sm leading-none">
+                  {toolIcons[p.tool] || "\u2699\uFE0F"}
+                </span>
+                <span className="font-medium text-gray-700">{p.tool}</span>
+                <span className="text-gray-400">{p.prompt}</span>
               </div>
             ))}
           </div>
@@ -90,8 +94,8 @@ export function PlanApprovalCard({
           <textarea
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}
-            placeholder="What should be changed?"
-            className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg resize-none"
+            placeholder="Explain what should change..."
+            className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:border-emerald-400"
             rows={2}
           />
           <div className="flex gap-2">

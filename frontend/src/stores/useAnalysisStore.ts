@@ -41,7 +41,12 @@ interface AnalysisStore {
     allowedPrompts: AllowedPrompt[],
   ) => void;
   markAnswered: (slug: string) => void;
-  markComplete: (slug: string, cost: number, sessionId: string) => void;
+  markComplete: (
+    slug: string,
+    cost: number,
+    sessionId: string,
+    extra?: { duration?: number; inputTokens?: number; outputTokens?: number },
+  ) => void;
   addUserMessage: (slug: string, content: string) => void;
   setError: (slug: string, error: string) => void;
   setTodos: (slug: string, todos: TodoItem[]) => void;
@@ -62,6 +67,8 @@ interface AnalysisStore {
     parentToolId: string,
     toolId: string,
   ) => void;
+  appendSubText: (slug: string, parentToolId: string, chunk: string) => void;
+  appendSubThinking: (slug: string, parentToolId: string, chunk: string) => void;
 }
 
 function getOrCreateAssistantMsg(messages: ChatMessage[]): {
@@ -414,7 +421,7 @@ export const useAnalysisStore = create<AnalysisStore>()(
           }),
         ),
 
-      markComplete: (slug, cost, sessionId) =>
+      markComplete: (slug, cost, sessionId, extra) =>
         set((state) =>
           updateAnalysis(state, slug, (analysis) => {
             const messages = updateLastAssistant(analysis.messages, (msg) => ({
@@ -425,7 +432,15 @@ export const useAnalysisStore = create<AnalysisStore>()(
                   : b,
               ),
             }));
-            return { messages, status: "complete", cost, sessionId };
+            return {
+              messages,
+              status: "complete",
+              cost,
+              sessionId,
+              duration: extra?.duration,
+              inputTokens: extra?.inputTokens,
+              outputTokens: extra?.outputTokens,
+            };
           }),
         ),
 
@@ -524,6 +539,36 @@ export const useAnalysisStore = create<AnalysisStore>()(
                           : se,
                       ),
                     }
+                  : b,
+              ),
+            }));
+            return { messages };
+          }),
+        ),
+
+      appendSubText: (slug, parentToolId, chunk) =>
+        set((state) =>
+          updateAnalysis(state, slug, (analysis) => {
+            const messages = updateLastAssistant(analysis.messages, (msg) => ({
+              ...msg,
+              blocks: msg.blocks.map((b) =>
+                b.type === "tool_call" && b.toolId === parentToolId
+                  ? { ...b, subText: (b.subText ?? "") + chunk }
+                  : b,
+              ),
+            }));
+            return { messages };
+          }),
+        ),
+
+      appendSubThinking: (slug, parentToolId, chunk) =>
+        set((state) =>
+          updateAnalysis(state, slug, (analysis) => {
+            const messages = updateLastAssistant(analysis.messages, (msg) => ({
+              ...msg,
+              blocks: msg.blocks.map((b) =>
+                b.type === "tool_call" && b.toolId === parentToolId
+                  ? { ...b, subThinking: (b.subThinking ?? "") + chunk }
                   : b,
               ),
             }));

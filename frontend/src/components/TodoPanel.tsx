@@ -1,24 +1,34 @@
 import { useAnalysisStore } from "../stores/useAnalysisStore";
+import { CheckCircle2, Loader2, Circle } from "lucide-react";
 import type { TodoItem } from "../types";
 
 const statusConfig: Record<
   TodoItem["status"],
-  { icon: string; bg: string; text: string; border: string }
+  { bg: string; text: string; border: string }
 > = {
-  pending: { icon: "○", bg: "bg-gray-50", text: "text-gray-500", border: "border-gray-200" },
+  pending: { bg: "bg-gray-50", text: "text-gray-500", border: "border-gray-200" },
   in_progress: {
-    icon: "◉",
     bg: "bg-blue-50",
     text: "text-blue-700",
     border: "border-blue-300",
   },
   completed: {
-    icon: "✓",
     bg: "bg-emerald-50",
     text: "text-emerald-700",
     border: "border-emerald-300",
   },
 };
+
+function StatusIcon({ status }: { status: TodoItem["status"] }) {
+  switch (status) {
+    case "completed":
+      return <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />;
+    case "in_progress":
+      return <Loader2 className="h-4 w-4 text-blue-500 shrink-0 mt-0.5 animate-spin" />;
+    case "pending":
+      return <Circle className="h-4 w-4 text-gray-400 shrink-0 mt-0.5" />;
+  }
+}
 
 export function TodoPanel() {
   const analyses = useAnalysisStore((s) => s.analyses);
@@ -45,25 +55,25 @@ export function TodoPanel() {
           <span className="text-xs text-gray-500 tabular-nums">
             {done}/{todos.length}
           </span>
+          <span className="text-xs text-gray-400 tabular-nums">
+            {pct}%
+          </span>
         </div>
       </div>
       <div className="flex-1 overflow-y-auto px-3 py-2 space-y-1.5">
         {todos.map((todo, i) => {
           const cfg = statusConfig[todo.status];
+          const isCompleted = todo.status === "completed";
           return (
             <div
               key={i}
-              className={`flex items-start gap-2 px-3 py-2 rounded-lg border ${cfg.bg} ${cfg.border}`}
+              className={`flex items-start gap-2 px-3 py-2 rounded-lg border ${cfg.bg} ${cfg.border} ${isCompleted ? "opacity-60" : ""}`}
             >
-              <span
-                className={`text-sm shrink-0 mt-0.5 ${cfg.text} ${
-                  todo.status === "in_progress" ? "animate-pulse" : ""
-                }`}
-              >
-                {cfg.icon}
-              </span>
+              <StatusIcon status={todo.status} />
               <div className="min-w-0">
-                <p className={`text-xs font-medium ${cfg.text} leading-snug`}>
+                <p
+                  className={`text-xs font-medium ${cfg.text} leading-snug ${isCompleted ? "line-through" : ""}`}
+                >
                   {todo.content}
                 </p>
                 {todo.status === "in_progress" && todo.activeForm && (

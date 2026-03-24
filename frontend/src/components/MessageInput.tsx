@@ -1,12 +1,18 @@
 import { useState, type KeyboardEvent } from "react";
+import { ThinkingModeSelector } from "./ThinkingModeSelector.tsx";
+import { PermissionModeSelector } from "./PermissionModeSelector.tsx";
+import { ContextUsageIndicator } from "./ContextUsageIndicator.tsx";
+import type { ContextUsage } from "../hooks/useWebSocket.ts";
 
 interface Props {
   onSend: (text: string) => void;
   disabled: boolean;
   placeholder?: string;
+  sendControl: (msg: Record<string, unknown>) => void;
+  contextUsage: ContextUsage | null;
 }
 
-export function MessageInput({ onSend, disabled, placeholder }: Props) {
+export function MessageInput({ onSend, disabled, placeholder, sendControl, contextUsage }: Props) {
   const [text, setText] = useState("");
 
   function handleSubmit() {
@@ -42,6 +48,18 @@ export function MessageInput({ onSend, disabled, placeholder }: Props) {
         >
           Send
         </button>
+      </div>
+      {/* Controls row */}
+      <div className="flex items-center justify-between mt-2">
+        <div className="flex items-center gap-1">
+          <ThinkingModeSelector sendControl={sendControl} />
+          <PermissionModeSelector sendControl={sendControl} />
+        </div>
+        <div className="flex items-center">
+          {contextUsage && contextUsage.total > 0 && (
+            <ContextUsageIndicator used={contextUsage.used} total={contextUsage.total} />
+          )}
+        </div>
       </div>
     </div>
   );

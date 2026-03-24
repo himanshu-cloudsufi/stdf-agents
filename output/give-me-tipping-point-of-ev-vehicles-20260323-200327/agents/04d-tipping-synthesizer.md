@@ -87,7 +87,7 @@ The BEV virtuous cycle operates on two reinforcing loops: the cost-curve learnin
 
 ### Convergence Effects
 
-The BEV disruption exhibits multi-vector convergence from the SWB-EV (Solar + Wind + Battery + BEV) convergence identified in the domain-disruption agent. Two convergence effects are material to the tipping timeline:
+The BEV disruption exhibits multi-vector convergence from the SWB-EV (Solar + Wind + Battery + BEV) convergence identified in the domain-disruption agent. This is a market-driven disruption: S-curve adoption is driven by cost-curve economics, not policy mandates. Two convergence effects are material to the tipping timeline:
 
 **SWB-EV convergence (confirmed active):** As stellar energy generation displaces fossil-fuel power generation, BEV electricity costs per mile fall independently of oil prices. This permanently decouples BEV operating costs from the X-Flow fossil fuel cost system that governs ICE economics. The energy cost per mile advantage ($0.046 BEV vs. $0.135 ICE by 2028 [model-derived]) compounds with each year of stellar energy grid penetration — a mechanism that ICE cannot replicate through efficiency improvements. Per agent memory, this convergence accelerated BEV tipping by an estimated 1–2 years vs. an independent-vector scenario.
 

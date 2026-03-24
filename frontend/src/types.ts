@@ -25,6 +25,8 @@ export interface ToolCallBlock {
   input: string;
   status: "running" | "done";
   subEvents: SubEvent[];
+  subText?: string;
+  subThinking?: string;
 }
 
 export interface TodoItem {
@@ -94,4 +96,7 @@ export interface Analysis {
   error: string | null;
   todos: TodoItem[];
   createdAt: number;
+  duration?: number;
+  inputTokens?: number;
+  outputTokens?: number;
 }
