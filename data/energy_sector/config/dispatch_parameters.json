@@ -1,0 +1,137 @@
+{
+  "regional_marginal_costs": {
+    "China": {"coal": 35, "gas": 70, "unit": "$/MWh", "note": "Gas 2x coal — gas displaced first in China"},
+    "USA": {"coal": 40, "gas": 35, "unit": "$/MWh", "note": "Gas cheaper than coal — gas runs as baseload in USA"},
+    "Europe": {"coal": 50, "gas": 60, "unit": "$/MWh", "note": "Gas displaced first in Europe"},
+    "India": {"coal": 30, "gas": 80, "unit": "$/MWh", "note": "Very expensive gas — displaced immediately"},
+    "Rest_of_World": {"coal": 45, "gas": 55, "unit": "$/MWh", "note": "Gas displaced first (default)"}
+  },
+  "capacity_factors": {
+    "solar_pv": {
+      "China": 0.11, "USA": 0.22, "Europe": 0.13, "India": 0.19,
+      "Rest_of_World": 0.15, "Global": 0.17,
+      "note": "China CF=0.11 per BNEF — using 0.17 causes 55% generation overstatement"
+    },
+    "wind_onshore": {
+      "China": 0.23, "USA": 0.34, "Europe": 0.27,
+      "Rest_of_World": 0.25, "Global": 0.28
+    },
+    "wind_offshore": {
+      "China": 0.35, "USA": 0.42, "Europe": 0.45,
+      "Rest_of_World": 0.38, "Global": 0.40
+    },
+    "coal": {
+      "China": 0.52, "USA": 0.40, "Europe": 0.35,
+      "Rest_of_World": 0.50, "Global": 0.55
+    },
+    "gas_ccgt": {
+      "China": 0.30, "USA": 0.42, "Europe": 0.38,
+      "Rest_of_World": 0.40, "Global": 0.45
+    }
+  },
+  "reserve_floors": {
+    "coal": 0.10,
+    "gas": 0.15,
+    "note": "Minimum fraction of peak historical capacity maintained for grid stability"
+  },
+  "battery_defaults": {
+    "duration_hours": {"China": 2, "USA": 4, "Europe": 4, "Rest_of_World": 4},
+    "cycle_life": 5000,
+    "round_trip_efficiency": 0.90,
+    "depth_of_discharge": 0.90,
+    "sizing_method": "solar_capacity",
+    "note": "Battery_Energy_GWh = Solar_Capacity_GW × Duration_hours"
+  },
+  "gas_conversion": {
+    "heat_rate_mj_per_m3": 35.3,
+    "ccgt_efficiency": 0.45,
+    "ocgt_efficiency": 0.35,
+    "formula": "BCM = Gas_Gen_GWh × 3.6 / (heat_rate × efficiency)",
+    "note": "3.6 converts GWh to TJ; heat_rate is LHV of natural gas"
+  },
+  "gas_supply_source_ordering": {
+    "China": {
+      "sources": [
+        {"name": "Domestic_conventional", "priority": 5, "note": "Cheapest, displaced last"},
+        {"name": "Domestic_coal_to_gas", "priority": 4, "note": "Domestic syngas production"},
+        {"name": "Pipeline_Central_Asia", "priority": 3, "note": "Turkmenistan, Kazakhstan"},
+        {"name": "Pipeline_Russia", "priority": 2, "note": "Power of Siberia"},
+        {"name": "LNG_imports", "priority": 1, "note": "Most expensive, displaced first"}
+      ],
+      "note": "Coal always dispatches before gas. Even if gas needed, domestic + pipeline cheaper than LNG"
+    },
+    "Europe": {
+      "sources": [
+        {"name": "Domestic_North_Sea", "priority": 4, "note": "Declining but cheapest"},
+        {"name": "Pipeline_Norway", "priority": 3, "note": "No liquefaction cost, short distance"},
+        {"name": "LNG_Qatar", "priority": 2, "note": "Lower extraction cost but long shipping"},
+        {"name": "LNG_US", "priority": 1, "note": "Highest cost: liquefaction + shipping + regas — displaced first"}
+      ]
+    },
+    "USA": {
+      "sources": [
+        {"name": "Domestic_shale", "priority": 3, "note": "Abundant domestic production"},
+        {"name": "Pipeline_Canada", "priority": 2, "note": "Cross-border pipeline"},
+        {"name": "LNG_imports", "priority": 1, "note": "Minimal — USA is net exporter"}
+      ],
+      "note": "USA is a net LNG exporter; domestic supply stack is not LNG-dependent"
+    }
+  },
+  "lng_displacement_priority": {
+    "Europe": [
+      {"origin": "US_LNG", "priority": 3, "note": "Highest cost: liquefaction + Atlantic shipping + regas"},
+      {"origin": "Qatar_LNG", "priority": 2, "note": "Lower extraction but long shipping distance"},
+      {"origin": "Norwegian_pipeline", "priority": 1, "note": "Cheapest: no liquefaction, short distance — displaced last"}
+    ],
+    "China": [
+      {"origin": "Spot_LNG", "priority": 4, "note": "Highest cost, most volatile"},
+      {"origin": "Australian_LNG", "priority": 3, "note": "Long-term contracts but high delivered cost"},
+      {"origin": "Qatar_LNG", "priority": 2, "note": "Moderate cost"},
+      {"origin": "Pipeline_gas", "priority": 1, "note": "Central Asia + Russia — cheapest, displaced last"}
+    ]
+  },
+  "emission_factors_kg_co2_per_mwh": {
+    "coal": 900,
+    "gas_ccgt": 400,
+    "gas_ocgt": 550,
+    "solar": 45,
+    "wind": 12,
+    "nuclear": 12,
+    "hydro": 24,
+    "note": "Lifecycle emissions including upstream/manufacturing"
+  },
+  "demand_growth_vectors": {
+    "datacenter": {
+      "base_twh": 415,
+      "base_year": 2024,
+      "cagr": 0.12,
+      "regional_shares": {"USA": 0.44, "China": 0.25, "Europe": 0.10, "Rest_of_World": 0.21},
+      "source": "IEA — grown at 12% per year over 2019-2024"
+    },
+    "ev_kwh_per_vehicle_per_year": {
+      "BEV_passenger": {"China": 3300, "USA": 4500, "Europe": 3000, "Rest_of_World": 2500},
+      "PHEV": {"China": 1500, "USA": 2000, "Europe": 1400, "Rest_of_World": 1200},
+      "E2W": {"China": 400, "USA": 500, "Europe": 450, "Rest_of_World": 350},
+      "Commercial_EV": {"China": 10000, "USA": 12000, "Europe": 9000, "Rest_of_World": 8000},
+      "note": "Includes 10-15% charging losses"
+    },
+    "heat_pump": {
+      "avg_cop": {"China": 3.5, "USA": 3.2, "Europe": 3.5, "Rest_of_World": 3.0},
+      "regional_heat_demand_twh_thermal": {"China": 6900, "USA": 2800, "Europe": 3300, "Rest_of_World": 13700},
+      "breakeven_elec_gas_ratio": 3.9,
+      "note": "HP wins on operating cost when Elec/Gas price ratio < COP / Boiler_Efficiency (3.5/0.90 = 3.9)"
+    }
+  },
+  "forecasting": {
+    "start_year": 2025,
+    "end_year": 2040,
+    "last_actual_year": 2024,
+    "blended_cagr_weights": {"long_10yr": 0.333, "medium_5yr": 0.333, "short_3yr": 0.333}
+  },
+  "metadata": {
+    "version": "1.0",
+    "description": "Energy sector dispatch parameters for STDF v2 energy agents",
+    "source": "Compiled from Seba framework empirical observations and energy-sector skill v2",
+    "last_updated": "2026-03-24"
+  }
+}
