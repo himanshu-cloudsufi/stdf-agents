@@ -21,7 +21,12 @@ export function ChatPanel({ onAnswer, onPlanApproval, onPromptSelect }: Props) {
     ? lastMsg.role === "assistant"
       ? lastMsg.blocks.reduce(
           (acc, b) =>
-            acc + (b.type === "text" ? b.content.length : b.type === "tool_call" ? 1 : 0),
+            acc +
+            (b.type === "text"
+              ? b.content.length
+              : b.type === "tool_call"
+                ? b.input.length + (b.result?.length ?? 0) + b.subEvents.length
+                : 0),
           0,
         )
       : lastMsg.content.length

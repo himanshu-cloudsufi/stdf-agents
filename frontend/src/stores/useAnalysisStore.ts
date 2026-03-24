@@ -33,6 +33,13 @@ interface AnalysisStore {
   appendThinking: (slug: string, chunk: string) => void;
   startToolCall: (slug: string, toolId: string, name: string) => void;
   appendToolInput: (slug: string, toolId: string, json: string) => void;
+  setToolResult: (
+    slug: string,
+    toolId: string,
+    result: string,
+    truncated?: boolean,
+    isError?: boolean,
+  ) => void;
   endToolCall: (slug: string, toolId: string) => void;
   addAskUser: (slug: string, questions: Question[]) => void;
   addPlanApproval: (
@@ -61,6 +68,14 @@ interface AnalysisStore {
     parentToolId: string,
     toolId: string,
     json: string,
+  ) => void;
+  setSubToolResult: (
+    slug: string,
+    parentToolId: string,
+    toolId: string,
+    result: string,
+    truncated?: boolean,
+    isError?: boolean,
   ) => void;
   endSubToolCall: (
     slug: string,
@@ -353,6 +368,26 @@ export const useAnalysisStore = create<AnalysisStore>()(
           }),
         ),
 
+      setToolResult: (slug, toolId, result, truncated, isError) =>
+        set((state) =>
+          updateAnalysis(state, slug, (analysis) => {
+            const messages = updateLastAssistant(analysis.messages, (msg) => ({
+              ...msg,
+              blocks: msg.blocks.map((b) =>
+                b.type === "tool_call" && b.toolId === toolId
+                  ? {
+                      ...b,
+                      result,
+                      resultTruncated: Boolean(truncated),
+                      isError: Boolean(isError),
+                    }
+                  : b,
+              ),
+            }));
+            return { messages };
+          }),
+        ),
+
       endToolCall: (slug, toolId) =>
         set((state) =>
           updateAnalysis(state, slug, (analysis) => {
@@ -514,6 +549,40 @@ export const useAnalysisStore = create<AnalysisStore>()(
                       subEvents: b.subEvents.map((se) =>
                         se.toolId === toolId
                           ? { ...se, input: se.input + json }
+                          : se,
+                      ),
+                    }
+                  : b,
+              ),
+            }));
+            return { messages };
+          }),
+        ),
+
+      setSubToolResult: (
+        slug,
+        parentToolId,
+        toolId,
+        result,
+        truncated,
+        isError,
+      ) =>
+        set((state) =>
+          updateAnalysis(state, slug, (analysis) => {
+            const messages = updateLastAssistant(analysis.messages, (msg) => ({
+              ...msg,
+              blocks: msg.blocks.map((b) =>
+                b.type === "tool_call" && b.toolId === parentToolId
+                  ? {
+                      ...b,
+                      subEvents: b.subEvents.map((se) =>
+                        se.toolId === toolId
+                          ? {
+                              ...se,
+                              result,
+                              resultTruncated: Boolean(truncated),
+                              isError: Boolean(isError),
+                            }
                           : se,
                       ),
                     }

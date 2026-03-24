@@ -108,33 +108,53 @@ function formatFallback(raw: string): string {
   return "...";
 }
 
+function summarizeResult(raw: string, maxChars = 140): string {
+  const oneLine = raw.replace(/\s+/g, " ").trim();
+  if (!oneLine) return "";
+  if (oneLine.length <= maxChars) return oneLine;
+  return `${oneLine.slice(0, maxChars)}...`;
+}
+
 function subEventDescription(se: SubEvent): string {
+  const withResult = (base: string): string => {
+    const result = se.result?.trim();
+    if (!result) return base;
+    const prefix = se.isError ? "error" : "result";
+    return `${base} -> ${prefix}: ${summarizeResult(result, 72)}`;
+  };
+
   try {
     const parsed = JSON.parse(se.input);
     switch (se.name) {
       case "Read":
-        return parsed.file_path?.split("/").slice(-2).join("/") || "Reading...";
+        return withResult(
+          parsed.file_path?.split("/").slice(-2).join("/") || "Reading...",
+        );
       case "Write":
-        return `Writing ${parsed.file_path?.split("/").slice(-2).join("/") || "file"}`;
+        return withResult(
+          `Writing ${parsed.file_path?.split("/").slice(-2).join("/") || "file"}`,
+        );
       case "Edit":
-        return `Editing ${parsed.file_path?.split("/").slice(-2).join("/") || "file"}`;
+        return withResult(
+          `Editing ${parsed.file_path?.split("/").slice(-2).join("/") || "file"}`,
+        );
       case "Bash":
-        return parsed.command?.slice(0, 80) || "Running command...";
+        return withResult(parsed.command?.slice(0, 80) || "Running command...");
       case "Glob":
-        return `Pattern: ${parsed.pattern || ""}`;
+        return withResult(`Pattern: ${parsed.pattern || ""}`);
       case "Grep":
-        return `Searching: ${parsed.pattern || ""}`;
+        return withResult(`Searching: ${parsed.pattern || ""}`);
       case "WebSearch":
-        return `"${parsed.query || ""}"`;
+        return withResult(`"${parsed.query || ""}"`);
       case "WebFetch":
-        return parsed.url?.slice(0, 60) || "Fetching...";
+        return withResult(parsed.url?.slice(0, 60) || "Fetching...");
       case "Agent":
-        return parsed.description || "Launching agent...";
+        return withResult(parsed.description || "Launching agent...");
       default:
-        return se.name;
+        return withResult(se.name);
     }
   } catch {
-    return se.name;
+    return withResult(se.name);
   }
 }
 
@@ -161,14 +181,31 @@ function ToolCallCardWrapper({ block }: { block: ToolCallBlockType }) {
   const isAgent = block.name === "Agent";
   const subEvents = block.subEvents || [];
   const subDone = subEvents.filter((s) => s.status === "done").length;
+  const hasResult = Boolean(block.result?.trim());
+  const hasInput = block.input.trim().length > 0;
+  const hasDetails = hasInput || hasResult || (isAgent && subEvents.length > 0);
+
+  const statusParts: string[] = [];
+  if (isAgent && subEvents.length > 0) {
+    statusParts.push(`${subDone}/${subEvents.length} sub-tasks`);
+  }
+  if (block.status === "done" && hasResult) {
+    const label = block.isError ? "error" : "result";
+    const suffix = block.resultTruncated ? " (truncated)" : "";
+    statusParts.push(`${label}: ${summarizeResult(block.result || "", 88)}${suffix}`);
+  }
+  const statusDetail = statusParts.length > 0 ? (
+    <span className="text-[10px] text-gray-400">{statusParts.join(" | ")}</span>
+  ) : undefined;
 
   return (
     <ToolCard
       icon={<span className="text-sm">{meta.icon}</span>}
       status={status}
       title={`${block.name} \u2014 ${description}`}
-      expandable
+      expandable={hasDetails}
       defaultExpanded={false}
+      statusDetail={statusDetail}
       loadingContent={
         isAgent && subEvents.length > 0
           ? `${subDone}/${subEvents.length} sub-tasks done`
@@ -200,6 +237,18 @@ function ToolCallCardWrapper({ block }: { block: ToolCallBlockType }) {
       {block.input && (
         <div className="text-xs text-gray-500 font-mono whitespace-pre-wrap max-h-48 overflow-y-auto mt-1">
           {tryPrettyPrint(block.input)}
+        </div>
+      )}
+
+      {hasResult && (
+        <div className="border-t border-gray-100 pt-2 mt-2">
+          <div className="text-[11px] text-gray-400 mb-1">
+            {block.isError ? "Tool error" : "Tool result"}
+            {block.resultTruncated ? " (truncated)" : ""}
+          </div>
+          <pre className="whitespace-pre-wrap break-words text-[11px] leading-relaxed text-gray-600 max-h-56 overflow-y-auto">
+            {block.result}
+          </pre>
         </div>
       )}
     </ToolCard>

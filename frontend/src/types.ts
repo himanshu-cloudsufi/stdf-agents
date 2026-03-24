@@ -16,6 +16,9 @@ export interface SubEvent {
   name: string;
   input: string;
   status: "running" | "done";
+  result?: string;
+  resultTruncated?: boolean;
+  isError?: boolean;
 }
 
 export interface ToolCallBlock {
@@ -25,6 +28,9 @@ export interface ToolCallBlock {
   input: string;
   status: "running" | "done";
   subEvents: SubEvent[];
+  result?: string;
+  resultTruncated?: boolean;
+  isError?: boolean;
   subText?: string;
   subThinking?: string;
 }

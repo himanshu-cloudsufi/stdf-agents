@@ -149,6 +149,27 @@ export function useWebSocket() {
               store.appendToolInput(msg.slug, msg.toolId, msg.json);
             }
             break;
+          case "tool_result":
+            flushBuffer();
+            if (parentId) {
+              store.setSubToolResult(
+                msg.slug,
+                parentId,
+                msg.toolId,
+                msg.result ?? "",
+                Boolean(msg.truncated),
+                Boolean(msg.isError),
+              );
+            } else {
+              store.setToolResult(
+                msg.slug,
+                msg.toolId,
+                msg.result ?? "",
+                Boolean(msg.truncated),
+                Boolean(msg.isError),
+              );
+            }
+            break;
           case "tool_end":
             flushBuffer();
             if (parentId) {
