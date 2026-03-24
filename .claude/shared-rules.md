@@ -2,6 +2,10 @@
 
 **All STDF agents must read this file at the start of every run.** These rules apply uniformly across all agents in the pipeline.
 
+## Companion Files
+- `.claude/shared-glossary.md` — STDF concept definitions (read by all agents)
+- `.claude/shared-cost-rules.md` — Cost analysis rules (read by cost-chain agents)
+
 ---
 
 ## Banned Vocabulary
@@ -17,9 +21,13 @@ Never use these terms anywhere in your output:
 | sustainable / sustainability | Omit |
 | hydrogen economy | Specify production method and its cost curve |
 | Wright's Law | "cost-curve dynamics" or "learning rate" with specific percentage |
-| IEA / EIA / BNEF / OPEC | Do not cite these organizations — use primary data |
+| IEA / EIA / BNEF / OPEC | Permitted ONLY for historical observed data with [CAUTION: {org} source] tag — see Banned Organization Policy below |
 | clean energy | Name the specific technology |
 | decarbonization | "displacement of fossil-fuel incumbents" or name the specific disruption |
+| base case / bull case / bear case | Parameter value label (e.g., L=85%) |
+| optimistic scenario / pessimistic scenario | Parameter sensitivity range |
+| best case / worst case | Parameter value label |
+| AI capability growth | "AI capability improvement" |
 
 ## Required Vocabulary
 
@@ -31,12 +39,166 @@ Use these terms consistently:
 - **incumbent displacement** (not "phase-out" or "retirement")
 - **S-curve adoption** (not "linear growth" or "gradual adoption")
 
+## Date Awareness
+
+Your prompt includes an **Analysis date: YYYY-MM-DD**. This is your temporal anchor:
+- Data BEFORE this date = historical (observed, citable)
+- Data AFTER this date = projected/forecast (NOT citable from web sources)
+- When citing data, tag as [observed] or [model-derived]
+- NEVER present projected web data as observed fact
+
+## Web Search Guardrails
+
+### Historical-Only Rule (STRICT)
+Web search gathers ONLY observed, historical data from primary sources.
+After EVERY WebSearch/WebFetch, evaluate BEFORE using any data:
+1. Is the data point OBSERVED or FORECASTED?
+2. Is the timestamp BEFORE the analysis date?
+3. Is the source a primary data publisher (government, peer-reviewed, official registry)?
+If ANY check fails → DISCARD the data point and note it in Data Gaps.
+
+### Forecast Ban (CRITICAL GUARDRAIL)
+REJECT web results containing: "forecast", "projected", "outlook", "expected to
+reach", "will reach", "estimated to reach" when paired with future-dated claims.
+Your OWN model-derived projections (exponential decay, S-curve fits) from
+historical data are permitted — third-party forecasts are NOT.
+
+## Data Source Hierarchy (STRICT)
+
+For cost, adoption, and capability data:
+
+**Tier 1 (HIGHEST): Published Reports** — government statistical agencies,
+peer-reviewed publications, official industry body reports with named methodology.
+**Tier 2: Local Data Catalog** (data/ directory) — curated, validated, with provenance.
+**Tier 3 (LOWEST): Web Search** — historical only, gap-filling, NO forecasts.
+
+Tag every data point: [T1: source], [T2: catalog-file.json], [T3: url, retrieved YYYY-MM-DD]
+If tiers conflict: higher tier wins; note discrepancy in Data Gaps.
+
+## Citation Standards
+
+Every numerical data point MUST include:
+- **Source name** (organization or publication)
+- **Year of data** (year described, not publication year)
+- **Data type tag:** [observed] or [model-derived]
+- **URL** + retrieval date (for web sources)
+
+In-table: `Source Name (year) [observed] | url`
+In-text: "value (Source, year [observed])"
+
 ## Core Analytical Guardrails
 
 - **NO linear extrapolation.** Disruption follows S-curves, not straight lines.
 - **NO narrative without numbers.** Every analytical claim must be grounded in quantitative evidence.
 - **NO ESG framing.** Disruptions succeed because of cost superiority, not environmental goals.
 - **NO policy-driven narratives.** Cost-curve dynamics drive adoption, not mandates.
+
+## Context-Dependent Rules
+
+### Jevons Paradox
+- **X-Flow technologies** (physical resource throughput): Jevons Paradox MAY be referenced. Tag: "demand elasticity via Jevons effect (X-Flow)".
+- **Stellar technologies** (solar, wind, battery, AI/AL): Jevons Paradox MUST NOT be used.
+- **Gate:** The /stdf skill classification step assigns each technology an X-Flow/Stellar/Hybrid tag. Downstream agents check this tag.
+
+**Where to find the tag:** Read `01-domain-disruption.md` section `## Classification Overrides`. Each technology is tagged with `X-Flow`, `Stellar`, or `Hybrid`.
+
+**Fallback behavior:** If the `## Classification Overrides` section is missing (e.g., Phase 1 hard gate was skipped), the agent MUST self-classify based on the technology's characteristics — X-Flow if it has physical resource throughput, Stellar if it has zero marginal cost characteristics — and emit `[WARNING: Jevons classification not found in upstream — self-classified as {tag}]` in the output.
+
+**Propagation rule:** Every downstream agent that may reference Jevons (capability, xcurve-analyst, tipping-synthesizer, stream-forecaster, demand-decomposer) MUST read the classification tag before applying or excluding Jevons. Never assume the classification — always check.
+
+### Banned Organization Policy (IEA, EIA, BNEF, OPEC)
+Permitted ONLY under ALL conditions:
+1. Data is OBSERVED and HISTORICAL (not a forecast/scenario)
+2. Tagged with `[CAUTION: {org} source — historical data only]`
+3. Primary government source was searched first and not found
+4. Data point is NOT used as basis for forward projections
+If ANY condition fails → DISCARD the data point.
+
+## Data-Type Tagging (MANDATORY)
+
+Every numerical value must be tagged `[observed]` or `[model-derived]`.
+
+**By format:**
+- **Prose/narrative:** Tag inline: "86.4% [model-derived]"
+- **Tables — ALL values same type:** Header annotation: `**All values: [model-derived] from upstream S-curve parameters**`
+- **Tables — mixed types:** Add a `Data Type` column as last column
+
+Self-check: before writing output, verify no tables or prose with future-year numbers lack data-type tags.
+
+---
+
+## Computation Rules (MANDATORY)
+
+### Rule 1: Never Estimate by Hand
+**ALL numerical computation MUST use `Bash` with `python3`.** Never estimate, approximate, or "eyeball" a number. If you need a number, compute it. If you catch yourself writing "approximately" or "roughly" for a derived value, stop and write python3 code instead.
+
+### Rule 2: Use `lib/` Functions First
+Before writing inline python3, check if a pre-built function exists in `lib/`. These are tested, validated, and produce consistent outputs across agents.
+
+**Discovery**: Run this to see available functions for your task:
+```bash
+python3 -c "import lib.<module>; help(lib.<module>)"
+```
+
+**Library map — which agent uses which lib:**
+
+| Agent | Primary Library | Key Functions |
+|-------|----------------|---------------|
+| cost-researcher | `lib.data_catalog` | `search_curves`, `find_cost_curves`, `get_xy_data` |
+| cost-fitter | `lib.cost_curve_math` | `exponential_fit`, `learning_rate_from_decay`, `competitive_threshold`, `inflection_threshold`, `convert_*` |
+| capability | `lib.capability_math` | `fit_trajectory`, `threshold_check`, `parity_year_estimate`, `convergence_pattern` |
+| capability-parity-checker | `lib.capability_math` | `threshold_check`, `parity_year_estimate` |
+| cost-parity-checker | `lib.tipping_math` | `check_tipping_conditions` |
+| tipping-synthesizer | `lib.tipping_math` | `check_tipping_conditions`, `completion_timeline_from_scurve`, `confidence_aggregate`, `regional_tipping_assessment` |
+| scurve-fitter | `lib.scurve_math` | `fit_scurve`, `project_scurve`, `classify_phase`, `completion_year` |
+| regional-adopter | `lib.scurve_math` | `fit_scurve`, `classify_phase` |
+| xcurve-analyst | `lib.scurve_math` | `xcurve_decline` |
+| demand-decomposer | `lib.demand_math` | `decompose_demand`, `material_intensity_demand` |
+| stream-forecaster | `lib.demand_math` | `project_demand_from_scurve`, `aggregate_demand_by_technology` |
+| fleet-modeler | `lib.demand_math` | `stock_flow_fleet`, `oem_replacement_split`, `validate_stock_flow_consistency` |
+| regional-demand-analyst | `lib.demand_math` | `regional_demand_split` |
+| ALL downstream agents | `lib.upstream_reader` | `read_upstream`, `get_cost_trajectory`, `get_scurve_parameters`, `get_capability_dimensions` |
+| ALL agents | `lib.compliance` | `create_checklist`, `checklist_to_markdown`, `has_critical_failure` |
+| ALL agents | `lib.output_writer` | `build_agent_output`, `table_to_markdown` |
+
+### Rule 3: When to Write Inline python3
+
+Write inline `python3 -c "..."` via Bash ONLY when:
+- No `lib/` function covers your specific calculation
+- You need a one-off computation (e.g., unit conversion not in `lib.cost_curve_math`)
+- You're combining outputs from multiple lib functions in a custom way
+
+Always import from `lib/` first, then add custom logic on top:
+```bash
+python3 -c "
+from lib.cost_curve_math import exponential_fit, competitive_threshold
+from lib.scurve_math import fit_scurve
+# ... your custom computation using lib functions
+"
+```
+
+### Rule 4: Always Report Fit Quality
+Any curve fitting (exponential, logistic, linear) MUST report:
+- **R-squared** (or equivalent goodness-of-fit metric)
+- **Number of data points** used
+- **Year span** of the data
+- If R² < 0.8, flag in Data Gaps as low-confidence fit
+
+---
+
+## Pre-Output Self-Check (MANDATORY)
+
+Before writing your output file, run this validation:
+```bash
+python3 -c "
+from lib.vocabulary import scan_banned, vocabulary_report
+text = open('<your-output-file>').read()
+report = vocabulary_report(text)
+print(report)
+"
+```
+Fix ALL violations before writing. A Claude Code hook will BLOCK your write
+if banned terms, banned source URLs, or forecast language are detected.
 
 ---
 

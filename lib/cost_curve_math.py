@@ -103,8 +103,11 @@ def learning_rate_from_decay(r: float, basis: str = "per_year") -> float:
     elif basis == "per_doubling":
         if r <= 0:
             raise ValueError("Decay rate must be positive for per_doubling basis")
-        doubling_time = math.log(2) / r
-        return round((1 - math.exp(-r * doubling_time)) * 100, 2)
+        # Learning rate per doubling of cumulative production:
+        # LR = (1 - 2^(-r_log2)) * 100 where r_log2 = r * ln(2) / ln(e)
+        # Simplified: LR = (1 - 2^(-b)) * 100 with b = r * ln(2)
+        b = r * math.log(2)
+        return round((1 - 2 ** (-b)) * 100, 2)
     else:
         raise ValueError(f"Unknown basis '{basis}'; use 'per_year' or 'per_doubling'")
 
@@ -319,6 +322,10 @@ def convert_solar_wp_to_kwh(
         raise ValueError("cost_per_wp must be non-negative")
     if not (0 < capacity_factor < 1):
         raise ValueError("capacity_factor must be between 0 and 1")
+    if lifetime_years <= 0:
+        raise ValueError("lifetime_years must be positive")
+    if degradation_adj >= 1:
+        raise ValueError("degradation_adj must be less than 1")
 
     total_kwh = capacity_factor * 8760 * lifetime_years * (1 - degradation_adj)
     cost_per_kwh = (cost_per_wp * 1000) / total_kwh
@@ -363,7 +370,101 @@ def convert_storage_cap_to_delivered(
 
 
 # ---------------------------------------------------------------------------
-# 8. Full cost analysis pipeline
+# 8. Plausibility check for learning rates
+# ---------------------------------------------------------------------------
+
+# Empirically observed learning rate bounds by technology class (percent).
+TECH_LR_BOUNDS: dict[str, tuple[float, float]] = {
+    "batteries": (12.0, 28.0),
+    "solar_pv": (18.0, 32.0),
+    "wind": (8.0, 18.0),
+    "compute": (25.0, 50.0),
+    "generic": (5.0, 35.0),
+}
+
+
+def plausibility_check(learning_rate_pct: float, tech_class: str = "generic") -> dict:
+    """Check whether a derived learning rate is plausible for the technology class.
+
+    Parameters
+    ----------
+    learning_rate_pct : float
+        Learning rate as a percentage (e.g. 16.81 means 16.81%).
+    tech_class : str
+        Technology class key from TECH_LR_BOUNDS. Falls back to "generic"
+        if the key is not recognized.
+
+    Returns
+    -------
+    dict with keys: status, bounds, learning_rate_pct, tech_class, explanation
+        status is one of: NORMAL, CAUTION, IMPLAUSIBLE
+        - NORMAL: within bounds
+        - CAUTION: outside bounds but within 20% margin
+        - IMPLAUSIBLE: beyond 20% margin of bounds
+    """
+    bounds = TECH_LR_BOUNDS.get(tech_class, TECH_LR_BOUNDS["generic"])
+    low, high = bounds
+    margin = 0.20  # 20% margin for CAUTION zone
+
+    if low <= learning_rate_pct <= high:
+        return {
+            "status": "NORMAL",
+            "bounds": bounds,
+            "learning_rate_pct": learning_rate_pct,
+            "tech_class": tech_class if tech_class in TECH_LR_BOUNDS else "generic",
+            "explanation": f"Learning rate {learning_rate_pct}% is within expected bounds "
+                           f"[{low}%, {high}%] for {tech_class}.",
+        }
+
+    # Check if within 20% margin of bounds
+    margin_low = low * (1 - margin)
+    margin_high = high * (1 + margin)
+
+    if margin_low <= learning_rate_pct <= margin_high:
+        if learning_rate_pct < low:
+            explanation = (
+                f"Learning rate {learning_rate_pct}% is below expected range "
+                f"[{low}%, {high}%] for {tech_class} but within 20% margin "
+                f"(floor: {margin_low:.1f}%). Review inputs."
+            )
+        else:
+            explanation = (
+                f"Learning rate {learning_rate_pct}% is above expected range "
+                f"[{low}%, {high}%] for {tech_class} but within 20% margin "
+                f"(ceiling: {margin_high:.1f}%). Review inputs."
+            )
+        return {
+            "status": "CAUTION",
+            "bounds": bounds,
+            "learning_rate_pct": learning_rate_pct,
+            "tech_class": tech_class if tech_class in TECH_LR_BOUNDS else "generic",
+            "explanation": explanation,
+        }
+
+    # Beyond 20% margin
+    if learning_rate_pct < margin_low:
+        explanation = (
+            f"Learning rate {learning_rate_pct}% is far below expected range "
+            f"[{low}%, {high}%] for {tech_class} (20% margin floor: {margin_low:.1f}%). "
+            f"Re-examine inputs and data quality."
+        )
+    else:
+        explanation = (
+            f"Learning rate {learning_rate_pct}% is far above expected range "
+            f"[{low}%, {high}%] for {tech_class} (20% margin ceiling: {margin_high:.1f}%). "
+            f"Re-examine inputs and data quality."
+        )
+    return {
+        "status": "IMPLAUSIBLE",
+        "bounds": bounds,
+        "learning_rate_pct": learning_rate_pct,
+        "tech_class": tech_class if tech_class in TECH_LR_BOUNDS else "generic",
+        "explanation": explanation,
+    }
+
+
+# ---------------------------------------------------------------------------
+# 9. Full cost analysis pipeline
 # ---------------------------------------------------------------------------
 
 def full_cost_analysis(
@@ -401,6 +502,9 @@ def full_cost_analysis(
     lr_year = learning_rate_from_decay(exp_fit["r"], basis="per_year")
     lr_doubling = learning_rate_from_decay(exp_fit["r"], basis="per_doubling")
 
+    # Step 2b: Plausibility check on derived learning rate
+    plaus = plausibility_check(lr_year)
+
     # Step 3: Incumbent trend
     inc_trend = incumbent_trend_fit(incumbent_years, incumbent_costs)
 
@@ -421,6 +525,7 @@ def full_cost_analysis(
         "exponential_fit": exp_fit,
         "learning_rate_per_year": lr_year,
         "learning_rate_per_doubling": lr_doubling,
+        "plausibility_check": plaus,
         "incumbent_trend": inc_trend,
         "competitive_threshold": comp_thresh,
         "inflection_threshold": infl_thresh,

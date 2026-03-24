@@ -117,6 +117,44 @@ def get_regional_breakdown(upstream: dict) -> list[dict]:
     return []
 
 
+def get_demand_decomposition(upstream: dict) -> list[dict]:
+    """Extract the demand decomposition tree table from a parsed commodity-demand output.
+
+    Searches for sections whose heading contains 'Demand' and 'Decomposition'.
+    """
+    sections = upstream.get("sections", {})
+    for heading, content in sections.items():
+        if "demand" in heading.lower() and "decomposition" in heading.lower():
+            table = extract_table(content)
+            if table:
+                return table
+    # Fallback
+    for candidate in ("Demand Decomposition Tree", "Demand Decomposition"):
+        table = extract_table(_sections_text(sections), heading=candidate)
+        if table:
+            return table
+    return []
+
+
+def get_material_intensity(upstream: dict) -> list[dict]:
+    """Extract the material intensity by technology table from a parsed commodity-demand output.
+
+    Searches for sections whose heading contains 'Material' and 'Intensity'.
+    """
+    sections = upstream.get("sections", {})
+    for heading, content in sections.items():
+        if "material" in heading.lower() and "intensity" in heading.lower():
+            table = extract_table(content)
+            if table:
+                return table
+    # Fallback
+    for candidate in ("Material Intensity by Technology", "Material Intensity"):
+        table = extract_table(_sections_text(sections), heading=candidate)
+        if table:
+            return table
+    return []
+
+
 def _sections_text(sections: dict[str, str]) -> str:
     """Reassemble all sections into a single text block for fallback searching."""
     parts = []
