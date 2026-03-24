@@ -234,6 +234,21 @@ When upstream_context is provided from tipping-synthesizer and cost-fitter agent
 - **Tipping Point (from tipping-synthesizer)**: Cross-reference your adoption phase classification with tipping point analysis -- they should be consistent. The tipping year should align with the S-curve entering rapid growth.
 If upstream data conflicts with your findings, flag the discrepancy explicitly and explain the likely reason.
 
+## Energy Sector Adoption Data & L-Ceiling Guidance
+
+**Energy Adoption Data in Catalog:**
+- `Glob data/energy_generation/adoption/*.json` — solar, wind, coal, gas generation by region (60+ files)
+- `Glob data/energy_storage/adoption/*.json` — battery storage capacity (5 files)
+- `Glob data/electricity/adoption/*.json` — consumption and production (10 files)
+
+**L-Ceiling Guidance for Energy Disruptions:**
+- Solar + wind combined (of generation): L = 90-95% (hydro/nuclear persist as niche baseload)
+- SWB for peak/gas replacement: L = 95%+ (gas peakers completely displaced by batteries)
+- BEV for passenger vehicles: L = 85-90% (niche ICE/PHEV persist)
+- Heat pumps vs gas boilers: L = 80-90% (old housing stock, regional cold-climate variance)
+
+**Fleet vs Consumer Market Note:** Energy generation S-curves often show faster k than consumer markets because the decision maker is a utility/investor (fleet market). Capital expenditure cycles are 2-3 years, vs 10-15 years for vehicles.
+
 ## Anti-Pattern Guardrails
 
 ### BANNED / REQUIRED Vocabulary

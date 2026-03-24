@@ -41,6 +41,13 @@ This file provides detailed dependency resolution information for the STDF pipel
         fleet-modeler   regional-demand-analyst ←── regional-adopter
                 ╲         ╱
    ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+
+   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  (Tier 7 — conditional energy)
+              energy-dispatch ←── cost-fitter + scurve-fitter + domain-disruption
+                    │
+                    ▼
+        gas-supply-decomposer ←── domain-disruption
+   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
                     │
                     ▼
               synthesizer (always last)
@@ -61,6 +68,8 @@ When building the execution plan, use this template. Delete tiers not needed by 
 | 6a | demand-decomposer | No | scurve-fitter + domain-disruption |
 | 6b | stream-forecaster | No | demand-decomposer |
 | 6c | fleet-modeler, regional-demand-analyst | Yes | stream-forecaster (+ regional-adopter for regional-demand) |
+| 7a | energy-dispatch | No | cost-fitter + scurve-fitter + domain-disruption |
+| 7b | gas-supply-decomposer | No | energy-dispatch + domain-disruption |
 | Final | synthesizer | No | all selected outputs |
 
 ## Preset → Agent Resolution
@@ -82,3 +91,11 @@ domain-disruption, cost-researcher, capability, cost-fitter, cost-parity-checker
 
 **FULL+COMMODITY** adds 4 agents to FULL (16 total):
 FULL agents + demand-decomposer, stream-forecaster, fleet-modeler, regional-demand-analyst
+
+**ENERGY_FULL** adds 2 agents to FULL (14 total):
+FULL agents + energy-dispatch, gas-supply-decomposer
+
+**ENERGY_GAS** adds 2 agents to FULL (14 total):
+FULL agents + energy-dispatch, gas-supply-decomposer
+
+**Note:** Tier 6 (commodity) and Tier 7 (energy) can run in parallel when both triggered — no cross-dependencies.

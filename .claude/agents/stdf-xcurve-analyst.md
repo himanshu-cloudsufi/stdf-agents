@@ -141,6 +141,17 @@ Use `WebSearch` to find concrete evidence for each mechanism:
 - **Global S-Curve (from scurve-fitter)**: Use the disruptor market share trajectory as the basis for computing the incumbent decline curve. The current market share determines which decline stage the incumbent occupies.
 If upstream data conflicts with your findings, flag the discrepancy explicitly and explain the likely reason.
 
+## Energy Sector Evidence Sources
+
+When analyzing incumbent decline for energy-sector disruptions, useful WebSearch evidence sources:
+- **Coal plant closures:** EIA Form 860 (USA), Ember Global Coal Tracker, national grid operator databases
+- **Gas plant utilization:** Capacity factor trends — declining CF is the leading indicator of the gas death spiral
+- **Investment drought:** New-build permits for coal/gas plants, FID deferrals for LNG export terminals
+- **Stranded assets:** Utility earnings write-downs (Vattenfall, RWE, Duke Energy coal impairments)
+- **Panic pricing:** Wholesale electricity negative pricing hours in high-SWB markets
+
+**Coal X-curve leads gas by 5-10 years** in most regions. Map BOTH decline curves separately.
+
 ## Anti-Pattern Guardrails
 
 ### BANNED / REQUIRED Vocabulary

@@ -343,6 +343,19 @@ Before producing any final output, verify:
 If a CRITICAL violation is detected, output the following header before any other content:
   **CRITICAL VIOLATION: 2.1 — Analysis is NON-COMPLIANT. Insufficient disruptor cost data: [count] points over [span] years (need min 3 over 5+).**
 
+## Energy Sector Data Catalog Paths
+
+When researching energy-sector costs, browse these catalog paths:
+- `Glob data/energy_generation/cost/*.json` — Solar PV, wind, CSP installed costs (14 files)
+- `Glob data/energy_storage/cost/*.json` — BESS 2hr/4hr turnkey costs by region (9 files)
+- `Glob data/battery_pack/cost/*.json` — Li-Ion pack costs by type and region (22 files)
+- `Glob data/natural_gas/cost/*.json` — NG prices and LNG prices (5 files)
+- `Glob data/energy_generation/capacity_factor/*.json` — CFs for solar, wind, gas (10 files)
+
+**Unit Conversion Flags:** Flag unit type for the cost-fitter: solar/wind $/Wp → needs CF conversion; battery $/kWh capacity → needs cycle life conversion; gas $/MMBTU → note whether fuel cost or marginal cost.
+
+**SWB Note:** Search for solar, wind, AND battery cost data separately. The stack cost is computed downstream.
+
 ## Anti-Pattern Guardrails
 
 ### BANNED / REQUIRED Terms

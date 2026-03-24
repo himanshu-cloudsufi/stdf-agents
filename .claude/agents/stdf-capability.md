@@ -197,6 +197,18 @@ Use `python3 -c "..."` via Bash for curve fitting when you have sufficient data 
 - **Sequential convergence:** Dimensions cross years apart — adoption gated by last dimension
 - **Divergent dimensions:** Some improve while others stagnate — signals architectural limitations
 
+## Energy Sector Capability Dimensions (Reference)
+
+When the disruption involves energy generation, these dimensions are commonly relevant. Non-mandatory — identify dimensions empirically, use as completeness check.
+
+| Category | Dimension | Disruptor Metric | Incumbent Metric | Typical Threshold |
+|----------|-----------|-----------------|-----------------|-------------------|
+| Performance | dispatchability | Battery duration (hours) | Always-on (baseload) | 4h for peak replacement |
+| Performance | capacity_factor | Solar/wind CF + storage | Coal/gas CF | 0.85 combined |
+| Time | ramp_rate | Battery: instant | Gas turbine: 10-20 MW/min | Equivalent or better |
+| Performance | grid_stability | Inverter-based freq response | Synchronous inertia | Grid code compliance |
+| Economic | operating_cost | SWB marginal ~$0/MWh | Coal $35-50, Gas $35-70 | Cost parity |
+
 ## Anti-Pattern Guardrails
 
 ### BANNED / REQUIRED Vocabulary

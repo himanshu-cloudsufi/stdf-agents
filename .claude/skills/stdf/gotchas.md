@@ -71,6 +71,18 @@ Every table containing future-year numbers (post-analysis-date) must have either
 
 The `validate_data_type_tags()` guardrail catches untagged future-year numbers. If the Step 4 validation flags "untagged_projection" warnings, the agent needs to add data-type annotations.
 
+## Energy agents (Tier 7) are conditional like commodity agents
+
+Only launch energy-dispatch and gas-supply-decomposer if the preset is ENERGY_FULL or ENERGY_GAS. Their absence on non-energy queries is normal, not a degradation. Tier 6 (commodity) and Tier 7 (energy) can run in parallel when both triggered — no cross-dependencies.
+
+## Marginal cost, not LCOE, for incumbent dispatch
+
+The energy-dispatch agent uses marginal cost for fossil fuel dispatch ordering. LCOE includes sunk capital costs. If you see LCOE being used for merit order comparison, the analysis is structurally wrong — the tipping point will be incorrect by several years.
+
+## China solar CF is 0.11, not 0.17
+
+When converting solar $/Wp to $/kWh for China, use CF=0.11 (BNEF). The commonly cited 0.17 is a global average and produces a 55% underestimate of $/kWh service cost. This has been a recurring error in prior analyses.
+
 ## X-Flow/Stellar classification must propagate to downstream agents
 
 The X-Flow/Stellar/Hybrid classification is set in `01-domain-disruption.md` `## Classification Overrides` during the Phase 1 hard gate. Every downstream agent that references Jevons Paradox (capability, xcurve-analyst, tipping-synthesizer, stream-forecaster, demand-decomposer) MUST read this tag before applying or excluding Jevons. If the tag is missing, agents should self-classify and emit a `[WARNING]`. A missing tag is a pipeline smell — check whether the Phase 1 hard gate was skipped.

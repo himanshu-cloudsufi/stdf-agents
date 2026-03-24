@@ -157,6 +157,10 @@ python3 -c "import lib.<module>; help(lib.<module>)"
 | stream-forecaster | `lib.demand_math` | `project_demand_from_scurve`, `aggregate_demand_by_technology` |
 | fleet-modeler | `lib.demand_math` | `stock_flow_fleet`, `oem_replacement_split`, `validate_stock_flow_consistency` |
 | regional-demand-analyst | `lib.demand_math` | `regional_demand_split` |
+| energy-dispatch | `lib.energy_math` | `merit_order_dispatch`, `displacement_schedule`, `swb_generation`, `energy_balance_check`, `full_energy_dispatch`, `blended_cagr`, `datacenter_demand`, `heat_pump_demand` |
+| gas-supply-decomposer | `lib.energy_math` | `gwh_to_bcm`, `supply_source_ordering`, `lng_displacement_cascade` |
+| cost-fitter (energy) | `lib.energy_math` | `scoe`, `swb_stack_cost` |
+| demand-decomposer (energy) | `lib.energy_math` | `ev_charging_demand`, `datacenter_demand`, `heat_pump_demand`, `gwh_to_bcm` |
 | ALL downstream agents | `lib.upstream_reader` | `read_upstream`, `get_cost_trajectory`, `get_scurve_parameters`, `get_capability_dimensions` |
 | ALL agents | `lib.compliance` | `create_checklist`, `checklist_to_markdown`, `has_critical_failure` |
 | ALL agents | `lib.output_writer` | `build_agent_output`, `table_to_markdown` |

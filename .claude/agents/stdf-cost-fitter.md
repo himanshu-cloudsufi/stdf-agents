@@ -534,6 +534,24 @@ Before producing any final output, verify:
 If a CRITICAL violation is detected, output the following header before any other content:
   **CRITICAL VIOLATION: 2.5 — Analysis is NON-COMPLIANT. Cost figures in hardware units detected: [details].**
 
+## Energy Sector Computation Notes
+
+When the sector involves energy generation or electricity systems:
+
+**Incumbent Cost — Use Marginal Cost, NOT LCOE:**
+For coal and gas incumbent cost fitting, use marginal cost (fuel + variable O&M + carbon where applicable), NOT LCOE. LCOE includes sunk capital costs and understates the cost at which incumbents actually dispatch in the merit order.
+
+**SWB Stack Cost Formula (reference):**
+`SWB_Stack = MAX(Solar_LCOE, Wind_LCOE) + SCOE`. SCOE = `[Battery_Capex_per_kWh * 1000] / [Cycle_Life * Duration_hrs * Round_Trip_Efficiency]`. Use `lib.energy_math.scoe()` and `lib.energy_math.swb_stack_cost()`.
+
+**Wind Conversion:** For wind $/Wp to $/kWh, use `convert_solar_wp_to_kwh` with wind CFs: onshore 0.25-0.35, offshore 0.40-0.55.
+
+**China Solar CF Warning:** China solar PV CF is **0.11** (BNEF), not 0.17. Using 0.17 causes **55% underestimate** of $/kWh.
+
+**Energy Plausibility Bounds:** Solar PV LR: 20-24%/doubling. Battery LR: 15-20%/yr. Wind: 12-18%/doubling. Coal/gas: flat-to-rising.
+
+**Coal vs Gas:** Coal faces higher stranded asset risk (longer-lived, less flexible). Gas faces higher fuel price exposure but lower fixed cost burden.
+
 ## Anti-Pattern Guardrails
 
 ### BANNED / REQUIRED Terms

@@ -291,6 +291,15 @@ In the Handoff Context section, ALSO include:
 - **Cost Metric Recommendation:** Which metric for parity comparison (purchase price / $/kWh / $/km etc.) with justification
 - **Market Type Recommendation:** consumer / fleet / enterprise / utility with justification
 
+## Energy Sector Convergence Reference
+
+Additional energy-sector convergence combinations beyond SWB:
+- **SWB+HP** (Solar + Wind + Battery + Heat Pump): Enables full building electrification — electricity for both power and heating, eliminating gas demand from both sectors simultaneously
+- **SWB+EV** (SWB + Electric Vehicles): Creates demand-supply reinforcing loop — EVs create electricity demand that justifies more SWB deployment
+- **SWB+DC** (SWB + Datacenter): Direct PPA model — hyperscale datacenters contract directly with solar/battery farms, accelerating utility-scale SWB deployment
+
+**Demand-side convergence insight:** Each demand vector (EV, HP, DC) individually justifies SWB deployment, but together they create an unassailable demand floor for stellar energy systems.
+
 ## Anti-Pattern Guardrails
 
 ### BANNED / REQUIRED Vocabulary

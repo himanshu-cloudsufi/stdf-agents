@@ -1,6 +1,6 @@
 # STDF v2 Agents — Claude Code Implementation
 
-STDF (Seba Technology Disruption Framework) v2 multi-agent pipeline with dynamic DAG orchestration. 16 agents, 5 skills, 14 lib modules, 956 empirical curves.
+STDF (Seba Technology Disruption Framework) v2 multi-agent pipeline with dynamic DAG orchestration. 18 agents, 5 skills, 15 lib modules, 956 empirical curves.
 
 ## Agent Registry
 
@@ -23,6 +23,8 @@ The single source of truth for pipeline DAG resolution. The `/stdf` skill walks 
 | stdf-stream-forecaster | 07b-stream-forecaster.md | 07a-demand-decomposer.md | HIGH | commodity |
 | stdf-fleet-modeler | 07c-fleet-modeler.md | 07b-stream-forecaster.md | MEDIUM | commodity |
 | stdf-regional-demand-analyst | 07d-regional-demand.md | 07b-stream-forecaster.md, 05b-regional-adopter.md | HIGH | commodity |
+| stdf-energy-dispatch | 08a-energy-dispatch.md | 02b-cost-fitter.md, 05a-scurve-fitter.md, 01-domain-disruption.md | HIGH | energy |
+| stdf-gas-supply-decomposer | 08b-gas-supply.md | 08a-energy-dispatch.md, 01-domain-disruption.md | MEDIUM | energy |
 | stdf-synthesizer | 00-final-synthesis.md, 06-synthesizer.md | all selected outputs | CRITICAL | always |
 
 ## Pipeline Presets
@@ -35,6 +37,8 @@ The single source of truth for pipeline DAG resolution. The `/stdf` skill walks 
 | COST_FOCUS | cost-fitter, capability, synthesizer | "cost trajectory", "learning rate", "price" |
 | ADOPTION_FOCUS | scurve-fitter, regional-adopter, xcurve-analyst, synthesizer | "market share", "adoption", "when will X reach" |
 | FULL+COMMODITY | FULL + demand-decomposer, stream-forecaster, fleet-modeler, regional-demand-analyst | Commodity keyword (copper, lithium, etc.) + demand/supply |
+| ENERGY_FULL | FULL + energy-dispatch, gas-supply-decomposer | Energy sector + generation/dispatch/merit order/grid/SWB |
+| ENERGY_GAS | FULL + energy-dispatch, gas-supply-decomposer | "LNG", "natural gas" + supply/displacement/demand |
 
 ## Pipeline Execution
 
@@ -81,12 +85,13 @@ Headless: `claude -p "Analyze the energy storage disruption using the STDF frame
 | Path | Purpose |
 |------|---------|
 | `.claude/skills/` | 5 pipeline skills (slash commands) |
-| `.claude/agents/` | 16 agent definitions |
+| `.claude/agents/` | 18 agent definitions |
 | `.claude/shared-rules.md` | Vocabulary, guardrails, computation rules (read by all agents) |
 | `.claude/agent-memory/` | Persistent per-agent memory |
-| `lib/` | 14 Python computation modules (math, parsing, validation) |
+| `lib/` | 15 Python computation modules (math, parsing, validation) |
 | `data/` | 956 empirical time series curves (JSON, sector-organized) |
 | `output/<slug>/` | Pipeline run outputs (one dir per analysis) |
+| `data/energy_sector/config/` | Energy dispatch parameters (marginal costs, capacity factors, battery defaults) |
 | `scripts/` | CLI utilities (`query_curves.py`, `build_data.py`) |
 
 ## Conventions

@@ -222,6 +222,31 @@ Follow the strict rules from `.claude/shared-rules.md`:
 - **No forecasts** — reject data containing "forecast", "projected", "expected to reach" paired with future dates
 - **Tag all data** — [T1: source], [T2: catalog], or [T3: url, retrieved YYYY-MM-DD]
 
+## Energy Sector Readiness Assessment Guide
+
+When the sector involves energy generation or electricity systems, use these sector-specific indicators for each sub-condition:
+
+**Infrastructure (Sub-Condition 1) — Energy-Specific Indicators:**
+- Grid interconnection queue length and backlog (MW pending vs annual additions). In USA, median wait exceeds 4 years (FERC data).
+- Transmission capacity headroom in target regions — congestion corridors, curtailment rates
+- Grid-scale battery storage deployment vs requirements (GWh deployed vs needed for SWB reliability)
+- Smart grid / advanced inverter deployment coverage
+
+**Supply Chain (Sub-Condition 2) — Energy-Specific Indicators:**
+- Solar panel manufacturing capacity (GW/yr by region; China ~80% of global capacity)
+- Battery cell manufacturing capacity (GWh/yr; China dominates at ~75%)
+- Wind turbine manufacturing and installation capacity
+- Inverter and power electronics supply chain depth
+- Critical mineral supply for batteries: lithium refining, cobalt, nickel, graphite
+
+**Regulatory (Sub-Condition 3) — Energy-Specific Indicators:**
+- Interconnection permitting timelines by region (key bottleneck in USA/Europe)
+- Wholesale market rules for battery/storage participation (most markets now accommodate)
+- Grid code requirements for inverter-based resources
+- Coal/gas plant retirement schedules — note as friction/enabler, NOT as policy driver
+
+**Note:** For energy-sector analyses, grid infrastructure is almost always the binding sub-condition. Manufacturing capacity (solar, batteries) has scaled faster than grid interconnection in most regions.
+
 ## Anti-Pattern Guardrails
 
 ### BANNED / REQUIRED Vocabulary

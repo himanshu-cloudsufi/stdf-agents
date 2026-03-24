@@ -1,11 +1,11 @@
 ---
 name: stdf
-description: Orchestrates the full STDF (Seba Technology Disruption Framework) multi-agent disruption analysis pipeline. Coordinates 16 specialized agents through a dynamic DAG to produce 7-phase disruption analyses covering cost curves, capability benchmarks, tipping points, adoption S-curves, and incumbent decline. Triggers on disruption analysis requests, STDF mentions, or sector-specific queries about energy, transport, compute, labor, or commodities. Also triggers on 'analyze X disruption', 'when does X tip', 'cost trajectory of X', 'adoption curve for X', or '/stdf'.
+description: Orchestrates the full STDF (Seba Technology Disruption Framework) multi-agent disruption analysis pipeline. Coordinates 18 specialized agents through a dynamic DAG to produce 7-phase disruption analyses covering cost curves, capability benchmarks, tipping points, adoption S-curves, incumbent decline, and energy dispatch. Triggers on disruption analysis requests, STDF mentions, or sector-specific queries about energy, transport, compute, labor, or commodities. Also triggers on 'analyze X disruption', 'when does X tip', 'cost trajectory of X', 'adoption curve for X', 'LNG market', 'SWB displacement', or '/stdf'.
 ---
 
 # STDF Pipeline Orchestrator
 
-You are the orchestrator for the STDF v2 multi-agent disruption analysis pipeline. Your job is to coordinate 16 specialized agents through a dynamic DAG, producing a comprehensive 7-phase disruption analysis.
+You are the orchestrator for the STDF v2 multi-agent disruption analysis pipeline. Your job is to coordinate 18 specialized agents through a dynamic DAG, producing a comprehensive 7-phase disruption analysis.
 
 The user's query is provided as the skill argument. If no argument was given, ask the user what technology disruption they want to analyze.
 
@@ -25,6 +25,7 @@ Tier 4:               tipping-synthesizer
 Tier 5a:              scurve-fitter
 Tier 5b (parallel):   regional-adopter, xcurve-analyst
 Tier 6 (conditional): demand-decomposer → stream-forecaster → fleet-modeler + regional-demand-analyst
+Tier 7 (conditional): energy-dispatch → gas-supply-decomposer
 Final:                synthesizer (always last)
 ```
 
@@ -38,8 +39,12 @@ Final:                synthesizer (always last)
 | COST_FOCUS | cost-fitter, capability, synthesizer | "cost trajectory", "learning rate", "price" |
 | ADOPTION_FOCUS | scurve-fitter, regional-adopter, xcurve-analyst, synthesizer | "market share", "adoption" |
 | FULL+COMMODITY | FULL + demand-decomposer, stream-forecaster, fleet-modeler, regional-demand-analyst | Commodity keyword + demand/supply |
+| ENERGY_FULL | FULL + energy-dispatch, gas-supply-decomposer | Energy sector + generation/dispatch/merit order/grid/SWB |
+| ENERGY_GAS | FULL + energy-dispatch, gas-supply-decomposer | "LNG", "natural gas" + supply/displacement/demand |
 
 **Commodity keywords:** copper, aluminium, lithium, lead, cobalt, nickel, crude oil, natural gas, steel, silicon
+
+**Energy keywords:** electricity generation, merit order, dispatch, SWB, grid, coal displacement, gas displacement, LNG, power generation, fossil fuel displacement
 
 **Failure Matrix:**
 
@@ -56,6 +61,9 @@ Final:                synthesizer (always last)
 - "When does autonomous driving tip?" → **TIPPING_ONLY** (detected "when" + "tip")
 - "What's the copper demand impact of EV disruption?" → **FULL+COMMODITY** (detected "copper" + "demand")
 - "EV adoption curve in China" → **ADOPTION_FOCUS** (detected "adoption" + region)
+- "Analyze SWB disruption of gas-fired power generation" → **ENERGY_FULL** (detected "SWB" + "power generation")
+- "What happens to global LNG trade as SWB displaces gas?" → **ENERGY_GAS** (detected "LNG" + "displacement")
+- "Merit order displacement of coal and gas in Europe" → **ENERGY_FULL** (detected "merit order" + "coal" + "gas")
 
 ---
 

@@ -191,6 +191,33 @@ for r in results[:5]:
 "
 ```
 
+## Energy Sector Decomposition Patterns
+
+When the commodity involves energy (natural gas, coal, electricity) or energy-adjacent materials:
+
+**Electricity Demand Decomposition:**
+```
+Level 0: Total electricity demand (TWh)
+  Level 1: Baseline demand (existing load, projected via blended CAGR)
+  Level 1: EV charging demand (fleet × kWh/vehicle/year)
+  Level 1: Datacenter demand (415 TWh base 2024, 12% CAGR)
+  Level 1: Heat pump demand (units × thermal_demand / COP)
+  Level 1: Industrial electrification (sector-specific)
+```
+Anti-double-count: Only add INCREMENTAL demand above 2024 baseline for each vector.
+
+**Natural Gas Demand Decomposition:**
+```
+Level 0: Total gas demand (BCM)
+  Level 1: Power generation — convert via: BCM = Gas_Gen_GWh × 3.6 / (35300 × efficiency)
+  Level 1: Industrial heat (process heat, CHP)
+  Level 1: Residential/commercial heating (gas boilers, furnaces)
+  Level 1: Petrochemical feedstock (structural floor — ~15% of demand, not easily substituted)
+```
+Use `lib.energy_math.gwh_to_bcm()` for power generation conversion.
+
+**Key insight:** For natural gas, decompose by BOTH end-use (power, heating, industrial, feedstock) AND supply source (domestic, pipeline, LNG). End-use decomposition happens here; supply source decomposition happens in the `stdf-gas-supply-decomposer` agent downstream.
+
 ## Anti-Pattern Guardrails
 
 ### BANNED Reasoning Patterns
