@@ -5,6 +5,14 @@ __pycache__/
 .venv/
 env/
 
+# Secrets
+.env
+server/.env
+
+# Build caches
+.vite/
+frontend/.vite/
+
 # OS
 .DS_Store
 Thumbs.db
