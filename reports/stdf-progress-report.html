@@ -1,0 +1,3278 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>STDF Agents — Progress Report</title>
+        <style>
+            :root {
+                --bg: #0d1117;
+                --surface: #161b22;
+                --surface2: #1c2333;
+                --border: #30363d;
+                --text: #e6edf3;
+                --text-dim: #8b949e;
+                --accent: #58a6ff;
+                --green: #3fb950;
+                --red: #f85149;
+                --orange: #d29922;
+                --purple: #bc8cff;
+                --pink: #f778ba;
+                --cyan: #39d2c0;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+                    Arial, sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+            .hero {
+                text-align: center;
+                padding: 80px 40px 60px;
+                background: linear-gradient(180deg, #0d1117, #161b22);
+                border-bottom: 1px solid var(--border);
+                position: relative;
+                overflow: hidden;
+            }
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: -200px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 800px;
+                height: 800px;
+                background: radial-gradient(
+                    circle,
+                    rgba(88, 166, 255, 0.08),
+                    transparent 70%
+                );
+                pointer-events: none;
+            }
+            .hero h1 {
+                font-size: 3rem;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                margin-bottom: 12px;
+                background: linear-gradient(
+                    135deg,
+                    var(--accent),
+                    var(--purple)
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .hero .subtitle {
+                font-size: 1.25rem;
+                color: var(--text-dim);
+                max-width: 720px;
+                margin: 0 auto 30px;
+            }
+            .hero .date-badge {
+                display: inline-block;
+                padding: 6px 16px;
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 20px;
+                font-size: 0.85rem;
+                color: var(--text-dim);
+            }
+            .nav {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                display: flex;
+                background: var(--surface);
+                border-bottom: 1px solid var(--border);
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+            .nav::-webkit-scrollbar {
+                display: none;
+            }
+            .nav button {
+                flex-shrink: 0;
+                padding: 14px 24px;
+                background: none;
+                border: none;
+                border-bottom: 2px solid transparent;
+                color: var(--text-dim);
+                font-size: 0.9rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.2s;
+                white-space: nowrap;
+            }
+            .nav button:hover {
+                color: var(--text);
+                background: rgba(88, 166, 255, 0.05);
+            }
+            .nav button.active {
+                color: var(--accent);
+                border-bottom-color: var(--accent);
+            }
+            .section {
+                display: none;
+                padding: 40px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .section.active {
+                display: block;
+            }
+            .section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+                font-weight: 700;
+            }
+            .section .section-sub {
+                color: var(--text-dim);
+                font-size: 1rem;
+                margin-bottom: 32px;
+            }
+            .section h3 {
+                font-size: 1.2rem;
+                margin: 28px 0 12px;
+                font-weight: 600;
+                color: var(--accent);
+            }
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 16px;
+                margin-bottom: 40px;
+            }
+            .stat-card {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 24px;
+                text-align: center;
+            }
+            .stat-card .num {
+                font-size: 2.2rem;
+                font-weight: 700;
+                line-height: 1.1;
+            }
+            .stat-card .num.blue {
+                color: var(--accent);
+            }
+            .stat-card .num.green {
+                color: var(--green);
+            }
+            .stat-card .num.purple {
+                color: var(--purple);
+            }
+            .stat-card .num.cyan {
+                color: var(--cyan);
+            }
+            .stat-card .num.orange {
+                color: var(--orange);
+            }
+            .stat-card .label {
+                font-size: 0.8rem;
+                color: var(--text-dim);
+                margin-top: 6px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            .card {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 28px;
+                margin-bottom: 20px;
+            }
+            .card h4 {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+                font-weight: 600;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.88rem;
+                margin: 12px 0;
+            }
+            th,
+            td {
+                padding: 10px 14px;
+                text-align: left;
+                border-bottom: 1px solid var(--border);
+            }
+            th {
+                font-weight: 600;
+                color: var(--text-dim);
+                font-size: 0.78rem;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                background: var(--surface2);
+            }
+            tr:last-child td {
+                border-bottom: none;
+            }
+            .badge {
+                display: inline-block;
+                padding: 3px 10px;
+                border-radius: 12px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .badge-green {
+                background: rgba(63, 185, 80, 0.15);
+                color: var(--green);
+            }
+            .badge-red {
+                background: rgba(248, 81, 73, 0.15);
+                color: var(--red);
+            }
+            .badge-orange {
+                background: rgba(210, 153, 34, 0.15);
+                color: var(--orange);
+            }
+            .badge-blue {
+                background: rgba(88, 166, 255, 0.15);
+                color: var(--accent);
+            }
+            .badge-purple {
+                background: rgba(188, 140, 255, 0.15);
+                color: var(--purple);
+            }
+            .dag-container {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 32px;
+                overflow-x: auto;
+                margin-bottom: 24px;
+            }
+            .dag-svg {
+                width: 100%;
+                min-width: 900px;
+                height: auto;
+            }
+            .comparison-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                margin-bottom: 20px;
+            }
+            @media (max-width: 800px) {
+                .comparison-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .comp-card {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 24px;
+            }
+            .comp-card.current {
+                border-left: 3px solid var(--text-dim);
+            }
+            .comp-card.agents {
+                border-left: 3px solid var(--green);
+            }
+            .comp-card .comp-label {
+                font-size: 0.7rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                margin-bottom: 10px;
+            }
+            .comp-card.current .comp-label {
+                color: var(--text-dim);
+            }
+            .comp-card.agents .comp-label {
+                color: var(--green);
+            }
+            .highlight-block {
+                background: rgba(63, 185, 80, 0.06);
+                border-left: 3px solid var(--green);
+                padding: 16px 20px;
+                margin: 12px 0;
+                border-radius: 0 8px 8px 0;
+            }
+            .run-card {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 24px;
+                margin-bottom: 16px;
+                transition: all 0.2s;
+            }
+            .run-card:hover {
+                border-color: var(--accent);
+                box-shadow: 0 0 0 1px var(--accent);
+            }
+            .run-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 8px;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .run-header h4 {
+                margin: 0;
+                font-size: 1.05rem;
+                cursor: pointer;
+            }
+            .run-meta {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                align-items: center;
+                font-size: 0.82rem;
+                color: var(--text-dim);
+            }
+            .run-excerpt {
+                font-size: 0.88rem;
+                color: var(--text-dim);
+                margin-top: 8px;
+                line-height: 1.5;
+            }
+            .run-detail {
+                display: none;
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid var(--border);
+            }
+            .run-card.expanded .run-detail {
+                display: block;
+            }
+            .file-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 14px;
+            }
+            .file-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 5px 12px;
+                background: var(--surface2);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                font-size: 0.78rem;
+                color: var(--accent);
+                cursor: pointer;
+                transition: all 0.15s;
+                text-decoration: none;
+            }
+            .file-link:hover {
+                border-color: var(--accent);
+                background: rgba(88, 166, 255, 0.08);
+            }
+            .file-link.synthesis {
+                border-color: var(--green);
+                color: var(--green);
+            }
+            .file-link.synthesis:hover {
+                background: rgba(63, 185, 80, 0.08);
+            }
+            .conf-bar {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .conf-track {
+                flex: 1;
+                max-width: 100px;
+                height: 6px;
+                background: var(--surface2);
+                border-radius: 3px;
+                overflow: hidden;
+            }
+            .conf-fill {
+                height: 100%;
+                border-radius: 3px;
+            }
+            .conf-fill.high {
+                background: var(--green);
+            }
+            .conf-fill.medium {
+                background: var(--orange);
+            }
+            .scorecard-row {
+                display: grid;
+                grid-template-columns: 200px 1fr 1fr;
+                gap: 1px;
+                background: var(--border);
+                margin-bottom: 1px;
+            }
+            .scorecard-row > div {
+                padding: 12px 16px;
+                background: var(--surface);
+                font-size: 0.88rem;
+            }
+            .scorecard-row.header > div {
+                background: var(--surface2);
+                font-weight: 600;
+                color: var(--text-dim);
+                font-size: 0.78rem;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+            }
+            .scorecard-wrapper {
+                border-radius: 12px;
+                overflow: hidden;
+                border: 1px solid var(--border);
+                margin-bottom: 24px;
+            }
+            .improvement {
+                color: var(--green);
+                font-weight: 600;
+            }
+            .legend {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin: 16px 0;
+                font-size: 0.82rem;
+                color: var(--text-dim);
+            }
+            .legend-item {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            .legend-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+            .roadmap-item {
+                padding: 16px 20px;
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                margin-bottom: 10px;
+                font-size: 0.9rem;
+            }
+            .roadmap-item strong {
+                color: var(--accent);
+            }
+            .footer {
+                text-align: center;
+                padding: 40px;
+                color: var(--text-dim);
+                font-size: 0.8rem;
+                border-top: 1px solid var(--border);
+                margin-top: 60px;
+            }
+            .finding-card {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 24px;
+                margin-bottom: 16px;
+                border-left: 3px solid var(--green);
+            }
+            .finding-card h4 {
+                color: var(--green);
+                margin-bottom: 8px;
+                font-size: 0.95rem;
+            }
+            .finding-card p {
+                color: var(--text-dim);
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            .finding-card .finding-metric {
+                display: flex;
+                gap: 24px;
+                margin-top: 12px;
+                flex-wrap: wrap;
+            }
+            .finding-card .metric-item {
+                text-align: center;
+            }
+            .finding-card .metric-item .val {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--text);
+            }
+            .finding-card .metric-item .lbl {
+                font-size: 0.72rem;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                color: var(--text-dim);
+            }
+            /* Modal */
+            .modal-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                z-index: 1000;
+                background: rgba(0, 0, 0, 0.75);
+                backdrop-filter: blur(4px);
+            }
+            .modal-overlay.open {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                padding: 40px 20px;
+            }
+            .modal {
+                background: var(--bg);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                width: 100%;
+                max-width: 900px;
+                max-height: calc(100vh - 80px);
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 24px;
+                border-bottom: 1px solid var(--border);
+                flex-shrink: 0;
+            }
+            .modal-header h3 {
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .modal-header .modal-path {
+                font-size: 0.78rem;
+                color: var(--text-dim);
+                font-family: monospace;
+            }
+            .modal-close {
+                background: none;
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                color: var(--text-dim);
+                padding: 4px 12px;
+                cursor: pointer;
+                font-size: 0.85rem;
+            }
+            .modal-close:hover {
+                border-color: var(--text-dim);
+                color: var(--text);
+            }
+            .modal-body {
+                padding: 24px;
+                overflow-y: auto;
+                flex: 1;
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+            .modal-body h1 {
+                font-size: 1.5rem;
+                margin: 24px 0 12px;
+                font-weight: 700;
+            }
+            .modal-body h1:first-child {
+                margin-top: 0;
+            }
+            .modal-body h2 {
+                font-size: 1.25rem;
+                margin: 20px 0 10px;
+                font-weight: 600;
+                color: var(--accent);
+            }
+            .modal-body h3 {
+                font-size: 1.05rem;
+                margin: 16px 0 8px;
+                font-weight: 600;
+                color: var(--purple);
+            }
+            .modal-body h4 {
+                font-size: 0.95rem;
+                margin: 12px 0 6px;
+                font-weight: 600;
+            }
+            .modal-body p {
+                margin: 8px 0;
+            }
+            .modal-body strong {
+                color: var(--text);
+            }
+            .modal-body em {
+                color: var(--text-dim);
+            }
+            .modal-body ul,
+            .modal-body ol {
+                margin: 8px 0 8px 24px;
+            }
+            .modal-body li {
+                margin: 4px 0;
+            }
+            .modal-body code {
+                background: var(--surface2);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 0.85em;
+                color: var(--cyan);
+            }
+            .modal-body pre {
+                background: var(--surface2);
+                padding: 16px;
+                border-radius: 8px;
+                overflow-x: auto;
+                margin: 12px 0;
+            }
+            .modal-body pre code {
+                background: none;
+                padding: 0;
+            }
+            .modal-body blockquote {
+                border-left: 3px solid var(--accent);
+                padding-left: 16px;
+                margin: 12px 0;
+                color: var(--text-dim);
+            }
+            .modal-body hr {
+                border: none;
+                border-top: 1px solid var(--border);
+                margin: 20px 0;
+            }
+            .modal-body table {
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .modal-body a {
+                color: var(--accent);
+            }
+            .modal-loading {
+                text-align: center;
+                padding: 40px;
+                color: var(--text-dim);
+            }
+            .modal-error {
+                text-align: center;
+                padding: 40px;
+                color: var(--orange);
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(12px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .fade-up {
+                animation: fadeUp 0.5s ease forwards;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- MODAL -->
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="modal-title">Loading...</h3>
+                        <div class="modal-path" id="modal-path"></div>
+                    </div>
+                    <button class="modal-close" type="button">
+                        Close &times;
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <div class="modal-loading">Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <h1>STDF Agents</h1>
+            <p class="subtitle">
+                18-agent orchestration pipeline for technology disruption
+                analysis. Structured, auditable, first-pass-correct &mdash;
+                built on the Seba Technology Disruption Framework.
+            </p>
+            <span class="date-badge"
+                >Progress Report &mdash; 25 March 2026</span
+            >
+        </div>
+
+        <!-- NAV -->
+        <div class="nav" id="nav">
+            <button class="active" data-tab="overview">Overview</button>
+            <button data-tab="findings">Key Findings</button>
+            <button data-tab="architecture">How It Works</button>
+            <button data-tab="comparison">Current System vs STDF Agents</button>
+            <button data-tab="runs">Completed Analyses</button>
+            <button data-tab="scorecard">Quality Scorecard</button>
+            <button data-tab="roadmap">Roadmap</button>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section active" id="overview">
+            <h2>System at a Glance</h2>
+            <p class="section-sub">
+                STDF Agents enforces the Seba Technology Disruption Framework
+                structurally &mdash; through architecture, not prompts. Every
+                analysis follows the same rigorous methodology: cost curves
+                first, then capability assessment, tipping point synthesis,
+                adoption S-curves, and incumbent decline mapping.
+            </p>
+            <div class="stats-grid">
+                <div class="stat-card fade-up">
+                    <div class="num blue">18</div>
+                    <div class="label">Specialized Agents</div>
+                </div>
+                <div class="stat-card fade-up">
+                    <div class="num green">10</div>
+                    <div class="label">Completed Analyses</div>
+                </div>
+                <div class="stat-card fade-up">
+                    <div class="num cyan">15</div>
+                    <div class="label">Validated Math Modules</div>
+                </div>
+                <div class="stat-card fade-up">
+                    <div class="num orange">0.82</div>
+                    <div class="label">Avg. Confidence Score</div>
+                </div>
+            </div>
+            <div class="card">
+                <h4>What STDF Agents Delivers</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>First-pass accuracy</td>
+                            <td>
+                                Correct methodology on the first run &mdash; no
+                                correction rounds required
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Full data provenance</td>
+                            <td>
+                                Every claim tagged: [T1: primary], [T2:
+                                catalog], [T3: external], or [model-derived]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Framework compliance</td>
+                            <td>
+                                S-curve adoption modeling, banned vocabulary
+                                enforcement, no TCO/DCF/scenario analysis
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mathematical rigor</td>
+                            <td>
+                                Exponential cost curve fits with R&sup2;,
+                                learning rates, Monte Carlo confidence intervals
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Structured output</td>
+                            <td>
+                                16+ individually auditable agent files per
+                                analysis, plus executive synthesis
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Graceful degradation</td>
+                            <td>
+                                Failure matrix with confidence penalties &mdash;
+                                always reports quality level
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Multi-sector coverage</td>
+                            <td>
+                                Energy, transport, commodities, labor, robotics
+                                &mdash; with preset auto-detection
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Design Principle</h3>
+            <div class="card">
+                <p style="font-size: 1.05rem; line-height: 1.7">
+                    STDF Agents makes the framework the architecture. Cost
+                    curves must be fitted <em>before</em> tipping points can be
+                    assessed. Tipping must be synthesized
+                    <em>before</em> S-curves can be modeled. Each agent reads
+                    upstream output files &mdash; there is no way to skip steps.
+                    The pipeline order <strong>is</strong> the Seba framework.
+                </p>
+            </div>
+        </div>
+
+        <!-- KEY FINDINGS -->
+        <div class="section" id="findings">
+            <h2>Key Findings from Completed Analyses</h2>
+            <p class="section-sub">
+                Headline results from 10 disruption analyses across energy,
+                transport, commodities, labor, and robotics.
+            </p>
+            <div class="finding-card" style="border-left-color: var(--purple)">
+                <h4 style="color: var(--purple)">
+                    AI Cognitive Labor &mdash; Confirmed Deflationary Shock
+                </h4>
+                <p>
+                    AI is a Stellar technology disrupting a universal input
+                    &mdash; cognitive labor embedded in every sector. Cost
+                    dropped from $17.50/task to $0.002/task (8,750x advantage)
+                    with a 69.5%/yr decline rate, 3&ndash;4x faster than solar
+                    or batteries. Big Bang pattern: arrived simultaneously cheap
+                    AND capable (2022&ndash;2023). First STDF analysis where USA
+                    leads (enterprise concentration), not China. EU is
+                    structural laggard (&minus;4.8 years, AI Act drag).
+                </p>
+                <div class="finding-metric">
+                    <div class="metric-item">
+                        <div class="val">8,750x</div>
+                        <div class="lbl">Cost Advantage</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">69.5%</div>
+                        <div class="lbl">Cost Decline / yr</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">2027</div>
+                        <div class="lbl">Tipping Point</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">2032</div>
+                        <div class="lbl">80% Displacement</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">$3&ndash;6T</div>
+                        <div class="lbl">Wage Deflation / yr</div>
+                    </div>
+                </div>
+            </div>
+            <div class="finding-card">
+                <h4>BEV Heavy Trucks in China &mdash; Already Tipping</h4>
+                <p>
+                    Battery-electric heavy trucks have already disrupted China's
+                    urban and regional freight market (tipped 2022). Long-haul
+                    tipping crossing now (2025&ndash;2026). LNG trucks
+                    identified as a "doubly-compressed chimera."
+                </p>
+                <div class="finding-metric">
+                    <div class="metric-item">
+                        <div class="val">-27%</div>
+                        <div class="lbl">BEV Cost Advantage</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">16.7%</div>
+                        <div class="lbl">LFP Learning Rate / yr</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">0.995</div>
+                        <div class="lbl">S-Curve Fit R&sup2;</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">2029</div>
+                        <div class="lbl">80% Market Share</div>
+                    </div>
+                </div>
+            </div>
+            <div class="finding-card">
+                <h4>Lead Demand Decline &mdash; 10% Threshold by 2027</h4>
+                <p>
+                    Global lead demand crosses the 10%-below-baseline threshold
+                    in 2027. Decomposed into 5 disruption vectors across 10
+                    market products covering 99.98% of demand.
+                </p>
+                <div class="finding-metric">
+                    <div class="metric-item">
+                        <div class="val">2027</div>
+                        <div class="lbl">10% Threshold Year</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">12,259 kt</div>
+                        <div class="lbl">2024 Baseline</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">16/16</div>
+                        <div class="lbl">Agents Completed</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">0.82</div>
+                        <div class="lbl">Confidence</div>
+                    </div>
+                </div>
+            </div>
+            <div class="finding-card">
+                <h4>Oil Market &mdash; Structural Peak 2027&ndash;2030</h4>
+                <p>
+                    Three simultaneous disruption fronts: BEV (&minus;45%), SWB
+                    (&minus;70% vs gas peakers), heat pumps. Oil price spikes
+                    accelerate disruption via ratchet mechanism.
+                </p>
+                <div class="finding-metric">
+                    <div class="metric-item">
+                        <div class="val">2027&ndash;30</div>
+                        <div class="lbl">Peak Window</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">-45%</div>
+                        <div class="lbl">BEV vs ICE</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">-70%</div>
+                        <div class="lbl">Solar vs Gas</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">3</div>
+                        <div class="lbl">Fronts</div>
+                    </div>
+                </div>
+            </div>
+            <div class="finding-card">
+                <h4>
+                    EV Passenger Cars &mdash; Global Tipping 2027&ndash;2028
+                </h4>
+                <p>
+                    China already past tipping (2024). Europe 2027, USA 2028.
+                    S-curve (R&sup2;=0.979) projects 62% global BEV by 2031.
+                </p>
+                <div class="finding-metric">
+                    <div class="metric-item">
+                        <div class="val">2028</div>
+                        <div class="lbl">Global Tipping</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">62%</div>
+                        <div class="lbl">BEV by 2031</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">0.979</div>
+                        <div class="lbl">S-Curve R&sup2;</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">0.88</div>
+                        <div class="lbl">Confidence</div>
+                    </div>
+                </div>
+            </div>
+            <div class="finding-card">
+                <h4>Humanoid Robots &mdash; Cost Parity Already Crossed</h4>
+                <p>
+                    Service-level cost crossed parity with US manufacturing
+                    labor in 2020&ndash;2021. Unitree G1 at $10.76/hr vs
+                    $42.40/hr. All 8 capability dimensions met. By 2044:
+                    $0.07/hr.
+                </p>
+                <div class="finding-metric">
+                    <div class="metric-item">
+                        <div class="val">$10.76</div>
+                        <div class="lbl">Robot $/hr</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">$42.40</div>
+                        <div class="lbl">Labor $/hr</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">32%</div>
+                        <div class="lbl">HW Learning Rate</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="val">8/8</div>
+                        <div class="lbl">Capabilities MET</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ARCHITECTURE -->
+        <div class="section" id="architecture">
+            <h2>How STDF Agents Works</h2>
+            <p class="section-sub">
+                18 specialized agents in a dependency-ordered DAG. File-based
+                communication &mdash; fully auditable.
+            </p>
+            <div class="dag-container">
+                <svg
+                    class="dag-svg"
+                    viewBox="0 0 960 720"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <defs>
+                        <marker
+                            id="arrow"
+                            markerWidth="8"
+                            markerHeight="6"
+                            refX="8"
+                            refY="3"
+                            orient="auto"
+                        >
+                            <path d="M0,0 L8,3 L0,6" fill="#30363d" />
+                        </marker>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text
+                        x="20"
+                        y="50"
+                        fill="#8b949e"
+                        font-size="11"
+                        font-weight="600"
+                    >
+                        TIER 1 — FOUNDATION (PARALLEL)
+                    </text>
+                    <text
+                        x="20"
+                        y="180"
+                        fill="#8b949e"
+                        font-size="11"
+                        font-weight="600"
+                    >
+                        TIER 2 — COST FITTING
+                    </text>
+                    <text
+                        x="20"
+                        y="290"
+                        fill="#8b949e"
+                        font-size="11"
+                        font-weight="600"
+                    >
+                        TIER 3 — CONDITION CHECKERS (PARALLEL)
+                    </text>
+                    <text
+                        x="20"
+                        y="400"
+                        fill="#8b949e"
+                        font-size="11"
+                        font-weight="600"
+                    >
+                        TIER 4 — TIPPING SYNTHESIS
+                    </text>
+                    <text
+                        x="20"
+                        y="500"
+                        fill="#8b949e"
+                        font-size="11"
+                        font-weight="600"
+                    >
+                        TIER 5 — ADOPTION MODELING (PARALLEL)
+                    </text>
+                    <text
+                        x="20"
+                        y="610"
+                        fill="#8b949e"
+                        font-size="11"
+                        font-weight="600"
+                    >
+                        TIER 6 — COMMODITY / ENERGY (CONDITIONAL)
+                    </text>
+                    <text
+                        x="20"
+                        y="700"
+                        fill="#8b949e"
+                        font-size="11"
+                        font-weight="600"
+                    >
+                        FINAL — SYNTHESIS
+                    </text>
+                    <rect
+                        x="100"
+                        y="60"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(88,166,255,0.12)"
+                        stroke="#58a6ff"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="190"
+                        y="85"
+                        fill="#58a6ff"
+                        font-size="12"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Domain Disruption
+                    </text>
+                    <rect
+                        x="380"
+                        y="60"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(88,166,255,0.12)"
+                        stroke="#58a6ff"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="470"
+                        y="85"
+                        fill="#58a6ff"
+                        font-size="12"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Cost Researcher
+                    </text>
+                    <rect
+                        x="660"
+                        y="60"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(88,166,255,0.12)"
+                        stroke="#58a6ff"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="750"
+                        y="85"
+                        fill="#58a6ff"
+                        font-size="12"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Capability
+                    </text>
+                    <line
+                        x1="470"
+                        y1="100"
+                        x2="470"
+                        y2="190"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                    <rect
+                        x="380"
+                        y="190"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(188,140,255,0.12)"
+                        stroke="#bc8cff"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="470"
+                        y="215"
+                        fill="#bc8cff"
+                        font-size="12"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Cost Fitter
+                    </text>
+                    <line
+                        x1="470"
+                        y1="230"
+                        x2="190"
+                        y2="300"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                    <line
+                        x1="470"
+                        y1="230"
+                        x2="470"
+                        y2="300"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                    <line
+                        x1="750"
+                        y1="100"
+                        x2="750"
+                        y2="300"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                    <line
+                        x1="190"
+                        y1="100"
+                        x2="190"
+                        y2="300"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                        stroke-dasharray="4"
+                    />
+                    <rect
+                        x="100"
+                        y="300"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(57,210,192,0.12)"
+                        stroke="#39d2c0"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="190"
+                        y="325"
+                        fill="#39d2c0"
+                        font-size="11"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Adoption Readiness
+                    </text>
+                    <rect
+                        x="380"
+                        y="300"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(57,210,192,0.12)"
+                        stroke="#39d2c0"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="470"
+                        y="325"
+                        fill="#39d2c0"
+                        font-size="11"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Cost Parity
+                    </text>
+                    <rect
+                        x="660"
+                        y="300"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(57,210,192,0.12)"
+                        stroke="#39d2c0"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="750"
+                        y="325"
+                        fill="#39d2c0"
+                        font-size="11"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Capability Parity
+                    </text>
+                    <line
+                        x1="190"
+                        y1="340"
+                        x2="470"
+                        y2="410"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                    <line
+                        x1="470"
+                        y1="340"
+                        x2="470"
+                        y2="410"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                    <line
+                        x1="750"
+                        y1="340"
+                        x2="470"
+                        y2="410"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                    <rect
+                        x="380"
+                        y="410"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(63,185,80,0.12)"
+                        stroke="#3fb950"
+                        stroke-width="1.5"
+                        filter="url(#glow)"
+                    />
+                    <text
+                        x="470"
+                        y="435"
+                        fill="#3fb950"
+                        font-size="12"
+                        font-weight="700"
+                        text-anchor="middle"
+                    >
+                        Tipping Synthesizer
+                    </text>
+                    <line
+                        x1="470"
+                        y1="450"
+                        x2="190"
+                        y2="510"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                    <rect
+                        x="100"
+                        y="510"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(210,153,34,0.12)"
+                        stroke="#d29922"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="190"
+                        y="535"
+                        fill="#d29922"
+                        font-size="12"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        S-Curve Fitter
+                    </text>
+                    <line
+                        x1="190"
+                        y1="550"
+                        x2="470"
+                        y2="510"
+                        stroke="#30363d"
+                        stroke-width="1"
+                        marker-end="url(#arrow)"
+                        stroke-dasharray="4"
+                    />
+                    <line
+                        x1="190"
+                        y1="550"
+                        x2="750"
+                        y2="510"
+                        stroke="#30363d"
+                        stroke-width="1"
+                        marker-end="url(#arrow)"
+                        stroke-dasharray="4"
+                    />
+                    <rect
+                        x="380"
+                        y="510"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(210,153,34,0.12)"
+                        stroke="#d29922"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="470"
+                        y="535"
+                        fill="#d29922"
+                        font-size="12"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Regional Adopter
+                    </text>
+                    <rect
+                        x="660"
+                        y="510"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(210,153,34,0.12)"
+                        stroke="#d29922"
+                        stroke-width="1.5"
+                    />
+                    <text
+                        x="750"
+                        y="535"
+                        fill="#d29922"
+                        font-size="12"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        X-Curve Analyst
+                    </text>
+                    <rect
+                        x="80"
+                        y="620"
+                        width="160"
+                        height="36"
+                        rx="8"
+                        fill="rgba(247,120,186,0.08)"
+                        stroke="#f778ba"
+                        stroke-width="1"
+                        stroke-dasharray="4"
+                    />
+                    <text
+                        x="160"
+                        y="643"
+                        fill="#f778ba"
+                        font-size="10"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Demand Decomposer
+                    </text>
+                    <rect
+                        x="260"
+                        y="620"
+                        width="160"
+                        height="36"
+                        rx="8"
+                        fill="rgba(247,120,186,0.08)"
+                        stroke="#f778ba"
+                        stroke-width="1"
+                        stroke-dasharray="4"
+                    />
+                    <text
+                        x="340"
+                        y="643"
+                        fill="#f778ba"
+                        font-size="10"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Stream Forecaster
+                    </text>
+                    <rect
+                        x="440"
+                        y="620"
+                        width="140"
+                        height="36"
+                        rx="8"
+                        fill="rgba(247,120,186,0.08)"
+                        stroke="#f778ba"
+                        stroke-width="1"
+                        stroke-dasharray="4"
+                    />
+                    <text
+                        x="510"
+                        y="643"
+                        fill="#f778ba"
+                        font-size="10"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Fleet Modeler
+                    </text>
+                    <rect
+                        x="600"
+                        y="620"
+                        width="160"
+                        height="36"
+                        rx="8"
+                        fill="rgba(247,120,186,0.08)"
+                        stroke="#f778ba"
+                        stroke-width="1"
+                        stroke-dasharray="4"
+                    />
+                    <text
+                        x="680"
+                        y="643"
+                        fill="#f778ba"
+                        font-size="10"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Regional Demand
+                    </text>
+                    <rect
+                        x="780"
+                        y="620"
+                        width="160"
+                        height="36"
+                        rx="8"
+                        fill="rgba(247,120,186,0.08)"
+                        stroke="#f778ba"
+                        stroke-width="1"
+                        stroke-dasharray="4"
+                    />
+                    <text
+                        x="860"
+                        y="643"
+                        fill="#f778ba"
+                        font-size="10"
+                        font-weight="600"
+                        text-anchor="middle"
+                    >
+                        Energy Dispatch
+                    </text>
+                    <line
+                        x1="190"
+                        y1="550"
+                        x2="160"
+                        y2="620"
+                        stroke="#30363d"
+                        stroke-width="1"
+                        marker-end="url(#arrow)"
+                        stroke-dasharray="4"
+                    />
+                    <line
+                        x1="160"
+                        y1="656"
+                        x2="340"
+                        y2="620"
+                        stroke="#30363d"
+                        stroke-width="1"
+                        marker-end="url(#arrow)"
+                        stroke-dasharray="4"
+                    />
+                    <line
+                        x1="340"
+                        y1="656"
+                        x2="510"
+                        y2="620"
+                        stroke="#30363d"
+                        stroke-width="1"
+                        marker-end="url(#arrow)"
+                        stroke-dasharray="4"
+                    />
+                    <line
+                        x1="340"
+                        y1="656"
+                        x2="680"
+                        y2="620"
+                        stroke="#30363d"
+                        stroke-width="1"
+                        marker-end="url(#arrow)"
+                        stroke-dasharray="4"
+                    />
+                    <rect
+                        x="380"
+                        y="680"
+                        width="180"
+                        height="40"
+                        rx="8"
+                        fill="rgba(247,120,186,0.15)"
+                        stroke="#f778ba"
+                        stroke-width="2"
+                        filter="url(#glow)"
+                    />
+                    <text
+                        x="470"
+                        y="705"
+                        fill="#f778ba"
+                        font-size="13"
+                        font-weight="700"
+                        text-anchor="middle"
+                    >
+                        Synthesizer
+                    </text>
+                    <line
+                        x1="470"
+                        y1="550"
+                        x2="470"
+                        y2="680"
+                        stroke="#30363d"
+                        stroke-width="1.5"
+                        marker-end="url(#arrow)"
+                    />
+                </svg>
+            </div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #58a6ff"></div>
+                    Tier 1 — Foundation
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #bc8cff"></div>
+                    Tier 2 — Cost Fitting
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #39d2c0"></div>
+                    Tier 3 — Checkers
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #3fb950"></div>
+                    Tier 4 — Tipping
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #d29922"></div>
+                    Tier 5 — Adoption
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #f778ba"></div>
+                    Tier 6 — Commodity/Energy
+                </div>
+            </div>
+            <h3>Resilience Model</h3>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Criticality</th>
+                            <th>On Failure</th>
+                            <th>Penalty</th>
+                            <th>Behavior</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="badge badge-red">CRITICAL</span>
+                            </td>
+                            <td>Stop pipeline</td>
+                            <td>&mdash;</td>
+                            <td>Report failure</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-orange">HIGH</span>
+                            </td>
+                            <td>Continue</td>
+                            <td>&minus;0.3</td>
+                            <td>Degraded, documented</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-blue">MEDIUM</span>
+                            </td>
+                            <td>Continue</td>
+                            <td>&minus;0.1</td>
+                            <td>Noted in synthesis</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>Analysis Presets</h3>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Preset</th>
+                            <th>Agents</th>
+                            <th>Triggers On</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-blue">FULL</span></td>
+                            <td>11 core</td>
+                            <td>Default</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-green">QUICK</span>
+                            </td>
+                            <td>3</td>
+                            <td>"quick", "cost of X"</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-purple"
+                                    >TIPPING_ONLY</span
+                                >
+                            </td>
+                            <td>9</td>
+                            <td>"tipping point"</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-orange"
+                                    >COST_FOCUS</span
+                                >
+                            </td>
+                            <td>4</td>
+                            <td>"cost trajectory"</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-blue"
+                                    >FULL+COMMODITY</span
+                                >
+                            </td>
+                            <td>16</td>
+                            <td>Commodity + demand</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-purple"
+                                    >ENERGY_FULL</span
+                                >
+                            </td>
+                            <td>13+</td>
+                            <td>Energy + grid/SWB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- COMPARISON -->
+        <div class="section" id="comparison">
+            <h2>Current System vs STDF Agents</h2>
+            <p class="section-sub">Same queries, both systems.</p>
+            <h3>1. Lead Demand Decline</h3>
+            <div class="comparison-grid">
+                <div class="comp-card current">
+                    <div class="comp-label">Current System</div>
+                    <table>
+                        <tr>
+                            <td style="width: 120px; color: var(--text-dim)">
+                                Architecture
+                            </td>
+                            <td>Single LLM, 3 rounds (22 messages)</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-dim)">Answer</td>
+                            <td>Converged to 2027 after 3 iterations</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-dim)">Cost curves</td>
+                            <td>No fitted curves</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-dim)">Demand</td>
+                            <td>Aggregate</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="comp-card agents">
+                    <div class="comp-label">STDF Agents</div>
+                    <table>
+                        <tr>
+                            <td style="width: 120px; color: var(--text-dim)">
+                                Architecture
+                            </td>
+                            <td>16 agents, single pass</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-dim)">Answer</td>
+                            <td>
+                                <strong>2027</strong> (P25: 2027.4, P75: 2028.8)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-dim)">Cost curves</td>
+                            <td>R&sup2;=0.954, 16.81%/yr</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-dim)">Demand</td>
+                            <td>5 vectors, 10 products, 99.98%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="highlight-block">
+                <strong>Key improvement:</strong> Same answer on first pass
+                &mdash; with full provenance, fitted cost curves, 10-product
+                decomposition, 5-region breakdown, and 4-fleet stock-flow
+                models.
+            </div>
+
+            <h3>2. Oil Market</h3>
+            <div class="comparison-grid">
+                <div class="comp-card current">
+                    <div class="comp-label">Current System</div>
+                    <table>
+                        <tr>
+                            <td style="color: var(--text-dim)">Result</td>
+                            <td>Script error interrupted analysis</td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-dim)">Vectors</td>
+                            <td>Transport only</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="comp-card agents">
+                    <div class="comp-label">STDF Agents</div>
+                    <table>
+                        <tr>
+                            <td style="color: var(--text-dim)">Result</td>
+                            <td><strong>Peak 2027&ndash;2030</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="color: var(--text-dim)">Vectors</td>
+                            <td>3: BEV + SWB + heat pumps</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="highlight-block">
+                <strong>Key improvement:</strong> Full multi-sector analysis
+                completed with three disruption fronts.
+            </div>
+
+            <h3>3. Credit Stress (Multi-Disruption)</h3>
+            <div class="comparison-grid">
+                <div class="comp-card current">
+                    <div class="comp-label">Current System</div>
+                    <table>
+                        <tr>
+                            <td style="color: var(--text-dim)">Result</td>
+                            <td>Unable to complete</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="comp-card agents">
+                    <div class="comp-label">STDF Agents</div>
+                    <table>
+                        <tr>
+                            <td style="color: var(--text-dim)">Status</td>
+                            <td>
+                                <span class="badge badge-blue">QUEUED</span> 4
+                                parallel FULL runs
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="highlight-block">
+                <strong>Key improvement:</strong> Pipeline natively supports
+                parallel multi-disruption queries.
+            </div>
+        </div>
+
+        <!-- COMPLETED ANALYSES -->
+        <div class="section" id="runs">
+            <h2>Completed Analyses</h2>
+            <p class="section-sub" id="runs-subtitle">
+                10 analyses. Click titles to expand findings. Click file links
+                to view rendered agent output.
+            </p>
+            <div id="runs-list"></div>
+        </div>
+
+        <!-- SCORECARD -->
+        <div class="section" id="scorecard">
+            <h2>Quality Scorecard</h2>
+            <p class="section-sub">Dimension-by-dimension comparison.</p>
+            <div class="scorecard-wrapper">
+                <div class="scorecard-row header">
+                    <div>Dimension</div>
+                    <div>Current System</div>
+                    <div>STDF Agents</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>First-pass accuracy</strong></div>
+                    <div>2&ndash;3 correction rounds</div>
+                    <div class="improvement">Correct on first pass</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Data provenance</strong></div>
+                    <div>Not consistently tagged</div>
+                    <div class="improvement">All claims tagged [T1/T2/T3]</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Framework compliance</strong></div>
+                    <div>Depends on LLM</div>
+                    <div class="improvement">
+                        Structural: vocab scanning + hooks
+                    </div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Math rigor</strong></div>
+                    <div>Limited fitting</div>
+                    <div class="improvement">
+                        R&sup2;, learning rates, Monte Carlo CI
+                    </div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Demand decomposition</strong></div>
+                    <div>Aggregate</div>
+                    <div class="improvement">10 products, 99%+ coverage</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Regional analysis</strong></div>
+                    <div>Limited</div>
+                    <div class="improvement">5-region per-region S-curves</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Fleet modeling</strong></div>
+                    <div>N/A</div>
+                    <div class="improvement">Stock-flow + OEM/replacement</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Incumbent decline</strong></div>
+                    <div>N/A</div>
+                    <div class="improvement">X-curve, 5 trauma mechanisms</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Error handling</strong></div>
+                    <div>Script errors</div>
+                    <div class="improvement">Failure matrix + degradation</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Auditability</strong></div>
+                    <div>Single output</div>
+                    <div class="improvement">16+ files, each auditable</div>
+                </div>
+                <div class="scorecard-row">
+                    <div><strong>Guardrails</strong></div>
+                    <div>Model compliance</div>
+                    <div class="improvement">Runtime scanning + hooks</div>
+                </div>
+            </div>
+            <h3>Confidence Across Runs</h3>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Analysis</th>
+                            <th>Preset</th>
+                            <th>Agents</th>
+                            <th>Confidence</th>
+                            <th>Guard</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI Labor</td>
+                            <td>FULL</td>
+                            <td>12/16</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.85</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 85%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>EV Tipping</td>
+                            <td>TIPPING</td>
+                            <td>9/16</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.88</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 88%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Lead</td>
+                            <td>FULL+C</td>
+                            <td>16/16</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.82</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 82%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Oil Extended</td>
+                            <td>FULL+C</td>
+                            <td>16/16</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.82</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 82%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>BEV China</td>
+                            <td>FULL+C</td>
+                            <td>16/16</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.794</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 79.4%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>BEV Quick</td>
+                            <td>QUICK</td>
+                            <td>3/16</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.815</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 81.5%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Humanoid</td>
+                            <td>COST</td>
+                            <td>4/16</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.71</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill medium"
+                                            style="width: 71%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>EV Full</td>
+                            <td>FULL</td>
+                            <td>6/6</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.85</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 85%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>Oil Market</td>
+                            <td>FULL</td>
+                            <td>6/6</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.784</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 78.4%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                        <tr>
+                            <td>EV Early</td>
+                            <td>FULL</td>
+                            <td>6/6</td>
+                            <td>
+                                <div class="conf-bar">
+                                    <span>0.857</span>
+                                    <div class="conf-track">
+                                        <div
+                                            class="conf-fill high"
+                                            style="width: 85.7%"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge badge-green">PASS</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p
+                    style="
+                        color: var(--text-dim);
+                        font-size: 0.85rem;
+                        margin-top: 12px;
+                    "
+                >
+                    All 10 passed guardrails. Avg confidence: 0.83.
+                </p>
+            </div>
+        </div>
+
+        <!-- ROADMAP -->
+        <div class="section" id="roadmap">
+            <h2>Roadmap</h2>
+            <p class="section-sub">Next analyses and pipeline enhancements.</p>
+            <h3>Next Analyses</h3>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Priority</th>
+                            <th>Query</th>
+                            <th>Preset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="badge badge-purple">HIGH</span>
+                            </td>
+                            <td>Top four credit stress areas</td>
+                            <td>FULL x4</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-purple">HIGH</span>
+                            </td>
+                            <td>Lithium-ion demand globally</td>
+                            <td>FULL+COMMODITY</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-purple">HIGH</span>
+                            </td>
+                            <td>Germany gas demand peak</td>
+                            <td>ENERGY_FULL</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-blue">MEDIUM</span>
+                            </td>
+                            <td>Copper demand drivers</td>
+                            <td>FULL+COMMODITY</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-blue">MEDIUM</span>
+                            </td>
+                            <td>SWB vs LNG 2030&ndash;2032</td>
+                            <td>ENERGY_GAS</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="badge badge-blue">MEDIUM</span>
+                            </td>
+                            <td>AI cognitive labor</td>
+                            <td>FULL</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p
+                    style="
+                        color: var(--text-dim);
+                        font-size: 0.85rem;
+                        margin-top: 12px;
+                    "
+                >
+                    Full queue: 25 queries from 20+ users.
+                </p>
+            </div>
+            <h3>Enhancements</h3>
+            <div class="roadmap-item">
+                <strong>Supply-side modeling.</strong> Add supply dynamics
+                &mdash; e.g., recycling loops amplifying commodity surplus.
+            </div>
+            <div class="roadmap-item">
+                <strong>Synthesis source tagging.</strong> Improve inline
+                attribution in final synthesis.
+            </div>
+            <div class="roadmap-item">
+                <strong>Canonical sector engines.</strong> Promote domain models
+                (copper 4-bucket, labor sim) to first-class pipeline components.
+            </div>
+            <div class="roadmap-item">
+                <strong>Emerging market data.</strong> Expand catalog for 2W/3W
+                (India, SE Asia) and humanoid robot shipments.
+            </div>
+            <div class="roadmap-item">
+                <strong>Interactive reports.</strong> HTML reports with charts
+                and expandable agent detail.
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            STDF Agents &mdash; 25 March 2026 &mdash; 18 agents &bull; 956
+            curves &bull; 15 math modules &bull; 10 analyses
+        </div>
+
+        <!-- JS -->
+        <script>
+            // Tabs
+            document.querySelectorAll(".nav button").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    document
+                        .querySelectorAll(".nav button")
+                        .forEach((b) => b.classList.remove("active"));
+                    document
+                        .querySelectorAll(".section")
+                        .forEach((s) => s.classList.remove("active"));
+                    btn.classList.add("active");
+                    document
+                        .getElementById(btn.dataset.tab)
+                        .classList.add("active");
+                });
+            });
+
+            const RUNS_DATA = [
+                {
+                    slug: "ai-cognitive-labor",
+                    style: "border-left: 3px solid var(--purple)",
+                    title:
+                        "AI Cognitive Labor &mdash; Is AI a Deflationary Shock?",
+                    badge: { className: "badge-blue", label: "FULL" },
+                    confidence: { score: "0.85", level: "high", width: "85%" },
+                    agentCount: "12 agents",
+                    date: "2026-03-25",
+                    excerpt:
+                        "Yes &mdash; confirmed, ongoing, non-equilibrating. AI cost: $0.002/task vs human $17.50/task (8,750x). 69.5%/yr decline rate. Tipping 2027. 80% displacement by 2032. USA leads, EU lags by 4.8 years.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/01-domain-disruption.md",
+                            title: "Domain",
+                            label: "Domain",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02a-cost-researcher.md",
+                            title: "Cost Research",
+                            label: "Cost Research",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02b-cost-fitter.md",
+                            title: "Cost Fitter",
+                            label: "Cost Fitter",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04a-cost-parity.md",
+                            title: "Cost Parity",
+                            label: "Cost Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04b-cap-parity.md",
+                            title: "Cap Parity",
+                            label: "Cap Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04c-adopt-readiness.md",
+                            title: "Adopt Ready",
+                            label: "Adopt Ready",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04d-tipping-synthesizer.md",
+                            title: "Tipping",
+                            label: "Tipping",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05a-scurve-fitter.md",
+                            title: "S-Curve",
+                            label: "S-Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05b-regional-adopter.md",
+                            title: "Regional",
+                            label: "Regional",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05c-xcurve-analyst.md",
+                            title: "X-Curve",
+                            label: "X-Curve",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            [
+                                "Cost Advantage",
+                                "8,750x ($0.002 vs $17.50/task)",
+                            ],
+                            [
+                                "Cost Decline Rate",
+                                "69.5%/yr &mdash; 3&ndash;4x faster than solar or batteries",
+                            ],
+                            ["Tipping Point", "2027 (binding: skills gap)"],
+                            ["80% Displacement", "2032.5 globally"],
+                            ["Wage Deflation", "$3&ndash;6T/yr by mid-2030s"],
+                            [
+                                "Already Visible",
+                                "SW dev headcount &minus;20%, CS enrollment &minus;13% (2022&ndash;2025)",
+                            ],
+                            [
+                                "Regional Sequence",
+                                "USA (2030) &rarr; China (2031) &rarr; India (2032) &rarr; RoW (2033) &rarr; EU (2036)",
+                            ],
+                            [
+                                "Pattern",
+                                "Big Bang &mdash; arrived cheap AND capable simultaneously",
+                            ],
+                            [
+                                "Unique Property",
+                                "Stellar technology: zero marginal cost, no Jevons rebound into human labor",
+                            ],
+                        ],
+                    },
+                },
+                {
+                    slug: "give-me-tipping-point-of-ev-vehicles-20260323-200327",
+                    title: "BEV vs ICE &mdash; Tipping Point",
+                    badge: {
+                        className: "badge-purple",
+                        label: "TIPPING_ONLY",
+                    },
+                    confidence: { score: "0.88", level: "high", width: "88%" },
+                    agentCount: "9/16",
+                    date: "2026-03-24",
+                    excerpt:
+                        "Global 2027&ndash;2028. China tipped 2024. Europe 2027. USA 2028.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/01-domain-disruption.md",
+                            title: "Domain",
+                            label: "Domain",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02a-cost-researcher.md",
+                            title: "Cost Research",
+                            label: "Cost Research",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02b-cost-fitter.md",
+                            title: "Cost Fitter",
+                            label: "Cost Fitter",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04a-cost-parity.md",
+                            title: "Cost Parity",
+                            label: "Cost Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04b-cap-parity.md",
+                            title: "Cap Parity",
+                            label: "Cap Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04c-adopt-readiness.md",
+                            title: "Adopt Ready",
+                            label: "Adopt Ready",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04d-tipping-synthesizer.md",
+                            title: "Tipping",
+                            label: "Tipping",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            ["Global", "2027&ndash;2028"],
+                            ["China", "Tipped 2024"],
+                            ["Europe", "2027"],
+                            ["USA", "2028"],
+                        ],
+                    },
+                },
+                {
+                    slug: "bev-trucks-china",
+                    title: "BEV Heavy Trucks Disrupt NG Trucks in China",
+                    badge: {
+                        className: "badge-blue",
+                        label: "FULL+COMMODITY",
+                    },
+                    confidence: {
+                        score: "0.794",
+                        level: "high",
+                        width: "79.4%",
+                    },
+                    agentCount: "16/16",
+                    date: "2026-03-20",
+                    excerpt:
+                        "Urban tipped 2022. Long-haul 2025&ndash;2026. LNG trucks = doubly-compressed chimera.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/01-domain-disruption.md",
+                            title: "Domain Disruption",
+                            label: "Domain Disruption",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02a-cost-researcher.md",
+                            title: "Cost Researcher",
+                            label: "Cost Researcher",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02b-cost-fitter.md",
+                            title: "Cost Fitter",
+                            label: "Cost Fitter",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04a-cost-parity.md",
+                            title: "Cost Parity",
+                            label: "Cost Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04b-cap-parity.md",
+                            title: "Cap Parity",
+                            label: "Cap Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04c-adopt-readiness.md",
+                            title: "Adopt Readiness",
+                            label: "Adopt Readiness",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04d-tipping-synthesizer.md",
+                            title: "Tipping",
+                            label: "Tipping",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05a-scurve-fitter.md",
+                            title: "S-Curve",
+                            label: "S-Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05b-regional-adopter.md",
+                            title: "Regional",
+                            label: "Regional",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05c-xcurve-analyst.md",
+                            title: "X-Curve",
+                            label: "X-Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07a-demand-decomposer.md",
+                            title: "Demand Decomp",
+                            label: "Demand Decomp",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07b-stream-forecaster.md",
+                            title: "Streams",
+                            label: "Streams",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07c-fleet-modeler.md",
+                            title: "Fleet",
+                            label: "Fleet",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07d-regional-demand.md",
+                            title: "Regional Demand",
+                            label: "Regional Demand",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            [
+                                "Rupture",
+                                "Urban: 2022 &bull; Long-haul: 2025&ndash;2026",
+                            ],
+                            ["BEV Advantage", "&minus;27% (CNY/km)"],
+                            ["LFP Rate", "16.70%/yr"],
+                            ["Li Demand 2031", "244 kt LCE/yr"],
+                        ],
+                    },
+                },
+                {
+                    slug: "lead-demand-decline",
+                    title: "Lead (Pb) Demand Decline",
+                    badge: {
+                        className: "badge-blue",
+                        label: "FULL+COMMODITY",
+                    },
+                    confidence: { score: "0.82", level: "high", width: "82%" },
+                    agentCount: "16/16",
+                    date: "2026-03-20",
+                    excerpt:
+                        "10% threshold in 2027. 5 vectors, 10 products, 99.98% coverage.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/01-domain-disruption.md",
+                            title: "Domain",
+                            label: "Domain",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02a-cost-researcher.md",
+                            title: "Cost Research",
+                            label: "Cost Research",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02b-cost-fitter.md",
+                            title: "Cost Fitter",
+                            label: "Cost Fitter",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04a-cost-parity.md",
+                            title: "Cost Parity",
+                            label: "Cost Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04b-cap-parity.md",
+                            title: "Cap Parity",
+                            label: "Cap Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04c-adopt-readiness.md",
+                            title: "Adopt Ready",
+                            label: "Adopt Ready",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04d-tipping-synthesizer.md",
+                            title: "Tipping",
+                            label: "Tipping",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05a-scurve-fitter.md",
+                            title: "S-Curve",
+                            label: "S-Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05b-regional-adopter.md",
+                            title: "Regional",
+                            label: "Regional",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05c-xcurve-analyst.md",
+                            title: "X-Curve",
+                            label: "X-Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07a-demand-decomposer.md",
+                            title: "Demand",
+                            label: "Demand",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07b-stream-forecaster.md",
+                            title: "Streams",
+                            label: "Streams",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07c-fleet-modeler.md",
+                            title: "Fleet",
+                            label: "Fleet",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07d-regional-demand.md",
+                            title: "Reg Demand",
+                            label: "Reg Demand",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            ["Threshold", "2027 (P25:2027.4, P75:2028.8)"],
+                            ["Baseline", "12,259 kt"],
+                            ["Learning Rate", "16.81%/yr (R&sup2;=0.954)"],
+                        ],
+                    },
+                },
+                {
+                    slug: "oil-gas-outlook",
+                    title: "Oil &amp; Gas Demand Disruption (Extended)",
+                    badge: {
+                        className: "badge-blue",
+                        label: "FULL+COMMODITY",
+                    },
+                    confidence: { score: "0.82", level: "high", width: "82%" },
+                    agentCount: "16/16",
+                    date: "2026-03-20",
+                    excerpt:
+                        "BEV + solar+BESS + heat pumps. All 16 agents. Rupture 2027&ndash;2028.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/01-domain-disruption.md",
+                            title: "Domain",
+                            label: "Domain",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02a-cost-researcher.md",
+                            title: "Cost Research",
+                            label: "Cost Research",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02b-cost-fitter.md",
+                            title: "Cost Fitter",
+                            label: "Cost Fitter",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04a-cost-parity.md",
+                            title: "Cost Parity",
+                            label: "Cost Parity",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04d-tipping-synthesizer.md",
+                            title: "Tipping",
+                            label: "Tipping",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05a-scurve-fitter.md",
+                            title: "S-Curve",
+                            label: "S-Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05b-regional-adopter.md",
+                            title: "Regional",
+                            label: "Regional",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05c-xcurve-analyst.md",
+                            title: "X-Curve",
+                            label: "X-Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07a-demand-decomposer.md",
+                            title: "Demand",
+                            label: "Demand",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/07b-stream-forecaster.md",
+                            title: "Streams",
+                            label: "Streams",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            ["Rupture", "2027&ndash;2028"],
+                            ["Agents", "16/16 completed"],
+                        ],
+                    },
+                },
+                {
+                    slug: "bev-trucks-china-2",
+                    title: "BEV Truck Costs in China (Quick)",
+                    badge: { className: "badge-green", label: "QUICK" },
+                    confidence: {
+                        score: "0.815",
+                        level: "high",
+                        width: "81.5%",
+                    },
+                    agentCount: "3",
+                    date: "2026-03-20",
+                    excerpt:
+                        "LFP 91.5% decline. Parity crossed 2024 short-haul.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/02a-cost-researcher.md",
+                            title: "Cost Research",
+                            label: "Cost Research",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02b-cost-fitter.md",
+                            title: "Cost Fitter",
+                            label: "Cost Fitter",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            ["LFP", "$1,100&rarr;$94/kWh"],
+                            ["Rate", "16.66%/yr"],
+                        ],
+                    },
+                },
+                {
+                    slug: "humanoid-robots",
+                    title: "Humanoid Robot Cost Curve &mdash; 20 Years",
+                    badge: { className: "badge-orange", label: "COST_FOCUS" },
+                    confidence: {
+                        score: "0.71",
+                        level: "medium",
+                        width: "71%",
+                    },
+                    agentCount: "4",
+                    date: "2026-03-19",
+                    excerpt:
+                        "Parity crossed 2020&ndash;2021. $10.76/hr vs $42.40/hr. 8/8 capabilities. 32%/yr hardware rate.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/02a-cost-researcher.md",
+                            title: "Cost Research",
+                            label: "Cost Research",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02b-cost-fitter.md",
+                            title: "Cost Fitter",
+                            label: "Cost Fitter",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            ["HW Rate", "32.07%/yr"],
+                            ["Service Rate", "23.67%/yr"],
+                            ["2044 Cost", "$0.07/hr"],
+                        ],
+                    },
+                },
+                {
+                    slug: "oil-market-disruption",
+                    title: "Oil Market &mdash; Multi-Sector",
+                    badge: { className: "badge-blue", label: "FULL" },
+                    confidence: {
+                        score: "0.784",
+                        level: "high",
+                        width: "78.4%",
+                    },
+                    agentCount: "6/6",
+                    date: "2026-03-16",
+                    excerpt:
+                        "Peak 2027&ndash;2030. BEV + SWB + heat pumps. Ratchet mechanism.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/01-domain-disruption.md",
+                            title: "Domain",
+                            label: "Domain",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02-cost-curve.md",
+                            title: "Cost Curve",
+                            label: "Cost Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04-tipping-point.md",
+                            title: "Tipping",
+                            label: "Tipping",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05-adoption-scurve.md",
+                            title: "S-Curve",
+                            label: "S-Curve",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            ["Peak", "2027&ndash;2030"],
+                            ["BEV vs ICE", "&minus;45%"],
+                            ["Solar vs Gas", "&minus;70%"],
+                        ],
+                    },
+                },
+                {
+                    slug: "electric-vehicles",
+                    title: "Electric Vehicles Disrupting ICE",
+                    badge: { className: "badge-blue", label: "FULL" },
+                    confidence: { score: "0.85", level: "high", width: "85%" },
+                    agentCount: "6/6",
+                    date: "2026-03-16",
+                    excerpt:
+                        "Rupture 2025&ndash;2027. 62% BEV by 2031 (R&sup2;=0.979).",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/01-domain-disruption.md",
+                            title: "Domain",
+                            label: "Domain",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02-cost-curve.md",
+                            title: "Cost Curve",
+                            label: "Cost Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04-tipping-point.md",
+                            title: "Tipping",
+                            label: "Tipping",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05-adoption-scurve.md",
+                            title: "S-Curve",
+                            label: "S-Curve",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Finding", "Value"],
+                        rows: [
+                            ["S-Curve", "62% by 2031, 82% by 2036"],
+                            ["Battery", "$1,436&rarr;$115/kWh"],
+                        ],
+                    },
+                },
+                {
+                    slug: "ev-analysis",
+                    title: "EV vs ICE (Early Run)",
+                    badge: { className: "badge-blue", label: "FULL" },
+                    confidence: {
+                        score: "0.857",
+                        level: "high",
+                        width: "85.7%",
+                    },
+                    agentCount: "6/6",
+                    date: "2026-03-13",
+                    excerpt: "First full pipeline run. Confidence 0.857.",
+                    links: [
+                        {
+                            file: "00-final-synthesis.md",
+                            title: "Final Synthesis",
+                            label: "&#9733; Final Synthesis",
+                            className: "file-link synthesis",
+                        },
+                        {
+                            file: "agents/01-domain-disruption.md",
+                            title: "Domain",
+                            label: "Domain",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/02-cost-curve.md",
+                            title: "Cost Curve",
+                            label: "Cost Curve",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/03-capability.md",
+                            title: "Capability",
+                            label: "Capability",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/04-tipping-point.md",
+                            title: "Tipping",
+                            label: "Tipping",
+                            className: "file-link",
+                        },
+                        {
+                            file: "agents/05-adoption-scurve.md",
+                            title: "S-Curve",
+                            label: "S-Curve",
+                            className: "file-link",
+                        },
+                    ],
+                    table: {
+                        headers: ["Agent", "Confidence"],
+                        rows: [
+                            ["Domain", "0.87"],
+                            ["Cost", "0.88"],
+                            ["Capability", "0.87"],
+                            ["Tipping", "0.86"],
+                            ["S-Curve", "0.78"],
+                        ],
+                    },
+                },
+            ];
+
+            const runsList = document.getElementById("runs-list");
+            const runsSubtitle = document.getElementById("runs-subtitle");
+
+            function renderRunLink(link, runIndex, linkIndex) {
+                return (
+                    '<a class="' +
+                    link.className +
+                    '" data-run-index="' +
+                    runIndex +
+                    '" data-link-index="' +
+                    linkIndex +
+                    '">' +
+                    link.label +
+                    "</a>"
+                );
+            }
+
+            function renderRunTable(table) {
+                const headers = table.headers
+                    .map((header) => "<th>" + header + "</th>")
+                    .join("");
+                const rows = table.rows
+                    .map(
+                        ([label, value]) =>
+                            "<tr><td>" +
+                            label +
+                            "</td><td>" +
+                            value +
+                            "</td></tr>",
+                    )
+                    .join("");
+                return (
+                    "<table><thead><tr>" +
+                    headers +
+                    "</tr></thead><tbody>" +
+                    rows +
+                    "</tbody></table>"
+                );
+            }
+
+            function renderRunCard(run, runIndex) {
+                const styleAttr = run.style ? ' style="' + run.style + '"' : "";
+                const links = run.links
+                    .map((link, linkIndex) =>
+                        renderRunLink(link, runIndex, linkIndex),
+                    )
+                    .join("");
+                return (
+                    '<div class="run-card" data-slug="' +
+                    run.slug +
+                    '"' +
+                    styleAttr +
+                    '><div class="run-header"><h4>' +
+                    run.title +
+                    '</h4><div class="run-meta"><span class="badge ' +
+                    run.badge.className +
+                    '">' +
+                    run.badge.label +
+                    '</span><div class="conf-bar"><span style="font-size: 0.82rem; color: var(--text-dim);">' +
+                    run.confidence.score +
+                    '</span><div class="conf-track"><div class="conf-fill ' +
+                    run.confidence.level +
+                    '" style="width: ' +
+                    run.confidence.width +
+                    '"></div></div></div><span>' +
+                    run.agentCount +
+                    "</span><span>" +
+                    run.date +
+                    '</span></div></div><div class="run-excerpt">' +
+                    run.excerpt +
+                    '</div><div class="file-links">' +
+                    links +
+                    '</div><div class="run-detail">' +
+                    renderRunTable(run.table) +
+                    "</div></div>"
+                );
+            }
+
+            function renderRuns() {
+                runsSubtitle.textContent =
+                    RUNS_DATA.length +
+                    " analyses. Click titles to expand findings. Click file links to view rendered agent output.";
+                runsList.innerHTML = RUNS_DATA.map(renderRunCard).join("");
+            }
+
+            function handleRunsClick(event) {
+                if (!(event.target instanceof Element)) return;
+
+                const linkEl = event.target.closest(".file-link");
+                if (linkEl && runsList.contains(linkEl)) {
+                    const runIndex = Number(linkEl.dataset.runIndex);
+                    const linkIndex = Number(linkEl.dataset.linkIndex);
+                    const run = RUNS_DATA[runIndex];
+                    const link = run?.links[linkIndex];
+                    if (!run || !link) return;
+                    openMd(run.slug, link.file, link.title);
+                    return;
+                }
+
+                const titleEl = event.target.closest(".run-header h4");
+                if (titleEl && runsList.contains(titleEl)) {
+                    titleEl.closest(".run-card").classList.toggle("expanded");
+                }
+            }
+
+            runsList.addEventListener("click", handleRunsClick);
+            renderRuns();
+
+            // Simple markdown to HTML
+            function mdToHtml(md) {
+                let h = md;
+                h = h
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+                h = h.replace(/^---+$/gm, "<hr>");
+                h = h.replace(/^#### (.+)$/gm, "<h4>$1</h4>");
+                h = h.replace(/^### (.+)$/gm, "<h3>$1</h3>");
+                h = h.replace(/^## (.+)$/gm, "<h2>$1</h2>");
+                h = h.replace(/^# (.+)$/gm, "<h1>$1</h1>");
+                h = h.replace(
+                    /\*\*\*(.+?)\*\*\*/g,
+                    "<strong><em>$1</em></strong>",
+                );
+                h = h.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+                h = h.replace(/\*(.+?)\*/g, "<em>$1</em>");
+                h = h.replace(/`([^`]+)`/g, "<code>$1</code>");
+                h = h.replace(
+                    /\[([^\]]+)\]\(([^)]+)\)/g,
+                    '<a href="$2" target="_blank">$1</a>',
+                );
+                h = h.replace(/^&gt; (.+)$/gm, "<blockquote>$1</blockquote>");
+                // Tables
+                h = h.replace(
+                    /^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)*)/gm,
+                    function (m, hdr, sep, body) {
+                        const ths = hdr
+                            .split("|")
+                            .filter((c) => c.trim())
+                            .map((c) => "<th>" + c.trim() + "</th>")
+                            .join("");
+                        const rows = body
+                            .trim()
+                            .split("\n")
+                            .map((r) => {
+                                const tds = r
+                                    .split("|")
+                                    .filter((c) => c.trim())
+                                    .map((c) => "<td>" + c.trim() + "</td>")
+                                    .join("");
+                                return "<tr>" + tds + "</tr>";
+                            })
+                            .join("");
+                        return (
+                            "<table><thead><tr>" +
+                            ths +
+                            "</tr></thead><tbody>" +
+                            rows +
+                            "</tbody></table>"
+                        );
+                    },
+                );
+                // Lists
+                h = h.replace(/^[-*] (.+)$/gm, "<li>$1</li>");
+                h = h.replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul>$1</ul>");
+                // Paragraphs
+                h = h
+                    .split("\n")
+                    .map((l) => {
+                        const t = l.trim();
+                        if (!t) return "";
+                        if (t.startsWith("<")) return l;
+                        return "<p>" + l + "</p>";
+                    })
+                    .join("\n");
+                h = h.replace(/<p>\s*<\/p>/g, "");
+                return h;
+            }
+
+            // Modal
+            function openMd(slug, file, title) {
+                const ov = document.getElementById("modal-overlay");
+                const body = document.getElementById("modal-body");
+                document.getElementById("modal-title").textContent = title;
+                document.getElementById("modal-path").textContent =
+                    "output/" + slug + "/" + file;
+                body.innerHTML = '<div class="modal-loading">Loading...</div>';
+                ov.classList.add("open");
+                fetch("../output/" + slug + "/" + file)
+                    .then((r) => {
+                        if (!r.ok) throw new Error("Not found");
+                        return r.text();
+                    })
+                    .then((md) => {
+                        body.innerHTML = mdToHtml(md);
+                        body.scrollTop = 0;
+                    })
+                    .catch(() => {
+                        body.innerHTML =
+                            '<div class="modal-error">' +
+                            "<p>Cannot load via fetch (file:// restriction).</p>" +
+                            '<p style="margin-top:12px"><a href="../output/' +
+                            slug +
+                            "/" +
+                            file +
+                            '" target="_blank" style="color:var(--accent);text-decoration:underline">Open raw file &rarr;</a></p>' +
+                            '<p style="margin-top:8px;font-size:0.8rem;color:var(--text-dim)">Tip: run <code>python3 -m http.server</code> in the repo root for full rendering.</p></div>';
+                    });
+            }
+            function closeModal() {
+                document
+                    .getElementById("modal-overlay")
+                    .classList.remove("open");
+            }
+            document
+                .querySelector(".modal-close")
+                .addEventListener("click", closeModal);
+            document
+                .getElementById("modal-overlay")
+                .addEventListener("click", function (e) {
+                    if (e.target === this) closeModal();
+                });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") closeModal();
+            });
+        </script>
+    </body>
+</html>
