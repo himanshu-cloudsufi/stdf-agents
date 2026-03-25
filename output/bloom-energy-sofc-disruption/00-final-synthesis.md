@@ -1,14 +1,14 @@
-# STDF v2 Disruption Analysis: When to Short Bloom Energy — SWB Displacement of Stationary Natural Gas Fuel Cells
+# STDF v2 Disruption Analysis: Bloom Energy SOFC Disruption by SWB
 
 **Sector:** Energy | **Framework:** STDF v2 | **Date:** 2026-03-25
-**Pipeline Confidence:** 0.70 | **Rupture Window:** 2031–2032 | **Short Entry Window:** 2028–2030
-**Cost Override:** Marginal cost framing (Tony override — LCOE used as secondary reference only)
+**Pipeline Confidence:** 0.702 | **Rupture Window:** 2028–2032
+**User Override:** Cost metric is MARGINAL COST (not LCOE); dual threshold reported
 
 ---
 
 ## Executive Summary
 
-Bloom Energy (NYSE: BE) is a structurally doomed growth story trading at an AI-data-center premium that will not survive contact with the SWB (Solar + Wind + Battery) cost curve. The company's solid oxide fuel cells (SOFCs) running on natural gas are X-Flow technology: their marginal cost of electricity is permanently bounded below by the Henry Hub gas price. SWB is Stellar technology: zero marginal fuel cost. In the on-site dispatch merit order, BESS cycling already costs $6.1/MWh [model-derived, energy-dispatch] versus Bloom's minimum marginal cost of $22.9/MWh at the 2024 all-time-low gas price of $2.19/MMBtu [observed, cost-fitter] — a structural gap that cannot close at any realistic gas price. On a new-system LCOE basis, SWB at 4-hour BESS crossed below Bloom's full LCOE in 2024, and LCOE parity on the standard amortized cost basis is modeled at 2031–2032 (cost-parity-checker, confidence 0.70). The tipping year is 2031–2032, binding constraint: cost parity (tipping-synthesizer). Between now and then, Bloom's AI data center tailwind inflates revenue to a modeled peak of $3.0–3.2B in 2027–2028 [model-derived, xcurve-analyst] — a chimera-like growth phase that masks the structural cost erosion underneath. The short entry window is **2028–2030**, when revenue growth deceleration becomes visible, SWB LCOE closes to within 20% of SOFC LCOE, and the 2–3 year enterprise procurement horizon brings the 2031–2032 parity year into full view. At the peak, Bloom trades at 125x forward P/E as a growth company [observed, xcurve-analyst]. At the trough, it is a declining services annuity worth 15–20x the $750M/yr stack-replacement revenue stream [model-derived, xcurve-analyst] — implying 63–73% stock downside from the March 2026 ~$41B market cap.
+Bloom Energy's solid oxide fuel cell (SOFC) business faces structurally irreversible displacement by the Solar-Wind-Battery (SWB) platform, but the timing of that displacement separates into two distinct events: a revenue peak in 2027–2028 at ~$3.0–3.2B [model-derived] driven by the AI data center demand surge, followed by an order-book collapse beginning 2031–2032 when SWB reaches full LCOE parity at $78.4/MWh [model-derived, cost-parity-checker]. The short answer to "when would you short Bloom Energy?" is: **enter the short position in 2028–2030**, when revenue begins decelerating from its AI-driven peak and procurement officers can see SWB LCOE closing within 20% of SOFC LCOE — not at the 2031–2032 tipping year itself, which will already be priced in by then. The binding constraint delaying disruption is cost parity: capability parity clears in 2027 [model-derived, cap-parity-checker], adoption readiness clears in 2028 [model-derived, adopt-readiness-checker], but LCOE parity does not arrive until 2031–2032. Bloom's structural flaw is permanent: as an X-Flow technology with marginal cost bounded below by Henry Hub gas prices, Bloom dispatches third in the on-site merit order — after solar ($0/MWh) and BESS ($5–14/MWh cycling cost) — a structural disadvantage that no efficiency improvement can overcome. The $2.2B convertible note maturing in 2030 [observed] lands at the onset of order collapse, compounding equity risk. Confidence: 0.702 (medium; limited by scurve-fitter proxy market data at 0.62 and regional-adopter at 0.52).
 
 ---
 
@@ -16,359 +16,473 @@ Bloom Energy (NYSE: BE) is a structurally doomed growth story trading at an AI-d
 
 ### Phase 1: Sector Scoping
 
-**Sector boundary and sub-domains.** The analysis covers the Energy sector, specifically the distributed on-site power generation sub-domain (domain-disruption): commercial and industrial (C&I) customers, data centers, hospitals, and microgrids requiring always-on behind-the-meter power generation at 1–20 MW scale. This is Bloom Energy's entire addressable market. The analysis excludes utility-scale centralized generation, transportation, and residential. Five sub-domains are in scope: data center primary and backup power (~35–40% of Bloom revenue [model-derived from public deal announcements]), C&I on-site generation (~30–35%), hospital and healthcare critical power (~10–15%), utility and grid-edge power (~10%), and microgrid/edge power (~5–8%) (domain-disruption).
+The analysis covers the **distributed on-site power generation** sub-domain — the specific market where Bloom Energy's SOFC platform competes (domain-disruption). The broader sector is Energy; the disruption sub-domain is tightly scoped: enterprise customers requiring always-on, behind-the-meter electricity at 1–20 MW scale, including data centers (~35–40% of Bloom revenue), commercial/industrial (~30–35%), and hospital/healthcare (~10–15%) (domain-disruption).
 
-**Disruptors and incumbents.** The disruptor is the SWB (Solar-Wind-Battery) stack — commercial/C&I solar PV combined with LFP (lithium iron phosphate) battery energy storage systems (BESS) deployed behind-the-meter. SWB is classified as a Stellar technology: zero marginal fuel cost, with cost-curve dynamics driving -13.5%/yr solar PV cost decline and -15.8%/yr BESS cost decline (2010–2024 observed CAGR, domain-disruption). The incumbent is Bloom Energy's solid oxide fuel cell (SOFC) running on natural gas, classified as X-Flow: value proposition tied to continuous physical natural gas throughput, marginal cost permanently bounded by Henry Hub pricing (domain-disruption). Bloom is the dominant global commercial SOFC operator, with a 1.2 GW installed base at over 1,000 sites, $1.474B in 2024 revenue [observed, Bloom 10-K 2024], and $2.02B in 2025 revenue (+37.3% YoY [observed, Bloom IR 2025]).
+**Primary disruptors:** Utility-scale and commercial rooftop solar PV; lithium iron phosphate (LFP) battery energy storage systems (BESS); integrated SWB systems (Solar + Wind + Battery).
 
-**Two chimera configurations** are active in this market: (1) SOFC + BESS hybrid (on-site), which retains all of Bloom's X-Flow infrastructure dependencies and cannot achieve SWB's cost curve; (2) solar + natural gas peaker backup ("solar-plus-peaker"), which captures most SWB cost advantages while retaining gas backup and evolves to pure SWB as BESS duration increases. Neither chimera represents a durable competitive moat for Bloom (domain-disruption).
+**Primary incumbent:** Bloom Energy solid oxide fuel cell (SOFC), natural-gas-fed, on-site distributed generation — the dominant US stationary fuel cell vendor with ~1.2 GW installed globally and $2.02B revenue in 2025 [observed, xcurve-analyst].
 
-**Primary markets.** Bloom operates in two primary national markets: the USA (~65% of revenue [model-derived from SK ecoplant ~23% related-party disclosure, 10-K 2024]) and South Korea (~28% of revenue via SK ecoplant related-party and additional partners [model-derived, regional-adopter]). Europe accounts for approximately 7% and is assessed as a reference market (regional-adopter).
+**Geographic scope:** USA (~65% of Bloom revenue), South Korea (~28%), Europe (~7%) (regional-adopter). The standard STDF China-leads adoption pattern is inverted here: China deploys SWB at ~16% enterprise BTM market share [model-derived] but has zero Bloom revenue exposure (regional-adopter). The USA S-curve trajectory is the decisive short-thesis risk vector.
+
+**Technology flow classification (domain-disruption):**
+- Bloom SOFC = **X-Flow** — marginal cost structurally bounded by Henry Hub gas price; $23–48/MWh fuel + variable O&M in 2024 [model-derived, energy-dispatch]
+- SWB = **Stellar** — zero marginal fuel cost; cost-curve dynamics drive declining capital cost without Jevons rebound effect
+
+This classification is structurally determinative: the merit order always places SWB above Bloom in dispatch priority, because Stellar technologies dispatch first regardless of total installed cost.
+
+**Chimeras identified (domain-disruption):** (1) SOFC + BESS hybrid on-site system — retains gas infrastructure dependency, fails SWB cost curve; (2) Solar + natural gas peaker backup; (3) Bloom SOFC on biogas — chimera because it retains gas supply chain; (4) Bloom SOFC on electrolytic hydrogen — a fuel-swap within the same platform, not a convergence.
 
 ---
 
 ### Phase 2: Technology Inventory
 
-**SWB disruptor — observed cost history.** Solar PV installed cost (USA, C&I commercial, NREL benchmark) declined from $5,300/kW (2010) to $1,780/kW (2023) — a 66% reduction over 13 years at 7.8%/yr (cost-fitter). BESS 4-hour turnkey system cost (global) declined from $441/kWh (2019) to $255/kWh (2024) — a 42% reduction over 5 years at 9.0%/yr (cost-fitter). Stationary Li-Ion battery pack cost declined from $1,400/kWh (2010) to $125/kWh (2024) — a 91% reduction at 15.3%/yr (cost-fitter). All disruptor cost trajectories are Stellar: no fuel cost component, learning rates driven by cumulative manufacturing volume.
+#### Disruptor: SWB (Solar + Wind + Battery)
 
-**SWB disruptor — exponential fits.** C&I solar PV: C(t) = 4,410 × exp(−0.0813 × (t − 2010)), R² = 0.806, 7 data points [model-derived, cost-fitter]. Li-Ion battery pack: C(t) = 1,210 × exp(−0.1662 × (t − 2010)), R² = 0.986, 15 data points [model-derived, cost-fitter]. BESS 4-hour turnkey: C(t) = 408 × exp(−0.0948 × (t − 2019)), R² = 0.900, 6 data points [model-derived, cost-fitter]. System-level composite R² = 0.74 (suppressed by 2022 supply chain spike in C&I solar and BESS — a real, transitory market event, not a data error).
+**Solar PV installed cost (USA C&I commercial rooftop, NREL primary basis — cost-fitter):**
 
-**Bloom SOFC incumbent — observed cost history.** SOFC capital cost declined from approximately $9,700/kW (2009, Hindenburg Research citing Bloom board documents [T3]) to approximately $2,950/kW (2020, DOE expert elicitation [T3]) — a 70% reduction over 11 years at 6.8%/yr. From 2020 to 2024, SOFC capital cost STAGNATED at approximately $3,500/kW (mean $3,475/kW, R² = 0.609 on linear fit — consistent with noise around a flat trend, not systematic decline) [model-derived, cost-fitter]. The structural drivers of stagnation: loss of scale economies as Bloom's installed base grew slowly versus plan; ceramic sintering and rare-earth catalyst requirements set a hard physical production floor; the fuel cost component has zero learning rate by definition (cost-fitter).
+| Year | Cost ($/kW) | Data Type |
+|------|-------------|-----------|
+| 2010 | 5,300 | [observed, NREL T3] |
+| 2016 | 2,165 | [observed, NREL T3] |
+| 2020 | 1,730 | [observed, NREL T3] |
+| 2022 | 1,990 | [observed, NREL T3 — supply chain spike] |
+| 2023 | 1,780 | [observed, NREL T3] |
 
-**SOFC marginal cost — the structural kill condition.** Bloom's marginal cost is computed as: SOFC_MC ($/MWh) = (Henry Hub $/MMBtu ÷ (293.07 × 0.58)) × 1,000 + 10.0 (variable O&M). At 2024 historic-low gas ($2.19/MMBtu), SOFC marginal = $22.9/MWh [model-derived, cost-fitter]. At historical average gas ($2.75/MMBtu), SOFC marginal = $26.2/MWh. At 2022 spike gas ($6.45/MMBtu), SOFC marginal = $47.9/MWh. The historical SOFC marginal cost range across 2010–2024: $21.9–$61.9/MWh [model-derived, cost-researcher]. SWB's marginal fuel cost: $0/MWh (Stellar classification). The 8-hour BESS cycling cost (SCOE): $6.1/MWh in 2024 [model-derived, energy-dispatch]. Even at the all-time-low gas price, Bloom's marginal cost ($22.9/MWh) exceeds 8-hour BESS SCOE ($6.1/MWh) by $16.8/MWh. For Bloom's marginal cost to equal BESS SCOE, gas would need to be priced below $0/MMBtu — structurally impossible under normal market conditions (gas-supply-decomposer).
+**Li-Ion battery pack cost (stationary storage, global, $/kWh capacity — cost-fitter, cost-researcher):**
 
-**SWB amortized capital cost — current and forward curve.** At 2024 hardware costs (C&I solar $1,600/kW, BESS 4-hr $255/kWh), SWB amortized capital cost = $162.6/MWh [model-derived, cost-parity-checker]. The forward trajectory [model-derived, cost-fitter]:
+| Year | Cost ($/kWh) | Data Type |
+|------|-------------|-----------|
+| 2010 | 1,400 | [observed, T2 Rethinkx] |
+| 2016 | 428 | [observed, T2 Rethinkx] |
+| 2019 | 265 | [observed, T2 Rethinkx] |
+| 2021 | 179 | [observed, T2 Rethinkx] |
+| 2024 | 125 | [observed, T2 Rethinkx] |
 
-**All values: [model-derived] from component exponential fits (cost-fitter)**
+**BESS 4-hour turnkey system cost:** $441/kWh (2019) → $255/kWh (2024) [observed, T2 Rethinkx] (capability). BESS SCOE (storage cost of energy, 8hr system): $6.1/MWh in 2024 [model-derived, energy-dispatch].
 
-| Year | SWB Amortized ($/MWh) | SOFC Full LCOE ($/MWh) | SOFC Marginal-mid ($/MWh) | Gap vs LCOE |
-|------|----------------------|------------------------|---------------------------|-------------|
-| 2024 | 162.6 | 78.8 | 40.2 | +83.8 (+106%) |
-| 2026 | 127.2 | 78.8 | 40.2 | +48.4 |
-| 2028 | 108.1 | 78.8 | 40.2 | +29.3 |
-| 2030 | 92.0 | 78.8 | 40.2 | +13.2 |
-| **2032** | **78.4** | **78.8** | **40.2** | **−0.4 (PARITY)** |
-| 2036 | 57.4 | 78.8 | 40.2 | −21.4 |
-| 2040 | 42.5 | 78.8 | 40.2 | −36.3 |
-| **2042** | **36.8** | **78.8** | **40.2** | **−3.4 vs marginal (KILL)** |
+**Disruptor cost-curve dynamics (domain-disruption):** Solar PV CAGR -13.5%/yr (2010–2024); LFP BESS -15.8%/yr CAGR. These are Stellar technology trajectories: cost decline accelerates with scale, no fuel-price floor.
+
+#### Incumbent: Bloom Energy SOFC (Natural Gas)
+
+**SOFC capital cost trajectory (6 anchor points, T3 secondary sources — cost-researcher, cost-fitter):**
+
+| Year | Cost ($/kW) | Data Type |
+|------|-------------|-----------|
+| 2009 | ~9,700 | [observed, T3 — Hindenburg/DOE sources] |
+| 2015 | ~4,500 | [observed, T3] |
+| 2020 | ~2,950 | [observed, T3] |
+| 2024 | ~3,500 | [observed, T3 — stagnation phase] |
+
+**SOFC cost stagnation:** Unlike solar PV and batteries, the SOFC shows no meaningful learning-curve continuation post-2020, flat at ~$3,500/kW (R²=0.609 on 2015–2024 linear fit) (cost-fitter). Physical constraints of ceramic sintering and rare-earth catalysts prevent cost-curve resumption. Capital component locked at ~$42/MWh amortized; only fuel price varies the SOFC LCOE.
+
+**SOFC cost stack (2024, per user override — marginal cost primary metric):**
+- Marginal fuel cost at NG_low ($2.19/MMBtu): $12.9/MWh [model-derived]
+- Marginal fuel cost at NG_mid ($3.42/MMBtu — historical 5yr avg): $20.2/MWh [model-derived]
+- Variable O&M: $10/MWh [observed]
+- **Total marginal cost (NG_low):** $22.9/MWh [model-derived, gas-supply-decomposer]; **(NG_mid): $40.2/MWh** [model-derived, cost-parity-checker]
+- Full LCOE (capital + fuel + O&M): **$78.8/MWh** [model-derived, cost-parity-checker]
+
+Formula: (NG_$/MMBtu ÷ (293.07 kWh/MMBtu × 0.58 efficiency)) × 1000 + $10/MWh variable O&M.
+
+**Henry Hub gas price:** 28-year series 1997–2024 [observed] [CAUTION: EIA source — historical data only]; 2024 historic inflation-adjusted low $2.19/MMBtu (cost-researcher). At this all-time-low gas price, Bloom's marginal cost ($22.9/MWh) still exceeds 8hr BESS SCOE ($6.1/MWh) by $16.8/MWh (gas-supply-decomposer). Gas price cannot go negative — the structural cost floor is permanent.
+
+#### Current Cost Stack Comparison (2024, SERVICE UNIT: $/MWh delivered on-site)
+
+| Cost Component | SWB (4hr BESS) | SWB (8hr BESS) | Bloom SOFC (NG_mid) | Data Type |
+|----------------|----------------|----------------|---------------------|-----------|
+| Marginal fuel | $0/MWh | $0/MWh | $20.2/MWh | [observed/model-derived] |
+| Variable O&M | ~$6/MWh | ~$6/MWh | $10/MWh | [observed/model-derived] |
+| BESS SCOE | $14.1/MWh | $6.1/MWh | N/A | [model-derived, energy-dispatch] |
+| **Total marginal** | **$14.1/MWh** | **$6.1/MWh** | **$40.2/MWh** | [model-derived] |
+| Full LCOE (per MWh served) | $76.6/MWh | $74.6/MWh | $78.8/MWh | [model-derived, energy-dispatch] |
+
+**Note on SWB LCOE basis:** The energy-dispatch agent computes SWB LCOE per MWh actually served (2x solar oversize, CF=0.18), yielding $76.6/MWh (4hr) and $74.6/MWh (8hr) — both already below Bloom's $78.8/MWh. The cost-parity-checker uses capacity-basis amortization ($162.6/MWh without oversizing), placing LCOE parity at 2031–2032. Both framings are internally consistent: energy-dispatch models site-delivered economics; cost-parity-checker models procurement-level new-vs-new comparison. The 2031–2032 parity date from cost-parity-checker is used as the tipping condition (procurement trigger). No factual conflict exists between the two agents.
 
 ---
 
 ### Phase 3: Convergence Analysis
 
-**SWB as a convergent Stellar platform.** SWB is not a single technology but a convergent system: solar PV, wind, and LFP BESS are three independently declining cost curves that combine in the SWB stack (domain-disruption). This convergence creates reinforcement — as solar costs decline, SWB configurations can use larger solar overbuild to compensate for shorter battery duration, reducing effective BESS requirements and holding the system LCOE trajectory steep even if either component curve decelerates (tipping-synthesizer). The competitive threshold structure for SWB disruption of SOFC involves two sequentially decisive crossings:
+SWB is a convergent platform (domain-disruption): solar PV (Stellar) + wind (Stellar) + LFP BESS (Stellar) combine into an integrated zero-marginal-cost energy system whose capabilities exceed the sum of parts. The convergence is self-reinforcing: falling BESS costs enable longer durations, which improve SWB site coverage, which unlocks new enterprise segments, which increases deployment volume, which further drives cost-curve dynamics.
 
-**Competitive threshold 1 (LCOE parity — commercial displacement signal):** SWB amortized capex ($/MWh) < SOFC full LCOE ($/MWh). From the cost-fitter forward curve: SWB reaches $78.4/MWh versus SOFC LCOE $78.8/MWh at NG_low = **2031–2032** across all NG price scenarios [model-derived, cost-parity-checker]. This is NG-price-insensitive because SOFC's capital component dominates LCOE at current stagnant capex ($3,500/kW), already locked flat. At this crossing, no rational new procurement chooses SOFC over SWB on a new-build cost basis.
+**Competitive thresholds (cost-fitter, cost-parity-checker, per user override — marginal cost framing):**
+- **Threshold 1 — LCOE parity (commercial displacement signal):** SWB amortized capex per MWh < SOFC full LCOE ($78.8/MWh). Year: **2031–2032** [model-derived]. New SOFC orders become economically irrational.
+- **Threshold 2 — Marginal cost kill (existential endpoint):** SWB amortized capex < SOFC marginal fuel + O&M (~$40.2/MWh NG_mid). Year: **2038–2042** [model-derived] (NG_high=2038, NG_mid=2041, NG_low=2042). At this crossing, building new SWB is cheaper than fueling an existing Bloom box.
 
-**Competitive threshold 2 (marginal cost kill — existential endpoint, Tony's framing):** SWB amortized capex ($/MWh) < SOFC marginal fuel + O&M ($/MWh). This is the decisive structural kill: it becomes cheaper to build new SWB from scratch than to simply pay the fuel bill on an existing, already-paid-for Bloom box. Crossover year: **2038–2042** (NG_high=$4.37/MMBtu → 2038; NG_mid=$2.75/MMBtu → 2041; NG_low=$2.19/MMBtu → 2042) [model-derived, cost-parity-checker]. This is highly NG-price-sensitive — a gas price spike accelerates the kill date by 3–4 years.
+**Gap-closure signal (tipping-synthesizer):** SWB LCOE closes within 20% of SOFC LCOE (~$94.6/MWh) at **2029.7 [model-derived]** — this is the leading short thesis indicator, not the parity crossing itself.
 
-**Inflection thresholds (vs SOFC LCOE):** SWB reaches 70% of SOFC LCOE ($55.2/MWh) in **2037** [model-derived, cost-parity-checker]; 50% of SOFC LCOE ($39.4/MWh) in **2042** [model-derived, cost-parity-checker]. From 2037 onward, SWB is not merely cheaper than new SOFC — it is materially cheaper (30%+ below LCOE), compressing incumbent payback timelines and accelerating S-curve adoption once parity is breached.
+**BESS duration as the convergence accelerant (energy-dispatch):** The decisive convergence variable is BESS duration. Each additional hour of storage directly improves site coverage and displaces Bloom utilization hours:
 
-**AI/compute convergence amplifier.** The AI compute buildout (2024–2028) is paradoxically financing the manufacturing scale that will ultimately displace Bloom. Every GW of BESS deployed in AI data centers — including SWB+BESS systems now being adopted by hyperscalers — adds to cumulative BESS manufacturing volume, driving cost-curve dynamics. The Bloom-backed AI data center buildout (AEP 1 GW deal, Brookfield $5B partnership [observed, domain-disruption]) generates the deployment volumes that accelerate the BESS learning rate crossing SOFC LCOE in 2031–2032. Google's acquisition of Intersect Power (~$4.75B, December 2025) for solar+storage at data center co-location [observed, xcurve-analyst] is the clearest evidence this convergence is already active.
+| BESS Duration | Annual Site Coverage | Bloom-Equiv. Hours/yr | 2024 SCOE | Data Type |
+|---------------|---------------------|----------------------|-----------|-----------|
+| 4-hour | 62% | 3,329 hrs/yr | $14.1/MWh | [model-derived] |
+| 8-hour | 78% | 1,927 hrs/yr | $6.1/MWh | [model-derived] |
+| 12-hour | 87% | 1,139 hrs/yr | $3.7/MWh | [model-derived] |
+| 16-hour | 92% | 701 hrs/yr | $2.6/MWh | [model-derived] |
+
+**BESS duration adoption pathway [model-derived, energy-dispatch]:**
+- 2024: 4-hour market standard
+- 2026–2027: 8-hour commercially available at C&I scale
+- 2028–2030: 8-hour becomes new standard for reliability-grade C&I
+- 2030–2033: 12-hour becomes standard for data center primary power
+- 2033–2037: 16-hour becomes standard, crossing 90% site coverage threshold
+
+At 16hr BESS, SWB covers 92% of annual site load — reducing Bloom to 701 hours/year, far below the continuous dispatch economics for which its cost structure was designed.
 
 ---
 
 ### Phase 4: Disruption Pattern
 
-**Disruption type: From Above with Systemic characteristics.** SWB entered as a utility-scale technology at the top of the power generation market and is cascading downward into distributed/commercial applications. It simultaneously exhibits Systemic characteristics because three independent technology improvements (solar PV, wind, BESS) reinforce each other and collectively reshape the entire on-site power generation market (domain-disruption).
+**Disruption type:** Sequential cost-curve displacement of an X-Flow incumbent (Bloom SOFC, natural gas) by converging Stellar technologies (SWB). This is market-driven disruption — no policy mandate required; cost-curve dynamics are the structural mechanism.
 
-**Capability inventory — 10 dimensions.** The capability agent assessed 10 dimensions comparing SWB against Bloom SOFC for stationary enterprise power (capability):
+**Capability parity status (cap-parity-checker): PARTIAL**
 
-**All current values: [observed] or [model-derived] as sourced from 03-capability.md**
+SWB meets the competitive threshold on 6 of 9 economically relevant capability dimensions (excluding electrical efficiency as economically irrelevant for zero-fuel systems):
 
-| Dimension | SWB Current | SOFC (Bloom) | Threshold | Status |
-|-----------|-------------|--------------|-----------|--------|
-| Availability (24/7) | 88.0% (4-hr BESS) [model-derived] | 99.5% [observed] | ≥99.0% | APPROACHING (2027) |
-| Response time | 200 ms [observed] | 900,000 ms [observed] | ≤5,000 ms | MET (SWB wins) |
-| Power density | 10.0 m²/kW [observed] | 0.56 m²/kW [observed] | ≤5.0 m²/kW | NOT_MET (permanent) |
-| System electrical efficiency | 23% [observed] | 65% LHV [observed] | ≥45% | NOT_MET (economically irrelevant*) |
-| Fuel dependency | 0.0 [observed] | 1.0 [observed] | ≤0.5 | MET (SWB wins) |
-| Stack degradation | 1.2%/yr [observed] | 4.5%/yr [observed] | ≤2.0%/yr | MET (2022) |
-| Installed CAPEX (firm-equiv.) | ~$4,070/kW [model-derived] | ~$3,000/kW [observed] | ≤$3,500/kW | NOT_MET → 2026 crossing |
-| Dispatchability | 88% [model-derived] | 95% [observed] | ≥85% | MET (4hr BESS) |
-| Startup time | 0.001 min [observed] | 15 min warm [observed] | ≤1 min hot | MET |
-| Annual O&M | ~$17.5/kW/yr [model-derived] | ~$180–250/kW/yr [observed] | ≤$100/kW/yr | MET (SWB wins) |
+| Dimension | SWB Current | Threshold | Status | Gap | Est. Year Met |
+|-----------|-------------|-----------|--------|-----|---------------|
+| Availability (4hr BESS) | 88.0% [model-derived] | ≥99.0% | APPROACHING | 11.1% | 2027 [model-derived] |
+| Response time | 200 ms [observed] | ≤5,000 ms | MET | -96% | ~2015 |
+| Power density | 10.0 m²/kW [observed] | ≤5.0 m²/kW | NOT_MET (permanent) | 100% | Never — physics limit |
+| Fuel dependency | 0.0 [observed] | ≤0.5 | MET | -100% | ~2010 |
+| Stack degradation | 1.2%/yr [observed] | ≤2.0%/yr | MET | -40% | 2022 |
+| Firm CAPEX equiv. | ~$4,070/kW [model-derived] | ≤$3,500/kW | NOT_MET (temporary) | 16.3% | 2026 [model-derived] |
+| Dispatchability | 88% [model-derived] | ≥85% | MET | -3.5% | 2024 |
+| Startup time | 0.001 min [observed] | ≤1.0 min | MET | -99.9% | ~2010 |
+| Annual O&M | ~$17.5/kW/yr [model-derived] | ≤$100/kW/yr | MET | -82.5% | ~2015 |
 
-*Electrical efficiency is economically irrelevant for a zero-fuel system. Excluded from the 2/3 materiality calculation (capability-parity-checker).
+**Pattern:** Sequential three-cluster convergence (capability). Cluster 1 (fuel independence, response, O&M) MET 2010–2015. Cluster 2 (degradation, dispatchability) MET 2022–2024. Cluster 3 (firm CAPEX and availability) model-derived crossings 2026–2027. The power density dimension is a permanent structural gap protecting a 25–35% urban footprint-constrained TAM niche — Bloom's only defensible permanent moat.
 
-**Capability parity: PARTIAL (2027 conditional).** 6 of 9 relevant dimensions are MET; 1 (availability) is APPROACHING at 11.1% gap with model-derived 2027 crossing when 8-hour BESS reaches economic viability; 1 (firm-CAPEX) has a temporary gap crossing in 2026; 1 (power density) is permanently NOT_MET — the 18x footprint gap (10.0 m²/kW vs. 0.56 m²/kW) defines SOFC's defensible residual niche for high-density urban sites (capability-parity-checker). For the mainstream 65–75% of distributed generation TAM (suburban campuses, industrial sites, lower-density commercial), capability parity arrives by 2027 as the BESS cost curve enables 8-hour systems at competitive economics (capability-parity-checker).
+**Critical gating dimension (capability, cap-parity-checker):** 24/7 availability at ≥99% requires ~8–12 hours of BESS at US median solar resource sites. At the current BESS cost trajectory ($255/kWh 4hr in 2024, declining at -9%/yr), 8hr systems reach economic viability by 2026–2027, enabling 91–95% site coverage and removal of the primary reliability purchase objection. SWB with wind co-location in wind-rich regions can reach 99% availability with 6-hour BESS — potentially pulling capability parity to 2026.
 
-**The power density moat is real and permanent — but limited.** SOFC's ~0.56 m²/kW footprint versus SWB's physics-constrained ~10 m²/kW is not a feature that cost curves will eliminate. This is the only genuinely permanent structural advantage Bloom retains. It bounds SOFC's residual market at approximately 25–35% of distributed generation TAM — high-density urban data centers, multi-tenant office towers, rooftop-constrained hospital campuses (capability, capability-parity-checker). For 65–75% of the TAM, this moat does not apply.
-
-**Convergence pattern: sequential — three clusters.** Cluster 1 (structural SWB advantages, MET 2010–2015): zero fuel dependency, sub-second startup and response time, minimal O&M. Cluster 2 (performance maturation, MET 2022–2024): degradation rate, dispatchability with 4-hour BESS. Cluster 3 (economics/availability gating, 2026–2027): firm-equivalent CAPEX and 24/7 uptime, both gated by the same BESS cost curve (capability-parity-checker).
+**What SWB permanently cannot match (capability):** Bloom's ~0.56 m²/kW footprint. SWB's physics-limited ~8–9 m²/kW floor is 14–16x larger. High-density urban deployments remain a defensible permanent niche, estimated at 25–35% of total distributed generation TAM.
 
 ---
 
 ### Phase 5: Business Model Shift
 
-**Cost parity status and dual threshold structure.** The cost-parity-checker assessed two thresholds:
+#### Cost Parity Crossing
 
-- **Threshold 1 (LCOE parity, commercial displacement signal): NOT_MET** — SWB amortized capex = $162.6/MWh (2024) versus SOFC full LCOE = $78.8/MWh (2024); parity year 2031–2032. All NG price scenarios converge on this window because SOFC LCOE is dominated by its flat capital component ($42/MWh amortized), not gas price.
-- **Threshold 2 (marginal cost kill, Tony's framing, existential endpoint): NOT_MET** — SWB amortized capex versus SOFC marginal fuel + O&M; crossover 2038–2042 depending on NG price.
-- **Binding constraint for tipping: cost_parity** (Threshold 1, 2031–2032). Capability parity (2027) and adoption readiness (2028) both resolve before cost parity, meaning when the cost crossing arrives, the ecosystem is already prepared — no simultaneous bottleneck (tipping-synthesizer).
+**Condition 1 (LCOE parity — commercial displacement signal, primary per user override): NOT_MET as of 2026-03-25**
+- SWB vs. SOFC LCOE gap: +$83.8/MWh (+106%) on capacity-basis procurement comparison [model-derived, cost-parity-checker]
+- Parity year: **2031–2032** [model-derived] — SWB = $78.4/MWh, SOFC LCOE = $78.8/MWh [model-derived, cost-parity-checker]
 
-**On-site dispatch economics: the merit order already favors SWB.** Per the energy-dispatch agent, the on-site generation merit order for a representative 1 MW enterprise data center is:
-1. Solar PV: $0/MWh marginal cost (Stellar) — dispatched first whenever irradiance available
-2. BESS discharge: $5–14/MWh cycling cost (SCOE) — dispatched from stored solar (evening/overnight)
-3. Bloom SOFC: $23–48/MWh (gas + variable O&M) — fills residual demand that SWB cannot cover
-4. Grid C&I: $80–120/MWh — backup when on-site capacity insufficient
-5. Diesel: $200–300/MWh — emergency only
+**Condition 2 (marginal cost kill — existential endpoint): NOT_MET**
+- Current SWB marginal (8hr BESS SCOE): $6.1/MWh vs. Bloom marginal $40.2/MWh — structural $34.1/MWh gap at dispatch level [model-derived, energy-dispatch]
+- Even at all-time-low 2024 gas: Bloom marginal $22.9/MWh vs. 8hr BESS SCOE $6.1/MWh — $16.8/MWh gap that gas price alone cannot close
+- Crossover year: **2038–2042** depending on NG price [model-derived, cost-parity-checker]
 
-Bloom is displaced BEFORE grid power in the merit order, because its marginal cost ($23–48/MWh) sits above both solar ($0/MWh) and BESS ($6–14/MWh). Every additional MWh of SWB generation reduces Bloom utilization hours — not grid utilization (energy-dispatch). BESS at 8-hour duration (SCOE $6.1/MWh in 2024) has always been cheaper to dispatch than Bloom at any gas price above zero (gas-supply-decomposer).
+#### On-Site Merit Order — The Structural Displacement Mechanism (energy-dispatch)
 
-**Energy Dispatch — BESS duration is the gating variable.** The decisive question is how quickly the standard BESS duration in reliability-grade C&I applications grows from the current 4-hour standard toward 16-hour systems. SWB coverage fractions for a 2x-oversized solar system at US commercial rooftop CF=0.18 (energy-dispatch):
+In any enterprise site with co-deployed SWB and Bloom SOFC, the dispatch order is:
 
-**All coverage fractions: [model-derived] from NREL SAM-calibrated coverage fractions (energy-dispatch)**
+| Rank | Source | Marginal Cost (2024) | Displacement Pressure |
+|------|--------|---------------------|----------------------|
+| 1st | Solar PV | $0/MWh [observed — Stellar] | None — disruptor |
+| 2nd | BESS discharge | $5–14/MWh SCOE [model-derived] | None — disruptor |
+| 3rd | Bloom SOFC | $23–48/MWh [model-derived] | HIGH — displaced before grid |
+| 4th | Grid C&I | $80–120/MWh [observed] | MEDIUM — residual fallback |
+| 5th | Diesel backup | $200–300/MWh [observed] | Emergency only |
 
-| BESS Duration | Annual Site Coverage | Residual for Bloom | Adoption Timeline |
-|---------------|---------------------|--------------------|--------------------|
-| 4-hour | 62% | 38% | 2024 standard [observed] |
-| 8-hour | 78% | 22% | 2028–2030 [model-derived] |
-| 12-hour | 87% | 13% | 2030–2033 [model-derived] |
-| 16-hour | 92% | 8% | 2033–2037 [model-derived] |
+**Bloom is displaced BEFORE grid power.** Every additional MWh of SWB generation directly reduces Bloom utilization hours, not grid utilization. This creates progressive utilization compression that degrades Bloom's revenue per installed kW regardless of whether new orders are placed.
 
-The 90% site coverage threshold — the point at which SWB genuinely eliminates Bloom's "24/7 availability" competitive moat — is reached when 16-hour BESS becomes the market standard, expected ~2035–2037 [model-derived, energy-dispatch]. At that point, Bloom serves only 8% of site load (701 hours/year), well below the continuous-dispatch model it was designed for. On a per-MWh-served basis, SWB at 4-hour BESS ($76.6/MWh) already crossed below Bloom's full LCOE ($78.8/MWh) in 2024 [model-derived, energy-dispatch] — though the standard system-level amortized cost comparison (cost-fitter) does not reach parity until 2031–2032 [Note: both measurements are valid for different decision contexts; the cost-parity-checker's new-system amortized basis governs the STDF tipping condition].
+**Business model implication:** Bloom's 10–12 year contract model is based on contracted kWh output. As enterprises co-deploy BESS at increasing durations, Bloom dispatches fewer hours per site while fixed contract costs remain. Customers negotiate down on renewals; new orders face procurement officers comparing against SWB LCOE of $68.9/MWh (8hr BESS, 2025 [model-derived, energy-dispatch]) and declining. Bloom's pricing premium erodes from both directions simultaneously.
 
-**Business model implications.** Bloom's current business model is a service/product hybrid: product revenue (new SOFC installations) is supported by the AI data center demand surge, and service revenue (stack replacement, maintenance) provides a 10–12 year revenue tail on installed base. The structural shift post-tipping:
-- New product revenue collapses at LCOE parity (2031–2032) as procurement officers choose SWB on a new-build basis
-- Service revenue on the existing ~5,500 MW peak installed base [model-derived, xcurve-analyst] generates stack replacement cash flows of approximately $750M/yr peaking around 2038–2042 [model-derived, xcurve-analyst]
-- The company becomes a declining services annuity business, not a growth company — triggering multiple compression from 125x forward P/E [observed, xcurve-analyst] to 15–20x [model-derived, xcurve-analyst]
+#### AI-Driven Counter-Growth Phase — Masking Structural Decline (xcurve-analyst)
 
-**Adoption readiness: NOT_MET, trajectory-implied 2028.** Three sub-conditions are all PARTIAL (adoption-readiness-checker):
-- Infrastructure: US BTM C&I solar deployed 2,118 MWdc in 2024 (5.3x Bloom's annual target), but installer workforce grew only 4.2% of deployment growth rate — a friction, not a block
-- Supply chain: global 3:1 BESS surplus, but US-specific 48.4% tariff stack on Chinese LFP batteries (90% of US supply) adds ~$48/kWh effective cost
-- Regulatory: OBBBA (P.L. 119-21, signed July 4, 2025) terminated the Section 48E ITC for solar/wind projects not beginning construction by July 4, 2026; adds ~$300–480/kW effective cost absorbed by cost curves by ~2028
+The AI data center power shortage (grid interconnection delays 3–7 years) created a new TAM expansion that is temporarily masking structural decline. Bloom revenue grew to $2.02B in 2025 (+37.3%) [observed] as hyperscalers committed: AEP 1 GW, Oracle, Equinix 100 MW, Brookfield $5B. This is the classic chimera-phase behavior: growing nominal revenue while structural market position erodes. Google's acquisition of Intersect Power (~$4.75B, Dec 2025) for solar+storage at data centers [observed, xcurve-analyst] is the clearest signal that hyperscalers are simultaneously hedging against Bloom dependency with SWB alternatives. Goldman Sachs estimates only 6–15% of incremental data center power from fuel cells long-term [observed T3, xcurve-analyst], implying SWB captures 85–94% of incremental data center power market. The AI tailwind is a delay mechanism, not a structural reversal.
 
-The adoption readiness binding sub-condition is regulatory (USA): OBBBA ITC cliff + BESS tariff compounding. Both resolve by 2028 as cost curves absorb the policy headwinds. Importantly, adoption readiness is NOT the binding constraint on the short thesis — cost parity at 2031–2032 governs timing, and adoption readiness resolves 3 years earlier (tipping-synthesizer).
+#### Energy Dispatch Analysis
+
+**SWB LCOE per MWh served vs. Bloom trajectory [model-derived, energy-dispatch]:**
+
+| Year | SWB 4hr BESS | SWB 8hr BESS | SWB 12hr BESS | Bloom Full LCOE | Bloom Marginal (NG_mid) |
+|------|-------------|-------------|--------------|-----------------|------------------------|
+| 2024 | $76.6/MWh | $74.6/MWh | $77.2/MWh | $78.8/MWh | $40.2/MWh |
+| 2025 | $70.8 | $68.9 | $71.2 | $78.8 | $40.2 |
+| 2027 | $60.6 | $58.8 | $60.6 | $78.8 | $40.2 |
+| 2028 | $56.2 | $54.4 | $56.0 | $78.8 | $40.2 |
+| 2030 | $48.3 | $46.7 | $48.0 | $78.8 | $40.2 |
+| 2031 | $44.8 | $43.3 | $44.4 | $78.8 | $40.2 |
+| 2032 | $41.7 | **$40.2** | $41.2 | $78.8 | **$40.2** |
+| 2033 | $38.8 | $37.4 | $38.2 | $78.8 | $40.2 |
+| 2036 | $31.4 | $30.2 | $30.8 | $78.8 | $40.2 |
+
+*Bold 2032: 8hr BESS SCOE ($40.2/MWh) equals Bloom marginal cost ($40.2/MWh) — the kill condition.*
+
+All SWB configurations 4hr–12hr already sit below Bloom's full LCOE as of 2024 (energy-dispatch). SWB crosses below Bloom's marginal cost in 2032–2033 — at which point it is cheaper to build new SWB than to pay the fuel bill on an existing Bloom unit.
+
+**Bloom installed base displacement [model-derived, energy-dispatch]:**
+- 2028: -401 GWh/yr vs. 2024 baseline
+- 2030: -721 GWh/yr
+- 2034: -1,699 GWh/yr
+- 2040: -4,153 GWh/yr
+- % USA installed base displaced: 10% by 2030; 24% by 2034; 59% by 2040
 
 ---
 
-### Phase 6: Adoption and S-Curve
+### Phase 6: Adoption & S-Curve
 
-**S-curve parameters — SWB share of enterprise reliability-grade on-site power procurement.** The scurve-fitter constructed a 9-point annual market share proxy series (2016–2024) using SEIA commercial solar data and ACP/Wood Mackenzie C&I BESS data [T3], counting only co-deployed solar+BESS systems providing reliability-grade backup competitive with SOFC (not all commercial solar). The logistic fit (L=70.0 fixed, k=0.1960, x0=2034.7, R² = 0.9927, RMSE = 0.165pp, 9 data points, 2016–2024) [model-derived, scurve-fitter]:
+#### S-Curve Parameters (scurve-fitter)
 
-- **L = 70.0%** — footprint-constrained urban sites retain 25–35% of TAM as permanent SOFC niche; L=70 is the midpoint of the 65–75% addressable mainstream TAM
-- **k = 0.1960 (+/− 0.0072, 1-sigma)** — enterprise procurement cycle 3–7 years slows the S-curve relative to consumer markets
-- **x0 = 2034.7 (+/− 0.48 years, 1-sigma; 95% CI: 2033.8–2035.6)** — mathematical S-curve inflection, 3.2 years after the 2031–2032 LCOE parity trigger (enterprise contract backlog lag)
-- **Current phase: tipping** (7.5% market share, proxy, 2024 [model-derived, scurve-fitter])
-- **10% share milestone: 2025.6** [model-derived, scurve-fitter] — tipping zone entry confirmed; procurement officers beginning to evaluate SWB at scale
-- **25% share milestone: 2031.7** [model-derived, scurve-fitter] — aligned with LCOE parity year; new SOFC procurement economically irrational
-- **50% share milestone: 2039.4** [model-derived, scurve-fitter] — S-curve inflection; majority of enterprise on-site procurement is SWB
+Market definition: SWB-capable systems (solar + BESS, 24/7 reliability-grade) as % of total new enterprise C&I on-site power procurement (>500 kW, where Bloom competes).
 
-Note on free-L convergence: the free-L optimizer returns L=20.4%, an economically implausible ceiling contradicted by the LCOE parity projections and capability analysis. L=70% is domain-constrained, not data-fitted. All three L-sensitivity scenarios (L=65, 70, 75) return virtually identical 25% milestone years (2031.6–2031.8) — the short thesis timing is L-insensitive.
+**Primary fit (L=70 fixed, domain knowledge constraint):**
 
-**Short entry window alignment with S-curve.** At the recommended short entry window (2028–2030), SWB is at 14.8–19.9% market share [model-derived, scurve-fitter] — past the 10% early-adoption signal and approaching the 20% mark where network effects and ecosystem lock-in accelerate adoption. The SWB system LCOE gap to SOFC LCOE is closing from +106% (2024) toward approximately +37% (~2028) to the 20% threshold at 2029.7 [model-derived, tipping-synthesizer] — the 2–3 year procurement horizon window.
+| Parameter | Value | Notes |
+|-----------|-------|-------|
+| L (ceiling) | 70.0% | Fixed — 25–35% urban footprint-constrained niche permanent; midpoint of 65–75% addressable TAM |
+| k (growth rate) | 0.1960 (±0.0072, 1σ) | Enterprise procurement cycle 3–7 yr slows vs. consumer (k~0.30) |
+| x0 (inflection) | 2034.7 (±0.48yr, 1σ; 95% CI: 2033.8–2035.6) | Actual procurement flow inflection; lags LCOE parity by ~3yr due to contract cycles |
+| R² | 0.9927 | Excellent fit on 9 data points 2016–2024 |
+| RMSE | 0.165 pp | |
 
-**Regional dynamics.** The standard STDF China-leads adoption pattern is INVERTED for this disruption (regional-adopter). Bloom has zero material China revenue. The relevant leadership structure:
+**Free-L divergence (scurve-fitter):** Free optimizer returns L=20.4%, k=0.237, x0=2026.3 (R²=0.9942) — economically implausible ceiling; correctly overridden by domain knowledge from cap-parity-checker (65–75% addressable TAM).
 
-**All share figures: [model-derived] proxy constructions from SEIA, ACP, SolarPower Europe, Korea NEA data (regional-adopter). Confidence: 0.52.**
+**x0 conflict resolved:** scurve-fitter x0=2034.7 vs. tipping-synthesizer provisional x0=2031.5. Both are correct for different events: tipping-synthesizer x0=2031.5 is the LCOE parity crossing (procurement trigger); scurve-fitter x0=2034.7 is the actual S-curve inflection of market share flows (lags trigger by ~3yr due to enterprise contract cycle). Economically coherent and consistent (scurve-fitter, tipping-synthesizer).
 
-| Region | Revenue Weight | SWB Share 2024 | Phase | 10% Milestone | 25% Milestone | S-curve k |
-|--------|---------------|----------------|-------|---------------|---------------|-----------|
-| Europe | ~7% | 13.0% | tipping | 2022.8 | 2026.8 | 0.3062 |
-| USA | ~65% | 6.5% | tipping | 2026.3 | 2032.5 | 0.1940 |
-| South Korea | ~28% | 3.5% | rupture | 2027.6 | 2031.3 | 0.3248 |
-| China | 0% | ~16% | tipping | benchmark only | — | — |
+**Current adoption status:**
+- SWB market share (2024): ~7.5% [model-derived proxy, scurve-fitter]
+- SWB market share (2025): ~9.1% [model-derived, xcurve-analyst]
+- **10% tipping threshold crossed: 2025.6 [model-derived, scurve-fitter]** — the disruption signal is live
+- Adoption phase: **Tipping** (scurve-fitter)
 
-Europe leads in the enterprise BTM reliability-grade segment (post-2022 electricity prices at $0.28–0.35/kWh make BTM economics compelling even at pre-parity SWB costs). USA is the decisive revenue risk vector (~65% of Bloom revenue). South Korea sits at 3.5% SWB share with a policy asymmetry: SOFC receives REC weight 2.0 (doubling policy-visible value versus solar at 1.0–1.5), suppressing SWB adoption but creating binary policy-reversal risk. South Korea's revenue risk is more policy-driven than cost-curve-driven in the 2025–2028 window (regional-adopter).
+**Key adoption milestones [model-derived, scurve-fitter]:**
 
-**Incumbent decline stage: Pre-disruption (masked by AI boom).** SOFC incumbent market share in 2024: 92.3% [model-derived, xcurve-analyst]. This is the standard pre-disruption phase. However, Bloom is in an atypical counter-disruption GROWTH PHASE: revenue grew 10.5% YoY to $1.474B in 2024 [observed, Bloom 10-K] and +37.3% to $2.02B in 2025 [observed, Bloom IR], driven by the AI data center demand shock. This growth is real — the AI data center power shortage creates a genuine time-to-power premium for Bloom's 90-day deployment time versus 3–7 years for grid infrastructure (domain-disruption). But it is temporal: each successive data center build faces a more favorable SWB cost environment, and Google's $4.75B acquisition of Intersect Power (December 2025) for solar+storage at data center co-location [observed, xcurve-analyst] signals that hyperscalers are already hedging their Bloom dependency.
+| Year | SWB Share | Milestone |
+|------|-----------|-----------|
+| 2025.6 | 10.1% | 10% threshold — already crossed; disruption confirmed live |
+| 2026.3 (USA) | ~10% | USA crosses 10% threshold [model-derived, regional-adopter] |
+| 2028–2030 | 14.8–19.9% | Short entry window — revenue deceleration visible |
+| 2029.7 | ~17.3% | SWB LCOE = $94.6/MWh (within 20% of SOFC — procurement horizon signal) [model-derived] |
+| 2031.7 | 25% | LCOE parity alignment; 95% CI: 2031.3–2032.1 |
+| 2034.7 | 35% (50% of L) | S-curve inflection of procurement flows |
+| ~2040 | ~48.9% | Majority of new enterprise on-site power is SWB |
 
-**Market trauma assessment — all five mechanisms in pre-activation phase** (xcurve-analyst):
+#### Regional Dynamics (regional-adopter)
 
-| Mechanism | Status (USA) | Key Evidence |
-|-----------|-------------|--------------|
-| Fixed-cost spread | Not yet | Bloom EXPANDING capacity 1→2 GW; fixed costs scaling UP. Reverse trauma activates ~2031–2032 |
-| Investment drought | Not yet | $2.2B convertible notes OVERSUBSCRIBED Nov 2025 [observed]; drought risk ~2030–2031 |
-| Talent flight | Beginning | US headcount −10.5% (2024) despite +37% revenue [observed] — early-stage productivity-pressure exits |
-| Panic pricing | Not yet | No price cuts observed as of March 2026; pressure expected ~2029–2031 |
-| Policy lobbying | Beginning | $75M IRA tax credits for Fremont expansion [observed]; lobbying is opportunistic, not defensive yet |
+**Note: Standard China-leads STDF pattern is INVERTED for this disruption.** China (~16% BTM enterprise share [model-derived]) is the global SWB benchmark but carries zero Bloom revenue exposure. Europe leads the enterprise BTM reliability-grade segment. USA is the decisive revenue risk vector.
 
-**Stack replacement tail — the hidden structural feature of the short thesis.** The 10–12 year SOFC stack replacement cycle creates a $8.2B total replacement pipeline [model-derived, xcurve-analyst] based on a modeled ~5,500 MW peak installed base [model-derived]. Annual replacement revenue peaks at approximately $750M/yr around 2038–2042 [model-derived, xcurve-analyst]. This long tail: (a) sustains Bloom as a viable business for 15+ years after the revenue growth peak, and (b) prevents immediate revenue collapse at the tipping year — which is precisely why the SHORT works on multiple compression, not bankruptcy.
+| Region | SWB Share (2024) | Phase | k | x0 | Bloom Revenue | 10% Year |
+|--------|-----------------|-------|---|----|---------------|---------|
+| Europe | 13.0% [model-derived] | Tipping | — | — | ~7% | 2022.8 [model-derived] |
+| Global | 7.5% [model-derived] | Tipping | 0.1960 | 2034.7 | — | 2025.6 [model-derived] |
+| USA | 6.5% [model-derived] | Tipping | 0.1940 | 2035.5 | ~65% | 2026.3 [model-derived] |
+| South Korea | 3.5% [model-derived] | Rupture | 0.3248 | — | ~28% | 2027.6 [model-derived] |
+| China | ~16% [model-derived] | Tipping | — | — | ~0% | — (benchmark only) |
+
+**Europe leads USA by 3.5 years** on the S-curve (regional-adopter). Post-2022 energy crisis elevated BTM solar+BESS economics in Europe, pulling it to 13.0% share already — past the 10% tipping threshold since 2022.8.
+
+**South Korea structural asymmetry (regional-adopter):** Korea's RPS grants fuel cells REC weight 2.0 (vs. solar at 1.0–1.5), effectively doubling policy-visible value of SOFC generation and delaying SWB displacement. This explains Korea's 3.5% SWB share vs. USA's 6.5%. High k=0.3248 implies rapid catch-up once K-REC BTM exclusion progresses. SK ecoplant (~23% of total Bloom revenue [observed via regional-adopter]) is a single counterparty concentration risk — a purchasing decision change by this entity creates outsized revenue volatility.
+
+#### Incumbent Decline Stage (xcurve-analyst)
+
+**Current stage: Pre-disruption** (SOFC incumbent market share ~90.9% in 2025 [model-derived]). But Bloom is in a **COUNTER-DISRUPTION GROWTH PHASE** through 2027–2028 — AI data center demand expanding TAM faster than SWB takes share within it.
+
+**Bloom revenue trajectory [2024–2025 observed; all other years model-derived, xcurve-analyst]:**
+
+| Year | Revenue ($M) | Growth % | Stage |
+|------|-------------|---------|-------|
+| 2024 | 1,474 | +10.5% | Growth [observed] |
+| 2025 | 2,020 | +37.3% | Growth [observed] |
+| 2026 | ~2,800 | ~+39% | Growth [model] |
+| 2027 | ~3,200 | ~+14% | Peak [model] |
+| 2028 | ~3,000 | ~-6% | **Inflection — short entry** [model] |
+| 2029 | ~2,700 | ~-10% | Decline [model] |
+| 2030 | ~2,200 | ~-19% | Decline [model] |
+| 2031 | ~1,800 | ~-18% | Collapse [model] |
+| 2032 | ~1,400 | ~-22% | Collapse [model] |
+| 2035 | ~1,100 | steady | Annuity [model] |
+| 2042 | ~750 | -5%/yr | Annuity [model] |
+
+**Death spiral trigger evidence (xcurve-analyst):**
+- Volume breakeven: ~303 MW/yr at 2 GW Fremont plant. At peak ~730 MW, a 59% decline triggers fixed-cost spiral.
+- Fixed cost/MW at peak (730 MW): $0.82M/MW → at breakeven (303 MW): $1.98M/MW — **+141% per MW inflation** [model-derived]
+- $2.2B convertible notes due 2030 [observed]: mature at onset of order collapse — compounding equity risk
+- Workforce -10.5% (2024) and -6.1% (2023) despite revenue growth [observed]: early talent flight signal
+- Gross margin 27.5% (2024), 29.0% (2025) [observed]; modeled blended margin at 303 MW ~-15% [model-derived]
+- 2 GW Fremont expansion [observed]: creates the exact fixed-cost structure that becomes stranded asset when volume declines
+
+**X-curve decline schedule [model-derived, xcurve-analyst]:**
+- 2032: SOFC share 74.1%; volume below 303 MW breakeven; margin implosion begins
+- 2033: Fixed cost/MW +49% vs. 2024 peak
+- 2037: Fixed cost/MW +112%; death spiral active
+- 2040: SWB at 51.7%; majority of enterprise on-site power is SWB
+- 2045: Advanced collapse; residual niche only at dense-urban footprint-constrained sites
 
 ---
 
 ### Pre-Phase 7 — Consistency Audit
 
-Six entities described as "benefiting" or "growing" across the 7-phase narrative were cross-checked against the X-curve analyst output (05c) and domain-disruption output (01):
+4 entities checked against specialist agent outputs:
 
-1. **Bloom Energy (revenue growing):** CONSISTENT with xcurve-analyst pre-disruption stage. X-curve explicitly confirms the AI data center growth phase is real through 2027–2028 before structural decline. No contradiction — the growth is characterized as a temporal bridge, not a structural moat.
-2. **SWB / Solar+BESS (growing share):** No contradiction — all agents confirm SWB is the disruptor.
-3. **Bloom SOEC electrolyzer (potential hedge):** domain-disruption classifies SOEC as X-Flow (hydrogen supply chain dependency). No contradiction: neither agent sees SOEC as escaping the structural cost problem.
-4. **SWB LCOE crossing in 2024 (energy-dispatch, 08a) vs. NOT_MET parity at 2031–2032 (cost-parity-checker, 04a):** Resolved. The energy-dispatch agent uses the LCOE-per-MWh-SERVED metric accounting for BESS coverage fraction (dispatch economics). The cost-parity-checker uses full amortized system cost on a new-build basis (procurement economics). Both are correct for their respective decision contexts. The cost-parity-checker governs the STDF tipping condition.
-5. **Hyperscalers described as "increasingly using SWB":** Confirmed by xcurve-analyst (Google/Intersect Power acquisition [observed, December 2025]). No contradiction.
-6. **LFP BESS market described as growing:** No contradiction — all agents confirm this.
+1. **Bloom Energy revenue growing ($1.47B 2024, $2.02B 2025):** Cross-checked vs. xcurve-analyst (05c) — confirmed as COUNTER-DISRUPTION GROWTH PHASE, explicitly identified as chimera-phase behavior masking structural decline. No contradiction.
 
-**Consistency audit: 6 entities checked, 1 metric interpretation conflict resolved (SWB LCOE framing), 1 nuance flag (Bloom growth as temporal bridge).**
+2. **SWB "already below Bloom LCOE" (energy-dispatch) vs. "NOT_MET" (cost-parity-checker):** Resolved — different cost accounting bases. Energy-dispatch: delivered MWh basis (2x solar oversize, $76.6/MWh); cost-parity-checker: capacity-basis procurement comparison ($162.6/MWh). Both internally consistent; specialist framing applied per respective analytical context. No fabricated claims.
 
----
+3. **Google/Intersect Power benefiting from SWB:** Cross-checked vs. xcurve-analyst — confirmed as observed hyperscaler hedging signal ($4.75B acquisition, Dec 2025). Consistent.
 
-### Phase 7: Synthesis and Tipping Point
+4. **25–35% TAM as permanent SOFC niche:** Cross-checked vs. cap-parity-checker (04b) and domain-disruption (01) — both independently confirm footprint-constrained urban niche. Consistent.
 
-**Integrated tipping conditions.** Using `lib.tipping_math.check_tipping_conditions` with cost_parity_year=2031.5, capability_parity_year=2027.0, adoption_readiness_year=2028.0 (tipping-synthesizer):
-
-| Condition | Status | Year | Binding? |
-|-----------|--------|------|----------|
-| Cost parity (LCOE, new-vs.-new) | NOT_MET | 2031–2032 | YES — latest of the three |
-| Capability parity (mainstream TAM) | PARTIAL | 2027 | No — resolves 4+ yrs before cost |
-| Adoption readiness | NOT_MET | 2028 | No — resolves 3+ yrs before cost |
-
-**Tipping year: 2031–2032 [model-derived, tipping-synthesizer]. Binding constraint: cost_parity.** Capability and adoption readiness both resolve before cost parity, meaning when the 2031–2032 LCOE crossing arrives, the SWB ecosystem is already prepared — a 3–4 year head-start in ecosystem preparation that accelerates post-tipping S-curve slope (estimated k=0.22 vs. k=0.18 in a simultaneous-tipping scenario, tipping-synthesizer).
-
-**Regional tipping assessment.** All three primary regions (USA, South Korea, Europe) tip simultaneously at the global LCOE parity year (2031–2032) because SWB cost trajectories are globally determined by manufacturing scale, not regional policy. Regional variation is entirely in adoption readiness resolution year (South Korea and Europe resolve ~2027, USA ~2028), but since cost parity is the binding constraint everywhere, the regional readiness advantage translates into faster post-tipping adoption slope, not an earlier tipping year (tipping-synthesizer).
-
-**Post-tipping dynamics — Bloom's death spiral.** Beginning at LCOE parity in 2031–2032, new SOFC orders collapse. Bloom's ~400 MW/yr deployment target [model-derived, tipping-synthesizer] falls as enterprise procurement redirects to SWB. Bloom's fixed cost base (~$600M/yr at the 2 GW manufacturing facility including R&D $123M [observed, Bloom 2024 annual], G&A/SG&A $213M [observed], manufacturing fixed overhead ~$264M [model-derived, xcurve-analyst]) must be spread across shrinking volume. Fixed cost per MW at the 2027 peak (~730 MW/yr): $0.82M/MW [model-derived, xcurve-analyst]. Fixed cost per MW at the volume breakeven (~303 MW/yr): $1.98M/MW — a +141% cost inflation per unit [model-derived, xcurve-analyst]. At the volume breakeven, blended gross margin collapses to approximately −15% [model-derived, xcurve-analyst]. The $2.2B in convertible notes due 2030 [observed, Bloom IR November 2025] creates a balance-sheet inflection point at exactly the onset of the order collapse — potentially triggering a liquidity crunch or forced equity issuance at depressed prices.
-
-**Post-tipping dynamics — SWB virtuous cycle.** At LCOE parity in 2031–2032, SWB at $78.4/MWh [model-derived] gains procurement share from Bloom's enterprise customers. Each additional C&I and data center BESS deployment adds to cumulative manufacturing volume, driving cost-curve dynamics at 9.0%/yr for BESS and 7.8%/yr for solar [model-derived, tipping-synthesizer]. By 2037, SWB falls to $57.4/MWh [model-derived, cost-fitter] — 27% below SOFC LCOE — unlocking segments previously at the margin. The BESS duration progression (8-hour standard 2028–2030 → 12-hour 2030–2033 → 16-hour 2033–2037) progressively eliminates Bloom's "24/7 availability" moat for more enterprise segments, reducing Bloom utilization per site from 35.1% of site load (2024) to 8.8% (2034) to 3.9% (2040) [model-derived, energy-dispatch].
-
-**The permanent niche — Bloom's structural floor.** SOFC retains approximately 25–35% of distributed generation TAM as a permanent niche: high-density urban sites where SWB's physics-constrained ~10 m²/kW cannot be accommodated against SOFC's 0.56 m²/kW. The S-curve asymptote is L=70%, not 100% (capability-parity-checker, scurve-fitter). Bloom's service annuity revenue ($750M/yr peak around 2038–2042 [model-derived, xcurve-analyst]) plus its permanent niche product revenue gives the company a viable long-term business — just not one worth a 125x P/E growth multiple.
-
-**Jevons Paradox:** NOT applied. SWB is classified Stellar (zero marginal fuel cost). Bloom SOFC is X-Flow (natural gas throughput dependency). Jevons demand elasticity applies to SOFC's efficiency improvements (better efficiency reduces per-unit gas consumption) but does NOT reverse the S-curve adoption disruption dynamics. Lower SOFC fuel consumption reduces the speed at which the marginal cost kill threshold (2038–2042) is reached, but does not change the direction (tipping-synthesizer).
-
-**Energy Supply — Gas Displacement.** Bloom's global SOFC fleet consumed 1.756 BCM of natural gas in 2024 [model-derived, gas-supply-decomposer] — 0.19% of US gas consumption, a micro-segment. This incumbent displacement does NOT move gas markets in aggregate. The investment thesis is entirely about Bloom's revenue, not commodity supply impacts (gas-supply-decomposer). USA supply chain: 100% domestic shale gas, no LNG import exposure. As Bloom's USA fleet shrinks from 1.229 BCM/yr (2024) to 0.499 BCM/yr (2040) [model-derived, gas-supply-decomposer], the displaced gas volume is too small to observe at market level.
-
-Bloom fleet gas trajectory (USA, [model-derived], gas-supply-decomposer):
-
-| Year | Bloom USA (GWh/yr) | BCM USA | BCM Full Fleet | BESS Standard |
-|------|-------------------|---------|----------------|---------------|
-| 2024 | 6,990 | 1.229 | 1.756 | 4hr |
-| 2028 | 6,589 | 1.159 | 1.656 | 6hr |
-| 2032 | 5,842 | 1.027 | 1.467 | 8hr |
-| 2036 | 4,605 | 0.810 | 1.157 | 16hr |
-| 2040 | 2,837 | 0.499 | 0.713 | 16hr |
-
-The macro LNG context: as SWB drives global incumbent displacement of distributed gas generation, LNG — as the most expensive marginal supply source — is eliminated first in every importing region. For China: LNG imports approach 10–30 BCM (from 107.64 BCM observed in 2024 [T2]) at the +20-year horizon as the coal-before-gas merit order ($35/MWh coal MC vs. $70/MWh gas MC) limits total gas power generation demand. For Europe: US LNG displaced first (highest delivered cost ~$7–9/MMBtu), Qatar second, Norwegian pipeline last [model-derived, gas-supply-decomposer]. Bloom's Korea fleet (~120 MW) is supplied via LNG-sourced Korean gas distribution — adding an LNG cost risk exposure not present in the USA fleet (gas-supply-decomposer).
+**Consistency audit: 4 entities checked, 1 parametric conflict resolved (SWB cost basis: capacity-amortization vs. delivered-MWh accounting). No entity-level contradictions. All specialist assessments applied as primary.**
 
 ---
 
-## The Short Thesis: When to Short Bloom Energy
+### Phase 7: Synthesis & Tipping Point
 
-The pipeline outputs a clear three-phase answer:
+**Tipping year: 2031–2032 [model-derived, tipping-synthesizer]**
+**Binding constraint: cost_parity (LCOE parity threshold — per user override)**
 
-**Phase 1 — Pre-Signal (hold or avoid): 2026–2028.** The AI data center buildout sustains SOFC demand. Bloom's revenue is growing toward a peak of $3.0–3.2B [model-derived, xcurve-analyst]. The structural short thesis is valid but early: SWB is at 10.8–14.8% of enterprise on-site power procurement [model-derived], the LCOE gap to SOFC is 48–29% above parity, and Bloom's order book is full. Monitor but do not enter. Modeled revenue trajectory [model-derived, xcurve-analyst]:
+All three tipping conditions:
 
-| Year | Revenue ($M) | Growth % | Stage |
-|------|-------------|----------|-------|
-| 2024 | 1,474 [observed] | +10.5% | Growth |
-| 2025 | 2,020 [observed] | +37.3% | Growth |
-| 2026 | ~2,800 [model-derived] | ~+39% | Growth |
-| 2027 | ~3,200 [model-derived] | ~+14% | Peak |
-| 2028 | ~3,000 [model-derived] | ~−6% | Inflection |
-| 2029 | ~2,700 [model-derived] | ~−10% | Decline |
-| 2031 | ~1,800 [model-derived] | ~−18% | Collapse |
-| 2035 | ~1,100 [model-derived] | steady | Annuity |
-| 2042 | ~750 [model-derived] | −5%/yr | Annuity |
+| Condition | Status (2026-03-25) | Resolution Year | Binding? |
+|-----------|---------------------|-----------------|---------|
+| Cost parity (LCOE) | NOT_MET | 2031–2032 [model-derived] | **YES — binding** |
+| Capability parity | PARTIAL | 2027 [model-derived] | NO — clears 4–5yr before cost |
+| Adoption readiness | NOT_MET | 2028 [model-derived] | NO — clears 3–4yr before cost |
 
-**Phase 2 — Short Entry Window: 2028–2030.** Enter the short when Bloom's YoY revenue growth rate decelerates below 10% — observable in quarterly reports. At this point: SWB is at 14.8–19.9% of new enterprise on-site procurement [model-derived, scurve-fitter]; 8-hour BESS is becoming the commercial standard for reliability-grade C&I (BESS turnkey falling toward $174/kWh by 2028 [model-derived, energy-dispatch]); hyperscalers are issuing competing SWB+BESS RFPs for new data center builds; and the SWB LCOE gap to SOFC narrows to within 20% of parity. The $2.2B convertible notes due 2030 [observed] become an overhang as revenue growth stalls. This is a multiple-compression trade: the market begins re-rating Bloom from an AI infrastructure growth company (125x P/E [observed]) toward a declining services annuity business (15–20x P/E on ~$750M terminal service revenue [model-derived]).
+Cost parity is the binding constraint because capability parity resolves in 2027 (cap-parity-checker) and adoption readiness resolves in 2028 (adopt-readiness-checker), but SWB LCOE does not cross below Bloom SOFC LCOE on a procurement-level new-vs-new comparison until 2031–2032 (cost-parity-checker, tipping-synthesizer).
 
-**Phase 3 — Conviction Window: 2031–2032.** LCOE parity is crossed. New SOFC procurement is economically indefensible on a new-build basis. Bloom's new-order pipeline contracts sharply, and quarterly booking data will confirm the collapse in real time. SWB reaches 25% of enterprise on-site procurement [model-derived, scurve-fitter]. By 2032–2033, the marginal cost kill condition is crossed [model-derived, energy-dispatch] — existing SOFC customers facing contract renewal find it cheaper to deploy new SWB than to renew their Bloom contract. The $600M/yr fixed cost structure generates −15% gross margin at the 303 MW/yr breakeven [model-derived, xcurve-analyst].
+**The short entry signal is 2028–2030 — not the tipping year itself (tipping-synthesizer):**
 
-**Structural magnitude:** 63–73% stock downside from the March 2026 ~$41B market cap [observed, xcurve-analyst], computed as: terminal value at 15–20x P/E on ~$750M service annuity = $11–15B versus ~$41B current market cap [model-derived, xcurve-analyst].
+The tipping year (2031–2032) is when new SOFC orders collapse. Equity markets price 2–3 years forward. The decisive re-rating signal is when SWB LCOE closes within 20% of SOFC LCOE, which the forward curve places at **2029.7 [model-derived, tipping-synthesizer]**. At that point, enterprise procurement officers making 5-year investment decisions see a cost crossover within their planning horizon. The observable trigger for a short position is Bloom's revenue deceleration from its AI peak — visible in quarterly results from **2028** when SWB is at 14.8% new-procurement share and 8hr BESS is becoming the commercial standard.
 
-**Leading indicators to monitor:**
-1. Bloom quarterly revenue growth deceleration: >30% (2025) → target <10% as short entry signal (~2028)
-2. Hyperscaler SWB procurement announcements: any Amazon/Microsoft/Google solar+storage deployments as primary data center power
-3. 8-hour BESS commercial deployments in data center applications with verified 99.9%+ uptime track record
-4. New Bloom order bookings flattening relative to AEP/Brookfield pipeline execution rate
-5. Natural gas price spikes: NG at $4.37/MMBtu pulls the marginal cost kill from 2042 to 2038 [model-derived, cost-parity-checker]
+**Short thesis investment timeline [model-derived except where noted]:**
 
-**Material risks to the short thesis:**
-- Bloom pivots to electrolytic hydrogen SOFC: current H2 cost ($4–10/kg observed, domain-disruption) still produces fuel costs far above gas; requires a separate cost-curve analysis
-- AI compute demand cycle extends beyond 2028, delaying revenue peak by 1–2 years
-- OBBBA regulatory reversal re-establishing ITC for solar would accelerate SWB adoption — making the short thesis more robust, not less
-- Bloom permanently dominates footprint-constrained data centers (25–35% of TAM niche) and re-rates to a niche-specialist multiple rather than a declining services annuity
+| Date | Signal | SWB Share | Bloom Revenue | Action |
+|------|--------|-----------|---------------|--------|
+| 2025.6 | 10% SWB threshold crossed | 9.1–10.1% | $2.02B (growth, observed) | Monitor — disruption live |
+| 2027 | Capability parity met (8hr BESS economic) | 12.7% | ~$3.2B (peak) | Near peak; watch for deceleration |
+| **2028** | **Revenue turns; SWB LCOE within 20% visible on horizon** | **14.8%** | **~$3.0B (inflection)** | **SHORT ENTRY WINDOW OPENS** |
+| 2029.7 | SWB LCOE = ~$94.6/MWh (20% gap to SOFC) | 17.3% | ~$2.7B (declining) | Core short thesis activating |
+| 2030 | $2.2B convertible notes pressure builds | 19.9% | ~$2.2B (order cliff) | Debt overhang + revenue cliff dual risk |
+| 2031–2032 | LCOE parity; new order collapse | 22.8–25.9% | ~$1.4–1.8B | Revenue collapse; death spiral confirmed |
+| 2032 | Volume < 303 MW breakeven | 25.9% | ~$1.4B | Fixed cost spiral; margin goes negative |
+
+**Post-tipping dynamics:**
+
+*Bloom incumbent death spiral (tipping-synthesizer):* Beginning at LCOE parity in 2031–2032, new SOFC orders collapse. Bloom's ~$600M/yr fixed cost base [model-derived from observed R&D $123M + G&A/SG&A $213M + manufacturing overhead $264M, xcurve-analyst] spreads across shrinking volume. Fixed cost/MW inflates from $0.82M at 730 MW peak to $1.98M at 303 MW breakeven — +141% overhead per unit. Talent flight follows as SOFC engineers migrate to SWB system integrators. Stack replacement cycle sustains ~$700–750M/yr revenue annuity through 2042 [model-derived, xcurve-analyst], preventing immediate collapse but masking structural impairment of the forward booking pipeline. The death spiral is slow by consumer-product standards (enterprise contracts of 5–10 years provide inertia) but structurally irreversible once LCOE parity is established.
+
+*SWB disruptor virtuous cycle (tipping-synthesizer):* At parity in 2031–2032, SWB at $78.4/MWh [model-derived] gains procurement share from Bloom's enterprise customers. BESS cost-curve dynamics accelerate: 4-hour turnkey falls from ~$40/kWh (2031) to ~$25/kWh (2036) [model-derived]; C&I solar capex from ~$450/kW to ~$300/kW [model-derived]. SWB LCOE falls to $57.4/MWh by 2037 — 27% below SOFC LCOE ceiling. Each new segment activation increases deployment volume, further accelerating the cost curve. Standardization (inverter platforms, EPC workflows, monitoring software) creates switching costs favoring continued SWB platform dominance.
+
+**Regional tipping (tipping-synthesizer):**
+
+All three primary Bloom markets tip simultaneously at 2031–2032 because cost parity is globally determined by SWB manufacturing curves, not regional policy. Regional adoption readiness advantages (Korea and Europe resolve ~1 year earlier at 2027 vs. USA 2028) translate into steeper initial adoption slopes after 2031, not earlier tipping dates.
+
+| Region | Tipping Year | Adoption Readiness Resolves | Notes |
+|--------|-------------|----------------------------|-------|
+| USA | 2031–2032 | 2028 | Primary Bloom market; OBBBA ITC cliff absorbed by cost curves; BESS domestic scaling 200+700 GWh |
+| South Korea | 2031–2032 | 2027 | No BESS tariff friction; Samsung SDI/SK/LG domestic supply; K-REC BTM partial resolution |
+| Europe | 2031–2032 | 2027 | Infrastructure READY; supply chain READY; EU Battery Regulation in force |
+
+**Gas Supply and Displacement Analysis:**
+
+Bloom's natural gas consumption: 1.756 BCM full fleet in 2024 [model-derived, gas-supply-decomposer] — approximately 0.19% of US gas consumption (gas-supply-decomposer). This is a niche-segment analysis, not a macro gas market event. Bloom's US fleet draws 100% from domestic shale gas (Henry Hub-priced, Marcellus/Utica/Haynesville/Permian); zero LNG import exposure (gas-supply-decomposer).
+
+Bloom fleet gas trajectory: declining from 1.756 BCM (2024) to 0.713 BCM (2040) as SWB drives incumbent displacement [model-derived, gas-supply-decomposer]. At 5-year average NG ($3.42/MMBtu), Bloom's customer-embedded fuel cost is ~$216M/yr — the fuel price customers pay through service contracts. Falling gas reduces Bloom's pricing power at renewal by making customers' total service cost appear lower, complicating SWB comparison.
+
+**China LNG context (gas-supply-decomposer):** China imported 107.64 BCM in 2024 [T2: observed]. As SWB drives broader gas generation incumbent displacement, China LNG imports approach zero because coal dispatches before gas in China's merit order (marginal cost $35 vs. $70 for gas) and domestic + pipeline supply covers remaining demand after SWB displacement. LNG — as highest-cost marginal supply — is eliminated first per merit order.
+
+**Europe LNG context (gas-supply-decomposer):** Europe imported 169.1 BCM LNG in 2023 [T2: observed]. Displacement order follows delivered cost: US LNG first (~$7–8/MMBtu, highest delivered cost), Qatar second, Norwegian pipeline last. Structural gas floor globally ~15% of demand as petrochemical feedstock — LNG import dependency in Europe can approach zero as SWB scales and domestic alternatives fill remaining non-feedstock demand.
+
+**Completion timeline [model-derived, tipping-synthesizer + scurve-fitter]:**
+- 10% of addressable TAM: ~2028 (16.4% displacement)
+- 50% of addressable TAM (S-curve inflection x0): 2034.7
+- 80% of addressable TAM: ~2039–2040
+- Saturation (L=70%): ~2045+
+
+**Jevons Paradox: NOT applied** (tipping-synthesizer, domain-disruption). SWB is Stellar — cost decline accelerates adoption without proportional fuel throughput rebound. The displacement of X-Flow SOFC by Stellar SWB reduces natural gas consumption permanently in each displaced installation, with no compensating demand rebound.
 
 ---
 
 ## Key Conclusion
 
-Bloom Energy's SOFC business will experience structural revenue inflection between 2028 and 2032: revenue peaks at ~$3.0–3.2B in 2027–2028 [model-derived], new SOFC procurement becomes economically indefensible in 2031–2032 when SWB LCOE ($78.4/MWh) crosses below Bloom's full LCOE ($78.8/MWh), and the marginal cost kill condition — when it is cheaper to build new SWB than to simply pay the fuel bill on an existing Bloom box — is crossed by 2038–2042 depending on gas prices. **Short Bloom Energy in the 2028–2030 window**, when revenue growth deceleration is observable in quarterly reports, 8-hour BESS commercial deployment at data center scale is confirmed, and the LCOE parity crossing is visible on a 2–3 year enterprise procurement horizon. The structural magnitude is 63–73% stock downside as the market re-rates from a 125x P/E AI growth story to a 15–20x P/E declining services annuity worth $11–15B. The binding constraint on the tipping year is cost parity (2031–2032) — not capability (met 2027) or adoption readiness (met 2028). Confidence: 0.70 (medium — limited by S-curve proxy construction quality, sparse SOFC capital cost time series, and AI data center TAM duration uncertainty).
+SWB will displace Bloom Energy's SOFC as the dominant enterprise on-site power technology globally, with new SOFC orders collapsing at LCOE parity in **2031–2032** [model-derived, tipping-synthesizer]. Cost parity is the binding constraint — capability parity clears in 2027 (cap-parity-checker) and adoption readiness clears in 2028 (adopt-readiness-checker), but SWB LCOE on a procurement-level new-vs-new comparison does not cross below Bloom's $78.8/MWh SOFC LCOE until 2031–2032 (cost-parity-checker). The actionable short signal is **2028–2030**: Bloom's AI-driven revenue peaks at ~$3.0–3.2B in 2027–2028 [model-derived, xcurve-analyst], then decelerates as SWB reaches 14.8–19.9% new-procurement share and 8hr BESS becomes the commercial standard — placing the LCOE crossover within enterprise procurement horizons. The $2.2B convertible note maturing in 2030 [observed, xcurve-analyst] arrives at the onset of order collapse, compounding equity dilution risk precisely when revenue is contracting. Bloom's permanent structural flaw: as an X-Flow technology, its marginal cost is bounded below by Henry Hub gas prices — it dispatches third in the on-site merit order (after solar at $0/MWh and BESS at $5–14/MWh cycling cost), and no operational efficiency gain can alter this ordering. The only defensible permanent moat is urban footprint (25–35% of TAM, per cap-parity-checker). Confidence: **0.702** (medium; core cost and tipping chain consistent at 0.70–0.80; limited by scurve-fitter proxy market data at 0.62 and regional-adopter at 0.52 on sparse Korea/Europe enterprise BTM series).
 
 ---
 
 ## Rupture Window
 
-**Primary rupture window: 2031–2032** [model-derived, tipping-synthesizer, cost-parity-checker]
-- SWB LCOE ($78.4/MWh) crosses SOFC full LCOE ($78.8/MWh) at 2031–2032 [model-derived]
-- SWB reaches 25% of new enterprise on-site power procurement in 2031.7 [model-derived, scurve-fitter]
-- New SOFC order collapse begins; Bloom's booking pipeline structurally impaired
-- All NG price scenarios converge on this window (LCOE parity is NG-price-insensitive)
+**2028–2032.** The rupture window spans two distinct inflection events:
+- **2028–2030:** Revenue deceleration from AI peak. SWB LCOE closes within 20% of SOFC LCOE at 2029.7 [model-derived, tipping-synthesizer] — visible on enterprise procurement horizons. Short entry window.
+- **2031–2032:** LCOE parity crossing. New SOFC orders collapse. Volume approaches 303 MW fixed-cost breakeven. Fixed cost spiral initiates.
 
-**Short entry window: 2028–2030** [model-derived, tipping-synthesizer, xcurve-analyst]
-- Revenue growth decelerates below 10%; AI tailwind peak passes
-- SWB LCOE narrows to within 20–37% of SOFC LCOE — visible on enterprise procurement horizon
-- Marginal cost kill threshold sensitivity: NG_high ($4.37/MMBtu) → 2038; NG_mid ($2.75/MMBtu) → 2041; NG_low ($2.19/MMBtu) → 2042
+Secondary endpoint — **marginal cost kill: 2038–2042** [model-derived, cost-parity-checker] — when it is cheaper to build new SWB from scratch than to fuel an existing Bloom box. This is the existential endpoint for Bloom's installed-base service economics, not the commercial displacement signal.
 
 ---
 
 ## Aggregated Confidence Score
 
-**Step 1 — Base confidence (arithmetic mean of 13 non-null agents):**
-domain_disruption=0.80, cost_researcher=0.74, cost_fitter=0.72, capability=0.74, cost_parity=0.70, cap_parity=0.72, adopt_readiness=0.74, tipping_synthesizer=0.72, scurve_fitter=0.62, regional_adopter=0.52, xcurve_analyst=0.58, energy_dispatch=0.71, gas_supply_decomposer=0.82
-Mean = **0.702**
+**Final confidence: 0.702**
 
-**Step 2 — Degradation penalty:** No CRITICAL agent failures. No HIGH agent failures. regional_adopter (MEDIUM, 0.52) and xcurve_analyst (MEDIUM, 0.58) have low scores but agents ran successfully — low confidence is captured in the mean. Penalty = **0.000**
+**Step 1 — Base (arithmetic mean, 13 agents):**
+mean(domain_disruption=0.80, cost_researcher=0.74, cost_fitter=0.72, capability=0.74, cost_parity=0.70, cap_parity=0.72, adopt_readiness=0.74, tipping_synthesizer=0.72, scurve_fitter=0.62, regional_adopter=0.52, xcurve_analyst=0.58, energy_dispatch=0.71, gas_supply=0.82) = **0.702**
 
-**Step 3 — Weakest-link cap:** No agent reported a CRITICAL criterion failure in its compliance checklist. All CRITICAL compliance items PASSED. No cap applied.
+**Step 2 — Degradation penalty:** All 4 CRITICAL agents ran: cost_researcher (0.74), cost_fitter (0.72), cost_parity (0.70), tipping_synthesizer (0.72). No CRITICAL failures. No HIGH failures. Commodity demand agents (07a–07d) not in this preset — no penalty. Penalty = 0.0.
 
-**Step 4 — Floor:** 0.702 > 0.10. Floor not triggered.
+**Step 3 — Weakest-link cap:** No CRITICAL criterion failures in any agent compliance checklist. Cap not applied.
 
-**Final confidence: 0.70** (rounded from 0.702)
+**Step 4 — Floor:** 0.702 > 0.10. Not triggered.
 
-**`lib.tipping_math.confidence_aggregate` output:** base=0.702, penalty=0.0, critical_cap_applied=False, final=0.702
-
----
-
-## Risk Factors and Data Gaps
-
-**Aggregated data gaps (from all 13 agents):**
-1. No observed SOFC LCOE time series — all SOFC cost figures are model-derived from observed capital cost and NG price inputs
-2. Bloom Energy 10-K production cost data inaccessible — SOFC capital cost series relies on 6 T3 secondary-source data points; post-2020 stagnation conclusion rests on only 3 points
-3. No direct market share series for SWB in enterprise reliability-grade on-site power — 9-point proxy series is the primary driver of the 0.62 scurve confidence score
-4. BESS 4-hour turnkey series covers only 5 years (2019–2024) — 9.0%/yr learning rate may not persist through full analysis horizon
-5. AI data center TAM growth rate beyond 2028 — duration of the AI tailwind is model-estimated, not directly observable
-6. 8-hour BESS operational track record in US data centers — 4-hour is well-documented; 8-hour is engineering-extrapolated from modular scaling
-7. No stack replacement cost in SOFC marginal cost model — inclusion would raise SOFC marginal floor and advance marginal kill to 2034–2036
-8. South Korea regional S-curve — only 6 data points, ±3–5 year uncertainty; K-REC policy path is highly uncertain
-9. Bloom geographic revenue split not publicly disclosed — 65%/28%/7% is estimated from SK ecoplant related-party disclosure
-10. Post-OBBBA enterprise procurement behavior not yet observable — OBBBA signed July 4, 2025; enterprise cycles are 3–7 years
-11. No wind component in SWB stack — wind+solar+BESS would lower effective SWB $/MWh and could advance parity by 1–3 years
-12. C&I solar fit R² = 0.806 — below 0.90 target; LCOE parity year could shift ±1–2 years
-
-**Critical assumptions (aggregated):**
-1. C&I solar CF = 17%; BESS sizing = 2.0 kWh/kW; discount rate = 8%
-2. SOFC efficiency = 58%; variable O&M = $10/MWh
-3. SOFC capex flat at $3,500/kW from 2020 forward
-4. SWB learning rates persist through 2040s (BESS 9.0%/yr, solar 7.8%/yr)
-5. BESS duration adoption pathway: 8-hour by 2028–2030, 12-hour by 2030–2033, 16-hour by 2033–2037
-6. AI data center tailwind peaks 2027–2028; extensions shift short entry window right by 1–2 years
+**Final: 0.702 (medium).** Primary confidence constraints: scurve-fitter (0.62) uses proxy market series with no authoritative enterprise BTM time series; regional-adopter (0.52) relies on second-order inference for Korea and Europe enterprise BTM share. Core cost and tipping chain (10 agents at 0.70–0.82) produce consistent directional conclusions — the short thesis direction is robust; 1–2 year timing precision is medium.
 
 ---
 
-## Regional Disruption Assessment
+## Risk Factors & Data Gaps
 
-**USA (dominant risk vector, ~65% of Bloom revenue):** SWB at 6.5% share [model-derived], tipping phase. 25% milestone: 2032.5 [model-derived]. Revenue risk: ~$958M of Bloom's 2024 revenue base. Short-term headwinds for SWB (OBBBA ITC cliff, 48.4% BESS tariff) are absorbed by cost curves by ~2028. USA is the decisive short-thesis market.
+### Risk Factors
 
-**South Korea (~28% of revenue):** SWB at 3.5% share [model-derived], rupture phase. 25% milestone: 2031.3 [model-derived]. Structurally suppressed by SOFC REC weight 2.0 multiplier and K-REC BTM exclusion — but binary policy-reversal risk exists. Korea's high k=0.3248 [model-derived] implies rapid catch-up once policy constraints ease. Near-term Korea revenue risk is policy-driven more than cost-curve-driven.
+**Short thesis accelerators:**
+- NG price spike above $4.37/MMBtu pulls marginal cost kill forward to 2038 (tipping-synthesizer)
+- 8-hour BESS achieving data center track record in 2026–2027 removes availability parity barrier for highest-reliability segment (capability)
+- US domestic BESS manufacturing scaling faster than 700 GWh under-construction timeline reduces tariff friction, advances adoption readiness (adopt-readiness-checker)
+- AI compute demand concentrating SWB-friendly procurement standards at hyperscalers (xcurve-analyst)
+- SK ecoplant or another Korea partner reducing Bloom purchase commitments — SK ecoplant concentration ~23% of revenue (regional-adopter)
 
-**Europe (~7% of Bloom revenue):** SWB at 13.0% share [model-derived], already past 10% threshold in 2022.8 [model-derived]. 25% milestone: 2026.8 [model-derived]. Bloom has minimal European SOFC revenue, but Europe's lead confirms the global disruption trajectory. Europe's faster adoption (k=0.3062) is driven by post-2022 retail electricity prices at $0.28–0.35/kWh.
+**Short thesis decelerators:**
+- Extended multi-year SOFC offtake contracts (5–10 year lock-ins) shield Bloom revenue; backlog overhang post-tipping (tipping-synthesizer)
+- AI data center demand tailwind extending beyond 2030 — if AI buildout sustains through 2031, Bloom revenue peak delayed by 1–2 years (xcurve-analyst)
+- NG price collapse below $1.50/MMBtu extends SOFC competitiveness, pushes LCOE parity to 2033–2034 (tipping-synthesizer)
+- BESS learning rate deceleration if critical minerals (lithium, cobalt) face supply constraints shifts cost curve right (adopt-readiness-checker)
+- OBBBA ITC cliff (July 2026 begin-construction solar deadline) creates near-term procurement compression for C&I solar (adopt-readiness-checker)
+
+### Data Gaps
+
+- No authoritative multi-year enterprise BTM reliability-grade SWB market share time series — primary driver of scurve-fitter proxy methodology and 0.62 confidence (scurve-fitter)
+- SOFC capital cost trajectory uses 6 T3 anchor points from secondary sources; no directly observed multi-year SOFC LCOE series (cost-researcher, cost-fitter)
+- Bloom Korea revenue exact split not fully disclosed; ~65%/28%/7% USA/Korea/Europe estimated from concentration disclosures (regional-adopter)
+- SWB uptime trajectory modeled from inferred values; SOFC degradation rate data conflicts in sources (5%/yr vs. 2.5–3yr stack life) (capability)
+- No observed 8-hour BESS SCOE time series at C&I enterprise scale (cost-fitter, energy-dispatch)
+- AI data center TAM expansion rate uncertain — key variable for Bloom revenue peak timing precision (xcurve-analyst)
+- Bloom convertible note covenant structure and 2030 refinancing terms not fully modeled (xcurve-analyst)
+- South Korea enterprise BTM SWB time series only 6 data points (regional-adopter)
+
+### Critical Assumptions
+
+- BESS cost-curve dynamics continue at historical ~9%/yr CAGR through tipping (cost-fitter)
+- SOFC capital cost remains flat post-2020 at ~$3,500/kW; supported by observed stagnation but not guaranteed (cost-fitter)
+- L=70% addressable TAM for SWB; 25–35% urban footprint-constrained niche permanent (cap-parity-checker)
+- Henry Hub gas prices remain $2–4/MMBtu historically; extreme gas price scenarios shift timing materially (cost-parity-checker)
+- AI data center power demand peaks 2027–2029; extension beyond 2030 delays Bloom revenue peak by 1–2 years (xcurve-analyst)
+- Bloom 2 GW Fremont capacity expansion executes as planned; single-facility concentration risk (xcurve-analyst)
+- Enterprise procurement cycle of 3–7 years drives k=0.196; shorter cycles would steepen S-curve (scurve-fitter)
+- OBBBA ITC cliff cost penalty absorbed by cost curves by 2028 as modeled (adopt-readiness-checker)
 
 ---
 
-## Sources
+## Regional Assessment
 
-All claims in this synthesis trace to the following upstream agent output files, read directly for this analysis:
+**USA (65% of Bloom revenue — decisive short-thesis market):**
+SWB at 6.5% enterprise on-site share (2024), crossing 10% in 2026.3 [model-derived]. k=0.1940, x0=2035.5. Adoption readiness resolves 2028 as domestic BESS capacity (200 GWh built + 700 GWh construction) scales and OBBBA ITC friction is absorbed. BTM C&I solar already at 5.3x Bloom's annual deployment target (2,118 MWdc vs. ~400 MW/yr) [observed, adopt-readiness-checker] — deployment channel capacity is not the bottleneck. US tariff stack on Chinese BESS (48.4%) adds friction but is absorbed by cost trajectory by 2028.
 
-- `output/bloom-energy-sofc-disruption/agents/01-domain-disruption.md` (confidence 0.80)
-- `output/bloom-energy-sofc-disruption/agents/02a-cost-researcher.md` (confidence 0.74)
-- `output/bloom-energy-sofc-disruption/agents/02b-cost-fitter.md` (confidence 0.72)
-- `output/bloom-energy-sofc-disruption/agents/03-capability.md` (confidence 0.74)
-- `output/bloom-energy-sofc-disruption/agents/04a-cost-parity.md` (confidence 0.70)
-- `output/bloom-energy-sofc-disruption/agents/04b-cap-parity.md` (confidence 0.72)
-- `output/bloom-energy-sofc-disruption/agents/04c-adopt-readiness.md` (confidence 0.74)
-- `output/bloom-energy-sofc-disruption/agents/04d-tipping-synthesizer.md` (confidence 0.72)
-- `output/bloom-energy-sofc-disruption/agents/05a-scurve-fitter.md` (confidence 0.62)
-- `output/bloom-energy-sofc-disruption/agents/05b-regional-adopter.md` (confidence 0.52)
-- `output/bloom-energy-sofc-disruption/agents/05c-xcurve-analyst.md` (confidence 0.58)
-- `output/bloom-energy-sofc-disruption/agents/08a-energy-dispatch.md` (confidence 0.71)
-- `output/bloom-energy-sofc-disruption/agents/08b-gas-supply.md` (confidence 0.82)
-- `lib.tipping_math.confidence_aggregate` — confidence calculation
+**South Korea (28% of Bloom revenue):**
+SWB at 3.5% enterprise on-site share (2024), crossing 10% in 2027.6 [model-derived]. Structurally delayed by REC weight 2.0 for fuel cells. No BESS tariff friction (Samsung SDI, SK Innovation, LG domestic supply). K-REC BTM exclusion (2023) is a direct demand hit to existing Bloom Korea installations — a regulatory disruption to Bloom Korea independent of SWB cost parity. k=0.3248 — rapid catch-up potential. SK ecoplant ~23% of total Bloom revenue: single counterparty concentration creates outsized revenue volatility.
+
+**Europe (7% of Bloom revenue):**
+SWB at 13.0% enterprise on-site share (2024), past 10% tipping threshold since 2022.8 [model-derived]. Infrastructure and supply chain READY; regulatory PARTIAL only (minor EU countervailing duties on Chinese products). Post-2022 energy crisis elevated BTM solar+BESS economics. Primary relevance is as leading indicator confirming global disruption trajectory — Europe's 2024 position is where USA will be by ~2027.5 [model-derived: USA lags Europe by 3.5 years on the S-curve].
+
+**China (benchmark only, zero Bloom revenue exposure):**
+SWB at ~16% [model-derived, regional-adopter] — global adoption benchmark. Confirms disruption is real and accelerating globally. LNG imports 107.64 BCM (2024) [T2: observed, gas-supply-decomposer] approach zero as SWB scales because coal dispatches before gas in China's merit order (marginal cost $35 vs. $70) and domestic + pipeline sources cover remaining post-SWB demand.
+
+---
+
+*Sources: All data from upstream STDF pipeline agent outputs (agents/01-domain-disruption.md through agents/08b-gas-supply.md). No independent analysis or external forecasts introduced. Agent attributions are inline throughout. Date of analysis: 2026-03-25.*
