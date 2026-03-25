@@ -1,0 +1,12 @@
+# Capability Agent Memory Index
+
+- [ev_ice_capability_benchmarks.md](./ev_ice_capability_benchmarks.md) — Validated EV vs ICE capability thresholds, trajectories, and dimension definitions
+- [data_sources_ev_capability.md](./data_sources_ev_capability.md) — Reliable data sources for EV/ICE capability metrics in the STDF catalog
+- [tco_dimension_pattern.md](./tco_dimension_pattern.md) — TCO partial-parity pattern: fleet average vs segment-level analysis needed
+- [oil_disruption_capability_benchmarks.md](./oil_disruption_capability_benchmarks.md) — Full oil disruption capability benchmarks: transport + power generation + heating sectors, all dimensions and thresholds (validated 2026-03-16)
+- [humanoid_robot_capability_benchmarks.md](./humanoid_robot_capability_benchmarks.md) — Humanoid robot capability benchmarks: 8 dimensions, all thresholds for logistics/warehouse segment, platform specs, trajectory data (validated 2026-03-19)
+- [bev_ng_truck_china_benchmarks.md](./bev_ng_truck_china_benchmarks.md) — BEV vs LNG heavy truck capability benchmarks for China: 11 dimensions, all thresholds, trajectories, crossing-year estimates (validated 2026-03-19)
+- [liion_vs_leadacid_capability_benchmarks.md](./liion_vs_leadacid_capability_benchmarks.md) — Li-ion vs lead-acid battery benchmarks: 13 dimensions, 4 application segments (SLI/telecom/datacenter/forklift), all thresholds and parity years (validated 2026-03-20)
+- [copper_electrification_capability_benchmarks.md](./copper_electrification_capability_benchmarks.md) — Copper demand from electrification: 5-sector capability benchmarks, copper intensity factors (BEV 83kg, solar 5.5t/MW, wind 8-15t/MW, BESS 1t/MWh), trajectory data, parity years (validated 2026-03-25)
+- [ai_cognitive_labor_capability_benchmarks.md](./ai_cognitive_labor_capability_benchmarks.md) — AI vs human cognitive labor: 10 dimensions, all thresholds, HCAST/MMLU/HumanEval/ARC-AGI trajectories, 9/10 dims met, agentic blocker crossing ~2026 (validated 2026-03-25)
+- [sofc_swb_capability_benchmarks.md](./sofc_swb_capability_benchmarks.md) — Bloom Energy SOFC vs SWB benchmarks: 10 dimensions, all thresholds, parity years (availability 2027, CAPEX 2026–2027), permanent footprint gap, data center moat (validated 2026-03-25)

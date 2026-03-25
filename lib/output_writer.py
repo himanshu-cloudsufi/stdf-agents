@@ -9,10 +9,20 @@ import textwrap
 # Map agent slugs to human-readable display names.
 AGENT_DISPLAY_NAMES: dict[str, str] = {
     "stdf-domain-disruption": "Domain Disruption",
-    "stdf-cost-curve": "Cost Curve",
+    "stdf-cost-researcher": "Cost Researcher",
+    "stdf-cost-fitter": "Cost Fitter",
     "stdf-capability": "Capability",
-    "stdf-adoption-scurve": "Adoption S-Curve",
-    "stdf-tipping-point": "Tipping Point",
+    "stdf-cost-parity-checker": "Cost Parity Checker",
+    "stdf-capability-parity-checker": "Capability Parity Checker",
+    "stdf-adoption-readiness-checker": "Adoption Readiness Checker",
+    "stdf-tipping-synthesizer": "Tipping Synthesizer",
+    "stdf-scurve-fitter": "S-Curve Fitter",
+    "stdf-regional-adopter": "Regional Adopter",
+    "stdf-xcurve-analyst": "X-Curve Analyst",
+    "stdf-demand-decomposer": "Demand Decomposer",
+    "stdf-stream-forecaster": "Stream Forecaster",
+    "stdf-fleet-modeler": "Fleet Modeler",
+    "stdf-regional-demand-analyst": "Regional Demand Analyst",
     "stdf-synthesizer": "Synthesizer",
 }
 

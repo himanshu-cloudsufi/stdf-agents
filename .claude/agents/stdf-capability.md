@@ -7,7 +7,7 @@ color: purple
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md` and `.claude/shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-capability/`
 
@@ -58,10 +58,7 @@ python3 scripts/query_curves.py --list-sectors
 
 Default output shows metadata + file paths. Add `--detail` for full X/Y data.
 
-**Data priority order:**
-1. **Local data** (`data/` directory via Read/Glob) — primary source for capability benchmarks, performance trajectories, efficiency data, and energy density trends.
-2. **Web research** — secondary source for gaps not covered by the catalog.
-3. When using catalog data, cite the `source` field from the curve file.
+**Data priority:** Follow the 3-tier hierarchy and tagging rules in `shared-rules.md` ("Data Source Hierarchy", "Web Search Guardrails", "Citation Standards"). Local catalog is primary for capability benchmarks, performance trajectories, efficiency data, and energy density trends. When using catalog data, cite the `source` field from the curve file.
 
 Relevant curve types: `Capability` (5), `Performance Benchmark` (16), `Energy Density` (5), `Energy Efficiency` (4), `Efficiency Rate` (4), `Capacity Factor` (10), `Performance Rate` (16). Also check `Safety Incidents` (2) for safety dimensions.
 
@@ -120,6 +117,7 @@ If your prompt includes `UPSTREAM_FILES:` paths, use the `Read` tool to read eac
 3. **Historical trajectory data is required.** For each dimension, provide data points over time showing the rate of improvement. Distinguish exponential improvement curves from linear ones.
 4. **Threshold assessment per dimension.** For each dimension, define the competitive capability threshold — the MINIMUM performance level at which the disruptor becomes a viable substitute for mainstream (not early adopter) use.
 5. **Always use tools to gather real data** before producing your structured output. Do not fabricate numbers. If data is unavailable for a dimension, state that explicitly with reduced confidence.
+6. **Jevons Paradox classification.** Read `01-domain-disruption.md` `## Classification Overrides` for the X-Flow/Stellar/Hybrid tag. If the technology is classified as **Stellar**, you MUST NOT reference Jevons Paradox in the capability assessment — efficiency gains in Stellar technologies do not rebound into increased resource consumption. If the tag is missing from upstream, self-classify (X-Flow/Stellar/Hybrid) based on whether the technology has physical resource throughput (X-Flow) or zero marginal cost characteristics (Stellar), and emit `[WARNING: Jevons classification not found in upstream — self-classified as {tag}]` in your output.
 
 ## Tool Usage
 
@@ -198,6 +196,18 @@ Use `python3 -c "..."` via Bash for curve fitting when you have sufficient data 
 - **Simultaneous convergence:** Multiple dimensions cross thresholds in the same 2-3 year window — triggers rapid adoption
 - **Sequential convergence:** Dimensions cross years apart — adoption gated by last dimension
 - **Divergent dimensions:** Some improve while others stagnate — signals architectural limitations
+
+## Energy Sector Capability Dimensions (Reference)
+
+When the disruption involves energy generation, these dimensions are commonly relevant. Non-mandatory — identify dimensions empirically, use as completeness check.
+
+| Category | Dimension | Disruptor Metric | Incumbent Metric | Typical Threshold |
+|----------|-----------|-----------------|-----------------|-------------------|
+| Performance | dispatchability | Battery duration (hours) | Always-on (baseload) | 4h for peak replacement |
+| Performance | capacity_factor | Solar/wind CF + storage | Coal/gas CF | 0.85 combined |
+| Time | ramp_rate | Battery: instant | Gas turbine: 10-20 MW/min | Equivalent or better |
+| Performance | grid_stability | Inverter-based freq response | Synchronous inertia | Grid code compliance |
+| Economic | operating_cost | SWB marginal ~$0/MWh | Coal $35-50, Gas $35-70 | Cost parity |
 
 ## Anti-Pattern Guardrails
 

@@ -6,7 +6,7 @@ model: sonnet
 memory: project
 ---
 
-**Before starting, Read `.claude/shared-rules.md`** for STDF vocabulary rules, analytical guardrails, and the persistent memory system.
+**Before starting, Read `.claude/shared-rules.md` and `.claude/shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `.claude/agent-memory/stdf-domain-disruption/`
 
@@ -62,10 +62,7 @@ python3 scripts/query_curves.py --list-types
 
 Default output shows metadata + file paths. Add `--detail` for full X/Y data.
 
-**Data priority order:**
-1. **Local data** (`data/` directory via Read/Glob) — primary source for quantitative grounding. Use adoption curves to assess S-curve positioning, cost data to identify disruption dynamics, market share for incumbent erosion evidence.
-2. **Web research** — secondary source for qualitative context, recent developments, and data gaps.
-3. When using catalog data, cite the `source` field from the curve file.
+**Data priority:** Follow the 3-tier hierarchy and tagging rules in `shared-rules.md` ("Data Source Hierarchy", "Web Search Guardrails", "Citation Standards"). Local catalog is primary for quantitative grounding — adoption curves for S-curve positioning, cost data for disruption dynamics, market share for incumbent erosion. When using catalog data, cite the `source` field from the curve file.
 
 The catalog covers 25 sectors including Passenger Cars, Energy Storage, Energy Generation, Battery Pack, Autonomous Vehicle, Artificial Intelligence, Robot, and more. 503 adoption curves + 279 cost curves + 42 labor impact + market share data.
 
@@ -206,6 +203,25 @@ Output must include a structured disruption_map (list of DisruptionMapEntry obje
 - **PASS:** A disruption_map with 3+ entries, each entry having non-empty disruptors and incumbents lists.
 - **FAIL:** An empty disruption_map with all analysis buried in the narrative field. A single catch-all entry like "energy disruption" covering everything.
 
+## End-Use Completeness Cross-Reference (MANDATORY)
+
+After producing your Disruption Map, you MUST verify end-use segment coverage:
+
+1. **Look up the end-use breakdown** for the commodity or sector under analysis (via WebSearch or data catalog). Identify all segments that account for >5% of total demand or market share.
+2. **Cross-reference** every segment >5% against your Disruption Map. For each segment, verify it has a disruption assessment (disruptor, incumbent, or chimera assigned).
+3. **Present as a table** in your output, after the Disruption Map:
+
+### End-Use Completeness Check
+
+| End-Use Segment | Share (%) | Disruption Assessed | Notes |
+|----------------|----------|--------------------:|-------|
+| [segment 1] | [pct] | YES / NO | [if NO, why omitted] |
+| [segment 2] | [pct] | YES / NO | [notes] |
+
+4. If ANY segment >5% has `Disruption Assessed = NO`, either add it to the Disruption Map or explain in Data Gaps why it was excluded (e.g., "insufficient data for this segment").
+
+This prevents missing major demand vectors (e.g., the T-25 failure where the 12V SLI battery vector was omitted from lead-acid disruption analysis).
+
 ## Analytical Checks — Run Before Finalizing
 
 Before producing your final output, verify each of the following. If any check fails, revise your analysis.
@@ -253,6 +269,36 @@ Each row is one disruption entry. Min 1 row. Disruptors and Incumbents columns m
 - **Narrative** (required): Must contain quantitative evidence. Must reference every disruption in the Disruption Map table.
 - **Confidence** (required): Between 0.0 and 1.0 inclusive.
 - **Handoff Context** (required): Must contain values useful to downstream agents. Include at minimum: sector boundaries, key cost data, and data gaps.
+
+## Required Section: Technology Flow Classification
+
+After the Disruption Map, add:
+
+### Technology Flow Classification
+
+| Technology | Flow Type | Reasoning |
+|-----------|-----------|-----------|
+| [each technology from map] | X-Flow / Stellar / Hybrid | One-line reasoning |
+
+For each technology, write a paragraph explaining:
+- Why X-Flow (physical throughput), Stellar (zero marginal cost), or Hybrid
+- For Hybrid: which component dominates
+- Downstream implications (Jevons applicability)
+
+### Required Handoff Fields
+
+In the Handoff Context section, ALSO include:
+- **Cost Metric Recommendation:** Which metric for parity comparison (purchase price / $/kWh / $/km etc.) with justification
+- **Market Type Recommendation:** consumer / fleet / enterprise / utility with justification
+
+## Energy Sector Convergence Reference
+
+Additional energy-sector convergence combinations beyond SWB:
+- **SWB+HP** (Solar + Wind + Battery + Heat Pump): Enables full building electrification — electricity for both power and heating, eliminating gas demand from both sectors simultaneously
+- **SWB+EV** (SWB + Electric Vehicles): Creates demand-supply reinforcing loop — EVs create electricity demand that justifies more SWB deployment
+- **SWB+DC** (SWB + Datacenter): Direct PPA model — hyperscale datacenters contract directly with solar/battery farms, accelerating utility-scale SWB deployment
+
+**Demand-side convergence insight:** Each demand vector (EV, HP, DC) individually justifies SWB deployment, but together they create an unassailable demand floor for stellar energy systems.
 
 ## Anti-Pattern Guardrails
 

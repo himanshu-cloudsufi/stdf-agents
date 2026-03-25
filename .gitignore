@@ -5,6 +5,14 @@ __pycache__/
 .venv/
 env/
 
+# Secrets
+.env
+server/.env
+
+# Build caches
+.vite/
+frontend/.vite/
+
 # OS
 .DS_Store
 Thumbs.db
@@ -14,7 +22,5 @@ Thumbs.db
 .idea/
 
 # Agent memory (project-scoped, not shared)
-.claude/agent-memory/
 
 # Output artifacts (regenerable)
-output/

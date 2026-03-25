@@ -69,7 +69,11 @@ def print_table(entries, detail=False):
 
     if detail:
         for e in entries:
-            fp = ROOT / e.get("file_path", "")
+            fp = (ROOT / e.get("file_path", "")).resolve()
+            # Prevent path traversal outside project root
+            if not str(fp).startswith(str(ROOT.resolve())):
+                print(f"Skipping unsafe path: {e.get('file_path', '')}")
+                continue
             if fp.exists():
                 with open(fp) as f:
                     curve = json.load(f)

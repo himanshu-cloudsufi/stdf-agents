@@ -1,0 +1,755 @@
+## AI Labor Disruption -- US
+
+Region          US
+Horizon         2022-2035
+
+
+## EXECUTIVE SUMMARY
+
+### Headline
+AI cognitive automation will displace or augment approximately 49 million US
+FTE (34.4% of the workforce) by 2030, with the transition largely complete by
+2028-2029. The disruption is driven by exponentially declining AI costs and
+rapidly expanding AI capability, creating cost-parity tipping points across
+all 24 occupation groups between 2022-2024.
+
+### Key Numbers
+  Total US Employment        143,066,500
+  Displaced by 2025          36,853,206 FTE  (25.8%)
+  Displaced by 2030          49,145,511 FTE  (34.4%)
+  Displaced by 2035          49,265,598 FTE  (34.4%)
+  Realistic Range (2030)     49.3M +/- 7-10M (20-37% depending on doubling time)
+  Split                      50% replacement (job loss) / 50% productivity (augmentation)
+  Peak Monthly Acceleration  July 2024, delta 937,925 FTE
+  Effective Plateau          2030 (monthly delta < 0.02%)
+
+### Disruption Profile
+  Disruptor       Large Language Models / Foundation Models
+  Incumbent       Human Cognitive Labor
+  Chimera         AI-Augmented Workers (copilot model)
+  S-Curve Phase   Rapid growth
+  Scope           Cognitive tasks only -- physical automation excluded
+
+### Most Affected by Rate (2035)
+  Occupation Group               Displacement %    Employment
+  Math                           39.5%             426,200
+  Business and Financial         38.7%             9,819,000
+  Legal                          38.5%             1,312,600
+  Community and Social Service   38.4%             2,519,200
+  Management                     38.0%             12,027,300
+
+### Most Affected by Absolute FTE (2035)
+  Occupation Group                          Displaced FTE    Employment
+  Office and Administrative Support         6,252,395        16,488,600
+  Healthcare                                6,124,435        17,533,300
+  Management                                4,569,387        12,027,300
+  Transportation and Material Moving        4,176,037        13,050,600
+  Food Preparation and Serving              4,162,409        12,022,100
+
+### Least Affected (2035)
+  - Building and Grounds Cleaning -- 21.6% (physical task dominance)
+  - Construction and Extraction -- 23.6% (manual trades)
+  - Installation Maintenance and Repair -- 24.6% (hands-on mechanical)
+
+
+## S01 -- DISRUPTION MAP (Global)
+Compliance -- Cat 1 (Disruption Identification), Cat 2 (S-Curve Positioning)
+
+Source  disruption-reasoning framework
+
+### Primary Disruption
+  Name          Cognitive AI Automation
+  Disruptor     Large Language Models / Foundation Models
+  Incumbent     Human Cognitive Labor
+  Chimera       AI-Augmented Workers (human + AI copilot)
+  Domain        Knowledge work, information processing, decision support
+
+  Mechanism
+    AI systems (LLMs, multimodal models) can now perform cognitive subtasks
+    -- writing, analysis, coding, customer interaction, data processing --
+    at rapidly declining cost. When AI cost drops below 50% of human cost
+    for a given subtask, a tipping point triggers S-curve adoption.
+
+  Cost Trajectory         AI inference cost declining ~70% annually; human wages rising ~3-4% annually
+  Capability Trajectory   METR benchmark -- AI capability doubling every 7 months
+
+### Demand Drivers
+
+  D01  Office and Administrative Automation
+       Share of disruption   12.7%
+       Employment            16,488,600
+       S-curve phase         Rapid growth
+       Demand direction      Growing
+       Tipping window        2023-Q1 to 2025-Q4
+       Notes                 Earliest mass tipping -- clerical, data entry, scheduling
+       Key occupations       Secretaries, General Office Clerks, Bookkeeping Clerks
+
+  D02  Healthcare Cognitive Tasks
+       Share of disruption   12.4%
+       Employment            17,533,300
+       S-curve phase         Rapid growth
+       Demand direction      Growing
+       Tipping window        2023-Q2 to 2026-Q2
+       Notes                 Documentation, triage protocols, prescription checking -- NOT physical care
+       Key occupations       Registered Nurses (admin), Medical Transcriptionists, Health Technicians
+
+  D03  Management and Executive Decision Support
+       Share of disruption   9.3%
+       Employment            12,027,300
+       S-curve phase         Tipping
+       Demand direction      Growing
+       Tipping window        2024-Q4 to 2027-Q2
+       Notes                 Strategy synthesis, reporting, meeting prep -- later tipping due to complexity
+       Key occupations       Top Executives, Management Analysts, Project Management Specialists
+
+  D04  Sales and Customer Service
+       Share of disruption   10.5%
+       Employment            13,642,000
+       S-curve phase         Rapid growth
+       Demand direction      Growing
+       Tipping window        2023-Q1 to 2025-Q4
+       Notes                 Chatbots, automated lead qualification, CRM automation
+       Key occupations       Customer Service Reps, Retail Sales Workers, Cashiers
+
+  D05  Transportation and Logistics (Cognitive)
+       Share of disruption   8.5%
+       Employment            13,050,600
+       S-curve phase         Rapid growth
+       Demand direction      Growing
+       Tipping window        2023-Q1 to 2026-Q3
+       Notes                 Route optimization, dispatch, documentation -- NOT driving
+       Key occupations       Hand Laborers (scheduling), Truck Drivers (admin), Dispatchers
+
+  D06  Food Service Operations
+       Share of disruption   8.5%
+       Employment            12,022,100
+       S-curve phase         Rapid growth
+       Demand direction      Growing
+       Tipping window        2023-Q1 to 2026-Q1
+       Notes                 Order management, scheduling, inventory -- physical cooking/serving excluded
+       Key occupations       Food Service Workers, Cooks (planning), Waiters (order processing)
+
+  D07  Business and Financial Analysis
+       Share of disruption   7.7%
+       Employment            9,819,000
+       S-curve phase         Tipping
+       Demand direction      Growing
+       Tipping window        2024-Q2 to 2027-Q1
+       Notes                 Financial modeling, audit procedures, compliance checking
+       Key occupations       Accountants, Financial Analysts, Budget Analysts, Actuaries
+
+  D08  Education and Training
+       Share of disruption   5.9%
+       Employment            8,295,000
+       S-curve phase         Tipping
+       Demand direction      Growing
+       Tipping window        2023-Q4 to 2027-Q1
+       Notes                 Lesson planning, grading, admin -- NOT classroom presence
+       Key occupations       K-12 Teachers (admin), Postsecondary Educators, Training Specialists
+
+  D09  Construction and Trades (Cognitive)
+       Share of disruption   3.0%
+       Employment            6,222,900
+       S-curve phase         Pre-rupture
+       Demand direction      Stable
+       Tipping window        2023-Q4 to never (ceiling)
+       Notes                 Estimating, permitting, project documentation -- most work is physical
+
+  D10  Legal Automation
+       Share of disruption   1.0%
+       Employment            1,312,600
+       S-curve phase         Tipping
+       Demand direction      Growing
+       Tipping window        2024-Q2 to 2027-Q1
+       Notes                 Contract review, legal research, document drafting
+       Key occupations       Lawyers, Paralegals, Legal Secretaries
+
+  D11  IT and Software Development
+       Share of disruption   3.4%
+       Employment            4,513,700
+       S-curve phase         Tipping
+       Demand direction      Growing
+       Tipping window        2024-Q3 to 2027-Q1
+       Notes                 Code generation, testing, documentation, debugging
+       Key occupations       Software Developers, Computer Programmers, QA Analysts
+
+  D12  Other (Physical-Dominant)
+       Share of disruption   17.1%
+       Employment            17,326,400
+       S-curve phase         N/A
+       Demand direction      Stable
+       Tipping window        Limited -- physical tasks not modeled
+       Notes                 Building maintenance, farming, installation, repair
+
+### Disruption Landscape
+  Disruption                   Disruptor              Incumbent                Chimera               S-Curve Phase
+  LLM-based task automation    GPT/Claude/Gemini      Human cognitive workers  AI copilots           Rapid growth
+  Robotic process automation   Rule-based + AI bots   Clerical workers         Human-supervised bots Saturation
+  Physical robotics            Humanoid robots         Manual labor             Cobots                Pre-rupture (GAP)
+
+### Limitations
+  - Physical task automation excluded -- cognitive subtasks only
+  - No job creation modeled -- displacement only, not net employment
+  - Static employment baseline -- no demographic shifts
+  - US-only data -- no UK, EU, China
+  - No sector-specific regulatory constraints
+
+
+## S02a -- COST CURVE: AI INFERENCE (Global)
+Compliance -- Cat 3 (Methodology), Cat 4 (Cost Curve Grounding)
+
+Source  artificial-labor/config/simulation_config.json, cost_model
+
+### Model
+  Type                  Exponential decline
+  Formula               cost(t) = $5.00 * (0.30)^years_from_2025
+  Baseline              $5.00 per million tokens (Jan 2025)
+  Annual decline rate   70%
+  Floor                 $0.01
+  Unit                  USD per million tokens
+
+### AI Inference Cost Trajectory
+  Year    Cost per M Tokens    Notes
+  2022    $34.29               Pre-GPT-4 era
+  2023    $10.29               GPT-4 launch
+  2024    $3.09
+  2025    $5.00                Baseline anchor
+  2026    $1.50
+  2027    $0.45
+  2028    $0.14
+  2029    $0.04
+  2030    $0.01                Hits floor
+  2035    $0.01
+
+### Cost per Task Comparison
+  Assumptions: 50,000 tokens per task, 30-minute human equivalent
+
+  Year    AI Cost     Human Cost    Ratio
+  2025    $0.25       $11.56        46x cheaper
+  2027    $0.02       $12.37        578x cheaper
+  2030    $0.001      $14.20        11,560x cheaper
+
+Key Insight
+  By 2027 AI cost is effectively zero for decisions. The binding constraint
+  is capability and adoption, not cost.
+
+Confidence  Medium
+
+
+## S02b -- COST CURVE: US LABOR (BLS)
+Compliance -- Cat 4 (Cost Curve Grounding), Cat 5 (Quantitative Rigor)
+
+Source  BLS Occupational Employment and Wage Statistics
+
+### Economy-Wide Wage Projection
+  Median Hourly (2024)    $23.11
+  Annual Growth           3.5%
+
+  Year    Projected Median Hourly
+  2025    $23.92
+  2030    $28.40
+  2035    $33.73
+
+### Wages by Occupation Group (2024 Median)
+  Occupation Group                         Hourly     Annual (2000 hrs)
+  Management                               $55.00     $110,000
+  Computer and Information Technology      $50.00     $100,000
+  Math                                     $50.00     $100,000
+  Legal                                    $47.00     $94,000
+  Architecture and Engineering             $43.00     $86,000
+  Business and Financial                   $40.00     $80,000
+  Life Physical and Social Science         $38.00     $76,000
+  Media and Communication                  $32.00     $64,000
+  Healthcare                               $30.00     $60,000
+  Education Training and Library           $28.00     $56,000
+  Arts and Design                          $28.00     $56,000
+  Construction and Extraction              $25.00     $50,000
+  Installation Maintenance and Repair      $25.50     $51,000
+  Community and Social Service             $24.00     $48,000
+  Entertainment and Sports                 $23.00     $46,000
+  Protective Service                       $22.00     $44,000
+  Office and Administrative Support        $20.00     $40,000
+  Production                               $19.00     $38,000
+  Transportation and Material Moving       $18.50     $37,000
+  Farming Fishing and Forestry             $16.50     $33,000
+  Building and Grounds Cleaning            $16.00     $32,000
+  Sales                                    $16.00     $32,000
+  Personal Care and Service                $15.50     $31,000
+  Food Preparation and Serving             $14.50     $29,000
+
+Key Insight
+  ALL occupation groups have already crossed AI cost parity. Even the
+  lowest-wage group (Food-Prep at $14.50/hr) is far more expensive than
+  AI ($0.25 per 30-min task). Cost is NOT the binding constraint.
+
+Confidence  High
+
+
+## S02c -- COST CURVE: PHYSICAL ROBOTICS (Global) -- GAP
+Compliance -- Cat 4 -- PARTIAL
+
+Status  GAP
+
+Gap Declaration
+  The artificial-labor skill models COGNITIVE task automation only.
+  Physical robotics is a separate disruption not covered. This report
+  UNDERSTATES total disruption for physically-intensive occupations.
+
+### Affected Groups (Cognitive-Only vs With-Robotics Estimate)
+  Group                                Current %    With Robotics
+  Building and Grounds Cleaning        21.6%        30-40%
+  Construction and Extraction          23.6%        30-35%
+  Installation Maintenance and Repair  24.6%        30-40%
+  Farming Fishing and Forestry         26.1%        35-50%
+  Production                           31.5%        40-55%
+  Food Preparation and Serving         34.6%        40-50%
+
+### Known Reference Points
+  - 2024  Industrial robot average price       $50K-80K/unit    (IFR, medium confidence)
+  - 2024  Tesla Optimus target cost            $20K-30K/unit    (Tesla, unverified, low confidence)
+  - 2025  Humanoid robot S-curve phase         Pre-rupture      (medium confidence)
+
+
+## S03 -- AI CAPABILITY CURVES (Global)
+Compliance -- Cat 3 (Methodology), Cat 2 (S-Curve / Capability)
+
+Source  artificial-labor skill (METR-based)
+
+### Model
+  Type              Exponential growth
+  Formula           C(t) = 1560 * 2^(months_elapsed / 7)
+  Baseline          1560 seconds (26 minutes)
+  Baseline Date     2025-01
+  Doubling Period   7 months
+
+### AI Capability Trajectory
+  Date       Seconds    Human Equivalent    Subtask Coverage
+  2022-01    53         ~1 min              ~5%
+  2023-01    188        ~3 min              ~15%
+  2024-01    669        ~11 min             ~35%
+  2025-01    1,560      26 min              ~55%
+  2026-01    5,547      ~1.5 hrs            ~75%
+  2027-01    19,726     ~5.5 hrs            ~88%
+  2028-01    70,137     ~19.5 hrs           ~95%
+  2029-01    249,384    ~69 hrs             ~98%
+  2030-01    886,731    ~246 hrs            ~99%
+
+### Capability Phases
+  Phase                             Period       Coverage
+  Narrow task automation            2022-2023    <20%
+  Broad task competence             2024-2025    35-65%
+  Complex task mastery              2026-2027    75-90%
+  Near-complete cognitive coverage  2028-2030    >95%
+
+Three Gates for Subtask Automation
+  A subtask is automated when all three conditions are met:
+  (1) AI is capable (duration gate)
+  (2) AI is cheaper (cost gate)
+  (3) Organization deploys (adoption gate)
+  Gate 1 (capability) is the binding constraint.
+
+### Sensitivity to Doubling Time
+  Doubling Period    Economy-Wide 2030    Notes
+  5 months           ~36%                Plateau ~2028
+  7 months (base)    34.4%               Base case
+  12 months          ~28%                Plateau ~2033
+  18 months          ~20%                Still accelerating at 2035
+
+Confidence  Medium
+Key Uncertainty  7-month doubling derived from 2 years of METR data -- most critical parameter
+
+
+## S04 -- S-CURVE ADOPTION DYNAMICS (US)
+Compliance -- Cat 2 (S-Curve Positioning), Cat 3 (Methodology)
+
+Source  artificial-labor skill adoption model
+
+### Model
+  Type                  Two-phase S-curve
+  Pre-tipping adoption  5%
+  Floor                 10%
+  Ceiling               80%
+  Years to ceiling      4
+  Tipping threshold     AI cost < 50% of human cost
+
+### Adoption Phases
+  Phase             Rate       Characteristic
+  Pre-tipping       0-10%      Pilots, early adopters
+  Early adoption    10-30%     Positive ROI, departmental rollouts
+  Rapid scaling     30-60%     Industry-wide, competitive pressure
+  Ceiling approach  60-80%     Saturation, holdouts
+  Ceiling           80%        Permanent human-in-loop floor
+
+### Economy-Wide Adoption Trajectory
+  Year    Avg Adoption    Phase
+  2022    6%              Pre-tipping for most
+  2023    9%              Early groups tipping
+  2024    17%             Mass tipping underway
+  2025    26%             Rapid scaling
+  2026    31%             Rapid scaling
+  2027    33%             Approaching ceiling
+  2028    34%             Most at ceiling
+  2030    34%             Plateau
+
+### Groups Never Reaching 30% Displacement
+  - Building and Grounds Cleaning -- ceiling 21.6%
+  - Construction and Extraction -- ceiling 23.6%
+  - Installation Maintenance and Repair -- ceiling 24.6%
+  - Farming Fishing and Forestry -- ceiling 26.1%
+
+
+## S05 -- TIPPING POINTS (US)
+Compliance -- Cat 2 (S-Curve), Cat 8 (Scenario Boundaries)
+
+Source  Derived from group_replacement_monthly output
+
+### Threshold Definitions
+  10%    Early tipping -- simplest cognitive tasks
+  25%    Mass adoption -- AI deeply integrated
+  30%    Structural shift -- labor market fundamentally changed
+
+### Wave 1 (Jan-Jun 2023) -- Routine Cognitive
+  Group                                  Hits 10%     Hits 25%     Hits 30%
+  Food Preparation and Serving           2023-02      2025-02      2026-03
+  Transportation and Material Moving     2023-02      2025-05      2026-09
+  Sales                                  2023-03      2025-01      2025-10
+  Healthcare                             2023-04      2025-05      2026-05
+  Office and Administrative Support      2023-04      2025-02      2025-10
+  Production                             2023-04      2025-08      2027-03
+  Personal Care and Service              2023-06      2025-07      2026-07
+
+### Wave 2 (Jul-Dec 2023) -- Mixed Cognitive/Physical
+  Group                                  Hits 10%     Hits 25%     Hits 30%
+  Protective Service                     2023-08      2025-11      2027-01
+  Farming Fishing and Forestry           2023-09      2027-07      never
+  Building and Grounds Cleaning          2023-12      never        never
+  Community and Social Service           2023-12      2025-11      2026-09
+  Construction and Extraction            2023-12      never        never
+  Education Training and Library         2023-12      2026-02      2027-02
+
+### Wave 3 (Jan-Jun 2024) -- Higher Complexity Cognitive
+  Group                                  Hits 10%     Hits 25%     Hits 30%
+  Media and Communication                2024-01      2025-12      2026-09
+  Entertainment and Sports               2024-02      2026-04      2027-04
+  Installation Maintenance and Repair    2024-02      never        never
+  Arts and Design                        2024-03      2026-03      2027-01
+  Business and Financial                 2024-05      2026-04      2026-12
+  Legal                                  2024-05      2026-04      2026-12
+
+### Wave 4 (Jul-Dec 2024) -- Most Complex Cognitive
+  Group                                  Hits 10%     Hits 25%     Hits 30%
+  Computer and Information Technology    2024-07      2026-06      2027-03
+  Math                                   2024-09      2026-07      2027-02
+  Management                             2024-10      2026-09      2027-05
+  Architecture and Engineering           2024-12      2027-02      2028-02
+  Life Physical and Social Science       2024-12      2027-07      2029-06
+
+### Summary
+  - All groups past 10% by December 2024
+  - All cognitive groups past 25% by July 2027
+  - 4 groups never reach 30%
+  - Fastest to structural shift (10% to 30%)
+      Sales -- 19 months
+      Office and Administrative Support -- 18 months
+  - Slowest cognitive groups
+      Life Physical and Social Science -- 54 months
+      Architecture and Engineering -- 38 months
+
+
+## S06 -- QUANTITATIVE FORECAST (US)
+Compliance -- Cat 3 (Methodology), Cat 5 (Quantitative Rigor)
+
+Source   artificial-labor skill output (family1_base)
+Horizon  2022-2035
+Total US Employment  143,066,500
+
+### Economy-Wide Displacement Trajectory
+  Year    Displaced FTE    Percent
+  2022    8,698,213        6.1%
+  2023    17,379,954       12.1%
+  2024    27,949,838       19.5%
+  2025    36,853,206       25.8%
+  2026    43,095,682       30.1%
+  2027    46,630,122       32.6%
+  2028    48,264,335       33.7%
+  2029    48,912,135       34.2%
+  2030    49,145,511       34.4%
+  2031    49,225,626       34.4%
+  2032    49,252,587       34.4%
+  2033    49,261,596       34.4%
+  2034    49,264,598       34.4%
+  2035    49,265,598       34.4%
+
+### Inflection Points
+  - July 2024     Peak monthly acceleration    delta 937,925 FTE    (16.5% cumulative)
+  - January 2025  Deceleration begins          delta 835,779 FTE    (20.1% cumulative)
+  - January 2027  30% threshold crossed                             (30.4% cumulative)
+  - January 2030  Effective plateau             delta 30,058 FTE    (34.2% cumulative)
+
+### Displacement by Occupation Group (sorted by 2035 rate descending)
+  Group                                   Emp.         2025%   2030%   2035%   Tier
+  Math                                    426,200      20.4    39.3    39.5    Highest
+  Business and Financial                  9,819,000    22.9    38.5    38.7    Highest
+  Legal                                   1,312,600    22.9    38.3    38.5    Highest
+  Community and Social Service            2,519,200    25.9    38.2    38.4    Highest
+  Management                              12,027,300   19.7    37.8    38.0    Highest
+  Office and Administrative Support       16,488,600   31.0    37.9    37.9    High
+  Computer and Information Technology     4,513,700    21.7    37.4    37.6    High
+  Sales                                   10,828,000   31.0    37.5    37.5    High
+  Media and Communication                 1,164,800    25.4    36.8    36.9    High
+  Arts and Design                         728,500      23.6    35.8    35.9    High
+  Education Training and Library          8,295,000    24.4    35.2    35.3    Moderate
+  Healthcare                              17,533,300   28.4    34.9    34.9    Moderate
+  Food Preparation and Serving            12,022,100   29.3    34.6    34.6    Moderate
+  Personal Care and Service               3,399,100    27.7    34.5    34.5    Moderate
+  Architecture and Engineering            2,406,700    17.3    34.0    34.2    Moderate
+  Entertainment and Sports                803,000      23.3    34.0    34.1    Moderate
+  Protective Service                      2,911,800    25.7    33.4    33.5    Moderate
+  Transportation and Material Moving      13,050,600   28.0    32.0    32.0    Moderate
+  Production                              5,706,000    26.8    31.5    31.5    Moderate
+  Life Physical and Social Science        1,143,800    16.5    30.8    31.0    Moderate
+  Farming Fishing and Forestry            889,600      21.7    26.1    26.1    Lower
+  Installation Maintenance and Repair     5,008,200    19.4    24.5    24.6    Lower
+  Construction and Extraction             6,222,900    19.4    23.6    23.6    Lower
+  Building and Grounds Cleaning           3,846,500    18.7    21.6    21.6    Lower
+
+### Top 10 Jobs by Absolute Displacement (2035)
+  Job                                            Emp.         Displaced     Pct
+  Hand Laborers and Material Movers              6,950,000    2,099,228     30.2%
+  Food and Beverage Serving Workers              5,030,600    1,775,262     35.3%
+  Top Executives                                 4,022,200    1,577,116     39.2%
+  Retail Sales Workers                           4,208,800    1,557,282     37.0%
+  Home Health and Personal Care Aides            4,347,700    1,365,984     31.4%
+  Secretaries and Administrative Assistants      3,453,100    1,309,503     37.9%
+  Registered Nurses                              3,391,000    1,246,214     36.8%
+  Cashiers                                       3,157,200    1,198,408     38.0%
+  Customer Service Representatives               2,814,000    1,115,982     39.7%
+  General Office Clerks                          2,646,000    955,982       36.1%
+
+### Top 10 Jobs by Displacement Rate (2035)
+  Job                                            Emp.         Pct
+  Political Scientists                           6,500        40.0%
+  Marriage and Family Therapists                 77,800       40.0%
+  Computer and Information Systems Managers      667,100      39.9%
+  Budget Analysts                                50,400       39.9%
+  Actuaries                                      33,600       39.9%
+  Project Management Specialists                 1,046,300    39.8%
+  Operations Research Analysts                   112,100      39.8%
+  Financial Managers                             868,600      39.7%
+  Customer Service Representatives               2,814,000    39.7%
+  Lawyers                                        864,800      39.6%
+
+
+## S07 -- FEEDBACK LOOPS (Global)
+Compliance -- Cat 7 (Feedback Loop Identification)
+
+Source  feedback-loop-analyzer framework
+
+### Reinforcing Loops (accelerate disruption)
+
+  R1  Cost-Capability Flywheel                              Strength: Very High
+      Lower AI cost -> more deployment -> more data -> better models -> more capable -> more deployment
+      Breakpoint: Model quality plateau (scaling limits)
+
+  R2  Competitive Pressure Cascade                          Strength: High
+      Early adopters gain advantage -> competitors forced to adopt -> industry-wide automation
+      Breakpoint: Regulatory intervention or labor shortages
+
+  R3  Wage-Cost Divergence                                  Strength: High
+      AI costs decline 70%/yr, wages rise 3.5%/yr -> gap widens exponentially -> irreversible
+      Breakpoint: None in forecast horizon
+
+  R4  Skill Concentration                                   Strength: Medium
+      AI handles routine -> remaining work more complex -> mid-skill displaced faster -> polarization
+      Breakpoint: Successful retraining programs
+
+### Balancing Loops (slow disruption)
+
+  B1  Regulatory Friction                                   Strength: Medium
+      Mass displacement -> political pressure -> regulation -> slower adoption
+      Impact: Could extend years_to_ceiling from 4 to 6-8 in regulated sectors
+      Affected sectors: Healthcare, Legal, Education, Financial
+
+  B2  Trust and Quality Ceiling                             Strength: Medium
+      AI errors in high-stakes -> liability concerns -> human oversight retained
+      Impact: Effective ceiling 50-60% in healthcare, legal, financial
+
+  B3  Retraining and Job Creation                           Strength: Low to Medium
+      Displacement -> retraining -> workers shift to AI-complementary roles
+      Lag: 3-5 years
+
+  B4  Human Preference Premium                              Strength: Low
+      Some consumers prefer humans -> niche premium market
+
+  B5  Infrastructure and Integration Friction               Strength: Medium
+      Legacy IT, organizational inertia, change management -> adoption lags capability
+      Impact: Most significant near-term friction
+
+### Net Assessment
+  Direction  Reinforcing
+  Verdict    Reinforcing loops are structurally stronger. Balancing loops create
+             1-3 year friction but do not change direction or magnitude.
+
+### Scenario Implications
+  Base case        34.4% displacement by 2030    Active loops: R1, R2, R3, B5
+  Accelerated      ~37% displacement by 2030     Active loops: R1, R2, R3, R4
+  Regulated        ~28% displacement by 2030     Active loops: B1, B2, B5
+
+
+## S08 -- CONFIDENCE ASSESSMENT (US)
+Compliance -- Cat 8 (Scenario Boundaries), Cat 9 (Uncertainty)
+
+Overall Confidence   Medium
+Range (2030)         20-37%
+Base Case (2030)     34.4%
+
+### Confidence by Section
+  Section                    Confidence        Key Risk
+  S01 Disruption Map         High              Scope -- physical robotics excluded
+  S02a Cost Curve AI         Medium            Decline rate could slow
+  S02b Cost Curve Labor      High              Wage acceleration possible
+  S03 Capability             Low to Medium     7-month doubling least certain, most critical
+  S04 Adoption               Medium            Regulation could extend ceiling time
+  S05 Tipping Points         Medium            +/-12 month uncertainty on dates
+  S06 Forecast               Medium            Compounding uncertainties
+  S07 Feedback Loops         Medium            Regulatory loop strength uncertain
+
+### Parameter Sensitivity (Most Sensitive)
+  Parameter                  Base Value    Range       Impact on 2030 Outcome
+  Capability doubling        7 months      5-18        20% to 37%
+  Adoption ceiling           0.80          0.50-0.95   22% to 40%
+  Years to ceiling           4 years       2-8         28% to 36%
+
+### Parameter Sensitivity (Less Sensitive)
+  Parameter                  Base Value    Impact
+  Tipping threshold          0.50          Minimal -- already crossed
+  Replacement split          0.50          Shifts mix, not total
+
+### Not Modeled
+  - Job creation from AI (overstates net loss)
+  - Physical robotics (understates physical-group disruption)
+  - Demographic shifts (static workforce)
+  - Wage adjustments (downward pressure)
+  - Sector regulation (healthcare, finance, education)
+  - AI output quality gaps (capability does not equal deployment readiness)
+
+### External Benchmarks
+  Source                     Estimate
+  Goldman Sachs (2023)       25% exposed
+  McKinsey (2023)            30% automatable by 2030
+  IMF (2024)                 40% exposed globally
+  This model                 34.4% displaced/augmented by 2030
+
+  Verdict  Within range of major studies
+
+
+## S09 -- DATA PROVENANCE (US)
+Compliance -- Cat 10 (Provenance and Traceability)
+
+### Data Sources
+  DS01  BLS OEWS
+        Type: Primary    Confidence: High
+        Coverage: 341 occupations, national employment
+        Used in: S00, S02b, S06
+
+  DS02  O*NET Task Decomposition
+        Type: Primary    Confidence: High
+        Coverage: 12,996 tasks -> 89,040 subtasks
+        Used in: S00, S06
+
+  DS03  METR AI Benchmark
+        Type: Secondary  Confidence: Medium
+        Coverage: 2023-2025 observations
+        Used in: S03
+
+  DS04  AI API Pricing
+        Type: Secondary  Confidence: Medium
+        Coverage: Published pricing 2023-2025
+        Used in: S02a
+
+  DS05  BLS Wage Estimates
+        Type: Primary    Confidence: High
+        Coverage: Median hourly by occupation
+        Used in: S02b
+
+### Model Parameters
+  MP01  Capability doubling     7 months            Source: DS03    Confidence: Medium     Sensitivity: Very High
+  MP02  Cost decline rate       70%/yr              Source: DS04    Confidence: Medium     Sensitivity: Low
+  MP03  Adoption ceiling        80%                 Source: Expert  Confidence: Low        Sensitivity: High
+  MP04  Tipping threshold       50% of human cost   Source: Expert  Confidence: Medium     Sensitivity: Low
+  MP05  Years to ceiling        4 years             Source: Lit.    Confidence: Medium     Sensitivity: Medium
+  MP06  Replacement split       50/50               Source: Expert  Confidence: Low        Sensitivity: Low (total)
+  MP07  Wage growth             3.5%/yr             Source: BLS     Confidence: Medium     Sensitivity: Low
+
+### Computation
+  Tool            artificial-labor skill v2.0.0
+  Runtime         Python 3.12.2 (stdlib only)
+  Deterministic   Yes
+  Command         python3 run_forecast.py --start-year 2022 --end-year 2035 --scenario family1_base
+  Timestamp       2026-03-02T21:48:36
+  Reproducible    Yes
+
+
+## S10 -- ANTI-PATTERNS AND COMPLIANCE (Global)
+Compliance -- Cat 9, Cat 10
+
+### Anti-Pattern Checks
+  AP01  Data Fabrication             Clean
+  AP02  Narrative Before Data        Clean
+  AP03  Unsupported Precision        Flagged -- 49.3M +/- 7-10M realistic range
+  AP04  Missing Uncertainty Bounds   Addressed
+  AP05  Scope Creep                  Flagged -- US cognitive only, must not overclaim
+  AP06  Stale Data                   Clean
+  AP07  Methodology Opacity          Clean
+  AP08  Confirmation Bias            Flagged -- No capability plateau scenario
+  AP09  Single Scenario              Addressed
+  AP10  Missing Feedback Loops       Clean
+
+### STDF Compliance Scorecard
+  Cat 1   Disruption Identification   PASS
+  Cat 2   S-Curve Positioning         PASS
+  Cat 3   Methodology                 PASS
+  Cat 4   Cost Curves                 PARTIAL (Robotics gap)
+  Cat 5   Quantitative Rigor          PASS
+  Cat 6   Commodity Analysis          Not applicable
+  Cat 7   Feedback Loops              PASS
+  Cat 8   Scenario Boundaries         PARTIAL (Sensitivity only, no multi-scenario runs)
+  Cat 9   Uncertainty                 PASS
+  Cat 10  Provenance                  PASS
+
+  Overall  7/9 PASS, 2 PARTIAL
+
+
+## QUERY-TIME USAGE GUIDE
+
+Load this file when a user asks about AI impact on jobs, unemployment,
+automation timelines, or labor market disruption. Ground responses in this
+pre-computed data instead of generating analysis from scratch.
+
+### Query Mapping
+
+  "How many jobs will AI replace?"
+      Refer to  Executive Summary, S06 Forecast
+
+  "Which jobs are most at risk?"
+      Refer to  S06 Top Jobs by Displacement Rate 2035, S05 Tipping Points
+
+  "When will AI automation peak?"
+      Refer to  S06 Inflection Points, S04 Adoption
+
+  "What about [specific occupation]?"
+      Refer to  S06 Occupation Groups, S05 Tipping Points
+
+  "How fast is AI getting cheaper/better?"
+      Refer to  S02a Cost Curve AI, S03 Capability
+
+  "What could slow this down?"
+      Refer to  S07 Balancing Loops, S08 Confidence
+
+  "How confident are these numbers?"
+      Refer to  S08 Confidence, S09 Provenance, S10 Anti-Patterns
+
+  "Investment implications?"
+      Refer to  Executive Summary, S01 Disruption Map, S05 Tipping Points
+
+Button Label: AI Labor Model

@@ -1,0 +1,12 @@
+# STDF Cost Fitter Agent Memory Index
+
+- [reference_humanoid_robots.md](./reference_humanoid_robots.md) — Validated exponential fit parameters, learning rates, conversion assumptions, and threshold years for humanoid robot cost analysis (2026-03-19)
+- [reference_bev_trucks_china.md](./reference_bev_trucks_china.md) — Validated exponential fits, learning rates, TCO parameters, and threshold years for BEV heavy trucks vs. LNG/diesel in China (2026-03-20)
+- [feedback_vocabulary.md](./feedback_vocabulary.md) — Hook blocks "projected/projection" and "outlook" as forecast language — use "model output", "forward curve", "analysis" instead
+- [reference_oil_gas_disruption.md](./reference_oil_gas_disruption.md) — Validated fits, learning rates, TCO methodology, and threshold years for three-vector oil/gas disruption: BEV/ICE ($/mile), Solar+BESS/NGCC ($/MWh), HP/Gas ($/kWh_th) (2026-03-20)
+- [reference_liion_leadacid_batteries.md](./reference_liion_leadacid_batteries.md) — Validated exponential fit (r=0.1841, R²=0.954), service-level conversion params, and threshold years for Li-ion vs. lead-acid (lead demand decline pipeline, 2026-03-20)
+- [reference_ev_ice_passenger_usa.md](./reference_ev_ice_passenger_usa.md) — Validated fits, learning rates, and threshold years for BEV vs. ICE passenger car US consumer market: parity 2025–2026, inflection 2031–2032 (2026-03-24)
+- [reference_ai_cognitive_labor.md](./reference_ai_cognitive_labor.md) — Validated exponential fit (r=1.1878, R²=0.983), 69.5%/yr learning rate, $/CTE conversion, and threshold years for AI inference vs. human cognitive labor: parity crossed 2020-2021, cost not binding constraint (2026-03-25)
+- [reference_copper_demand_electrification.md](./reference_copper_demand_electrification.md) — Validated fits for 5 electrification vectors (Li-ion, solar LCOE, wind LCOE, BESS, EV); BESS service-level conversion; copper demand CAGRs by vector; threshold years for all vectors (2026-03-25)
+- [reference_sofc_swb_disruption.md](./reference_sofc_swb_disruption.md) — Validated fits, SOFC marginal cost formula, and threshold years for Bloom Energy SOFC disruption by SWB: LCOE parity 2031–2032, Tony's kill-condition 2038–2042 (2026-03-25)
+- [feedback_tony_marginal_cost_framework.md](./feedback_tony_marginal_cost_framework.md) — Tony's decisive framing: SWB wins when amortized capex < incumbent marginal fuel+O&M; two-threshold approach (Tony primary + LCOE secondary)

@@ -17,13 +17,34 @@ BANNED_TERMS: dict[str, str] = {
     "sustainability": "Omit",
     "hydrogen economy": "Specify production method and its cost curve",
     "wright's law": '"cost-curve dynamics" or "learning rate" with specific percentage',
-    "IEA": "Do not cite — use primary data",
-    "EIA": "Do not cite — use primary data",
-    "BNEF": "Do not cite — use primary data",
-    "OPEC": "Do not cite — use primary data",
     "clean energy": "Name the specific technology",
     "decarbonization": '"displacement of fossil-fuel incumbents" or name the specific disruption',
+    "base case": 'Parameter value label (e.g., L=85%)',
+    "bull case": "Parameter value label",
+    "bear case": "Parameter value label",
+    "optimistic scenario": "Parameter sensitivity range",
+    "pessimistic scenario": "Parameter sensitivity range",
+    "best case": "Parameter value label",
+    "worst case": "Parameter value label",
+    "ai capability growth": '"AI capability improvement"',
 }
+
+# Banned source URL/name patterns — URLs are always violations.
+BANNED_SOURCE_PATTERNS: list[tuple[str, str]] = [
+    (r"iea\.org", "IEA source — use primary government data; if unavoidable, tag [CAUTION: IEA source]"),
+    (r"eia\.gov", "EIA source — use primary government data; if unavoidable, tag [CAUTION: EIA source]"),
+    (r"bnef\.com", "BNEF source — use primary data; if unavoidable, tag [CAUTION: BNEF source]"),
+    (r"opec\.org", "OPEC source — use primary data; if unavoidable, tag [CAUTION: OPEC source]"),
+]
+
+# Banned organization name patterns — inline mentions are violations UNLESS
+# the same line contains a [CAUTION: {org}...] tag.
+BANNED_ORG_NAMES: list[tuple[str, str]] = [
+    (r"\bIEA\b", "IEA"),
+    (r"\bBNEF\b", "BNEF"),
+    (r"\bEIA\b", "EIA"),
+    (r"\bOPEC\b", "OPEC"),
+]
 
 # Required terms that should appear in every compliant agent output.
 REQUIRED_TERMS: list[str] = [
@@ -48,6 +69,47 @@ def scan_banned(text: str) -> list[dict]:
         positions = [m.start() for m in pattern.finditer(text)]
         if positions:
             results.append({"term": term, "replacement": replacement, "positions": positions})
+    return results
+
+
+def scan_banned_sources(text: str) -> list[dict]:
+    """Scan for banned organization URLs and inline org name references.
+
+    URLs (e.g., iea.org) are always violations.
+    Inline org names (e.g., "IEA") are violations ONLY if the same line
+    does NOT contain a ``[CAUTION: {org}`` tag.
+
+    Returns list of {"pattern": str, "reason": str, "positions": list[int]}.
+    """
+    results = []
+
+    # 1. URL pattern checks — always violations
+    for pattern_str, reason in BANNED_SOURCE_PATTERNS:
+        pattern = re.compile(pattern_str, re.IGNORECASE)
+        positions = [m.start() for m in pattern.finditer(text)]
+        if positions:
+            results.append({"pattern": pattern_str, "reason": reason, "positions": positions})
+
+    # 2. Org name checks — violation only if same line lacks [CAUTION: {org}...] tag
+    lines = text.splitlines()
+    for org_pattern_str, org_name in BANNED_ORG_NAMES:
+        org_re = re.compile(org_pattern_str)
+        violation_positions = []
+        caution_tag = f"[CAUTION: {org_name}"
+        for line in lines:
+            if caution_tag in line:
+                continue  # line has the required CAUTION tag — not a violation
+            for m in org_re.finditer(line):
+                # Compute absolute position in full text
+                line_start = text.find(line)
+                violation_positions.append(line_start + m.start())
+        if violation_positions:
+            results.append({
+                "pattern": org_pattern_str,
+                "reason": f"{org_name} mentioned without [CAUTION: {org_name} ...] tag",
+                "positions": violation_positions,
+            })
+
     return results
 
 

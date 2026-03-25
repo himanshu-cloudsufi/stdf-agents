@@ -78,6 +78,8 @@ def completion_timeline_from_scurve(L, k, x0, target_pct=80.0):
         raise ValueError(
             f"target_pct ({target_pct}) must be less than L ({L})."
         )
+    if k <= 0:
+        raise ValueError(f"Growth rate k must be positive; got {k}")
 
     def _solve(k_val):
         return x0 - np.log((L - target_pct) / target_pct) / k_val
@@ -139,6 +141,10 @@ def confidence_aggregate(subagent_scores, penalty=0.0, critical_failures=False):
         adjusted = 0.50
         cap_applied = True
         steps.append(f"critical failure cap -> {adjusted:.3f}")
+
+    if adjusted > 1.0:
+        adjusted = 1.0
+        steps.append(f"ceiling applied -> {adjusted:.3f}")
 
     if adjusted < 0.10:
         adjusted = 0.10

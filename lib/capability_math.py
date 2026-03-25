@@ -208,18 +208,23 @@ def parity_year_estimate(years, values, threshold, higher_is_better=True):
     Returns:
         Year as float, or None if trajectory does not converge toward threshold.
     """
-    traj = fit_trajectory(years, values)
+    # Sort by year to ensure correct ordering
+    paired = sorted(zip(years, values), key=lambda x: x[0])
+    years_sorted = [p[0] for p in paired]
+    values_sorted = [p[1] for p in paired]
+
+    traj = fit_trajectory(years_sorted, values_sorted)
     params = traj["params"]
     curve_type = traj["curve_type"]
 
-    # Check if already met.
-    current = float(values[-1])
+    # Check if already met (use last = most recent after sorting).
+    current = float(values_sorted[-1])
     check = threshold_check(current, threshold, higher_is_better)
     if check["status"] == "MET":
-        return float(years[-1])
+        return float(years_sorted[-1])
 
     # Extrapolate year-by-year up to 50 years out.
-    last_year = int(max(years))
+    last_year = int(max(years_sorted))
     for future_year in range(last_year + 1, last_year + 51):
         if curve_type in ("exponential", "decelerating") and "t0" in params:
             t_norm = future_year - params["t0"]

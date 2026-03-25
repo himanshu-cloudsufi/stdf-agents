@@ -135,7 +135,11 @@ def load_curve(file_path: str, root: Optional[Path] = None) -> dict:
         Full curve dict including dataset_name, description, X, Y, type, units,
         source, region, category, entity_type, level_name.
     """
-    full_path = _resolve_root(root) / file_path
+    resolved_root = _resolve_root(root)
+    full_path = (resolved_root / file_path).resolve()
+    # Prevent path traversal outside project root
+    if not str(full_path).startswith(str(resolved_root.resolve())):
+        raise ValueError(f"Path traversal detected: {file_path} escapes project root")
     with open(full_path) as f:
         return json.load(f)
 
