@@ -1,6 +1,6 @@
 # STDF v2 Agents — Claude Code Implementation
 
-STDF (Seba Technology Disruption Framework) v2 multi-agent pipeline with dynamic DAG orchestration. 18 agents, 5 skills, 15 lib modules, 956 empirical curves.
+STDF (Seba Technology Disruption Framework) v2 multi-agent pipeline with dynamic DAG orchestration. 18 agents, 6 skills, 15 lib modules, 956 empirical curves.
 
 ## Agent Registry
 
@@ -67,6 +67,7 @@ Orchestration lives in `/stdf` skill (`.claude/skills/stdf.md`). Use `/stdf "que
 | `/stdf-data "query"` | Search/browse the 956-curve empirical data catalog |
 | `/stdf-compliance <file>` | Compliance checklist evaluation for a specific agent output |
 | `/stdf-readme [dir]` | Generate/regenerate README.md index for a pipeline run |
+| `/show-report` | Start local server and open STDF progress report in browser |
 
 ## Usage
 
@@ -84,7 +85,7 @@ Headless: `claude -p "Analyze the energy storage disruption using the STDF frame
 
 | Path | Purpose |
 |------|---------|
-| `.claude/skills/` | 5 pipeline skills (slash commands) |
+| `.claude/skills/` | 6 pipeline skills (slash commands) |
 | `.claude/agents/` | 18 agent definitions |
 | `.claude/shared-rules.md` | Vocabulary, guardrails, computation rules (read by all agents) |
 | `.claude/agent-memory/` | Persistent per-agent memory |
