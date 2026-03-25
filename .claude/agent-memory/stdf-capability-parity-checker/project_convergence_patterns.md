@@ -60,6 +60,50 @@ Key pattern: S-curve adoption inflected in non-SLI segments (2018-2021) BEFORE f
 
 Per-segment differentiation: when the application has >100 cycles/year (forklift, stationary, telecom), levelized cost/cycle is the decisive crossing dimension, not upfront cost. When the application is infrequent-use (SLI cranking: ~30 cycles/year), upfront unit cost dominates decision-making and is the last blocker to fall.
 
+## AI Disruption of Cognitive Labor (2026-03-25) — AL / Stellar technology
+
+Convergence type: sequential (library returned "divergent" — pseudo-divergent, not genuine).
+- 10 dimensions: 9 MET, 1 NOT_MET → PARTIAL status
+- Cluster 1 (structural, 2020): availability (8,760 hrs/yr = 4.2× human), output consistency (97%) — MET at first commercial deployment
+- Cluster 2 (task quality benchmarks, 2022-2024): coding 100% HumanEval (2022), visual reasoning 85% Q-AR (2022), throughput 1,000 TPS (2023), reasoning 92.3% MMLU (2024), math 97.9% (2024), abstract reasoning 75.7% ARC-AGI (2024), inference cost $0.50/M tokens (2024)
+- Cluster 3 (extended autonomy, 2026): agentic task duration 80% reliability — NOT_MET (1,560s vs 3,600s threshold; 56.7% gap; exponential R²=0.999, doubling every 7.6 months; model-derived crossing mid-2026)
+- Full parity year: mid-2026 [model-derived]
+
+Key pattern: For AL/AI Stellar technologies, Cluster 1 dimensions (structural availability, consistency) are MET from day 1 — analogous to BEV structural physics advantages. Cluster 2 is benchmark performance racing through exponential improvement. Cluster 3 is extended agentic autonomy — the "multi-hour task" frontier — which lags by ~2 years on same exponential doubling trajectory.
+
+PARTIAL rationale when gap > 15%: 9/10 (90%) dimensions MET and the single NOT_MET dimension is not a hard blocker for mainstream session-length cognitive task substitution. The 56.7% gap is large in absolute terms but the exponential trajectory (doubling every 7.6 months) makes mid-2026 crossing functionally imminent (~3 months from analysis date). PARTIAL is correct despite gap > 15% because the single blocker gates only multi-hour autonomous project execution, not the dominant majority of cognitive labor.
+
+## Bloom Energy SOFC vs SWB (2026-03-25) — Stellar disruptor vs X-Flow incumbent
+
+Convergence type: sequential (library returned "divergent" — pseudo-divergent, 17-year span artifact).
+- 10 dimensions: 6 MET, 1 APPROACHING, 3 NOT_MET → PARTIAL status
+- Cluster 1 (structural SWB advantages, 2010–2015): fuel_dependency, startup_time, response_time, annual_opex — MET at first deployment; SOFC had no path to compete on these dimensions
+- Cluster 2 (performance maturation, 2022–2024): stack_degradation (2022), dispatchability at 4-hr BESS (2024)
+- Cluster 3 (economics/availability gating, 2026–2027): installed_capex_firm (2026 [model-derived]), availability_pct (2027 [model-derived], gated by 8-hr BESS reaching economic scale)
+- Permanent SOFC advantages: power_density (100% gap, physics-limited 8–9 m²/kW vs. 0.56 m²/kW SOFC) AND electrical_efficiency (48.9% gap, but economically irrelevant for zero-fuel system)
+- Parity year: 2027 [model-derived] (non-footprint-constrained sites, ~65–75% of distributed gen TAM)
+- Residual SOFC niche: ~25–35% of TAM (urban/rooftop-constrained; footprint advantage permanent)
+
+Key pattern: Materiality exclusion for "economically irrelevant" NOT_MET dimensions. When the capability agent explicitly flags a NOT_MET dimension as economically inert (e.g., SWB electrical_efficiency at 23% vs 45% threshold — irrelevant because fuel is free), exclude it from the denominator of the 2/3 MET calculation. 6/10 = 60% MET (below 2/3), but 6/9 relevant = 66.7% (exactly 2/3) → PARTIAL correct.
+
+Key pattern: Permanent structural advantages that protect only a minority segment (footprint for urban dense sites ~25-35% of TAM) do NOT block PARTIAL status for the mainstream 65-75% TAM. Contrast with genuine hard blockers (e.g., BEV cold-weather range for Alaska) — a dimension that blocks a small niche is different from one that blocks mainstream adoption.
+
+## Copper Demand / Electrification Multi-Vector (2026-03-25) — 5 simultaneous disruptors
+
+Convergence type: sequential (library returned "divergent" — pseudo-divergent, 13-year span artifact across 5 sub-markets).
+- 31 dims across 5 sub-markets (BEV, Solar PV, Wind, BESS, Grid): 29 MET, 2 NOT_MET → PARTIAL status
+- Cluster 1 (structural physics, 2010–2015): copper intensities, BESS response time, wind CF, BEV acceleration/maintenance — MET at or before first commercial deployment; physics-determined, no trajectory needed
+- Cluster 2 (early cost/performance thresholds, 2011–2020): solar CF 2011, BESS response 2012, copper intensities structural, onshore wind CF pre-2010, BEV maintenance 2015, wind availability 2015
+- Cluster 3 (scale and deployment viability, 2020–2023): onshore wind cost 2020, BESS scale 2021, offshore wind cost 2021, solar LCOE 2021, BEV sales 2022, solar installed cost 2022, BESS 2hr cost 2023
+- Cluster 4 (economic completeness): BEV fleet-average TCO 2028 [model-derived] — sole remaining dimension
+- NOT_MET: ev_tco_fleet_avg (+20.2% gap, economic friction not performance), solar_dispatchability standalone (+50% gap, metric scoping artifact — Solar+BESS system MET 2024)
+
+Key pattern: Multi-sector commodity demand analysis (copper here) evaluates multiple disruptors simultaneously. The 5-disruptor sequential cluster pattern will always produce a "divergent" library result. Focus on: (a) sub-market-level MET fraction for each disruptor, (b) whether NOT_MET dimensions are performance or economic, and (c) system-level vs. component-level metric framing for dispatchability.
+
+Key pattern: When a dispatchability dimension is NOT_MET for standalone technology but the operative system (Solar+BESS) clears it — the correct status is "system-level MET, standalone NOT_MET." Report both; use system-level for parity determination. The standalone metric should be flagged as a metric scoping artifact in Data Gaps.
+
+Key pattern: Cross-listed dimensions (bev_copper_intensity in both Sub-Market A and E) inflate upstream dimension count. Deduplicate before computing MET fraction, but report both counts for traceability.
+
 ## lib.capability_math.convergence_pattern behavior note
 
 The function returns "divergent" when met_year values span more than ~5 years. For multi-cluster sequential patterns, this is technically correct but narratively imprecise. Always override library classification with manual narrative when the data shows distinct sequential clusters converging toward a simultaneous terminal phase.
