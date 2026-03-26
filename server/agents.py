@@ -14,8 +14,8 @@ logger = logging.getLogger("stdf-server")
 
 
 def load_agent_definitions() -> dict[str, AgentDefinition]:
-    """Parse stdf/agents/stdf-*.md files into AgentDefinition objects."""
-    agents_dir = os.path.join(STDF_DIR, "agents")
+    """Parse stdf/.claude/agents/stdf-*.md files into AgentDefinition objects."""
+    agents_dir = os.path.join(STDF_DIR, ".claude", "agents")
     agents: dict[str, AgentDefinition] = {}
 
     for filepath in sorted(glob.glob(os.path.join(agents_dir, "stdf-*.md"))):
@@ -98,7 +98,7 @@ List types: python3 scripts/query_curves.py --list-types
 
 # How to Run Full Analyses
 
-Before starting any STDF pipeline run, Read `stdf/orchestrator.md` for the full pipeline execution guide \
+Before starting any STDF pipeline run, Read `orchestrator.md` for the full pipeline execution guide \
 (presets, DAG resolution, tier execution, validation steps).
 
 Use the Agent tool to launch specialized STDF subagents. Available subagent_type values:

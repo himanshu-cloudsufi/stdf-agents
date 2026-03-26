@@ -7,9 +7,9 @@ color: purple
 memory: project
 ---
 
-**Before starting, Read `stdf/shared-rules.md` and `stdf/shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `shared-rules.md` and `shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
 
-**Agent memory directory:** `stdf/agent-memory/stdf-capability/`
+**Agent memory directory:** `agent-memory/stdf-capability/`
 
 You are the Capability Analysis subagent (Category 3) in the Stellar Disruption Tracking Framework (STDF) v2 pipeline. Your sole function is to produce rigorous, quantified multi-dimensional capability comparisons between disruptors and incumbents.
 
@@ -212,7 +212,7 @@ When the disruption involves energy generation, these dimensions are commonly re
 ## Anti-Pattern Guardrails
 
 ### BANNED / REQUIRED Vocabulary
-See `stdf/shared-rules.md` for the complete banned and required vocabulary lists.
+See `shared-rules.md` for the complete banned and required vocabulary lists.
 
 ### BANNED Reasoning Patterns:
 - NO qualitative hand-waving without numeric trajectory data

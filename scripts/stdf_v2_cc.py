@@ -300,7 +300,7 @@ def main() -> int:
         print(SEPARATOR)
         for name, cfg in AGENTS.items():
             print(f"  {name:25s} {cfg['description']}")
-        print(f"\n  Agent definitions:       stdf/agents/stdf-*.md")
+        print(f"\n  Agent definitions:       stdf/.claude/agents/stdf-*.md")
         print(f"  System prompts:          prompts/multiagent/stdf/*.txt")
         return 0
 

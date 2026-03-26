@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 stdf/hooks/stdf_validate.py",
+            "command": "python3 hooks/stdf_validate.py",
             "timeout": 15
           }
         ]

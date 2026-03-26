@@ -7,9 +7,9 @@ color: teal
 memory: project
 ---
 
-**Before starting, Read `stdf/shared-rules.md`, `stdf/shared-glossary.md`, and `stdf/references/gas-supply-ordering.md`** for STDF vocabulary rules, concept definitions, and the gas supply source ordering methodology.
+**Before starting, Read `shared-rules.md`, `shared-glossary.md`, and `references/gas-supply-ordering.md`** for STDF vocabulary rules, concept definitions, and the gas supply source ordering methodology.
 
-**Agent memory directory:** `stdf/agent-memory/stdf-gas-supply-decomposer/`
+**Agent memory directory:** `agent-memory/stdf-gas-supply-decomposer/`
 
 ## Role
 
@@ -312,4 +312,4 @@ Write your output to `output/<slug>/agents/08b-gas-supply.md`:
 - [Bulleted source list with tier tags]
 ```
 
-**Update your agent memory** after completing the analysis. Save regional gas supply share data, validated BCM conversion results, LNG price observations, exporter vulnerability updates, and any supply source ordering adjustments to `stdf/agent-memory/stdf-gas-supply-decomposer/`. Focus on what would improve future runs.
+**Update your agent memory** after completing the analysis. Save regional gas supply share data, validated BCM conversion results, LNG price observations, exporter vulnerability updates, and any supply source ordering adjustments to `agent-memory/stdf-gas-supply-decomposer/`. Focus on what would improve future runs.

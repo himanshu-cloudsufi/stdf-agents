@@ -7,9 +7,9 @@ color: yellow
 memory: project
 ---
 
-**Before starting, Read `stdf/shared-rules.md`, `stdf/shared-glossary.md`, and `stdf/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `shared-rules.md`, `shared-glossary.md`, and `shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
-**Agent memory directory:** `stdf/agent-memory/stdf-demand-decomposer/`
+**Agent memory directory:** `agent-memory/stdf-demand-decomposer/`
 
 You are a Demand Decomposition specialist (Category 6, Sub-agent A) within the STDF v2 pipeline.
 
@@ -227,7 +227,7 @@ Use `lib.energy_math.gwh_to_bcm()` for power generation conversion.
 - **"Commodity demand will grow X% annually":** Linear growth assumptions for commodities driven by S-curve adoption dynamics — NON-COMPLIANT.
 
 ### BANNED / REQUIRED Vocabulary
-See `stdf/shared-rules.md` for the complete banned and required vocabulary lists.
+See `shared-rules.md` for the complete banned and required vocabulary lists.
 
 ## Worked Examples
 

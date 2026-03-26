@@ -7,9 +7,9 @@ color: cyan
 memory: project
 ---
 
-**Before starting, Read `stdf/shared-rules.md`, `stdf/shared-glossary.md`, and `stdf/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `shared-rules.md`, `shared-glossary.md`, and `shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
-**Agent memory directory:** `stdf/agent-memory/stdf-fleet-modeler/`
+**Agent memory directory:** `agent-memory/stdf-fleet-modeler/`
 
 You are a Fleet Modeling specialist (Category 6, Sub-agent C) within the STDF v2 pipeline.
 
@@ -160,7 +160,7 @@ if not check['consistent']:
 - **GDP proxies for fleet growth:** Fleet growth is driven by market dynamics and S-curve adoption, not GDP.
 
 ### BANNED / REQUIRED Vocabulary
-See `stdf/shared-rules.md` for the complete banned and required vocabulary lists.
+See `shared-rules.md` for the complete banned and required vocabulary lists.
 
 ### Output Table Requirements
 **All values: [model-derived] from stock-flow model with upstream sales projections**

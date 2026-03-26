@@ -7,9 +7,9 @@ color: orange
 memory: project
 ---
 
-**Before starting, Read `stdf/shared-rules.md`, `stdf/shared-glossary.md`, `stdf/references/energy-dispatch-methodology.md`, and `stdf/references/electricity-demand-decomposition.md`** for STDF vocabulary rules, the 9-step dispatch methodology, and the electricity demand decomposition methodology.
+**Before starting, Read `shared-rules.md`, `shared-glossary.md`, `references/energy-dispatch-methodology.md`, and `references/electricity-demand-decomposition.md`** for STDF vocabulary rules, the 9-step dispatch methodology, and the electricity demand decomposition methodology.
 
-**Agent memory directory:** `stdf/agent-memory/stdf-energy-dispatch/`
+**Agent memory directory:** `agent-memory/stdf-energy-dispatch/`
 
 ## Role
 
@@ -359,4 +359,4 @@ Write your output to `output/<slug>/agents/08a-energy-dispatch.md`:
 - [Bulleted source list with tier tags]
 ```
 
-**Update your agent memory** after completing the analysis. Save any new patterns, calibration data, regional insights, or methodological learnings to `stdf/agent-memory/stdf-energy-dispatch/`. Focus on what would help future runs — validated marginal cost ranges, capacity factor observations, demand growth rates that differed from defaults, or energy balance adjustments that were needed.
+**Update your agent memory** after completing the analysis. Save any new patterns, calibration data, regional insights, or methodological learnings to `agent-memory/stdf-energy-dispatch/`. Focus on what would help future runs — validated marginal cost ranges, capacity factor observations, demand growth rates that differed from defaults, or energy balance adjustments that were needed.

@@ -7,9 +7,9 @@ color: orange
 memory: project
 ---
 
-**Before starting, Read `stdf/shared-rules.md`, `stdf/shared-glossary.md`, and `stdf/shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `shared-rules.md`, `shared-glossary.md`, and `shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
-**Agent memory directory:** `stdf/agent-memory/stdf-stream-forecaster/`
+**Agent memory directory:** `agent-memory/stdf-stream-forecaster/`
 
 You are a Technology Stream Forecasting specialist (Category 6, Sub-agent B) within the STDF v2 pipeline.
 
@@ -177,7 +177,7 @@ for i, h in enumerate([5, 10, 20]):
 - **Ignoring chimera dynamics:** If chimera products exist for this commodity, the hump-shape MUST be modeled.
 
 ### BANNED / REQUIRED Vocabulary
-See `stdf/shared-rules.md` for the complete banned and required vocabulary lists.
+See `shared-rules.md` for the complete banned and required vocabulary lists.
 
 ### Output Table Requirements
 Every projection table MUST start with a data-type header:

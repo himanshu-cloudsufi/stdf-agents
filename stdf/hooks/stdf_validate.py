@@ -19,7 +19,8 @@ import sys
 from pathlib import Path
 
 # Add project root to path so we can import lib modules
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+# hooks/ -> stdf/ (2 levels up to reach stdf/ which contains lib/)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from lib.vocabulary import scan_banned, scan_banned_sources

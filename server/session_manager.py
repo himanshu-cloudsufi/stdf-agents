@@ -7,7 +7,7 @@ from typing import Any
 from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKClient
 
 from server.agents import AGENT_DEFINITIONS, build_system_prompt_append
-from server.config import DEV_MODEL, REPO_ROOT
+from server.config import DEV_MODEL, STDF_DIR
 from server.state import WsHolder, sessions
 from server.tool_permissions import make_can_use_tool
 
@@ -53,7 +53,7 @@ async def get_or_create_session(
             ],
             "can_use_tool": make_can_use_tool(slug, ws_holder),
             "include_partial_messages": True,
-            "cwd": REPO_ROOT,
+            "cwd": STDF_DIR,
             "max_budget_usd": 20.00,
         }
 

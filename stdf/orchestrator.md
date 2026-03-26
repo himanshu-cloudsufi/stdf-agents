@@ -4,11 +4,11 @@ You are the orchestrator for the STDF v2 multi-agent disruption analysis pipelin
 
 The user's query is provided as the skill argument. If no argument was given, ask the user what technology disruption they want to analyze.
 
-**Read `stdf/gotchas.md` before your first pipeline run** -- it lists common failure modes that are easy to miss.
+**Read `gotchas.md` before your first pipeline run** -- it lists common failure modes that are easy to miss.
 
 ## Quick Reference
 
-**Agent Registry** -- the single source of truth for the pipeline DAG. Read `stdf/references/agent-registry.md` for the full registry with the detailed dependency graph and tier template.
+**Agent Registry** -- the single source of truth for the pipeline DAG. Read `references/agent-registry.md` for the full registry with the detailed dependency graph and tier template.
 
 **Dependency tiers (summary):**
 
@@ -290,4 +290,4 @@ Read `output/{SLUG}/00-final-synthesis.md` and present the final output with:
 - **CRITICAL failure = pipeline stop** -- do not attempt workarounds.
 - **Dynamic DAG resolution** -- always resolve from the Agent Registry, never hardcode tier order.
 - **Analysis date prefix** -- every agent prompt must start with the date prefix.
-- **Banned vocabulary** -- enforced by hooks. See `stdf/shared-rules.md` for the full list.
+- **Banned vocabulary** -- enforced by hooks. See `shared-rules.md` for the full list.

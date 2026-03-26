@@ -1,33 +1,27 @@
-# STDF v2 Agents -- Claude Code Implementation
+# STDF v2 -- Server & Frontend
 
-STDF (Seba Technology Disruption Framework) v2 multi-agent pipeline with dynamic DAG orchestration. 22 agents, 15 lib modules, 956 empirical curves.
+This repo contains two concerns:
 
-## STDF Pipeline
+1. **`stdf/`** -- Self-contained STDF analysis system. Run `cd stdf && claude` to work on pipeline analyses. Has its own `.claude/`, `CLAUDE.md`, agents, lib, data, scripts, and output.
 
-All pipeline definitions live in `stdf/`. See `stdf/orchestrator.md` for the full execution guide (presets, DAG resolution, tier execution, validation).
-
-Agent Registry (DAG source of truth): `stdf/references/agent-registry.md`
-
-### Rules
-- File-based communication only -- agents write files, downstream agents read files
-- Never skip the synthesizer -- raw agent outputs are not user-facing
-- CRITICAL failure = pipeline stop
-- Agent Registry is the single source of truth -- resolve DAG dynamically every time
+2. **`server/`** -- Claude Agent SDK server that exposes STDF via WebSocket/HTTP. The server loads agent definitions from `stdf/.claude/agents/` and runs sessions with `cwd=stdf/`.
 
 ## Key Directories
 
 | Path | Purpose |
 |------|---------|
-| `stdf/` | STDF pipeline definitions (agents, orchestrator, rules, references, memory) |
-| `stdf/agents/` | 22 agent definitions (18 pipeline + 4 utility) |
-| `stdf/shared-rules.md` | Vocabulary, guardrails, computation rules (read by all agents) |
-| `stdf/agent-memory/` | Persistent per-agent memory |
-| `stdf/references/` | Agent registry, energy methodology docs |
-| `server/` | Claude Agent SDK server |
-| `lib/` | 15 Python computation modules (math, parsing, validation) |
-| `data/` | 956 empirical time series curves (JSON, sector-organized) |
-| `output/<slug>/` | Pipeline run outputs (one dir per analysis) |
-| `scripts/` | CLI utilities (`query_curves.py`, `validate_pipeline.py`, `display_curve.py`) |
+| `stdf/` | Self-contained STDF analysis system (run Claude Code from here) |
+| `server/` | Claude Agent SDK server (FastAPI + WebSocket) |
+| `scripts/` | Legacy CLI wrapper (`stdf_v2_cc.py`) |
+
+## Server Development
+
+Server code is in `server/`. Key files:
+- `server/main.py` -- FastAPI app, WebSocket handler
+- `server/session_manager.py` -- SDK client creation, `cwd=stdf/`
+- `server/agents.py` -- Agent definition loader, system prompt
+- `server/config.py` -- `REPO_ROOT`, `STDF_DIR`, `DEV_MODEL`
+- `server/tool_permissions.py` -- Interactive tool interception (AskUser, PlanMode)
 
 ## Conventions
 - Always use python3

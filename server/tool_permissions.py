@@ -13,7 +13,7 @@ from claude_agent_sdk.types import (
     ToolPermissionContext,
 )
 
-from server.config import REPO_ROOT
+from server.config import STDF_DIR
 from server.state import WsHolder, pending_prompts, plan_content_cache
 
 logger = logging.getLogger("stdf-server")
@@ -85,7 +85,7 @@ def make_can_use_tool(slug: str, ws_holder: WsHolder):
             else:
                 now = time.time()
                 for plans_dir in [
-                    os.path.join(REPO_ROOT, ".claude", "plans"),
+                    os.path.join(STDF_DIR, ".claude", "plans"),
                     os.path.join(os.path.expanduser("~"), ".claude", "plans"),
                 ]:
                     try:
