@@ -18,6 +18,8 @@ REPO_ROOT = os.environ.get(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
 )
 
+STDF_DIR = os.path.join(REPO_ROOT, "stdf")
+
 ABANDON_TIMEOUT_SEC = 3600
 TOOL_RESULT_PREVIEW_CHARS = 500
 

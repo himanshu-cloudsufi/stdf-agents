@@ -8,14 +8,14 @@ from datetime import datetime, timezone
 import yaml
 from claude_agent_sdk import AgentDefinition
 
-from server.config import DEV_MODEL, REPO_ROOT
+from server.config import DEV_MODEL, STDF_DIR
 
 logger = logging.getLogger("stdf-server")
 
 
 def load_agent_definitions() -> dict[str, AgentDefinition]:
-    """Parse .claude/agents/stdf-*.md files into AgentDefinition objects."""
-    agents_dir = os.path.join(REPO_ROOT, ".claude", "agents")
+    """Parse stdf/agents/stdf-*.md files into AgentDefinition objects."""
+    agents_dir = os.path.join(STDF_DIR, "agents")
     agents: dict[str, AgentDefinition] = {}
 
     for filepath in sorted(glob.glob(os.path.join(agents_dir, "stdf-*.md"))):
@@ -98,7 +98,12 @@ List types: python3 scripts/query_curves.py --list-types
 
 # How to Run Full Analyses
 
+Before starting any STDF pipeline run, Read `stdf/orchestrator.md` for the full pipeline execution guide \
+(presets, DAG resolution, tier execution, validation steps).
+
 Use the Agent tool to launch specialized STDF subagents. Available subagent_type values:
+
+Pipeline agents:
 - stdf-domain-disruption, stdf-cost-researcher, stdf-capability (foundation — run in parallel)
 - stdf-cost-fitter (after cost-researcher)
 - stdf-cost-parity-checker, stdf-capability-parity-checker, stdf-adoption-readiness-checker (tipping conditions)
@@ -106,10 +111,20 @@ Use the Agent tool to launch specialized STDF subagents. Available subagent_type
 - stdf-scurve-fitter (after tipping-synthesizer)
 - stdf-regional-adopter, stdf-xcurve-analyst (after scurve-fitter)
 - stdf-demand-decomposer, stdf-stream-forecaster, stdf-fleet-modeler, stdf-regional-demand-analyst (commodity chain)
+- stdf-energy-dispatch, stdf-gas-supply-decomposer (energy chain)
 - stdf-synthesizer (always last — merges all outputs into final analysis)
 
-IMPORTANT: Do NOT use the Skill tool — project skills are not available in this environment due to an SDK limitation. \
-Use Bash and Agent tools directly instead.
+Utility agents:
+- stdf-validate (guardrail audit on output files)
+- stdf-data (search/browse the 956-curve empirical data catalog)
+- stdf-compliance (structural compliance check on a single agent output)
+- stdf-readme (generate README.md index for a completed pipeline run)
+
+# How to Show the Progress Report
+
+```bash
+python3 -m http.server 8765 --directory . & sleep 0.5 && open http://localhost:8765/reports/stdf-progress-report.html
+```
 
 # Interaction Rules
 
