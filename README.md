@@ -183,7 +183,16 @@ stdf-agents/
 │   └── build_data.py         # CLI: rebuild data index
 ├── output/                # Pipeline run outputs (one dir per analysis)
 ├── reports/               # Audit reports and progress dashboards
-└── chat_exports/          # User session exports
+├── docs/                  # Project documentation
+│   ├── plans/                # Roadmap and implementation plans
+│   ├── specs/                # Design specifications
+│   └── *.md                  # Chat UI, implementation, eval docs
+├── archive/               # Legacy/historical content
+│   ├── old_prompts/          # v1 prompt files (pre-agent era)
+│   └── chat_exports/         # User session exports
+├── server/                # Python backend (WebSocket API)
+├── frontend/              # Vite/React web UI
+└── tests/                 # Python test suite
 ```
 
 ## Data Catalog
