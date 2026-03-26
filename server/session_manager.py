@@ -7,9 +7,17 @@ from typing import Any
 from claude_agent_sdk import ClaudeAgentOptions, ClaudeSDKClient
 
 from server.agents import AGENT_DEFINITIONS, build_system_prompt_append
-from server.config import REPO_ROOT
+from server.config import DEV_MODEL, REPO_ROOT
 from server.state import WsHolder, sessions
 from server.tool_permissions import make_can_use_tool
+
+# Model ID mapping: short names → full API model IDs
+_MODEL_IDS = {
+    "haiku": "claude-haiku-4-5",
+    "sonnet": "claude-sonnet-4-6",
+    "opus": "claude-opus-4-6",
+}
+_DEFAULT_ORCHESTRATOR_MODEL = "claude-opus-4-6"
 
 logger = logging.getLogger("stdf-server")
 
@@ -23,7 +31,7 @@ async def get_or_create_session(
     user_sessions = sessions.setdefault(user_id, {})
     if slug not in user_sessions:
         options: dict[str, Any] = {
-            "model": "claude-opus-4-6",
+            "model": _MODEL_IDS.get(DEV_MODEL, DEV_MODEL) if DEV_MODEL else _DEFAULT_ORCHESTRATOR_MODEL,
             "system_prompt": {
                 "type": "preset",
                 "preset": "claude_code",

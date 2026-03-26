@@ -73,14 +73,15 @@ The final synthesis file format is:
 ---
 
 ## Executive Summary
-[1 paragraph]
+[1 paragraph — lead with the direct answer to the user's question]
 
 ---
 
-## 7-Phase Narrative
-### Phase 1: [title]
-...
-### Phase 7: [title]
+## [Query-responsive section headings — NOT "Phase 1", "Phase 2", etc.]
+[Organize by analytical argument. Each section heading should describe
+what the section proves or explains. Weave together cost, capability,
+adoption, and dispatch data wherever they jointly support an argument.
+See "Narrative Construction" section for structure rules.]
 
 ---
 
@@ -196,47 +197,49 @@ If a subagent output file is missing or empty, it is degraded. See degraded hand
 
 ## SYNTHESIS REQUIREMENTS
 
-### 1) NARRATIVE CONSTRUCTION — 7-Phase Flow
-Build a coherent analytical narrative in response_text that flows through all 7 STDF phases. Each phase MUST contain specific numbers, names, and evidence drawn from the subagent outputs.
+### 1) NARRATIVE CONSTRUCTION — Query-Responsive Argument
 
-**Phase 1 — Sector Scoping** (sources: domain-disruption):
-Draw the sector boundary and sub-domains. Name the primary disruptors and incumbents.
+**The output structure must be driven by the user's question, not by STDF phase numbering.** The 7 STDF phases are an internal completeness checklist — use them to verify coverage, but do NOT use "Phase 1", "Phase 2", etc. as section headings.
 
-**Phase 2 — Technology Inventory** (sources: domain-disruption + cost-researcher + cost-fitter):
-Catalogue disruptive and incumbent technologies with current cost/performance. Use raw cost data from cost-researcher and fitted trajectories from cost-fitter.
+#### Output structure rules
 
-**Phase 3 — Convergence Analysis** (sources: domain-disruption convergence + cost-fitter thresholds):
-Identify technology convergence combinations that amplify disruption speed. Reference competitive threshold and inflection threshold from cost-fitter.
+1. **Lead with the answer.** The first section after the Executive Summary must directly answer the user's question with specific numbers, years, and actionable conclusions.
 
-**Phase 4 — Disruption Pattern** (sources: domain-disruption + capability + capability-parity-checker):
-Classify the disruption type and trajectory using capability evidence. Reference capability parity status from the checker agent.
+2. **Organize by analytical argument, not by framework.** Section headings should describe what the section proves or explains — e.g., "Why SWB Wins Structurally", "The Cost Dynamics", "When the Last Moat Falls", "The Death Spiral Mechanics" — not "Phase 3: Convergence Analysis".
 
-**Phase 5 — Business Model Shift** (sources: cost-fitter + cost-parity-checker + capability-parity-checker + tipping-synthesizer + commodity demand agents if present + energy agents if present):
-Demonstrate cost parity crossing (from cost-parity-checker) and the resulting business model implications. Reference the tipping-synthesizer for integrated condition status. If commodity demand agents are present, include a **Commodity Demand Outlook** subsection showing:
-- Demand decomposition by technology stream (from demand-decomposer)
-- 3-stream demand projections (from stream-forecaster)
-- Stock-flow fleet dynamics and OEM vs replacement (from fleet-modeler)
-- Any hump-shape patterns from chimera products
+3. **Let the query shape the structure.** Different queries demand different organizations:
+   - Investment timing question ("when to short X?") → answer first, then the bull/bear tension, cost dynamics, capability convergence, decline mechanics, risk factors
+   - Disruption timing question ("when does X tip?") → tipping point first, then the three conditions, S-curve dynamics, regional breakdown
+   - Cost trajectory question ("what's the cost curve for X?") → cost data first, learning rates, competitive thresholds, then implications
+   - Commodity demand question ("what happens to copper demand?") → demand decomposition first, 3-stream projections, regional breakdown
 
-If energy-sector agents are present, include an **Energy Dispatch Outlook** subsection showing:
-- Total electricity demand decomposition (baseline + EV + datacenter + heat pump) from energy-dispatch
-- SWB generation stack and market share trajectory
-- Merit order dispatch results — which fuel displaced first, by how much, per region
-- Displacement schedule at +5/+10/+20 year horizons
-- Gas generation displacement converted to BCM (from gas-supply-decomposer if present)
+4. **Integrate, don't segregate.** Cost data, capability data, and adoption data should appear together where they jointly support an argument — not siloed into separate phases. For example, when explaining why a moat is falling, weave together the capability gap (from capability agent), the cost trajectory closing it (from cost-fitter), and the adoption evidence (from scurve-fitter) in one cohesive section.
 
-**Phase 6 — Adoption & S-Curve** (sources: scurve-fitter + regional-adopter + xcurve-analyst):
-Report current adoption metrics and S-curve parameters from scurve-fitter. Include regional dynamics from regional-adopter (China, USA, Europe minimum). Report incumbent decline stage and market trauma assessment from xcurve-analyst.
+5. **Every section must advance the argument.** No "scene-setting" sections that don't contain quantitative evidence. If sector scoping context is needed, weave it into the first substantive section rather than giving it its own heading.
 
-**Pre-Phase 7 — Consistency Audit** (MANDATORY before writing Phase 7):
-Before writing the final synthesis, perform a cross-check:
-1. List all entities (companies, technologies, sectors) described as "benefiting" or "growing" in any phase.
-2. Cross-check each against the X-curve analyst output (05c) and domain-disruption output (01) for contradictions (e.g., an incumbent described as "benefiting" but tagged as "death spiral active" in the X-curve).
-3. Resolve any contradictions by preferring the specialist agent's assessment.
-4. Document: "Consistency audit: N entities checked, M contradictions resolved" in the Phase 7 narrative.
+#### 7-Phase completeness checklist (INTERNAL — do NOT use as output headings)
 
-**Phase 7 — Synthesis & Tipping Point** (sources: tipping-synthesizer + all others):
-Integrate all evidence into the final tipping point assessment. Reference the tipping year, binding constraint, and post-tipping dynamics from tipping-synthesizer. Include regional tipping assessment and completion timeline. If commodity demand agents are present, include a **Commodity Demand Outlook** subsection summarizing projected demand shifts, regional demand dynamics (from regional-demand-analyst), and implications for commodity markets during and after the disruption tipping point. If energy-sector agents are present, include an **Energy Supply Outlook** subsection summarizing gas supply source shifts (from gas-supply-decomposer), LNG displacement cascade, BCM-level projections by region, and exporter vulnerability assessment. For China, explicitly state whether LNG imports approach zero and why (merit order + domestic supply stack). For Europe, state the LNG displacement order (US LNG first, Qatar second, Norwegian pipeline last).
+Before finalizing, verify that your narrative covers all 7 analytical dimensions. Check each box mentally, but present the content in whatever structure best serves the query:
+
+- [ ] **Sector & scope** (sources: domain-disruption) — sector boundary, sub-domains, disruptors, incumbents named somewhere in the narrative
+- [ ] **Technology inventory** (sources: cost-researcher + cost-fitter) — current cost/performance data for both disruptor and incumbent, with fitted trajectories
+- [ ] **Convergence** (sources: domain-disruption + cost-fitter thresholds) — technology convergence combinations, competitive and inflection thresholds
+- [ ] **Disruption pattern** (sources: capability + capability-parity-checker) — disruption type, capability dimension status, parity assessment
+- [ ] **Business model & cost parity** (sources: cost-parity-checker + tipping-synthesizer + energy/commodity agents if present) — cost parity crossing, business model implications, dispatch/demand modeling if applicable
+- [ ] **Adoption dynamics** (sources: scurve-fitter + regional-adopter + xcurve-analyst) — S-curve parameters, regional breakdown, incumbent decline stage and market trauma
+- [ ] **Tipping point synthesis** (sources: tipping-synthesizer + all) — tipping year, binding constraint, post-tipping dynamics, completion timeline
+
+If commodity demand agents ran, their outputs (demand decomposition, 3-stream projections, fleet dynamics, regional demand) must be integrated into the relevant argument sections — not isolated in a "Commodity" appendix.
+
+If energy-sector agents ran, their outputs (merit order dispatch, displacement schedule, generation shares, gas supply decomposition, LNG cascade) must be integrated into the cost dynamics and decline mechanics sections.
+
+#### Consistency audit (MANDATORY before writing final sections)
+
+Before writing your conclusion:
+1. List all entities described as "benefiting" or "growing" in any section.
+2. Cross-check each against X-curve analyst output (05c) and domain-disruption output (01).
+3. Resolve contradictions by preferring the specialist agent's assessment.
+4. Note: "Consistency audit: N entities checked, M contradictions resolved" somewhere in the narrative.
 
 ### 2) KEY CONCLUSION — Unambiguous, Actionable
 The key_conclusion field must contain exactly one declarative thesis structured as:
@@ -384,7 +387,7 @@ See `.claude/shared-rules.md` for the complete banned and required vocabulary li
 
 ## QUALITY CHECKS — Verify Before Finalizing
 Before producing your final output, verify each of these 14 criteria:
-1. Does the narrative cover all 7 STDF phases with quantitative evidence in each?
+1. Does the narrative directly answer the user's question in the first substantive section?
 2. Is every number traceable to a specific agent output (with agent name cited)?
 3. Is the key_conclusion unambiguous, declarative, and supported by tipping-synthesizer evidence?
 4. Does the rupture_window tie to specific threshold crossings from cost-parity-checker and tipping-synthesizer?
@@ -396,29 +399,33 @@ Before producing your final output, verify each of these 14 criteria:
 10. Are conflicts between agent outputs flagged and resolved using the priority rules?
 11. Are degraded agents explicitly noted with their criticality level and impact on analysis completeness?
 12. Does the output use ZERO banned vocabulary and ONLY required vocabulary where applicable?
-13. Does Phase 6 include regional dynamics from regional-adopter and incumbent decline from xcurve-analyst?
-14. If commodity agents ran, are their outputs integrated into Phases 5 and 7?
+13. Does the narrative include regional dynamics (from regional-adopter) and incumbent decline mechanics (from xcurve-analyst)?
+14. Does the 7-phase completeness checklist pass (all 7 analytical dimensions covered somewhere in the narrative)?
 
 If any check fails, revise before finalizing.
 
 ## PASS/FAIL EXAMPLES
 
 **PASS** — a valid synthesis:
-- Complete 7-phase narrative with numbers drawn from all produced agents (up to 11 core + 4 commodity).
+- Directly answers the user's question in the first substantive section with specific numbers.
+- Section headings describe analytical arguments, not STDF phase numbers.
+- All 7 analytical dimensions covered (verified via internal checklist), woven into the argument structure.
 - Clear key_conclusion with rupture window and binding constraint sourced from tipping-synthesizer.
 - Every data point traced to a specific agent output by name.
 - Conflicts between agents flagged and resolved using priority rules.
-- handoff_context fully populated with source agent attribution.
-- Confidence calculated using `confidence_aggregate` with Failure Matrix penalties.
+- Cost, capability, and adoption data integrated together where they jointly support an argument.
 
 **FAIL** — "The technology is disrupting the sector."
-Reason: No numbers, no phase structure, no key conclusion, no rupture window.
+Reason: No numbers, no direct answer, no key conclusion, no rupture window.
+
+**FAIL** — Output uses "Phase 1: Sector Scoping", "Phase 2: Technology Inventory" as section headings.
+Reason: Phases are an internal checklist, not output structure. Headings must describe analytical arguments.
 
 **FAIL** — Narrative introduces "solid-state batteries will reach $50/kWh by 2026" when no subagent output contains this claim.
 Reason: Synthesizer hallucinated new analysis.
 
-**FAIL** — Seven phases listed but Phase 5 says "Business models are shifting" with no cost figures from cost-fitter or cost-parity-checker.
-Reason: Every phase must contain quantitative evidence traced to specific agents.
+**FAIL** — Cost data in one section, capability data in another, adoption data in a third — with no integration.
+Reason: Data should be woven together where it jointly supports an argument (e.g., "The moat falls because capability parity arrives in 2027 AND cost parity in 2031, with adoption readiness clearing in 2028").
 
 **FAIL** — Key conclusion: "The disruption might happen between 2024 and 2030."
 Reason: Hedged language ("might"), overly wide window (6 years), no binding constraint from tipping-synthesizer identified.

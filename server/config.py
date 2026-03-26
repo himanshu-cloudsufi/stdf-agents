@@ -20,3 +20,6 @@ REPO_ROOT = os.environ.get(
 
 ABANDON_TIMEOUT_SEC = 3600
 TOOL_RESULT_PREVIEW_CHARS = 500
+
+# Model override for development — set STDF_DEV_MODEL=haiku in .env to use Haiku everywhere
+DEV_MODEL: str | None = os.environ.get("STDF_DEV_MODEL")

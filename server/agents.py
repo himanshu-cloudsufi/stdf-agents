@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 import yaml
 from claude_agent_sdk import AgentDefinition
 
-from server.config import REPO_ROOT
+from server.config import DEV_MODEL, REPO_ROOT
 
 logger = logging.getLogger("stdf-server")
 
@@ -47,7 +47,7 @@ def load_agent_definitions() -> dict[str, AgentDefinition]:
                 description=frontmatter.get("description", ""),
                 prompt=body,
                 tools=tools_list,
-                model=frontmatter.get("model"),
+                model=DEV_MODEL or frontmatter.get("model"),
                 memory=frontmatter.get("memory"),
             )
             logger.info(
@@ -58,7 +58,10 @@ def load_agent_definitions() -> dict[str, AgentDefinition]:
         except Exception:
             logger.exception("Failed to load agent from %s", filepath)
 
-    logger.info("Loaded %d agent definitions", len(agents))
+    if DEV_MODEL:
+        logger.info("DEV MODEL OVERRIDE: all %d agents using '%s'", len(agents), DEV_MODEL)
+    else:
+        logger.info("Loaded %d agent definitions (using frontmatter models)", len(agents))
     return agents
 
 
