@@ -9,6 +9,7 @@ STDF (Seba Technology Disruption Framework) v2 multi-agent pipeline with dynamic
 | Path | Purpose |
 |------|---------|
 | `.claude/agents/` | 24 agent definitions (18 pipeline + 1 research + 1 evaluator + 4 utility) |
+| `shared-philosophy.md` | WHY behind the rules -- Tony's intellectual framework, axioms, epistemology (read by all agents) |
 | `shared-rules.md` | Vocabulary, guardrails, disruption dynamics rules, computation rules (read by all agents) |
 | `shared-glossary.md` | STDF concept definitions (read by all agents) |
 | `shared-cost-rules.md` | Cost analysis rules (read by cost-chain agents) |
@@ -32,9 +33,11 @@ STDF (Seba Technology Disruption Framework) v2 multi-agent pipeline with dynamic
 
 ## Orchestration Principles
 
-These four principles guide all orchestration decisions. When in doubt, return to these.
+These five principles guide all orchestration decisions. When in doubt, return to these.
 
-1. **Reason from the question to the agents.** When you receive a query, determine what analytical outputs the question needs to be answered. Then identify which agents produce those outputs. Then resolve the DAG backward from those goal agents to find all their dependencies. The agent set emerges from reasoning, not from keyword matching.
+1. **SEBA First (NON-NEGOTIABLE).** When ANY query could be analyzed through mainstream economics (Phillips curve, Laffer curve, supply-demand equilibrium, GDP growth models, etc.), route through the SEBA disruption lens FIRST. Mainstream economics frameworks may provide context for understanding policymaker reaction functions, but they must NEVER be the primary analytical frame. The edge is in seeing what mainstream economists cannot: disruption dynamics. If a query about unemployment, inflation, energy prices, or GDP arrives, the first analytical move is always: "What disruption dynamics are at work here?" — not "What does conventional macroeconomics say?" See `shared-philosophy.md` for the full epistemological argument.
+
+2. **Reason from the question to the agents.** When you receive a query, determine what analytical outputs the question needs to be answered. Then identify which agents produce those outputs. Then resolve the DAG backward from those goal agents to find all their dependencies. The agent set emerges from reasoning, not from keyword matching.
 
 2. **The DAG is the only hard sequencing constraint.** Dependencies between agents are non-negotiable -- cost-fitter always runs after cost-researcher, tipping-synthesizer always after the three checkers, etc. But there is no mandatory numbered-step sequence beyond what the DAG dictates. You invoke capabilities (setup, classification approval, planning, execution, evaluation, presentation) as the situation requires.
 
@@ -138,6 +141,8 @@ mkdir -p output/<analysis-slug>/agents
    - The sector or technology being analyzed
    - Any specified regions, time horizon, or context
    - What analytical outputs the question requires to be answered
+   - **Convergence detection:** Does the query involve multiple sectors or technologies that could interact? (e.g., energy + transport, AI + labor, energy + AI + food). If yes, flag for cross-sector convergence analysis — this may require broader agent coverage than a single-sector analysis.
+   - **SEBA-first check (Principle 1 enforcement):** Could this query be answered using mainstream economics (Phillips curve, Laffer curve, supply-demand equilibrium, GDP models)? If yes, the analysis MUST begin with: "What disruption dynamics are at work here?" Frame the entire response through cost-curve dynamics and STDF methodology. Mainstream economics may appear ONLY as a secondary section explaining policymaker reaction functions — never as the primary analytical frame. If the initial agent outputs return mainstream-first analysis, re-run the agent with explicit SEBA-first instructions.
 
 2. Reason about which agents produce those outputs:
    - Does the question need cost dynamics? -> cost-researcher, cost-fitter
@@ -391,3 +396,5 @@ Read `output/{SLUG}/00-final-synthesis.md` and present the final output with:
 - **Agent re-run is permitted** -- if an agent's output is weak, you may re-run it individually without restarting the tier. State the reason.
 - **Research injection is permitted** -- you may insert `stdf-research` between tiers when data gaps are identified. Include its output in the synthesizer's UPSTREAM_FILES.
 - **Process gate justification** -- when you skip a user-facing gate (classification approval, plan mode), state your reasoning. This creates an audit trail.
+- **Philosophy reference** -- when agents face edge cases not covered by specific rules, they should reason from `shared-philosophy.md`. The philosophy encodes the WHY behind the rules, enabling correct reasoning at novel situations.
+- **SEBA First** -- every analysis must begin with the SEBA disruption lens. Mainstream economics (Phillips curve, Laffer curve, supply-demand equilibrium) may appear as secondary context for policymaker reaction functions, but never as the primary analytical frame.

@@ -7,7 +7,7 @@ color: orange
 memory: project
 ---
 
-**Before starting, Read `shared-rules.md`, `shared-glossary.md`, `references/energy-dispatch-methodology.md`, and `references/electricity-demand-decomposition.md`** for STDF vocabulary rules, the 9-step dispatch methodology, and the electricity demand decomposition methodology.
+**Before starting, Read `shared-philosophy.md`, `shared-rules.md`, `shared-glossary.md`, `references/energy-dispatch-methodology.md`, and `references/electricity-demand-decomposition.md`** for STDF vocabulary rules, the 9-step dispatch methodology, and the electricity demand decomposition methodology.
 
 **Agent memory directory:** `agent-memory/stdf-energy-dispatch/`
 

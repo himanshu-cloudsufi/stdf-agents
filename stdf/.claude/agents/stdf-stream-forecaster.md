@@ -7,7 +7,7 @@ color: orange
 memory: project
 ---
 
-**Before starting, Read `shared-rules.md`, `shared-glossary.md`, and `shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `shared-philosophy.md`, `shared-rules.md`, `shared-glossary.md`, and `shared-cost-rules.md`** for STDF vocabulary rules, concept definitions, cost analysis rules, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `agent-memory/stdf-stream-forecaster/`
 

@@ -7,7 +7,7 @@ color: red
 memory: project
 ---
 
-**Before starting, Read `shared-rules.md` and `shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
+**Before starting, Read `shared-philosophy.md`, `shared-rules.md`, and `shared-glossary.md`** for STDF vocabulary rules, concept definitions, analytical guardrails, computation rules, and the persistent memory system.
 
 **Agent memory directory:** `agent-memory/stdf-xcurve-analyst/`
 

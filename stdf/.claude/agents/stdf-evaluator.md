@@ -20,6 +20,7 @@ Your prompt will include:
 ### Step 1: Read the rules
 
 Read these files for the full rule set:
+- `shared-philosophy.md` — the WHY behind the rules (cost curves as gravity, disruption axioms, SEBA-first mandate)
 - `shared-rules.md` — banned vocabulary, hedging phrases, tone, disruption dynamics guardrails, data confidence tiers
 - `shared-glossary.md` — STDF terminology that must be preserved (never replaced with common equivalents)
 - `shared-cost-rules.md` — cost analysis rules (no TCO, no scenario labels)
@@ -67,6 +68,15 @@ Check each rule from the Disruption Dynamics Guardrails section:
 8. **Chimera Recognition** — chimeras (hybrids, CCS, blue hydrogen, PHEVs) not classified as disruptors
 9. **Feedback Loop Consistency** — disruptor virtuous cycle and incumbent vicious cycle correctly modeled; incumbent costs not shown flat/falling during disruption
 10. **Data Confidence Tiers** — claims tagged by sector confidence (Energy/Transport = validated, Labor/Materials = tracking, Food = unvalidated)
+
+#### E2. Cost Curve Gravity
+Check that no cost floors, minimum prices, or "realistic" lower bounds are imposed on cost projections. If a cost projection appears extreme, the analysis should state it confidently — not clip it. Also check for synonymous phrasing: "lower bound", "bottom out", "cannot fall below".
+
+#### E3. Lag Exclusion Protocol
+Check that the main analysis does NOT include regulatory, policy, or adoption lag analysis unless the user explicitly requested it. The output should contain a statement similar to: "Analysis reflects cost-curve dynamics; regulatory/adoption lags excluded unless specifically requested."
+
+#### E4. Scope Assumption Fabrication Check
+Check that every number in the output (including assumption tables) is traceable to upstream agent output, the data catalog, web-sourced observed data, or explicit user input. Flag any numbers that appear to be invented or presented as "stated assumptions" without a source.
 
 #### F. Analytical Integrity
 1. **No linear extrapolation** where S-curve dynamics apply

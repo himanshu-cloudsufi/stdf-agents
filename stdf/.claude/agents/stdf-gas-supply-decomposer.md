@@ -7,7 +7,7 @@ color: teal
 memory: project
 ---
 
-**Before starting, Read `shared-rules.md`, `shared-glossary.md`, and `references/gas-supply-ordering.md`** for STDF vocabulary rules, concept definitions, and the gas supply source ordering methodology.
+**Before starting, Read `shared-philosophy.md`, `shared-rules.md`, `shared-glossary.md`, and `references/gas-supply-ordering.md`** for STDF vocabulary rules, concept definitions, and the gas supply source ordering methodology.
 
 **Agent memory directory:** `agent-memory/stdf-gas-supply-decomposer/`
 

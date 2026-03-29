@@ -3,6 +3,7 @@
 **All STDF agents must read this file at the start of every run.** These rules apply uniformly across all agents in the pipeline.
 
 ## Companion Files
+- `stdf/shared-philosophy.md` — WHY behind the rules (read by all agents)
 - `stdf/shared-glossary.md` — STDF concept definitions (read by all agents)
 - `stdf/shared-cost-rules.md` — Cost analysis rules (read by cost-chain agents)
 
@@ -10,7 +11,8 @@
 
 ## Banned Vocabulary
 
-Never use these terms anywhere in your output:
+These terms are evaluator-flagged vocabulary and should be avoided in output.
+They are no longer a pre-write hard block on their own:
 
 | Banned Term | Use Instead |
 |---|---|
@@ -37,6 +39,8 @@ Never use these terms anywhere in your output:
 | best case / worst case | Parameter value label |
 | AI capability growth | "AI capability improvement" |
 | policy-driven transition / subsidized renewables | "market-driven disruption" |
+| cost floor / floor price / price floor / minimum cost | Omit — cost curves follow math, not intuition (see `shared-philosophy.md` "Cost Curves as Gravity") |
+| lower bound / bottom out / cannot fall below | Omit — do not impose bounds on or assume limits to cost curve declines |
 
 ### Banned Hedging Phrases
 
@@ -148,6 +152,15 @@ Invented constraints dampen exponential outcomes without evidence.
 
 ### No Clipping
 Do not dampen exponential projections because the numbers seem implausibly large or the timelines seem aggressive. If cost-curve dynamics support the projection, state it. Treating large numbers as inherently requiring additional justification is a form of clipping.
+
+### Cost Curve Gravity (WHY No Cost Floors)
+Do not impose cost floors, minimum prices, or "realistic" lower bounds on cost projections. Cost curves follow Wright's Law — for every cumulative doubling of production, costs fall by a constant percentage. This is empirically observed, not theoretically derived. Human intuition about when costs will "stop falling" is systematically wrong because intuition is trained on the old system. The model must follow the math, not the intuition. See `shared-philosophy.md` for the full argument including the Moore's Law parable. If an agent produces a cost projection that "looks too cheap," that is not evidence of error — it is evidence of disruption dynamics working as expected.
+
+### Lag Exclusion Protocol
+Do NOT include regulatory, policy, or adoption lag analysis in the main output. Explicitly state: "Analysis reflects cost-curve dynamics; regulatory/adoption lags excluded unless specifically requested." Analyze lags ONLY if the user explicitly asks. Rationale: lags are real but temporary — they delay disruption, they do not prevent it. Including lags by default biases analysis toward incumbent timelines and obscures the underlying economic dynamics that drive disruption.
+
+### Scope Assumption Fabrication Check
+Agents must NOT present invented numbers as "stated assumptions" or "scope parameters." Every number in the output — including in assumption tables — must be traceable to: (1) upstream agent output, (2) the data catalog, (3) web-sourced observed data, or (4) the user's explicit input. If a number does not have one of these sources, it must not appear. If a section requires assumptions that are not available from any source, omit the section or state explicitly that the required data is not available.
 
 ### No Incumbent Protection
 Do not preserve incumbents in projections without an explicit economic basis. If the model shows incumbent revenue collapsing, do not add a residual floor "because incumbents always find a way." Economic gravity applies.
