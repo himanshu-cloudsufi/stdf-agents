@@ -73,19 +73,6 @@ These items address fundamental gaps that block the product from serving the fun
 3. Add Philosophy Reference pointing to `shared-philosophy.md`
 **Effort:** 0.5 days
 **Owner:** Framework team
-
-### P0.4 Fix Server Quick Wins
-**Problem:** Several features are wired in frontend but disconnected on server side.
-**Action:**
-1. Forward `set_thinking` mode to SDK client (frontend selector sends it, server logs but ignores)
-2. Forward `set_permission_mode` to SDK client
-3. Emit `usage_update` WS messages (ContextUsageIndicator component is wired but always empty)
-4. Wire up tool component registry in ChatMessage.tsx (exists but unused)
-5. Wire up Read coalescing (coalesceTools.ts exists but unused)
-6. Fix stale reference to `orchestrator.md` in `server/agents.py`
-**Effort:** 2-3 days
-**Owner:** Frontend/server team
-
 ---
 
 ## PRIORITY 1 — HIGH (Required for Investment Use)
@@ -167,29 +154,6 @@ These items are required for the product to serve as an actual investment tool, 
 **Total effort:** P0 core: 10-14 days, full completion: 23-28 days
 **Owner:** Labor team
 
-### P1.6 Data Factory Auto-Refresh Layer
-**Problem:** STDF has 956 static curves. Old system has 1,108 with auto-refresh (581 refreshed, 441 pending). Stale data = wrong answers. Tony: "Without precision we are gonna lose money."
-**Action:**
-1. Per-curve source metadata + freshness timestamp in `data/index.json`
-2. Auto-refresh scheduler (`scripts/data_refresh.py`) — cron-based daily/weekly fetcher
-3. Data quality validation gate before catalog update
-4. Bloomberg API integration (credentials available per Mar 11)
-5. Paid data source integrations (IRENA, IEA historical)
-**Effort:** 2-3 weeks
-**Owner:** Data team
-
-### P1.7 Speed: Add URGENT Pipeline Preset
-**Problem:** Tony needs answers in live meetings. Some prompts ran overnight (Mar 11).
-**Action:**
-1. Add URGENT preset: domain-disruption + cost-researcher only, Haiku model, skip compliance
-2. Wire urgency toggle in frontend → server → preset selection
-3. Add response time estimation based on preset complexity
-4. Consider Sonnet for most agents, Opus only for synthesizer
-**Effort:** 3-5 days
-**Owner:** Framework + frontend team
-
----
-
 ## PRIORITY 2 — MEDIUM (Required for Full Product Vision)
 
 ### P2.1 Investment Translation Layer
@@ -214,7 +178,7 @@ These items are required for the product to serve as an actual investment tool, 
 **Effort:** 1-2 days
 **Owner:** Agent team
 
-### P2.4 Copper Supply Constraint Model
+### P2.4 Copper Supply Constraint Model (Migrate from COpper SKill)
 **Problem:** Tony: "In the case of copper, the supply will not scale as quickly as demand." No supply model exists for any commodity.
 **Action:** Extend `stdf-supply-modeler` (built in P1.4) with copper supply parameters:
 - Mine production projections by region
@@ -244,21 +208,6 @@ These items are required for the product to serve as an actual investment tool, 
 **Action:** Add both checks to `stdf-evaluator.md` criteria.
 **Effort:** 0.5 days
 **Owner:** Agent team
-
-### P2.8 Observability Dashboard
-**Problem:** Old system had Observability Hub (agent network view, compliance dashboard, data factory overview). New system has TodoPanel only.
-**Action:** Frontend feature using existing TodoWrite data, agent definitions from `agents.py`, compliance results.
-**Effort:** 2 weeks
-**Owner:** Frontend team
-
-### P2.9 Authentication & Session Persistence
-**Problem:** No auth (userId hardcoded as "user"), all state in-memory (lost on server restart).
-**Action:**
-1. Add user authentication (OAuth or simple token-based)
-2. Persist session state to SQLite or similar
-3. Session resume works across server restarts
-**Effort:** 1-2 weeks
-**Owner:** Server team
 
 ---
 
