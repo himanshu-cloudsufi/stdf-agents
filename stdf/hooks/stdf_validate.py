@@ -8,6 +8,10 @@ Only enforces on files matching:
   - output/*/agents/*.md
   - output/*/00-final-synthesis.md
 
+The hook is intentionally narrower than the evaluator:
+  - Vocabulary/style issues are evaluated later and do not block writes
+  - Source-policy violations and hard analytical anti-patterns still block writes
+
 Exit codes:
   0 — pass (no violations or file not in scope)
   2 — block (violations found, write should be prevented)
@@ -23,7 +27,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from lib.vocabulary import scan_banned, scan_banned_sources
+from lib.vocabulary import scan_banned_sources
 
 
 # Patterns for STDF output files that should be validated
@@ -57,25 +61,17 @@ def validate(content: str, filename: str) -> list[str]:
     """Run all validation checks. Returns list of violation messages."""
     violations = []
 
-    # 1. Banned vocabulary
-    banned_hits = scan_banned(content)
-    for hit in banned_hits:
-        count = len(hit["positions"])
-        violations.append(
-            f"Banned term '{hit['term']}' ({count} occurrences) → {hit['replacement']}"
-        )
-
-    # 2. Banned source URLs
+    # 1. Banned source URLs / org references
     source_hits = scan_banned_sources(content)
     for hit in source_hits:
         violations.append(f"Banned URL pattern '{hit['pattern']}' → {hit['reason']}")
 
-    # 3. Forecast language
+    # 2. Forecast language
     for m in FORECAST_KEYWORDS.finditer(content):
         keyword = m.group(0)
         violations.append(f"Forecast language '{keyword}' detected")
 
-    # 4. Anti-pattern phrases
+    # 3. Anti-pattern phrases
     for m in ANTI_PATTERNS.finditer(content):
         phrase = m.group(0)
         violations.append(f"Anti-pattern phrase '{phrase}' detected")

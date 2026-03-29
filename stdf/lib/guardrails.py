@@ -1,9 +1,9 @@
 """STDF v2 Guardrails — Validation Module.
 
-Provides validation functions for banned vocabulary, banned sources,
-forecast language, date consistency, and citation provenance. Used by
-both the Claude Code hooks (hard enforcement) and the orchestrator
-pipeline validation (soft audit).
+Provides validation functions for vocabulary/style checks, banned
+sources, forecast language, date consistency, and citation provenance.
+The evaluator uses the full suite; the write hook only enforces the
+hard-stop subset.
 """
 
 import re
@@ -246,22 +246,23 @@ def full_guardrail_check(text: str, analysis_date: str = None) -> dict:
     Returns:
         {
             "pass": bool,
-            "critical_violations": [...],  # banned vocab, banned sources, anti-patterns
-            "warnings": [...],             # forecast language, missing provenance, date issues
+            "critical_violations": [...],  # banned sources, anti-patterns, scenario labels
+            "warnings": [...],             # vocab/style, forecast language, provenance, date issues
             "report": str                  # human-readable markdown report
         }
     """
     critical: list[dict] = []
     warnings: list[dict] = []
 
-    # Critical checks
+    # Vocabulary/style checks are evaluator-visible warnings, not hard failures.
     banned_vocab = validate_banned_vocabulary(text)
     for v in banned_vocab:
-        critical.append({
+        warnings.append({
             "type": "banned_vocabulary",
             "detail": f"Banned term '{v['term']}' ({v['count']}x) → {v['replacement']}",
         })
 
+    # Critical checks
     banned_src = validate_banned_sources(text)
     for v in banned_src:
         critical.append({

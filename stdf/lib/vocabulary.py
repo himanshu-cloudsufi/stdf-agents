@@ -47,6 +47,13 @@ BANNED_TERMS: dict[str, str] = {
     "ai capability growth": '"AI capability improvement"',
     "policy-driven transition": '"market-driven disruption"',
     "subsidized renewables": '"market-driven disruption"',
+    "cost floor": "Omit — cost curves follow math, not intuition",
+    "floor price": "Omit — cost curves follow math, not intuition",
+    "minimum cost": "Omit — cost curves follow math, not intuition",
+    "price floor": "Omit — cost curves follow math, not intuition",
+    "lower bound": "Omit — do not impose bounds on cost projections",
+    "bottom out": "Omit — do not assume costs stop falling",
+    "cannot fall below": "Omit — do not assume costs stop falling",
 }
 
 # Banned hedging phrases — these signal incremental thinking.

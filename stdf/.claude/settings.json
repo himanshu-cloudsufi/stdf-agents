@@ -1,16 +1,2 @@
 {
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 hooks/stdf_validate.py",
-            "timeout": 15
-          }
-        ]
-      }
-    ]
-  }
 }

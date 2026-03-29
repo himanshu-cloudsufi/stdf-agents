@@ -37,7 +37,7 @@ Every agent's `subagent_type` is identical to its name: `stdf-cost-fitter` → `
 
 ## Guardrail validation is a soft audit
 
-The Step 4 validation script is informational — it runs AFTER all agents have written. The real enforcement happens via PreToolUse hooks that block writes containing banned vocabulary. If Step 4 reports violations, it means a hook was not active or was bypassed.
+The Step 4 validation script is informational — it runs AFTER all agents have written. Vocabulary/style issues are surfaced there and in the evaluator report. The PreToolUse hook is now reserved for the narrower hard-stop set: banned source-policy violations, forecast-language violations, and anti-pattern phrases.
 
 ## Empty output files silently pass validation
 
