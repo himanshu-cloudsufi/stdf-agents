@@ -43,9 +43,17 @@ The Step 4 validation script is informational — it runs AFTER all agents have 
 
 An agent may create a file but write nothing to it. The guardrail checker won't flag an empty file as a violation. After each tier, check file sizes — not just file existence.
 
-## Phase 1 hard gate is MANDATORY
+## Phase 1 hard gate is context-dependent
 
-After Tier 1, pause for user classification approval. Never skip this step. If domain-disruption lacks flow classification, the /stdf skill provides it. The gate presents disruption scope, cost parity metric, and market type for user confirmation before Tier 2 proceeds.
+After Tier 1, the orchestrator decides whether to pause for user classification approval based on scope and risk:
+
+**MANDATORY** for: FULL, ENERGY_FULL, ENERGY_GAS, FULL+COMMODITY, CUSTOM with 8+ agents, ambiguous sectors, or when domain-disruption lacks flow classification.
+
+**OPTIONAL** for: QUICK, COST_FOCUS, CUSTOM with 5 or fewer agents where sector/flow/metric/market are all unambiguous from the query.
+
+When skipping the gate, the orchestrator must state its reasoning (e.g., "Solar PV Stellar classification is unambiguous for a cost-only analysis").
+
+**Risk of skipping:** Misclassification propagates through the pipeline. For FULL runs, wrong flow type (X-Flow vs Stellar) changes Jevons Paradox applicability in 5+ downstream agents. For QUICK runs, the blast radius is limited to cost-fitter and synthesizer.
 
 ## User Overrides propagate downstream
 
@@ -86,3 +94,11 @@ When converting solar $/Wp to $/kWh for China, use CF=0.11 (BNEF). The commonly 
 ## X-Flow/Stellar classification must propagate to downstream agents
 
 The X-Flow/Stellar/Hybrid classification is set in `01-domain-disruption.md` `## Classification Overrides` during the Phase 1 hard gate. Every downstream agent that references Jevons Paradox (capability, xcurve-analyst, tipping-synthesizer, stream-forecaster, demand-decomposer) MUST read this tag before applying or excluding Jevons. If the tag is missing, agents should self-classify and emit a `[WARNING]`. A missing tag is a pipeline smell — check whether the Phase 1 hard gate was skipped.
+
+## Research agent output must be included in synthesizer UPSTREAM_FILES
+
+If the orchestrator injected `stdf-research` during the pipeline, its output files (`09-research-*.md`) must be listed in the synthesizer's UPSTREAM_FILES. The synthesizer will not find them on its own — it only reads files explicitly listed. After all research agents complete, verify their output files exist before launching the synthesizer and include them in the file list.
+
+## Custom agent sets still need DAG resolution
+
+When the orchestrator constructs a CUSTOM agent set (not matching any known configuration), it must still resolve the full dependency chain from the Agent Registry. Do not assume that listing goal agents is sufficient — walk the "Requires" column for every goal agent and add all transitive dependencies. Missing a dependency (e.g., forgetting cost-researcher when including cost-fitter) will cause the dependent agent to read a nonexistent upstream file.

@@ -2,7 +2,7 @@
 
 This repo contains two concerns:
 
-1. **`stdf/`** -- Self-contained STDF analysis system. Run `cd stdf && claude` to work on pipeline analyses. Has its own `.claude/`, `CLAUDE.md`, agents, lib, data, scripts, and output.
+1. **`stdf/`** -- Self-contained STDF analysis system. Run `cd stdf && claude` to work on pipeline analyses. Has its own `.claude/`, `CLAUDE.md` (which includes the full orchestrator), agents, lib, data, scripts, and output.
 
 2. **`server/`** -- Claude Agent SDK server that exposes STDF via WebSocket/HTTP. The server loads agent definitions from `stdf/.claude/agents/` and runs sessions with `cwd=stdf/`.
 
@@ -11,6 +11,7 @@ This repo contains two concerns:
 | Path | Purpose |
 |------|---------|
 | `stdf/` | Self-contained STDF analysis system (run Claude Code from here) |
+| `stdf/CLAUDE.md` | Pipeline orchestrator -- presets, DAG, tiers, execution steps, evaluation |
 | `server/` | Claude Agent SDK server (FastAPI + WebSocket) |
 | `scripts/` | Legacy CLI wrapper (`stdf_v2_cc.py`) |
 

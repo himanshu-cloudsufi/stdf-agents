@@ -1,0 +1,383 @@
+Hey Varasu.
+Hey, good mo good afternoon.
+Hey, Raso.
+Yes, how are you?
+Good, good.
+How about you?
+Good.
+I'm in London.
+Uh it's been quite a week.
+But uh here we are.
+Nice, nice, nice.
+Uh you're there for the next week as well.
+Probably.
+Um, I was thinking about going back this weekend back home, but um.
+But as you can imagine, flights are crazy.
+Um seriously.
+So yeah.
+So, you know, I I I don't know, I may stay uh because of that.
+Yeah, I mean, uh it's it's really uh difficult even here on the domestic side, many things happening, but yeah, I'll touch base at the end.
+The kind of CNG and LNG impacts uh are really crazy.
+Yeah, right.
+It's like gonna get chaotic.
+Restaurants are in panic.
+Uh although it it's not triggered yet, but the kind of narrative has been created is like LPG CNG, all these natural gases are not gonna be there, and cooking is going to be a big problem.
+People are not gonna get food.
+Yeah, Tony.
+Good morning, everybody morning you you hearing the same thing around in uh europe as well um so there is you know the the memory of the invasion of Ukraine was triggered um and what happened during that invasion L and G prices just went up you know um to I mean normally it's about 20 and it went up to like 200 right um this is four years ago um it came back down but um you know as soon as this happened it went back up to 50 or 60 right uh just like that um so so yeah I mean it it's uh you know um yeah anyway um so we're having to struggle with that yep real world cost curves impacting our life so yeah well you know um I'm guessing that this might accelerate um adoption of you know stellar energy and so on right so you know do you need more um um you know conflicts and war and whatever to realize what's in front of your eyes you know what I'm saying um so anyway, but uh it is what it is.
+Tony, just one thing before we get started, Vasul.
+Sorry, last week I couldn't join on Friday.
+I just wanna highlight a few things.
+So, Tony, uh, what uh I I went through the recording and what uh uh Robert, I don't know if Robert is planning to join this call, but what Robert was trying to do with the questions was a time travel with the model, uh, which is is a very good feature to build, but it's not like intrinsic or part of the DNA of what we have.
+I'll give you an example what I mean by that.
+If we go to chat GPT and we say jet chat GPT through a prompt, forget about the iPhone, let's go back to like 2000, and you know, can you predict what's gonna happen into the future about like mobile phones?
+Even though that we said it in the prompt, it's already encoded it's in DNA as far as the model itself.
+So it's it's uh it's so the time travel of the model is a different uh, you know, is it it's a it's a good feature, but it's not yet built.
+It's something that we can discuss.
+Um, but and it's not something to do with data factory, just uh to be clear also.
+Uh I'll pause, see if you have any questions.
+I just wanted to highlight that apologies couldn't make it that day.
+It was a little bit early for me, but uh yeah, I get that.
+Um I get what you're saying, but we can I think um, I mean, you know, I I I don't know everything that he wrote, but I think that we can look back since um chat GPT first came out, right?
+Um I think that you know, the last three years, I think that we have enough data to look at the impact.
+Does that make sense?
+I think that you know, I would agree with you uh since before chat GPT, even though we had AI, it was it was a very focused um thing.
+It was not Gen AI and it was not open and and and whatever.
+Um but since um since Chat GPT came out, there is data indicating that you know it did have an impact, right?
+And it has had an impact, especially in youth unemployment.
+Makes sense, recent graduates and whatever.
+So I would agree with you on before Chat GPT, but after Chat GPT, I think that you know, even though it was early, um, and you know, I think that in terms of capability, the ability to do 10 seconds of thinking is probably irrelevant.
+Um but as those capabilities have improved to an hour or two hours, whatever, I think that it it um it should be possible to to look at the implications, right?
+We may not find any, right, especially as we get closer to 23.
+Um, but at least we should we should look.
+Make sense.
+Yes, yes.
+Thanks, Tony.
+Thank you.
+Sorry, back to you, Vasou.
+Yep, I think uh uh we had the major agenda for today was uh 21st half.
+Uh Richard and Jitin wanted to deep dive into the AL model in context of this topic piece.
+We did a good comparison both on the data and model side.
+I'm gonna take your inputs and feedback how we should be shaping because there are some gaps we have identified, and then Dr.
+Wareed will share some high-level uh updates on the data factory that the team has prepared.
+So Sachin and Dr.
+Valeed will touch base.
+Uh and then you know, uh we'll talk about some of the major features being released uh this week and next week.
+Okay.
+I'll just go ahead and share that.
+Um can I chitin, I I apologize before you know, before we talk about that.
+Can we talk about the speed of thinking?
+Um you know, last night I you probably saw one of my prompts.
+I mean, it took so long, I just walked, right?
+Um so let's talk about that.
+And maybe not now, but at least know that um you know, I mean that prompt took forever and ever.
+I woke up to it, right?
+I don't know how long it actually took.
+Um, but uh you know, I I think if we need to start you know paying a little more for premium tokens or whatever, then we should discuss.
+Makes sense.
+Yes.
+Okay.
+So just to highlight on that part for me, I think one feature because uh we are tackling it in two parts.
+First part is uh as you said, like uh just looking at the response time and looking at how we can optimize the performance and reduce the latency.
+So we are also looking at it from that angle.
+But uh the other side is what we have done is we enabled uh button uh where we can just basically toggle it.
+You can just fire a query and you can go, and then it will basically give you an email-based notification whenever the response is generated.
+So you don't have to keep on waiting for the response.
+Whenever the response gets generated, uh it'll send you an email, and then you can just through the email click on that button and then it will show you the response.
+It'll take you back to the chart and then you can continue chatting from there.
+So it's mainly like just file the response, enable the notification log, and then you can just go ahead either start a new chart or like uh just basically we just you go ahead with other tasks and then whenever the response is generated, you can come back and uh review and go ahead with the analysis.
+But yeah, we are on the other side.
+We are also looking at like uh actively looking at how to decrease the time taken to perform the analysis.
+Yeah.
+Yeah.
+I mean, this specific one, which is why you know I bring it up, it was you know, we were in the middle of you know, a meeting, and then you know, Robert asked, you know, what would be the top for, you know, uh so basically that question.
+Um and essentially we it would have been great to have used the response in that meeting.
+Um and and that's what I so I get that non-urgent things could be done overnight or whatever, but um but in you know, in some cases, it might be great to to make it part of a an actual conversation.
+Makes sense.
+Yes.
+Um yeah, I think we can have a toggle mode, Jitin, on the light, maybe you and Rich can discuss on that and say, you know what, response is more important, and then uh we can skip a lot of other pieces.
+So the model knows that the user needs something immediate.
+Yes.
+Yep.
+Yes.
+Yeah, that's that's uh I like that.
+Yeah.
+And one more thing, I think we can if uh you know, give some estimate of the time, how much time it might require to give the output, that will be good for the user to understand.
+Yeah, that makes sense.
+That makes sense.
+Yeah, we'll look into this as well.
+Okay.
+All right, sorry, let's go back to AEL.
+Sure.
+Uh just quickly share my screen.
+So uh to me now, just to highlight, like uh you also shared that paper, and we were also earlier like over the weekend going through the same paper, and we were also looking at like uh what Robert had mentioned, and like you also iterated today, like where since the release of Chat GPT, we might have some signals out there in terms of unemployment, which we can use at target to calibrate the model and identify what are the optimal values of the parameters.
+So we started uh hunting data on two tracks.
+Uh one is just getting more and more granular level data on the unemployment trends in the past uh two years or three years, and uh the other track was getting more impactful evidence on the task level data that we have from ONET, uh, which was basically also used by the paper that Entropic published.
+So we're trying to gather both of these uh data to enhance the overall analysis uh quality that we have in Ale right now.
+And the plan is uh we have already collected the data, and then uh basically we want to ingest that data so by Monday or Tuesday next week, the data will be ingested in the DBs, and then we'll be able to query them uh by next week through Stellar Range.
+And the methodology that we're going to discuss today, we're planning to actually incorporate that methodology with your inputs uh by the end of the next week.
+So that's the plan going ahead.
+Uh any questions on the data itself.
+Yeah, no, I mean this is this is this is the data.
+Um so yeah, I mean, we're looking at uh what we should look at.
+I mean, if you guys can think of other sources of data like Brinny Offson looked at ADP, right?
+Um data, and we may need to pay for that data.
+Um, but if we think that that data might be useful, then shout, right?
+Uh please shout, and um, let's see what we can do to find data, right?
+That we need to pay for.
+Yeah, Tony, if I may, so on the data factory side, as we're refreshing the curves, guess what we found out?
+All of the things that we got for free last time, everybody put them under, you know, uh paid APIs or your or at least APIs.
+So they're no longer just you can go grab them sites.
+So everybody's locking uh their doors, and we will be sending over the next week um a list of what where we need help uh with.
+So just cycle.
+Okay.
+Okay.
+Okay.
+Okay.
+And uh Tony, just to go ahead with like how do we like uh envision how we can use the data like that we are gathering as we discussed earlier as well, like what kind of clustering techniques that we can implement, and then there is a usability issue as well because we cannot have different set of parameters for all of the tasks because there are roughly 13,000 to 19,000 tasks that we have.
+So this is an approach that I wanted to run through you and then get your comments and then refine it and go ahead with implementation.
+So uh just to give you a broad uh broad overview.
+So we have already got the data, and then we have to just basically make sure that all of that data gets uh related to the already existing jobs and tasks that we have, so that we are able to relate the relevant parameters and the metrics that we're getting, all the relevant tasks that we have currently placed in the model.
+Once we have that, like uh these dimensions uh like the categories that was uh E0, E1, E2 for different different tasks, and then uh anthropic economic index data for uh conversation percentages and penetration, task frequency, median age, all of this once we get we can take two approaches to actually uh build the clustering.
+One approach can be uh do a rule-based clustering where basically we have certain rules.
+For example, this is just an example, uh, this is not the final version that you'll see, but just an example.
+So one can be we'll first filter out on the uh exposure categories that we get from the LN2 paper, which is E naught is there is no cognitive task, it cannot be done by LLMs, E1 is a task that can be done by LLMs, and then E2 is a task that can be done by a combination of LLM and tools.
+We divide first tasks into this category, and then for each uh division, we do further divisions based upon the different matrix that we have obtained from the new data that we get, and basically create a rule-based decision tree where each leaf node represents a category.
+So in the end, we sort of obtain, let's say some five to ten categories or clusters of tasks.
+So just as an example here, one category can be physical, one can be cognitive, one can be low wage, high wage, uh active.
+And again, uh, this is just an example that I want to illustrate.
+Uh eventually we are going to run a more sophisticated system to actually determine these categories.
+But basically, the idea is we get these categories which is being backed by these rules, and these rules are actually being created on top of the matrix that we have collected.
+And once we have these categories and explanation for these categories, then it becomes easier for us to actually associate the different parameters that we are actually trying to tune.
+So parameters being time to uh 80% adoption, adoption lag, replacement ratio, and sealing.
+So that is first approach.
+Another approach that we can run parallelly is not run a rule based decision tree, but because we do have some features for each of the tasks, we do some algorithmic clustering.
+Uh, let's say unsupervised uh algorithms we apply K means, hierarchical, and then we basically create clusters of similar uh tasks.
+Now, the issue here uh if we do that alternative route of unsupervised learning is uh we'll then have to manually associate because that cluster clustering will be more mathematical in nature, so we will have to sit and actually associate some business logic to each cluster.
+What does each cluster mean?
+And then we'll have to sort of also identify proper criteria or like uh at least tune the model in that way that the clusters get broken down in some order of complexity.
+That one cluster to another cluster, there is some difference in the complexity of the task that we have.
+So that's uh the drawbacks of the unsupervised learning approach.
+But yeah, uh, I think we will do experimentation on both.
+And if we are able to see that there is a clear-cut separation in terms of complexity uh between different clusters that we design, then we'll also go ahead with that.
+And we can also think of some reconciliation strategies between the rule-based uh clustering and the unsupervised learning.
+But this is uh still something that we'll try to experiment with.
+Once we have the once we have the clusters again uh and uh clusters with some business logic and meaning and labeling uh done uh to the clusters, then we again uh as I mentioned earlier, we try to associate some parameter values with each cluster.
+So, for example, let's say in this activity, we got a cluster which is C6, which is active, which is a fast mover, uh, which had these uh parameters like anthropic percentage penetration was greater than 10 percent.
+So, for that case, we can just maybe say that adoption speed is 24 months, that 10 to 80 percent adoption will happen much fast, adoption lag is already zero because 10% adoption has already happened, and replacement ratio is maybe not 50 50, but it is 65 35, and then ceiling can be 80 percent, and then we can actually like decide uh like uh uh internally that these are the default values with some sort of sorry sorry, sorry to interrupt Jitin.
+Um ceiling is the what is ceiling?
+It's it's the capacity filter.
+Yes, the total like maximum adoption, yeah.
+Yes, got it, got it, got it.
+So no no more, no more than 20, no fewer than 20 percent humans, right?
+Yes, yes, got it.
+Got it.
+Okay.
+So we do this activity for each of the clusters that we have.
+Yeah, this is just a visual representation, like uh adoption speed.
+And once we have this, that becomes part of the current mechanism.
+But uh just to get the best case default values of these parameters.
+What we can do is another thing is like if we are able to identify any uh target signal related to unemployment, as you mentioned, like youth and employment can be uh one of the target signals which we can calibrate against.
+So if we are able to identify that particular signal which already has the impact of AI baked into that signal, then we can identify that target, then the adoption uh the adoption curves that we are generating for different clusters.
+We can run some sort of correlation and see if that uh the adoption that we are predicting is uh related uh correlated to the signal.
+Higher the correlation, that means the better uh parameters we have given.
+So this can be an iterative approach.
+We can just keep on testing with different different values of parameter and try to see which set of parameters gives us the uh least uh loss in terms of yeah, uh or uh the maximum correlation with the target, and that can become our default value of the parameter, and definitely uh once we bake in these default parameters the user will still have the capability of adjusting these parameters in real time while doing the chatter and uh yeah and we can also just basically for our sanity just keep track of some certain matrix like uh uh predicted sector displacement versus the uh unemployment change or like percentage of sectors where model correctly predicts uh employment direction so that we can create these custom matrix just to see the sanity of the uh model that's created right right so uh any comments on you on this yeah um no the good work um look i i you know from the beginning i think what we've been doing is um you know trying to figure it out right um and and um i think that you know when i when i um kind of threw my hands and thought okay let's have an open innovation challenge to to see what we're missing right because we're we're not getting this right um basically um um you know i i it's not a straight um a straight we're not necessarily horses, right?
+Does that make sense?
+Um, you know, I mean, in one of my um the essays that i that i wrote this time were the horses, we're not quite horses, not yet, anyway.
+Um I I don't think it's uh a lot of these things are not just one dimensional or two dimensional or or whatever.
+So that's the roundabout way of saying if we have enough um you know data, say over the last three years to do back tests and to learn from what is out there, right?
+Then we should do it.
+Does that make sense?
+We should do it because um, you know, what are the hidden you know dynamics and patterns and structures that were missing?
+Um you know, I it I I uh I'm pretty sure that um there's a lot to be discovered, and if we can, that would be amazing.
+Does that make sense?
+Um so if we can do that in a reasonable time with reasonable effort, I think we should do it.
+Makes sense.
+Um and I doubt that we're gonna get it all right in the beginning, but if we can iterate on that exercise, um that um you know, we'll we'll we'll learn along the way if there what we're missing, not if there's something, but what we're missing, right?
+In terms of patterns and curves and dynamics that that um you know we haven't paid attention to.
+Does that make sense?
+Yes.
+Uh Tonya, I have one question, a quick one.
+Yes.
+So the AL is not so long, like this just thinking aloud, like if we let's say are able to figure out a way where our model is you know gives us a good uh let's say accuracy on the back tested data.
+Will that confirm that this model will still work for forthcoming you know data?
+So I'm just curious that is the backtracking the only way to assume that our model is good, or are there any other ways in which we can validate the model?
+Um well, I mean, you know, we we we have to test it based on reality, right?
+Um and you know, the the question for me would be can we ascribe the rise in unemployment over the last three years in the US and also by the way, the UK is worse, right?
+Um and especially youth unemployment.
+So um one missing bit in our data is probably youth unemployment, right?
+Um which here is rising incredibly, right?
+Um college graduate unemployment, um, and so on, which you know, may or may not be in the bigger um data, but but you know, that that's a long answer to to your question.
+Yeah, we have I mean, if we don't test it on actual data, what are we gonna test it on?
+Does that make sense yeah no i was uh thinking from a different perspective let's say we test it and it works for last three years yes mean that it will work for coming five years as well like is that a fair assumption yeah um not necessarily right but i i think i think a fair uh deduction would be it's gonna be less bad than what we have yeah that's that right or not bad i'm sorry i i don't want to use that it's gonna be less wrong than than than what we have does that make sense yeah so my my point is like first i think we need to incorporate that back testing and validate our model and then we need to keep waiting on the model so that yes keep working yeah yeah yeah i i don't look i i don't i don't i would be very surprised if we get this in weeks right um i think that we're gonna have to keep iterating um and learning and and whatever um and and you know oh but i i think that if in the meantime we make it less wrong meaning you know uh i think that we all agree on direction but i think um that in in terms of dispersion right i mean is is 2028 gonna be um you know nine to sixteen percent or is it gonna be you know nine to eleven right if we can get it to that degree of kind of you know a little bit more more less wrong right or more precision that would be amazing makes sense hey Tony so when we're yes I know it's gonna it's not gonna be an easy problem to solve for but if we're trying to focus on optimizing for let's say unemployment which area or geography do you think would be the most important is it UK uh Europe I mean UK US anywhere else um I mean you know the world's biggest economies right uh US China UK um and and Europe right um and I'm I'm said putting the UK a little bit separate from EU because um you know they have different central banks right um so um and central banks adjust of course uh according to unemployment in their regions um so so yeah I would say if you want to rank order US UK you know China EU okay and then as we're exploring this uh you know there's a lot to try to figure out but are you open to looking at like you know there's articles I I read something yesterday uh for like RI advisory one of the CEOs is getting rid of 800 or 900 of all of his uh registered advisors and trying to go AI uh that's could be a good data point but it could be garbage right or a block they've laid off 50 percent of their workforce because they anticipate yeah AI and taking over.
+So it seems like there could be something there, but uh we don't know until we just try modeling it out, right?
+Yeah, yeah.
+I mean, I there's a lot of noise, right?
+Uh out there.
+And um, you know, I I um I get what you're saying, but but a lot of this is noise, right?
+Um, whether Block fired 4,000 people because of AI or because they were not doing great, who knows, right?
+Um, you know, maybe the guy was smoking something and and decided, you know what I'm saying?
+Uh we don't know.
+So there is a lot of noise.
+The only way to get this is with actual data, right?
+Um statistical data.
+And I don't, you know, and by the way, I don't know if we're looking at the right data.
+And I'm open to um suggestions as to other sources of data, right?
+Um, but but you know, these you know, bits and pieces and whatever, to me, it's it's mostly noise.
+Got it.
+Okay.
+Makes sense.
+That's helpful.
+Thank you.
+And then any update on the the hackathon, the uh that you were proposing.
+Um well, I mean, we we can we can go through it.
+Um and uh, you know, I just need on my side, um, you know, on on the autonomy stellar side, um, someone to run it, right?
+Um and and by that I mean also do PR, social, and you know, advertising, and like, you know, we want to advertise it in the DoR Cache podcast, for instance, right?
+And maybe four or five other top AI podcasts and and whatever.
+So, you know, we want to make this as much a you know a branding exercise as we want to do it a technology exercise.
+Does that make sense?
+Um, so you know, we've been going back and forth, Robert and I, on how to do this, and you know, hire somebody if you know you know somebody if you can you know you who can help us on that side on the marketing side, um uh you know, in Silicon Valley or New York or whatever, anywhere really.
+Um, you know, I'm happy to chat, right?
+But um it's both a marketing exercise and a technology exercise.
+Um make sense.
+Yes.
+Yeah.
+Okay.
+But thanks, thanks for putting thanks for putting together um that document.
+It's really, really, really uh useful.
+Um, and you know, um I I think we'll we'll um iterate.
+Um, and you know, I'm sorry the last couple of weeks have been a little nutty, but um my my question is um to the team do we want this to be done in a spreadsheet format, which is what the document says, or do we want it to be in code, right?
+And in Python or or or whatever.
+I mean, um, what do you think?
+So Tony, the way it goes is most of the input data, output sample data would be in spreadsheet, and they would have to also upload the Python code, which would be a simple uh dot Python file which will can be evaluated by a team internally and then you know uh help to rank it out so it will be a combination of both uh spreadsheet got it got it got it okay okay anything else on this unemployment topic Tony you know we cover a lot on it um I mean if uh if you've looked through um Robert's um you know sessions um then you know you know what we're looking for makes sense um you know it's it's um you know we we think this is so you know let me let me answer your question with uh more of a statement than than than anything I think that the usefulness the value of this tool is never gonna be bigger than now right um because there's still a lot of um you know back and forth in mainstream uh economic circles as to you know especially the idea that um yes there's gonna be job losses but every disruption in history has created new jobs right that narrative is still out there in the ether um and it will be there for probably another year um which means that um you know it the the the the the there's never gonna be as big a uh difference between uh you know our edge the value of this technology and the market than now makes sense um and um so you know the the the more progress we can make um it the better and you know if you follow you know robert's um you know all his sessions and whatever you know that's pretty much the way we're thinking about it right and those are the questions that um you know we're asking and and so on right sense or am I being too that does make a no that does make a lot of sense I'm just trying to naturally just trying to figure out like what to focus on first but there's so much to focus on and you know yeah unemplo yeah unemployment does seem like a good area and then from that we can derive maybe net new jobs but I think we need to get a good handle on unemployment first and with your guidance you know prioritizing US UK China and then Europe that'll help us uh start unraveling more interesting data sources yes yes exactly I mean you know I I think we're we're we're we're still in a in a discovery uh phase uh we you know as a team and um but you know I mean the the the and I don't want to go in all kinds of directions is that we're gonna have both gdp growth and i mean unemployment growth um and and we're starting to see that at least in the us um and and you know folks think that job creation will kick in and so on and bring you know blah blah blah i don't think that's gonna happen right um and and but i do think that gdp growth is going to continue right together with unemployment growth um whether you know it gdp growth is gonna be three and a half percent or seven percent next year is not as important as whether unemployment is gonna be six percent or five percent does that make sense um and that's why i want us to focus on unemployment more than on gdp growth and whatever makes sense it does yeah so it sounds like you know as kind of an added benefit as we're trying to unravel unemployment if we could also identify what is driving GDP growth be very specific just kind of like how we're clustering for unemployment if we could do the same or at least understand what's driving GDP that'll also help in the long run um yeah I mean you know if we can do both at the same time without losing um you know, focus and whatever meaning.
+Um, you know, if if focusing if we can do you know the unemployment thing in T1 into both in T1, also, then let's do it, right?
+Um, but if um we need to do both, it's gonna take twice um the time, then let's not do it.
+Does that make sense?
+Umwhere in between, then we can talk.
+Um, but you know, again, I think that um time is for the reason that I mentioned, right?
+That that we'll never have a bigger edge um than we do now.
+So time is is of the essence in getting it, you know, like I said, less wrong than we've been getting it.
+Makes sense.
+Makes sense, but yeah, you're right.
+We should not forget that that's part of the exercise, too.
+Okay.
+Uh did you want to show anything else?
+Yeah, I want to just uh Tony, just quickly walk you through where we're at with data factory.
+Um, I'll just give a quick highlights and then we can dive as much details.
+And like I said, by the end of the week, we'll send you there.
+You will see from the numbers that yeah, uh everybody everybody's locking things down.
+Uh can you guys see my screen?
+Uh let me see it in uh put it in slideshow.
+So Tony, just uh really quick.
+This is what we've been working on, correct?
+The auto data refresh, AL data that I'm sure we just covered it, and there are two other things for this MVP that the team have done, which is A V data.
+This came from Guido and the team, and also the automobile data.
+Those are already completed, they're uh refreshing on a daily basis, so it's all yeah uh good.
+And on the auto refresh, let me show you the numbers.
+Uh so we have collectively built uh 1108 curves.
+I want to emphasize one thing, Tony, not just because you said it, but these are highly guarded curves.
+So this is this is data that everybody worked hard to make sure it's Q8, etc.
+And we are in the process of refreshing it.
+How much did we refresh?
+We refreshed 581 of those, they're good to go, and there is 441 that are still pending.
+Now, a little bit of the profile, Tony, on the data.
+I know we all want it to be refreshed every day, etc.
+But just I want to share with you a little bit of color.
+Most of the curves are yearly related data.
+Okay, so it's again 1000 out of 51 of the 1100 are yearly.
+So the data points will be coming yearly basis, and uh some of the uh key data sources like Irina, they will only release like the 2025 data sometime uh in Q2 of this year.
+So we're almost there, but not yet.
+Uh meaning the data sources have been released, and that's part of the reason why you see some data not yet refreshed.
+Okay.
+Another uh key thing which I want to highlight here, uh Tony like I shared with you.
+Many of the when we did that back testing from data, we said, you know what, we want to make sure this engine is working, so let's go back to 2023 and say go collect the 2024 data.
+A big portion of them, they already locked their data behind APIs.
+Some of them are free, which is great, but some of them are started to get being paid.
+And by definition, also, if you recall, Tony, we got uh quite a few of the curves from the team from Peter and others, they come from Bloomberg and other paid data sources.
+Yeah.
+So again, by the end of the week, I will send you, hey Tony, these curves, unless maybe but we will work.
+Meaning, maybe we can work what we did before that um one of the team members will use their user ID password, download the data so that we can feed it into the data factory.
+It's all good.
+Either way, these things will have to be paid.
+And um, so this is where we're at.
+And I I will again, like I said, can I interrupt?
+I'm sorry.
+We we I mean we pay for Bloomberg, right?
+So um, yeah, it it's uh it's just a matter of um letting us know, and we pay for for that anyway.
+So um yeah, just a matter of sharing um you know passwords and and whatever.
+Yes, that is that's correct.
+Um, and the other thing, Tony, based on your uh feedback today, uh, we will work on identifying maybe alternate sources.
+But the key thing is whatever we do in this space, I want to emphasize data factory is like a highly guarded embassy these days, it's super super guarded.
+We cannot let you know uh to to Irfan's point the other day, the internet data is poison.
+We don't want any poison coming in.
+So I know we want to be as fast as possible, but at the same time, only you know curated data will be allowed in here.
+That's that's the main the main thing okay so um yes yes and thank you for that um today we got um peter is in China and um you know he he um you know we we uh and guido's coming is going next week and whatever um we have you know analysts just going to conferences and asking questions and talking with companies and whatever and you know once in a while we get a really good piece of information um that we can use to fill in some of the details makes sense um yes and and so we need we need to figure out how to to you know basically fill in some of the information with confidence right um meaning you know we know what the cost of lithium ion is today because we spoke with the company today right um so in some cases we may not may not need to wait for um you know bloomberg or arena or whatever to does that make sense we can just you know absolutely pencil it in yes yes so so tony what the the the the plan that Data Factory again now started to have more of a face.
+It's good it's and it's integrated part of stellar, of course, but part of the user experience.
+We will allow you to add it and create the data.
+But that I think I know I remember you stated even we need to make sure only few people have that access.
+Because honestly, whatever's written here, like a Brad, uh, all of the curves are these 1108.
+They will variegate it by Brad and the team, correct?
+And Setchin also can test it.
+So moving forward, only people with those keys should be allowed to do that.
+And we will enable that functionality, no problem.
+Um, yeah, okay.
+Okay, okay.
+Thank you.
+Thank you.
+Uh sure.
+And I apologize, I was looking, I couldn't see you guys now.
+I can I don't know what happened to Zoom, not used to it as much.
+Anyways, uh, that's all I have.
+Uh Richard and uh Batsu.
+I have a list of items as takeaways, but uh before you wrap, we have some time left.
+Is there anything else you wanted to discuss?
+Um let's see, was nothing that I haven't.
+I mean, I I think um written down, right?
+Um in my sessions.
+Um I mentioned the speed and um I think the LNG analysis, I think it's irrelevant after the Iran war, but um, but it's important.
+I mean, it it's important to always do the SIBA framework, right?
+Um, and uh at some point in one of my sessions, um it didn't do it.
+Um I think that that's not optional.
+Does that make sense?
+Um and I think I'm gonna keep repeating that um and minor things, but nothing big.
+Okay, yeah.
+So just just to reiterate, uh, we have a few takeaways on our end.
+There's faster processing, ideally that the team needs because you're using it as you know on the fly querying.
+Ideally, you know, we can work on getting you a fast response.
+In the meantime, there's a notification feature you guys will have.
+So as you're running a query, it'll show email me when you're you're done, you'll get an email, you can open up the chat when you're ready, uh, more data sources for unemployment tracking.
+Uh, you've offered Bloomberg as a potential source that uh we can uh look into that, and then team input to add data, uh that's another option that we could uh possibly add, which would be really helpful because it's more real time than uh real time data that we could probably get, and then prioritizing black uh backtesting unemployment in order of US, UK, China, and then Europe.
+Uh, and then a nice to have would be trying to understand how GDP is growing while unemployment is increasing, but uh definitely the focus isn't on the latter.
+Yes, um, I wanted to mention the newsletter, right?
+Um and and uh I don't know if I've given feedback in the past.
+Um I think that having a newsletter based on today's conversation is useful.
+Um, but news is not necessarily useful.
+Does that make sense?
+Um, you know, news is super abundant.
+There's if anything, there's too much of it.
+I think that what would be valuable would be some added intelligence um in terms of um the things that we're not paying attention to right um whether it's convergence uh you know emerging bottlenecks um tipping points uh systemic implications whatever does that make sense um but just just doing a newsletter based on the stuff that we talked about today um i personally i mean i think we can we can we can improve it adding intelligence makes sense yeah you mean implication of the news basically yeah implications and things that we're not paying attention to right um you know um which is which is um we you know um we talked about evs we talked about batteries we talked about oil we talked about lng fine that means that we're paying attention right um what can we do that is not in that conversation that we may not be paying attention to right um is there a bottleneck coming is there based on you know um running a convergence exercise or and we need to decide what this means you know what i'm saying i'm just putting it out there um that news in and of itself is not that interesting anymore, right?
+Um if anything, you know, we have too much of it.
+Right.
+Make sense yep yeah.
+And I was just gonna say the newsletter is a is a new type of feature that we're trying to implement.
+And getting the news right uh for the first uh round is is hard enough.
+So I think we're getting to a point where the news is accurate and it's filtered out.
+Uh but we were having conversations and I agree with you.
+It's not the fact that we're giving news that's important.
+It's the impact, right?
+Or uh what's becoming what's the result of it.
+So that's definitely the next step we'll iterate with you on that and try to find good nuggets for you based off of the news.
+Yeah.
+Yeah.
+Okay.
+All right.
+I think that's it.
+All right.
+Excellent.
+Thank you team.
+Thank you.
+It's all right.
+See you in a couple of days.
+Bye bye.
+Bye bye

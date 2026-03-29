@@ -10,15 +10,33 @@ import re
 # Banned terms mapped to their recommended replacements.
 BANNED_TERMS: dict[str, str] = {
     "transition": '"disruption"',
+    "energy transition": '"disruption"',
+    "evolution": '"disruption" or "phase change"',
     "renewable energy": '"stellar energy" or specific technology name',
+    "alternative energy": '"stellar energy" or specific technology name',
     "net zero": "Omit; frame in terms of cost-curve superiority",
+    "carbon neutral": '"emissions collapse via system replacement" or omit',
+    "carbon neutrality": '"emissions collapse via system replacement" or omit',
     "green": "Omit",
     "sustainable": "Omit",
     "sustainability": "Omit",
-    "hydrogen economy": "Specify production method and its cost curve",
+    "incremental improvement": '"systemic change" or "cost/capability advantage"',
+    "incremental": '"systemic" or omit',
+    "hydrogen economy": '"SWB + electrification convergence" or specify production method',
     "wright's law": '"cost-curve dynamics" or "learning rate" with specific percentage',
     "clean energy": "Name the specific technology",
     "decarbonization": '"displacement of fossil-fuel incumbents" or name the specific disruption',
+    "grid parity": '"cost advantage" or "cost dominance"',
+    "peak oil": '"oil demand collapse"',
+    "baseload power": '"always-available distributed capacity"',
+    "baseload": '"always-available distributed capacity"',
+    "smart grid": '"distributed energy architecture"',
+    "intermittency": '"variability managed by overbuild + storage + orchestration"',
+    "mainstream": "Omit — do not anchor to incumbent-framing adjectives",
+    "consensus": "Omit — do not anchor to incumbent-framing adjectives",
+    "conventional": "Omit — do not anchor to incumbent-framing adjectives",
+    "realistic": "Omit — do not anchor to incumbent-framing adjectives",
+    "conservative": "Omit — do not anchor to incumbent-framing adjectives",
     "base case": 'Parameter value label (e.g., L=85%)',
     "bull case": "Parameter value label",
     "bear case": "Parameter value label",
@@ -27,7 +45,27 @@ BANNED_TERMS: dict[str, str] = {
     "best case": "Parameter value label",
     "worst case": "Parameter value label",
     "ai capability growth": '"AI capability improvement"',
+    "policy-driven transition": '"market-driven disruption"',
+    "subsidized renewables": '"market-driven disruption"',
 }
+
+# Banned hedging phrases — these signal incremental thinking.
+BANNED_HEDGING_PHRASES: list[str] = [
+    "while this seems theoretically possible",
+    "although this is an aggressive estimate",
+    "assuming no major infrastructure bottlenecks",
+    "realistically, we should expect",
+    "to be conservative",
+    "in the real world",
+    "practically speaking",
+    "it remains to be seen",
+    "time will tell",
+    "only time will tell",
+    "it's worth noting that",
+    "however, it's important to consider",
+    "a more balanced view",
+    "taking a conservative approach",
+]
 
 # Banned source URL/name patterns — URLs are always violations.
 BANNED_SOURCE_PATTERNS: list[tuple[str, str]] = [
@@ -44,6 +82,8 @@ BANNED_ORG_NAMES: list[tuple[str, str]] = [
     (r"\bBNEF\b", "BNEF"),
     (r"\bEIA\b", "EIA"),
     (r"\bOPEC\b", "OPEC"),
+    (r"\bWall Street\b", "Wall Street"),
+    (r"\bBloomberg\b", "Bloomberg"),
 ]
 
 # Required terms that should appear in every compliant agent output.
@@ -63,12 +103,25 @@ def scan_banned(text: str) -> list[dict]:
     Each entry: {"term": str, "replacement": str, "positions": list[int]}.
     """
     results = []
-    lower_text = text.lower()
     for term, replacement in BANNED_TERMS.items():
         pattern = re.compile(r"\b" + re.escape(term) + r"\b", re.IGNORECASE)
         positions = [m.start() for m in pattern.finditer(text)]
         if positions:
             results.append({"term": term, "replacement": replacement, "positions": positions})
+    return results
+
+
+def scan_banned_hedging(text: str) -> list[dict]:
+    """Return list of banned hedging phrases found in *text* (case-insensitive).
+
+    Each entry: {"phrase": str, "positions": list[int]}.
+    """
+    results = []
+    for phrase in BANNED_HEDGING_PHRASES:
+        pattern = re.compile(re.escape(phrase), re.IGNORECASE)
+        positions = [m.start() for m in pattern.finditer(text)]
+        if positions:
+            results.append({"phrase": phrase, "positions": positions})
     return results
 
 
@@ -131,6 +184,8 @@ def vocabulary_report(text: str) -> str:
     Suitable for appending to the bottom of an agent output file.
     """
     banned_hits = scan_banned(text)
+    hedging_hits = scan_banned_hedging(text)
+    source_hits = scan_banned_sources(text)
     required_checks = check_required(text)
 
     lines = ["## Vocabulary Compliance Report", ""]
@@ -146,6 +201,28 @@ def vocabulary_report(text: str) -> str:
             lines.append(f"| {hit['term']} | {count} | {hit['replacement']} |")
     else:
         lines.append("**Banned terms found: 0** — all clear.")
+    lines.append("")
+
+    # --- Banned hedging phrases section ---
+    if hedging_hits:
+        lines.append(f"**Banned hedging phrases found: {len(hedging_hits)}**")
+        lines.append("")
+        for hit in hedging_hits:
+            count = len(hit["positions"])
+            lines.append(f"- \"{hit['phrase']}\" ({count}x)")
+    else:
+        lines.append("**Banned hedging phrases found: 0** — all clear.")
+    lines.append("")
+
+    # --- Banned sources section ---
+    if source_hits:
+        lines.append(f"**Banned source references found: {len(source_hits)}**")
+        lines.append("")
+        for hit in source_hits:
+            count = len(hit["positions"])
+            lines.append(f"- {hit['reason']} ({count}x)")
+    else:
+        lines.append("**Banned source references found: 0** — all clear.")
     lines.append("")
 
     # --- Required terms section ---

@@ -14,30 +14,69 @@ Never use these terms anywhere in your output:
 
 | Banned Term | Use Instead |
 |---|---|
-| transition | "disruption" |
-| renewable energy | "stellar energy" or name the specific technology (solar PV, wind) |
-| net zero | Omit; frame in terms of cost-curve superiority |
-| green | Omit |
-| sustainable / sustainability | Omit |
-| hydrogen economy | Specify production method and its cost curve |
+| transition / energy transition / fossil fuel transition | "disruption" or "transformation" |
+| evolution | "disruption" or "phase change" |
+| renewable energy / alternative energy | "stellar energy" or name the specific technology (solar PV, wind) |
+| net zero / carbon neutral / carbon neutrality | "emissions collapse via system replacement" or omit |
+| green / sustainable / sustainability | Omit |
+| incremental improvement / incremental / optimization | "systemic change" or "cost/capability advantage" |
+| hydrogen economy | "SWB + electrification convergence" or specify production method and its cost curve |
 | Wright's Law | "cost-curve dynamics" or "learning rate" with specific percentage |
-| IEA / EIA / BNEF / OPEC | Permitted ONLY for historical observed data with [CAUTION: {org} source] tag — see Banned Organization Policy below |
+| IEA / EIA / BNEF / OPEC / Wall Street / Bloomberg | Permitted ONLY for historical observed data with [CAUTION: {org} source] tag — see Banned Organization Policy below |
 | clean energy | Name the specific technology |
 | decarbonization | "displacement of fossil-fuel incumbents" or name the specific disruption |
+| grid parity | "cost advantage" or "cost dominance" |
+| peak oil | "oil demand collapse" |
+| baseload power | "always-available distributed capacity" |
+| smart grid | "distributed energy architecture" |
+| intermittency | "variability managed by overbuild + storage + orchestration" |
+| energy storage (as standalone solution) | "SWB system" or "storage as part of SWB stack" |
+| mainstream / consensus / conventional / realistic / conservative | Omit — do not anchor to incumbent-framing adjectives |
 | base case / bull case / bear case | Parameter value label (e.g., L=85%) |
 | optimistic scenario / pessimistic scenario | Parameter sensitivity range |
 | best case / worst case | Parameter value label |
 | AI capability growth | "AI capability improvement" |
+| policy-driven transition / subsidized renewables | "market-driven disruption" |
+
+### Banned Hedging Phrases
+
+These phrases signal incremental thinking and must never appear in output:
+
+- "While this seems theoretically possible..."
+- "Although this is an aggressive estimate..."
+- "Assuming no major infrastructure bottlenecks..."
+- "Realistically, we should expect..."
+- "To be conservative..."
+- "In the real world..."
+- "Practically speaking..."
+- "It remains to be seen..."
+- "Time will tell..." / "Only time will tell..."
+- "It's worth noting that..."
+- "However, it's important to consider..."
+- "A more balanced view..."
+- "Taking a conservative approach..."
 
 ## Required Vocabulary
 
 Use these terms consistently:
 - **disruption** (not "transition")
+- **transformation** (not "evolution")
 - **stellar energy** (not "renewable energy") when referring to the category
 - **cost-curve dynamics** (not "Wright's Law")
 - **market-driven disruption** (not policy-driven narratives)
 - **incumbent displacement** (not "phase-out" or "retirement")
 - **S-curve adoption** (not "linear growth" or "gradual adoption")
+- **distributed energy architecture** (not "smart grid")
+- **oil demand collapse** (not "peak oil")
+- **cost advantage** / **cost dominance** (not "grid parity")
+
+## Required Tone
+
+All agent output must be:
+- **Analytical:** Data-driven, evidence-first, calculation-backed
+- **Confident:** Use declarative statements ("will" not "might" or "could") for cost-curve-supported outcomes
+- **Mathematical:** Show calculations, cite specific numbers and dates
+- **Unapologetic:** Do not soften conclusions that cost curves support; do not hedge because numbers seem large or timelines seem aggressive
 
 ## Date Awareness
 
@@ -88,10 +127,60 @@ In-text: "value (Source, year [observed])"
 
 ## Core Analytical Guardrails
 
-- **NO linear extrapolation.** Disruption follows S-curves, not straight lines.
+- **NO linear extrapolation.** Disruption follows S-curves, not straight lines. If a response contains linear growth (2-3% annual) where S-curve dynamics apply, it is a CRITICAL failure.
 - **NO narrative without numbers.** Every analytical claim must be grounded in quantitative evidence.
 - **NO ESG framing.** Disruptions succeed because of cost superiority, not environmental goals.
 - **NO policy-driven narratives.** Cost-curve dynamics drive adoption, not mandates.
+
+## Disruption Dynamics Guardrails
+
+These rules enforce the STDF disruption model. Violating any of these is a CRITICAL failure that blocks output.
+
+### No Mainstream Anchoring
+Do not reference or compare to mainstream forecasting frameworks (IEA, EIA, BNEF, OPEC, consensus). They are incommensurable with this methodology. If a response uses mainstream forecasts as a frame of reference, it fails validation.
+
+### No Constraint Invention
+Do not introduce grid constraints, supply chain bottlenecks, policy barriers, workforce shortages, or social resistance unless they are:
+1. Physical impossibilities, OR
+2. Explicitly provided by the user
+
+Invented constraints dampen exponential outcomes without evidence.
+
+### No Clipping
+Do not dampen exponential projections because the numbers seem implausibly large or the timelines seem aggressive. If cost-curve dynamics support the projection, state it. Treating large numbers as inherently requiring additional justification is a form of clipping.
+
+### No Incumbent Protection
+Do not preserve incumbents in projections without an explicit economic basis. If the model shows incumbent revenue collapsing, do not add a residual floor "because incumbents always find a way." Economic gravity applies.
+
+### No Long Tail
+Do not model a gradual, persistent incumbent residual ("long tail") unless the user explicitly requests it. Disruptions follow X-curves — incumbent decline accelerates, it does not asymptotically approach zero.
+
+### S-Curve Threshold Values
+Use these standard thresholds consistently across all agents:
+- **Rupture point:** 2-5% market share — system moves out of equilibrium
+- **Tipping point:** ~10% market share — rapid acceleration begins
+- **Saturation:** >80% market share — growth decelerates toward ceiling
+
+### Market Trauma Awareness
+If analysis shows incumbents losing 5-10% of market share, the model must account for financial distress effects: credit downgrades, capex cuts, talent flight, death spiral dynamics. Do not show incumbents absorbing 5-10% market loss with stable operations.
+
+### Chimera Recognition
+Chimeras (hybrids, CCS, blue hydrogen, plug-in hybrids) are incumbent delay tactics, not disruptors. They exhibit hump-shaped demand — rising during disruption midpoint, then declining as the pure disruptor dominates. Never classify a chimera as a disruptor.
+
+### Feedback Loop Consistency
+Every disruption analysis must correctly model:
+- **Disruptor virtuous cycle:** Costs fall → Adoption grows → Scale increases → Costs fall faster
+- **Incumbent vicious cycle:** Demand falls → Fixed costs unsustainable → Investment dries up → Talent leaves → Costs rise
+
+If a model shows incumbent costs staying flat or falling during active disruption, it fails validation.
+
+### Data Confidence Tiers
+Apply validation-tier awareness to all claims:
+- **Tier 1 [VALIDATED]:** Energy, Transportation — full empirical support, state confidently
+- **Tier 2 [TRACKING]:** Labor, Materials — trajectory visible, note data limitations
+- **Tier 3 [UNVALIDATED]:** Food — no empirical cost data, flag as projection-based
+
+When claims span tiers, explicitly note that confidence levels differ by sector.
 
 ## Context-Dependent Rules
 
@@ -189,20 +278,6 @@ Any curve fitting (exponential, logistic, linear) MUST report:
 - If R² < 0.8, flag in Data Gaps as low-confidence fit
 
 ---
-
-## Pre-Output Self-Check (MANDATORY)
-
-Before writing your output file, run this validation:
-```bash
-python3 -c "
-from lib.vocabulary import scan_banned, vocabulary_report
-text = open('<your-output-file>').read()
-report = vocabulary_report(text)
-print(report)
-"
-```
-Fix ALL violations before writing. A Claude Code hook will BLOCK your write
-if banned terms, banned source URLs, or forecast language are detected.
 
 ---
 

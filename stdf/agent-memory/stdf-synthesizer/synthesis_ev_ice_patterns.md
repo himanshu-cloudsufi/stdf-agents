@@ -1,8 +1,33 @@
 ---
 name: EV-ICE synthesis patterns and conflict resolution
-description: Synthesis patterns, conflict resolution decisions, and calibration insights from the BEV disruption of ICE passenger cars analysis (2026-03-13, updated 2026-03-24 TIPPING_ONLY run)
+description: Synthesis patterns, conflict resolution decisions, and calibration insights from the BEV disruption of ICE passenger cars analysis (2026-03-13, updated 2026-03-24 TIPPING_ONLY run, updated 2026-03-27 CUSTOM capability-gap run)
 type: project
 ---
+
+## Key synthesis patterns observed in BEV-ICE CUSTOM capability-gap run (2026-03-27)
+
+### CUSTOM 4-agent capability-gap run — confidence 0.875
+CUSTOM runs with only capability-chain agents (domain-disruption, cost-researcher, capability, capability-parity-checker) produce confidence in the 0.87–0.89 range (mean 0.875). No penalties applied for the 7 intentionally skipped agents. The capability-parity-checker consistently yields the highest confidence (0.89) because all dimension data is observed with clear threshold crossings.
+
+### 12-dimension BEV capability table — canonical structure
+The per-dimension table (Dimension | BEV 2024 | ICE 2024 | Threshold | Status | Year Met) is the core analytical output for capability-gap queries. Always include the year-met column — it reveals the sequential convergence wave and is more informative than the static status alone. The 2022–2024 burst (range, TCO, purchase price, charge time, cold-weather retention all crossing in 3 years) is the headline finding.
+
+### God Parity vs. competitive threshold — always distinguish
+BEV will not achieve God Parity (superiority on ALL dimensions) because ICE retains a permanent refueling speed structural advantage (3–5 min vs. 15–22 min physics floor for DCFC). The competitive threshold for charge time is set at ≤30 min, not ≤5 min, because the decision gate is "acceptable travel delay," not "equals ICE refueling." This distinction must be explicit in the synthesis — without it, readers will incorrectly conclude charge time remains a major gap.
+
+### Towing range as sole remaining niche blocker
+As of 2026-03-27, towing range at maximum load (180 km vs. 200 km threshold) is the last APPROACHING dimension. Its 2026 closure date drives the "full capability parity" headline. The 10.0% gap is accurately characterized as a niche-segment blocker (heavy-duty towing users), not a wide-population blocker. Never frame it as a material adoption barrier for the general buyer.
+
+### Cost-researcher vs. domain-disruption price data: minor scope boundary
+Domain-disruption estimated "US BEV median ~$30k / ICE ~$29.5k (2025 model-derived)"; cost-researcher reported "$31k / $29k (2024 catalog observed)." Resolution: cost-researcher T2 catalog observed 2024 values are authoritative for current-year numbers. Domain-disruption's 2025 figure is used only as future-dated context. Both are directionally consistent — not a material conflict.
+
+### Narrative structure for CUSTOM capability-gap queries
+1. Per-dimension capability table (core answer to the query — lead with it)
+2. Sequential convergence wave narrative (how/when dimensions closed — organize chronologically by crossing year)
+3. Remaining APPROACHING dimensions with specific closure timing and physics constraints
+4. Cost structure as the unified mechanism (all capability improvements trace back to battery learning rate)
+5. Disruption landscape context (chimeras, convergence combinations, adoption position)
+6. Key conclusion with parity window and binding constraint
 
 ## Key synthesis patterns observed in BEV-ICE TIPPING_ONLY run (2026-03-24)
 
